@@ -7,6 +7,5 @@ export default function About() {
       <title>qw - about us</title>
     </Head>
     <div>What would you like to know?</div>
-    <div>{process.env.GREETING}</div>
   </Fragment>
 }

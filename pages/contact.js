@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 
-export default function Index() {
+export default function Contact() {
   return <Fragment>
     <Head>
-      <title>qw</title>
+      <title>qw - contact</title>
     </Head>
-    <div>Am I alive?</div>
+    <div>What is your request?</div>
   </Fragment>
 }

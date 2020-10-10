@@ -6,6 +6,7 @@ export default function Index() {
     <Head>
       <title>qw</title>
     </Head>
+    <div>Am I alive?</div>
     <div>{process.env.GREETING}</div>
   </Fragment>
 }

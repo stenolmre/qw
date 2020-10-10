@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import {Fragment} from 'react';
 import Head from 'next/head';
 
 export default function Index() {
@@ -6,6 +6,8 @@ export default function Index() {
     <Head>
       <title>qw</title>
     </Head>
-    <div>Am I alive?</div>
+    <div className="landing">
+      <h3>Hello World!</h3>
+    </div>
   </Fragment>
 }

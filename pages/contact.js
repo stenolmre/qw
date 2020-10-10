@@ -17,7 +17,7 @@ export default function Contact({ notes }) {
 }
 
 Contact.getInitialProps = async () => {
-  const { data } = await axios.get('/api/notes');
+  const { data } = await axios.get('https://qw-kappa.vercel.app/api/notes');
 
   return { notes: data }
 }

@@ -1,13 +1,18 @@
-import { Fragment, useState, useEffect } from 'react';
+import { Fragment, useMemo } from 'react';
 import Head from 'next/head';
-import axios from 'axios';
+import { useNoteState, useNoteDispatch } from './context/notes';
+import { getNotes } from './actions/notes';
 
-export default function Contact({ notes }) {
-  const [info, setInfo] = useState([]);
+export default function Contact() {
+  const stateNote = useNoteState();
+  const dispatchNote = useNoteDispatch();
 
-  useEffect(() => {
-    setInfo(notes.data);
-  }, [])
+  const { notes } = stateNote;
+
+  useMemo(() => {
+    getNotes(dispatchNote)
+  }, [dispatchNote])
+
   return <Fragment>
     <Head>
       <title>qw - contact</title>
@@ -15,14 +20,8 @@ export default function Contact({ notes }) {
     <div>What is your request?</div>
     <div>
       {
-        notes.data && info.map(note => <h2 key={note._id}>{note.title}</h2>)
+        notes.data && notes.data.map(note => <p key={note._id}>{note.title}</p>)
       }
     </div>
   </Fragment>
-}
-
-Contact.getInitialProps = async () => {
-  const { data } = await axios.get('https://qw-kappa.vercel.app/api/notes');
-
-  return { notes: data }
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function getNotes(dispatch) {
+async function getNotes(dispatch) {
   try {
     const { data } = await axios.get('/api/notes');
 
@@ -13,3 +13,5 @@ export async function getNotes(dispatch) {
     console.log('Something went wrong..');
   }
 }
+
+export default getNotes

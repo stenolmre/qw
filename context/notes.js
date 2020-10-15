@@ -50,7 +50,7 @@ export function useNoteDispatch() {
   return context;
 }
 
-export function NoteProvider({ children }) {
+export default function NoteProvider({ children }) {
   const [note, dispatch] = useReducer(NoteReducer, initialState);
 
   return <NoteStateCtx.Provider value={note}>

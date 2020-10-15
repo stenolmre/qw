@@ -1,7 +1,7 @@
 import { Fragment, useMemo } from 'react';
 import Head from 'next/head';
-import { useNoteState, useNoteDispatch } from './context/notes';
-import { getNotes } from './actions/notes';
+import { useNoteState, useNoteDispatch } from './../context/notes';
+import getNotes from './../actions/notes';
 
 export default function Contact() {
   const stateNote = useNoteState();

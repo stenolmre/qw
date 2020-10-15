@@ -7,7 +7,7 @@ export default function Index() {
       <title>qw</title>
     </Head>
     <div className="landing">
-      <h2>Hello</h2>
+      <h2>Hello World!</h2>
     </div>
   </Fragment>
 }

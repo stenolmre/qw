@@ -1,27 +1,16 @@
-import { Fragment, useMemo } from 'react';
-import Head from 'next/head';
-import { useNoteState, useNoteDispatch } from './../context/notes';
-import getNotes from './../actions/notes';
+import { Fragment } from 'react'
+import Head from 'next/head'
+import Landing from './../components/landing'
 
-export default function Contact() {
-  const stateNote = useNoteState();
-  const dispatchNote = useNoteDispatch();
-
-  const { notes } = stateNote;
-
-  useMemo(() => {
-    getNotes(dispatchNote)
-  }, [dispatchNote])
-
+export default function About() {
   return <Fragment>
     <Head>
-      <title>qw - {notes.data && notes.data[0].title}</title>
+      <title>qw - contact us</title>
     </Head>
-    <div>What is your request?</div>
-    <div>
-      {
-        notes.data && notes.data.map(note => <p key={note._id}>{note.title}</p>)
-      }
-    </div>
+    <Landing>
+      <div className="container">
+
+      </div>
+    </Landing>
   </Fragment>
 }

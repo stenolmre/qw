@@ -1,30 +1,22 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import Navbar from './../components/navbar'
-import Footer from './../components/footer'
-import Sidebar from './../components/sidebar'
+import Landing from './../components/landing'
 
 export default function Index() {
   return <Fragment>
     <Head>
       <title>qw</title>
     </Head>
-    <div className="landing">
-      <div className="overlay"/>
-      <div className="landing-content">
-        <Navbar/>
-          <div className="heading">
-            <h1>Travel and inspire your life</h1>
-            <p>Some random text about travelling and exploring.</p>
-            <div className="heading-read-more">
-              <hr/>
-              <Link href="/"><a>Read more</a></Link>
-            </div>
-          </div>
-        <Footer/>
+    <Landing>
+      <div className="container">
+        <h1>Travel to inspire your life</h1>
+        <p>Visit magical lapland and gather amazing experiences that last forever. We are made to give you a taste of artic nature.</p>
+        <div className="heading-read-more">
+          <hr/>
+          <Link href="/"><a>Show all experiences</a></Link>
+        </div>
       </div>
-      <Sidebar/>
-    </div>
+    </Landing>
   </Fragment>
 }

@@ -15,7 +15,7 @@ export default function Contact() {
 
   return <Fragment>
     <Head>
-      <title>qw - contact</title>
+      <title>qw - {notes.data && notes.data[0].title}</title>
     </Head>
     <div>What is your request?</div>
     <div>

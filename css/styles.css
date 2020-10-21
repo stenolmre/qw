@@ -1,0 +1,28 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: monospace;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #212121;
+}

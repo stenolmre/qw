@@ -37,6 +37,10 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  nav, footer {
+    height: 60px;
+  }
+  
   footer {
     justify-content: center;
   }

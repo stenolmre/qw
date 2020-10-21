@@ -25,8 +25,8 @@ export default function Sidebar() {
           <div className="sidebar-media-images">
             <img src="särkitunturi.JPG" alt=""/>
           </div>
-          </div>
-          </div>
+        </div>
+      </div>
       <div className="sidebar-button">
         <Link href="/"><a>See all posts ↠</a></Link>
       </div>

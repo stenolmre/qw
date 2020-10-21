@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Landing from './../components/landing'
+import MobileLanding from './../components/mobilelanding'
 
 export default function Index() {
   return <Fragment>
@@ -17,6 +18,7 @@ export default function Index() {
           <Link href="/"><a>Show all experiences</a></Link>
         </div>
       </div>
+      <MobileLanding/>
     </Landing>
   </Fragment>
 }

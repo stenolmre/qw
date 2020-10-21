@@ -1,0 +1,26 @@
+@media (min-width: 768px) {
+  .mobile-landing {
+    display: none;
+  }
+}
+
+.mobile-landing {
+  width: calc(100% - 10px);
+  padding: 10px 5px 50px 5px;
+  background: white;
+  color: rgba(33, 33, 33);
+}
+
+.mobile-experience-preview {
+  width: 90%;
+  height: 280px;
+  position: relative;
+}
+
+.mobile-experience-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}

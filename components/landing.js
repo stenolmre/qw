@@ -6,6 +6,7 @@ import Sidebar from './sidebar'
 export default function Landing({ children }) {
   return <Fragment>
     <div className="landing">
+      <img src="aurora.jpeg" alt="aurora-lights"/>
       <div className="overlay"/>
       <div className="landing-content">
         <Navbar/>

@@ -6,7 +6,7 @@ export default function MobileLanding() {
   return <div className="mobile-landing-container">
     <div className="mobile-landing">
       <img src="aurora.jpeg" alt="aurora-lights"/>
-      <div className="mobile-overlay"/>
+      <div className="mobile-overlay-header"/>
       <div className="landing-content">
         <Navbar/>
         <div className="container">
@@ -30,12 +30,21 @@ export default function MobileLanding() {
     </div>
     <br/>
     <div className="mobile-landing-header">
+      <h1>All adventures<br/><span>by category</span></h1>
+    </div>
+    <div className="category-card-container">
+      <CategoryCard name="snowshoe trekking" icon="fa-hiking"/>
+      <CategoryCard name="hiking" icon="fa-hiking"/>
+      <CategoryCard name="skiing" icon="fa-skiing-nordic"/>
+    </div>
+    <br/>
+    <div className="mobile-landing-header">
       <h1>latest posts</h1>
       <Link href="/"><a>See all</a></Link>
     </div>
     <div className="mobile-experience-container">
-      <ExperienceCard name="Snowshoe Trekking" place="Kätkatunturi"/>
-      <ExperienceCard name="Aurora Hike" place="Levitunturi"/>
+      <BlogCard title="Day 2 - To Nordkapp" author="Sten Olmre"/>
+      <BlogCard title="Day 1 - To Nordkapp" author="Sten Olmre"/>
     </div>
     <br/>
     <div className="mobile-landing-header">
@@ -51,9 +60,33 @@ function ExperienceCard({ name, place }) {
   return <div className="mobile-experience-preview">
     <img src="särkitunturi.JPG" alt="hiking"/>
     <div className="mobile-overlay"/>
+    <div className="top-rated-icon">
+      <i className="fas fa-star"/>
+    </div>
     <div className="mobile-experience-info">
       <h3>{ name }</h3>
       <p><i className="fas fa-map-marker-alt"/> { place }</p>
+    </div>
+  </div>
+}
+
+function CategoryCard({ name, icon }) {
+  return <div className="category-card">
+    <i className={`fas ${ icon } icon`}/>
+    <p>{ name }</p>
+  </div>
+}
+
+function BlogCard({ title, author }) {
+  return <div className="mobile-experience-preview">
+    <img src="särkitunturi.JPG" alt="hiking"/>
+    <div className="mobile-overlay"/>
+    <div className="top-rated-icon">
+      <i className="fas fa-heart"/>
+    </div>
+    <div className="mobile-experience-info">
+      <h3>{ title }</h3>
+      <p><i className="fas fa-user"/> { author }</p>
     </div>
   </div>
 }

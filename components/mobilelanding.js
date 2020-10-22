@@ -6,7 +6,7 @@ export default function MobileLanding() {
   return <div className="mobile-landing-container">
     <div className="mobile-landing">
       <img src="aurora.jpeg" alt="aurora-lights"/>
-      <div className="overlay"/>
+      <div className="mobile-overlay"/>
       <div className="landing-content">
         <Navbar/>
         <div className="container">

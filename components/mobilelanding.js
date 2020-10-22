@@ -10,7 +10,7 @@ export default function MobileLanding() {
       <ExperienceCard name="Snowshoe Trekking" place="Kätkatunturi"/>
       <ExperienceCard name="Aurora Hike" place="Levitunturi"/>
     </div>
-    <div className="overflow" />
+    <br/>
     <div className="mobile-landing-header">
       <h1>latest posts</h1>
       <Link href="/"><a>See all</a></Link>

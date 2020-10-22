@@ -1,7 +1,25 @@
 import Link from 'next/link'
+import Navbar from './navbar'
+import Footer from './footer'
 
 export default function MobileLanding() {
-  return <div className="mobile-landing">
+  return <div className="mobile-landing-container">
+    <div className="mobile-landing">
+      <img src="aurora.jpeg" alt="aurora-lights"/>
+      <div className="overlay"/>
+      <div className="landing-content">
+        <Navbar/>
+        <div className="container">
+          <h1>Travel to inspire your life</h1>
+          <p>Visit magical lapland and gather amazing experiences that last forever. We are made to give you a taste of artic nature.</p>
+          <div className="heading-read-more">
+            <hr/>
+            <Link href="/"><a>Show all experiences</a></Link>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
     <div className="mobile-landing-header">
       <h1>Top rated picks</h1>
       <Link href="/"><a>See all</a></Link>
@@ -25,6 +43,7 @@ export default function MobileLanding() {
       <Link href="/"><a>See all</a></Link>
     </div>
     <ImageSlider/>
+    <Footer/>
   </div>
 }
 

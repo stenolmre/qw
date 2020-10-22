@@ -18,7 +18,7 @@ export default function Index() {
           <Link href="/"><a>Show all experiences</a></Link>
         </div>
       </div>
-      <MobileLanding/>
     </Landing>
+    <MobileLanding/>
   </Fragment>
 }

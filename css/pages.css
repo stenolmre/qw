@@ -34,6 +34,10 @@
 }
 
 @media (max-width: 768px) {
+  .landing {
+    display: none;
+  }
+  
   .landing-content {
     width: 100%;
     display: block;

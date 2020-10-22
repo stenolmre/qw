@@ -1,4 +1,4 @@
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .mobile-landing-container {
     display: none;
   }
@@ -79,7 +79,6 @@
 
 .mobile-experience-preview img {
   width: 100%;
-  max-width: 400px;
   height: 100%;
   object-fit: cover;
   object-position: center;
@@ -100,9 +99,11 @@
   position: absolute;
   top: 15px;
   left: 15px;
-  padding: 5px;
-  border-radius: 100%;
+  padding: 7px;
+  border-radius: 50%;
   border: .5px solid #eee;
+  display: grid;
+  place-items: center;
 }
 
 .top-rated-icon .fa-star {
@@ -148,7 +149,8 @@
 }
 
 .category-card .fa-hiking,
-.fa-skiing-nordic {
+.fa-skiing-nordic,
+.fa-biking {
   font-size: 2.4rem;
   color: #ff4500;
 }
@@ -185,4 +187,68 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.mobile-contact {
+  background: rgba(0, 0, 0, .9);
+  margin-bottom: -1px;
+  padding: 30px 0 30px 0;
+  color: white;
+}
+
+.mobile-contact p {
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.mobile-landing-container iframe {
+  width: 100%;
+  height: 50vh;
+}
+
+.mobile-contact form {
+  width: calc(100% - 25px);
+  margin: 0 10px;
+}
+
+.mobile-contact input {
+  width: calc(60% - 16px);
+  padding: 5px 8px;
+  margin: 2px 0;
+  border: 1px solid rgba(240, 240, 240, 1);
+  border-radius: 2px;
+  background: none;
+  color: white;
+  outline: none;
+  font-family: monospace;
+}
+
+.mobile-contact input:nth-of-type(2) {
+  width: calc(70% - 16px);
+}
+
+.mobile-contact textarea {
+  width: calc(80% - 14px);
+  min-height: 150px;
+  padding: 5px 8px;
+  margin: 2px 0;
+  background: none;
+  color: white;
+  outline: none;
+  border: 1px solid rgba(240, 240, 240, 1);
+  border-radius: 2px;
+  resize: vertical;
+}
+
+.mobile-contact button {
+  padding: 5px 40px;
+  background: #00b100;
+  color: white;
+  font-weight: 600;
+  font-family: monospace;
+  border: 1px solid #00b100;
+  border-radius: 2px;
+  outline: none;
+  margin-top: 10px;
 }

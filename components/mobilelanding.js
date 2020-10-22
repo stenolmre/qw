@@ -36,6 +36,7 @@ export default function MobileLanding() {
       <CategoryCard name="snowshoe trekking" icon="fa-hiking"/>
       <CategoryCard name="hiking" icon="fa-hiking"/>
       <CategoryCard name="skiing" icon="fa-skiing-nordic"/>
+      <CategoryCard name="fatbike adventures" icon="fa-biking"/>
     </div>
     <br/>
     <div className="mobile-landing-header">
@@ -52,6 +53,29 @@ export default function MobileLanding() {
       <Link href="/"><a>See all</a></Link>
     </div>
     <ImageSlider/>
+    <div className="mobile-contact">
+      <div className="mobile-landing-header">
+        <h1>Our Location</h1>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d362.71851578978425!2d24.80773896521732!3d67.80406628103867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d24d51b880851b%3A0x9e1d3e75ebfb4e6f!2sOy%20Levi%20Ski%20Resort!5e0!3m2!1sen!2sfi!4v1603366555120!5m2!1sen!2sfi" frameBorder="0" allowFullScreen="" ariaHidden="false" tabIndex="0"></iframe>
+      <br/><br/>
+      <div className="mobile-landing-header">
+        <h1>Contact</h1>
+      </div>
+      <p>tel: +372 5346 1027</p>
+      <p>email: stenolmre@icloud.com</p>
+      <p>location: Levi, Lapland</p>
+      <br/>
+      <div className="mobile-landing-header">
+        <h1>Write Us Now</h1>
+      </div>
+      <form>
+        <input placeholder="Name" />
+        <input placeholder="Email" />
+        <textarea placeholder="Please write your questions, recommendations or requests here and we will get back to you during the day." /><br/>
+        <button>Send</button>
+      </form>
+    </div>
     <Footer/>
   </div>
 }

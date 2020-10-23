@@ -1,26 +1,28 @@
 import { Fragment } from 'react'
+import Head from 'next/head'
+import Container from './../../components/container'
 import Link from 'next/link'
 import Navbar from './../../components/navbar'
 import Footer from './../../components/footer'
-import { BlogCard } from './../../components/mobilelanding'
+import Heading from './../../components/heading'
+import Search from './../../components/search'
+import PostCard from './../../components/postcard'
 
 export default function Posts() {
   return <Fragment>
-    <Navbar style={{ color: 'black', boxShadow: '0 0 7px rgba(33, 33, 33, .2)' }}/>
-    <br/>
-    <div className="mobile-landing-header">
-      <h1 style={{color: 'black'}}>All posts</h1>
-    </div>
-    <div className="mobile-search">
-      <input placeholder="Search" onChange={e => e.target.name = e.target.value}/>
-      <span><i className="fas fa-search"/></span>
-    </div>
-    <br/>
-    <div className="posts">
-      <BlogCard title="Day 2 - To Nordkapp" author="Sten Olmre"/>
-      <BlogCard title="Day 1 - To Nordkapp" author="Sten Olmre"/>
-      <BlogCard title="Day 1 - To Nordkapp" author="Sten Olmre"/>
-    </div>
-    <Footer style={{ background: 'white', color: 'black', boxShadow: '0 0 7px rgba(33, 33, 33, .2)' }}/>
+    <Head>
+      <title>qw - posts</title>
+    </Head>
+    <Container>
+      <section className="posts-container">
+        <Heading name="all posts" link="Latest ↡"/>
+        <Search/>
+        <div className="posts">
+          <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
+          <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
+          <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
+        </div>
+      </section>
+    </Container>
   </Fragment>
 }

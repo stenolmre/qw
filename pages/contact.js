@@ -1,16 +1,15 @@
 import { Fragment } from 'react'
 import Head from 'next/head'
-import Landing from './../components/landing'
+import Container from './../components/container'
+import Contact from './../components/contact'
 
 export default function About() {
   return <Fragment>
     <Head>
       <title>qw - contact us</title>
     </Head>
-    <Landing>
-      <div className="container">
-
-      </div>
-    </Landing>
+    <Container>
+      <Contact/>
+    </Container>
   </Fragment>
 }

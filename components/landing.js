@@ -1,19 +1,12 @@
-import { Fragment } from 'react'
-import Navbar from './navbar'
-import Footer from './footer'
-import Sidebar from './sidebar'
+import Link from 'next/link'
 
 export default function Landing({ children }) {
-  return <Fragment>
-    <div className="landing">
-      <img src="aurora.jpeg" alt="aurora-lights"/>
-      <div className="overlay"/>
-      <div className="landing-content">
-        <Navbar/>
-          { children }
-        <Footer/>
-      </div>
-      <Sidebar/>
+  return <div className="landing-container">
+    <h1>Travel to inspire your life</h1>
+    <p>Come to above artic circle to visit magical lapland and to gather amazing experiences that last forever. Our goal is to give you wonderful memories worth remembering for years.</p>
+    <div className="heading-read-more">
+      <hr/>
+      <Link href="/"><a>Show all experiences</a></Link>
     </div>
-  </Fragment>
+  </div>
 }

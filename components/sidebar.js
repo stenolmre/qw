@@ -1,13 +1,11 @@
 import Link from 'next/link'
+import Search from './search'
 
 export default function Sidebar() {
   return <div className="sidebar">
     <div className="sidebar-content">
       <div className="sidebar-posts-container">
-        <div className="search">
-          <input placeholder="Search" onChange={e => e.target.name = e.target.value}/>
-          <span><i className="fas fa-search"/></span>
-        </div>
+        <Search/>
         <div className="sidebar-posts">
           <div className="sidebar-post">
             <h3><span>01</span> Day One</h3>
@@ -28,7 +26,7 @@ export default function Sidebar() {
         </div>
       </div>
       <div className="sidebar-button">
-        <Link href="/"><a>See all posts ↠</a></Link>
+        <Link href="/posts"><a>See all posts ↠</a></Link>
       </div>
     </div>
   </div>

@@ -1,15 +1,18 @@
 @media (min-width: 769px) {
-  .mobile-landing-container {
+  .mobile-container {
     display: none;
   }
 }
 
-.mobile-landing-container {
+.mobile-container {
   width: 100%;
   background: white;
   color: rgba(33, 33, 33);
   overflow: hidden;
 }
+
+/* ========================================= */
+/* LANDING */
 
 .mobile-landing {
   width: 100%;
@@ -34,107 +37,20 @@
   object-position: center;
 }
 
-.mobile-landing-header {
-  display: flex;
-  padding: 0 10px 0 30px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mobile-landing-header h1 {
-  width: 70%;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-.mobile-landing-header h1 span {
-  font-size: .8rem;
-  color: rgba(33, 33, 33, .5);
-}
-
-.mobile-landing-header a {
-  color: #ff4500;
-  font-weight: 600;
-  padding-right: 20px;
-}
-
-.mobile-experience-container {
-  display: grid;
-  grid-template-columns: 90% 90% 90% 90% 90%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  margin-bottom: 20px;
-}
-
-.mobile-landing-container ::-webkit-scrollbar {
-  display: none;
-}
-
-.mobile-experience-preview {
-  width: calc(100% - 5px);
-  height: 280px;
-  margin: 0 5px;
-  position: relative;
-}
-
-.mobile-experience-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 24px;
-}
-
-.mobile-overlay {
-  border-radius: 24px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(180deg, rgba(33, 33, 33, 0) 50%, rgba(33, 33, 33, .8) 100%);
-}
-
-.top-rated-icon {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  padding: 7px;
-  border-radius: 50%;
-  border: .5px solid #eee;
-  display: grid;
-  place-items: center;
-}
-
-.top-rated-icon .fa-star {
-  color: #ffc107;
-}
-
-.mobile-experience-info {
-  position: absolute;
-  bottom: 20px;
-  color: white;
-  left: 10%;
-}
-
-.mobile-experience-info h3 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.mobile-experience-info p {
-  font-size: .9rem;
-  margin: 10px 0 0 0;
-  color: white;
-}
+/* ========================================= */
+/* CATEGORY CARD */
 
 .category-card-container {
+  margin-bottom: 20px;
+  padding: 0 5px;
   display: grid;
   grid-template-columns: 40% 40% 40% 40% 40%;
-  padding: 0 5px;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin-bottom: 20px;
+}
+
+.category-card-container::-webkit-scrollbar {
+  display: none;
 }
 
 .category-card {
@@ -144,15 +60,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(240, 240, 240, .5);
   border-radius: 24px;
-}
-
-.category-card .fa-hiking,
-.fa-skiing-nordic,
-.fa-biking {
-  font-size: 2.4rem;
-  color: #ff4500;
+  background: rgba(240, 240, 240, .5);
 }
 
 .category-card p {
@@ -162,9 +71,8 @@
   font-weight: 600;
 }
 
-.fa-heart {
-  color: #ff4500;
-}
+/* ========================================= */
+/* MOBILE GALLERY */
 
 .image-slider {
   width: 100%;
@@ -173,6 +81,10 @@
   grid-template-columns: 90% 90% 90% 90% 90%;
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.image-slider::-webkit-scrollbar {
+  display: none;
 }
 
 .image-slider-img {
@@ -189,66 +101,16 @@
   object-position: center;
 }
 
-.mobile-contact {
-  background: rgba(0, 0, 0, .9);
-  margin-bottom: -1px;
-  padding: 30px 0 30px 0;
-  color: white;
+/* ========================================= */
+/* CONTACT */
+
+ .mobile-contact {
+  width: calc(100% - 10px);
+  min-height: calc(100vh - 170px);
+  padding: 25px 5px;
 }
 
-.mobile-contact p {
-  margin-left: 10px;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.mobile-landing-container iframe {
+.mobile-contact iframe {
   width: 100%;
   height: 50vh;
-}
-
-.mobile-contact form {
-  width: calc(100% - 25px);
-  margin: 0 10px;
-}
-
-.mobile-contact input {
-  width: calc(60% - 16px);
-  padding: 5px 8px;
-  margin: 2px 0;
-  border: 1px solid rgba(240, 240, 240, .5);
-  border-radius: 2px;
-  background: none;
-  color: white;
-  outline: none;
-  font-family: monospace;
-}
-
-.mobile-contact input:nth-of-type(2) {
-  width: calc(70% - 16px);
-}
-
-.mobile-contact textarea {
-  width: calc(80% - 14px);
-  min-height: 150px;
-  padding: 5px 8px;
-  margin: 2px 0;
-  background: none;
-  color: white;
-  outline: none;
-  border: 1px solid rgba(240, 240, 240, .5);
-  border-radius: 2px;
-  resize: vertical;
-}
-
-.mobile-contact button {
-  padding: 5px 40px;
-  background: #00b100;
-  color: white;
-  font-weight: 600;
-  font-family: monospace;
-  border: 1px solid #00b100;
-  border-radius: 2px;
-  outline: none;
-  margin-top: 10px;
 }

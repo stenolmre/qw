@@ -216,7 +216,7 @@
   width: calc(60% - 16px);
   padding: 5px 8px;
   margin: 2px 0;
-  border: 1px solid rgba(240, 240, 240, 1);
+  border: 1px solid rgba(240, 240, 240, .5);
   border-radius: 2px;
   background: none;
   color: white;
@@ -236,7 +236,7 @@
   background: none;
   color: white;
   outline: none;
-  border: 1px solid rgba(240, 240, 240, 1);
+  border: 1px solid rgba(240, 240, 240, .5);
   border-radius: 2px;
   resize: vertical;
 }

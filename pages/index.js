@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Landing from './../components/landing'
-import MobileLanding from './../components/mobilelanding'
+import { MobileLanding } from './../components/mobilelanding'
 
 export default function Index() {
   return <Fragment>

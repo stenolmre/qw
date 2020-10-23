@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Navbar from './navbar'
 import Footer from './footer'
 
-export default function MobileLanding() {
+export function MobileLanding() {
   return <div className="mobile-landing-container">
     <div className="mobile-landing">
       <img src="aurora.jpeg" alt="aurora-lights"/>
@@ -41,7 +41,7 @@ export default function MobileLanding() {
     <br/>
     <div className="mobile-landing-header">
       <h1>latest posts</h1>
-      <Link href="/"><a>See all</a></Link>
+      <Link href="/posts"><a>See all</a></Link>
     </div>
     <div className="mobile-experience-container">
       <BlogCard title="Day 2 - To Nordkapp" author="Sten Olmre"/>
@@ -67,7 +67,7 @@ export default function MobileLanding() {
       <p>location: Levi, Lapland</p>
       <br/>
       <div className="mobile-landing-header">
-        <h1>Write Us Now</h1>
+        <h1>Write to us</h1>
       </div>
       <form>
         <input placeholder="Name" />
@@ -101,7 +101,7 @@ function CategoryCard({ name, icon }) {
   </div>
 }
 
-function BlogCard({ title, author }) {
+export function BlogCard({ title, author }) {
   return <div className="mobile-experience-preview">
     <img src="särkitunturi.JPG" alt="hiking"/>
     <div className="mobile-overlay"/>

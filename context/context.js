@@ -1,7 +1,7 @@
-import NoteProvider from './notes';
+import PostProvider from './post';
 
 export default function GlobalState({ children }) {
-  return <NoteProvider>
+  return <PostProvider>
     { children }
-  </NoteProvider>
+  </PostProvider>
 }

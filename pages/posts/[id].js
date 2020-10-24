@@ -1,21 +1,24 @@
 import { Fragment, useEffect, useState } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
-import Container from './../../components/container'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Container from './../../components/container'
+import AddRating from './../../components/addrating'
+import Comments from './../../components/comments'
+import { usePostState, usePostDispatch } from './../../context/post'
+import { getPost } from './../../actions/post'
 
-export default function Posts() {
-  const [post, setPost] = useState(null)
+export default function Post() {
+  const dispatchPost = usePostDispatch()
+  const postState = usePostState()
+  const { post } = postState
+  const router = useRouter()
+  const { id } = router.query
 
   useEffect(() => {
-    const fetch = async () => {
-      const { data } = await axios.get('/api/posts/get/?postId=5f92da9110c2e7e441216c74')
-
-      setPost(data)
-    }
-
-    fetch()
-  }, [fetch])
+    getPost(dispatchPost, id)
+  }, [dispatchPost, id])
 
   return <Fragment>
     <Head>
@@ -23,13 +26,21 @@ export default function Posts() {
     </Head>
     <Container>
       <section className="post">
-        <div className="post-image" style={{ backgroundImage: `url(${ post && post.image })` }}/>
-        <div className="post-content">
-          <h1>{post && post.name}</h1>
-          <h4>by {post && post.author}</h4>
-          <p>{post && post.content}</p>
-        </div>
+        {
+          postState && post !== null
+            ? <Fragment>
+                <div className="post-image" style={{ backgroundImage: `url(${ post && post.image })` }}/>
+                <div className="post-content">
+                  <h1>{post && post.name}</h1>
+                  <h4>by {post && post.author}</h4>
+                  <p>{post && post.content}</p>
+                </div>
+              </Fragment>
+            : 'null'
+        }
       </section>
+      <AddRating/>
+      <Comments/>
     </Container>
   </Fragment>
 }

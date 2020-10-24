@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
     "axios": "^0.20.0",
     "js-cookie": "^2.2.1",
     "mongoose": "^5.10.9",
@@ -12,7 +11,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",

@@ -125,12 +125,12 @@
   min-height: calc(100vh - 150px);
   padding: 25px 0;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33.33% 33.33% 33.33%;
 }
 
 @media (max-width: 1024px) {
   .posts {
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
   }
 }
 

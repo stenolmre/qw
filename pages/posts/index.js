@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Container from './../../components/container'
 import Link from 'next/link'
@@ -7,8 +7,19 @@ import Footer from './../../components/footer'
 import Heading from './../../components/heading'
 import Search from './../../components/search'
 import PostCard from './../../components/postcard'
+import { usePostState, usePostDispatch } from './../../context/post'
+import { getPosts } from './../../actions/post'
 
 export default function Posts() {
+  const [search, setSearch] = useState('')
+  const dispatchPost = usePostDispatch()
+  const postState = usePostState()
+  const { posts } = postState
+
+  useEffect(() => {
+    getPosts(dispatchPost)
+  }, [dispatchPost])
+
   return <Fragment>
     <Head>
       <title>qw - posts</title>
@@ -16,11 +27,13 @@ export default function Posts() {
     <Container>
       <section className="posts-container">
         <Heading name="all posts" link="Latest ↡"/>
-        <Search/>
+        <Search onChange={e => setSearch(e.target.value)}/>
         <div className="posts">
-          <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
-          <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
-          <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
+          {
+            postState && posts
+              ? posts.filter(item => item.name.toLowerCase().includes(search.toLowerCase())).map(post => <PostCard key={post._id} link={`/posts/${post._id}`} title={post.name} author={post.author} topicon="fa-heart" bottomicon="fa-user"/>)
+              : 'null'
+          }
         </div>
       </section>
     </Container>

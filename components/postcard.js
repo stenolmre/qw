@@ -1,5 +1,9 @@
-export default function PostCard({ title, author, topicon, bottomicon }) {
-  return <div className="postcard">
+import { useRouter } from 'next/router'
+
+export default function PostCard({ title, author, link, topicon, bottomicon }) {
+  const router = useRouter()
+
+  return <div className="postcard" onClick={() => router.push(link)}>
     <img src="särkitunturi.JPG" alt="hiking"/>
     <div className="postcard-overlay"/>
     <div className="icon">

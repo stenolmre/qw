@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Link from 'next/link'
 import Navbar from './../navbar'
 import Footer from './../footer'
@@ -5,8 +6,18 @@ import Heading from './../heading'
 import PostCard from './../postcard'
 import Landing from './../landing'
 import Contact from './../contact'
+import { usePostState, usePostDispatch } from './../../context/post'
+import { getPosts } from './../../actions/post'
 
 export default function MobileLanding() {
+  const dispatchPost = usePostDispatch()
+  const postState = usePostState()
+  const { posts } = postState
+
+  useEffect(() => {
+    getPosts(dispatchPost)
+  }, [dispatchPost])
+
   return <div className="mobile-container">
     <LandingMobile/>
     <br/>
@@ -24,11 +35,13 @@ export default function MobileLanding() {
     </div>
     <Heading name="all posts" href="/posts" link="see all"/>
     <div className="slider">
-      <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
-      <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
-      <PostCard title="Day 2 - To Nordkapp" author="Sten Olmre" topicon="fa-heart" bottomicon="fa-user"/>
+      {
+        postState && posts
+          ? posts.map(post => <PostCard key={post._id} link={`/posts/${post._id}`} title={post.name} author={post.author} topicon="fa-heart" bottomicon="fa-user"/>)
+          : 'null'
+      }
     </div>
-    <Heading name="gallery"/>
+    <Heading name="gallery" href="/albums" link="see all"/>
     <ImageSlider/>
     <Contact/>
     <Footer style={{ background: 'white', color: 'rgba(33, 33, 33)', boxShadow: '0 0 7px rgba(33, 33, 33, .2)' }}/>

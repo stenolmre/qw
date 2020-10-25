@@ -125,7 +125,8 @@
   min-height: calc(100vh - 150px);
   padding: 25px 0;
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -147,7 +148,7 @@
 }
 
 /* ========================================= */
-/* POSTS */
+/* POST */
 
 .post {
   width: 100%;

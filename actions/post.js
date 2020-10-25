@@ -32,3 +32,43 @@ export async function getPost(dispatch, postId) {
     })
   }
 }
+
+export async function comment(dispatch, postId, commentData) {
+  try {
+    const config = { headers: { 'Content-Type': 'application/json' } }
+
+    const body = JSON.stringify(commentData)
+
+    const { data } = await axios.post(`/api/posts/comment/?postId=${postId}`, body, config)
+
+    dispatch({
+      type: GET_POST,
+      payload: data
+    })
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: err.response.data.msg
+    })
+  }
+}
+
+export async function rate(dispatch, postId, ratingData) {
+  try {
+    const config = { headers: { 'Content-Type': 'application/json' } }
+
+    const body = JSON.stringify(ratingData)
+
+    const { data } = await axios.post(`/api/posts/rate/?postId=${postId}`, body, config)
+
+    dispatch({
+      type: GET_POST,
+      payload: data
+    })
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: err.response.data.msg
+    })
+  }
+}

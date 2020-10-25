@@ -1,7 +1,10 @@
 import PostProvider from './post';
+import AlbumProvider from './album';
 
 export default function GlobalState({ children }) {
   return <PostProvider>
-    { children }
+    <AlbumProvider>
+      { children }
+    </AlbumProvider>
   </PostProvider>
 }

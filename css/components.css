@@ -36,6 +36,10 @@ footer p {
     height: 60px;
   }
 
+  nav a {
+    margin: 0 10px;
+  }
+
   footer {
     justify-content: center;
   }
@@ -529,4 +533,16 @@ main .search span {
   font-weight: 600;
   font-family: monospace;
   outline: none;
+}
+
+.hide-comments {
+  display: none;
+}
+
+.comments hr {
+  width: 45px;
+  height: 4px;
+  margin: 0;
+  border: none;
+  background: rgba(33, 33, 33, .2);
 }

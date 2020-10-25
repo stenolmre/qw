@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Search from './search'
 import { usePostState, usePostDispatch } from './../context/post'
@@ -9,6 +9,10 @@ export default function Sidebar() {
   const dispatchPost = usePostDispatch()
   const postState = usePostState()
   const { posts } = postState
+
+  useEffect(() => {
+    getPosts(dispatchPost)
+  }, [dispatchPost])
 
   return <Fragment>
     <div className="sidebar">
@@ -28,7 +32,7 @@ export default function Sidebar() {
         </div>
         <div className="sidebar-media-container">
           <div className="sidebar-media">
-            <Link href="/" className="sidebar-media-button"><a>+</a></Link>
+            <Link href="/albums" className="sidebar-media-button"><a>+</a></Link>
             <div className="sidebar-media-images">
               <img src="särkitunturi.JPG" alt=""/>
             </div>

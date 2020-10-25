@@ -1,31 +1,31 @@
-import { GET_POST, GET_POSTS, POST_ERROR } from './../actions/types'
+import { GET_ALBUM, GET_ALBUMS, ALBUM_ERROR } from './../actions/types'
 
 export const initialState = {
-  post: null,
-  posts: [],
+  album: null,
+  albums: [],
   loading: true,
   error: null
 }
 
-export function PostReducer(state = initialState, action) {
+export function AlbumReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case GET_POSTS:
+    case GET_ALBUMS:
       return {
         ...state,
-        posts: payload,
+        albums: payload,
         loading: false,
         error: null
       }
-    case GET_POST:
+    case GET_ALBUM:
       return {
         ...state,
-        post: payload,
+        album: payload,
         loading: false,
         error: null
       }
-    case POST_ERROR:
+    case ALBUM_ERROR:
       return {
         ...state,
         error: payload,

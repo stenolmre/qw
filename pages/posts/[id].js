@@ -7,7 +7,7 @@ import Container from './../../components/container'
 import AddRating from './../../components/addrating'
 import Comments from './../../components/comments'
 import { usePostState, usePostDispatch } from './../../context/post'
-import { getPost } from './../../actions/post'
+import { getPost, comment, rate } from './../../actions/post'
 
 export default function Post() {
   const dispatchPost = usePostDispatch()
@@ -39,8 +39,8 @@ export default function Post() {
             : 'null'
         }
       </section>
-      <AddRating/>
-      <Comments/>
+      <AddRating action={rate} dispatch={dispatchPost} id={id}/>
+      <Comments title="Comment this post." state={post} action={comment} dispatch={dispatchPost} id={id}/>
     </Container>
   </Fragment>
 }

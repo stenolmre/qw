@@ -1,25 +1,25 @@
 import connectDB from './../../../utils/connectDB'
-import Post from './../../../models/post'
+import Album from './../../../models/album'
 
 connectDB()
 
 export default async function (req, res) {
-  const { postId, ratingId } = req.query
+  const { albumId, ratingId } = req.query
 
   try {
-    const post = await Post.findById(postId)
+    const album = await Album.findById(albumId)
 
-    if (!post) return res.status(404).json({ msg: 'Post not found.' })
+    if (!album) return res.status(404).json({ msg: 'Album not found.' })
 
-    const rating = post.ratings.find(x => x.id === ratingId)
+    const rating = album.ratings.find(x => x.id === ratingId)
 
     if (!rating) return res.status(404).json({ msg: 'Rating not found.' })
 
     await rating.remove()
 
-    await post.save()
+    await album.save()
 
-    res.send(post)
+    res.send(album)
   } catch (err) {
     res.status(500).json({ msg: 'Server Error', error: err.message })
   }

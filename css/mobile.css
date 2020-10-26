@@ -42,7 +42,7 @@
 
 .category-card-container {
   margin-bottom: 20px;
-  padding: 20px 5px;
+  padding: 20px 10px;
   display: grid;
   grid-template-columns: 40% 40% 40% 40% 40%;
   overflow-x: scroll;

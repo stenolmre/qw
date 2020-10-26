@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import Container from './../../components/container'
 import AddRating from './../../components/addrating'
 import Comments from './../../components/comments'
+import Spinner from './../../components/spinner'
 import { usePostState, usePostDispatch } from './../../context/post'
 import { getPost, comment, rate } from './../../actions/post'
 
@@ -36,7 +37,7 @@ export default function Post() {
                   <p>{post && post.content}</p>
                 </div>
               </Fragment>
-            : 'null'
+            : <Spinner />
         }
       </section>
       <AddRating action={rate} dispatch={dispatchPost} id={id}/>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
 import Heading from './../../components/heading'
+import Spinner from './../../components/spinner'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbum } from './../../actions/album'
 
@@ -36,7 +37,7 @@ export default function Album() {
           {
             albumState && album
               ? album.images.map(image => <img key={image} src={image} alt=""/>)
-              : 'null'
+              : <Spinner/>
           }
         </div>
       </div>

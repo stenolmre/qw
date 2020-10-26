@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Search from './search'
+import Spinner from './spinner'
 import { usePostState, usePostDispatch } from './../context/post'
 import { getPosts } from './../actions/post'
 
@@ -26,7 +27,7 @@ export default function Sidebar() {
                     <Link href={`/posts/${post._id}`}><a><h3><span>0{i + 1}</span> { post.name }</h3></a></Link>
                     <p>This is some random text to describe this post.</p>
                   </div>).slice(0, 2)
-                : 'null'
+                : null
             }
           </div>
         </div>

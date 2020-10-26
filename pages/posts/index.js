@@ -7,6 +7,7 @@ import Footer from './../../components/footer'
 import Heading from './../../components/heading'
 import Search from './../../components/search'
 import PostCard from './../../components/postcard'
+import Spinner from './../../components/spinner'
 import { usePostState, usePostDispatch } from './../../context/post'
 import { getPosts } from './../../actions/post'
 
@@ -32,7 +33,7 @@ export default function Posts() {
           {
             postState && posts
               ? posts.filter(item => item.name.toLowerCase().includes(search.toLowerCase())).map(post => <PostCard key={post._id} link={`/posts/${post._id}`} title={post.name} author={post.author} topicon="fa-heart" bottomicon="fa-user"/>)
-              : 'null'
+              : <Spinner/>
           }
         </div>
       </section>

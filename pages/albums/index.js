@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Container from './../../components/container'
 import Heading from './../../components/heading'
+import Spinner from './../../components/spinner'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 
@@ -32,7 +33,7 @@ export default function Albums() {
                   </div>
                   <h4>{album.name}</h4>
                 </a></Link>)
-              : 'null'
+              : <Spinner/>
           }
         </div>
       </div>

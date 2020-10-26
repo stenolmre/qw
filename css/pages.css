@@ -293,3 +293,126 @@
   object-fit: cover;
   object-position: center;
 }
+
+/* ========================================= */
+/* ADVENTURES */
+
+.adventures {
+  width: calc(100% - 50px);
+  min-height: calc(100vh - 170px);
+  padding: 25px;
+}
+
+.adventures a h4 {
+  width: 240px;
+  margin-left: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.adventure-previews {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 375px 375px 375px;
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 25px 0;
+}
+
+@media (max-width: 980px) {
+  .adventure-previews {
+    grid-template-columns: 375px 375px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 415px) {
+  .adventures {
+    width: calc(100% - 10px);
+    min-height: calc(100vh - 130px);
+    padding: 5px;
+  }
+
+  .adventure-previews {
+    width: 100%;
+    grid-template-columns: 90%;
+    place-items: center;
+  }
+}
+
+.adventure-categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+}
+
+.adventure-categories div {
+  width: 105px;
+  height: 75px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(240, 240, 240, .5);
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  cursor: pointer;
+}
+
+.adventure-categories div i {
+  font-size: .8rem;
+  color: #ff4500;
+}
+
+.adventure-categories div h4 {
+  margin: 5px 0 0 0;
+  color: rgba(33, 33, 33, .5);
+}
+
+@media (max-width: 415px) {
+  .adventure-categories {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .adventure-categories div {
+    min-width: 105px;
+  }
+}
+
+.adventure-categories::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================= */
+/* ADVENTURE */
+
+.adventure {
+  width: 100%;
+  min-height: calc(100vh - 145px);
+  padding: 0 0 25px 0;
+}
+
+.adventure-images {
+  width: calc(100% - 2px);
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-gap: 1px;
+}
+
+.adventure-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.adventure-content {
+  width: calc(100% - 50px);
+  padding: 0 25px;
+}

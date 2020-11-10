@@ -27,8 +27,9 @@ export default function Posts() {
     </Head>
     <Container>
       <section className="posts-container">
-        <Heading name="all posts" link="Latest ↡"/>
-        <Search onChange={e => setSearch(e.target.value)}/>
+        <div className="posts-search">
+          <Search onChange={e => setSearch(e.target.value)}/>
+        </div>
         <div className="posts">
           {
             postState && posts

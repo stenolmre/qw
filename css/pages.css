@@ -46,7 +46,6 @@
 
 /* ========================================= */
 /* LANDING CONTAINER */
-
 .landing-container {
   width: 100%;
   height: 100%;
@@ -113,31 +112,36 @@
 
 /* ========================================= */
 /* POSTS */
-
 .posts-container {
   width: calc(100% - 50px);
-  padding: 25px;
+  padding: 50px 25px;
   overflow: hidden;
 }
 
 .posts {
   width: 100%;
-  min-height: calc(100vh - 150px);
-  padding: 25px 0;
+  min-height: calc(100vh - 300px);
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  grid-gap: 10px;
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 25px 0;
+  place-items: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .posts {
     grid-template-columns: 50% 50%;
+    justify-content: center;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 415px) {
   .posts {
-    grid-template-columns: auto;
+    width: calc(100% - 10px);
+    min-height: calc(100vh - 130px);
+    padding: 5px;
+    grid-template-columns: 100%;
   }
 }
 
@@ -147,9 +151,24 @@
   margin: 5px;
 }
 
+.posts-search {
+  width: 50%;
+  margin-left: 25%;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 768px) {
+  .posts-search {
+    width: 90%;
+    margin-left: 5%;
+    display: grid;
+    place-items: center;
+  }
+}
+
 /* ========================================= */
 /* POST */
-
 .post {
   width: 100%;
   min-height: calc(100vh - 145px);
@@ -197,7 +216,6 @@
 
 /* ========================================= */
 /* ALBUMS */
-
 .albums {
   width: calc(100% - 50px);
   min-height: calc(100vh - 170px);
@@ -233,6 +251,10 @@
   grid-gap: 6px;
   place-items: center;
   box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
+}
+
+.album-preview:hover {
+  transform: scale(1.02);
 }
 
 .album-preview-image {
@@ -296,7 +318,6 @@
 
 /* ========================================= */
 /* ADVENTURES */
-
 .adventures {
   width: calc(100% - 50px);
   min-height: calc(100vh - 170px);
@@ -314,15 +335,16 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 375px 375px 375px;
+  grid-template-columns: 33% 33% 33%;
   grid-gap: 20px;
   justify-content: center;
   padding: 25px 0;
+  place-items: center;
 }
 
 @media (max-width: 980px) {
   .adventure-previews {
-    grid-template-columns: 375px 375px;
+    grid-template-columns: 50% 50%;
     justify-content: center;
   }
 }
@@ -390,29 +412,294 @@
 
 /* ========================================= */
 /* ADVENTURE */
-
 .adventure {
-  width: 100%;
-  min-height: calc(100vh - 145px);
-  padding: 0 0 25px 0;
+  width: calc(100% - 200px);
+  min-height: calc(100vh - 220px);
+  margin: 50px 100px;
+  display: grid;
+  grid-template-columns: 150px auto 350px;
+}
+
+@media (max-width: 768px) {
+  .adventure {
+    grid-template-columns: 100%;
+    width: calc(100% - 20px);
+    margin: 0 10px 50px 10px;
+  }
 }
 
 .adventure-images {
-  width: calc(100% - 2px);
+  width: 100%;
   height: 50vh;
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
-  grid-gap: 1px;
+  grid-template-columns: 100%;
+  grid-gap: 5px;
+  place-items: center;
 }
 
 .adventure-images img {
-  width: 100%;
-  height: 100%;
+  width: 75px;
+  height: 75px;
   object-fit: cover;
   object-position: center;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .adventure-images {
+    width: 108%;
+    margin-left: -5%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    grid-gap: 1px;
+  }
+
+  .adventure-images::-webkit-scrollbar {
+    display: none;
+  }
+
+  .adventure-images img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+  }
 }
 
 .adventure-content {
   width: calc(100% - 50px);
   padding: 0 25px;
+}
+
+@media (max-width: 768px) {
+  .adventure-content {
+    width: 100%;
+    padding: 0 0 25px 0;
+  }
+}
+
+.adventure-first-info {
+  margin-left: 30px;
+  padding-right: 30px;
+}
+
+.adventure-parameters {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.adventure-parameters p {
+  margin: 0 25px 0 0;
+}
+
+.adventure-hashtags {
+  margin: 26px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.adventure-hashtag {
+  margin: 4px 4px 0 0;
+  padding: 3px 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .1);
+}
+
+.adventure-cart {
+  border: 1px solid #eee;
+  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .adventure-cart {
+    border: 1px solid #eee;
+    box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .2);
+    border-radius: 4px;
+    padding: 20px;
+  }
+}
+
+.adventure-cart table {
+  width: 100%;
+}
+
+.adventure-cart table td:nth-of-type(2) {
+  text-align: right;
+}
+
+.adventure-cart hr {
+  width: 45px;
+  margin: 20px 0;
+  height: 6px;
+  background: #eee;
+  border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.adventure-cart input[type='number'] {
+  width: 45px;
+  padding: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  outline: none;
+}
+
+.adventure-cart span {
+  width: 25px;
+  height: 25px;
+  padding: 5px 10px;
+  margin: 0 1px;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  cursor: pointer;
+}
+
+.adventure-cart input[type='radio'] {
+  display: none;
+}
+
+.booking-times {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.booking-time {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  cursor: pointer;
+}
+
+input[type="date"] {
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 3px 5px;
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  width: 50%;
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.adventure-cart button {
+  padding: 5px 40px 5px 40px;
+  border: 1px solid #00b100;
+  border-radius: 4px;
+  background: #00b100;
+  color: white;
+  font-weight: 600;
+  font-family: monospace;
+  outline: none;
+  cursor: pointer;
+}
+
+.adventure-cart button:disabled {
+  background: rgba(0, 177, 0, .5);
+  border: 1px solid rgba(0, 177, 0, .5);
+  cursor: default;
+}
+
+/* ========================================= */
+/* CHECKOUT */
+
+.order-container {
+  width: calc(100% - 50px);
+  min-height: calc(100vh - 170px);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.order {
+  width: calc(90% - 50px);
+  max-width: 550px;
+  padding: 25px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
+}
+
+.order h3 {
+  text-transform: uppercase;
+}
+
+.order img {
+  width: 120px
+}
+
+.order-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order table {
+  width: 100%;
+}
+
+.order table tr td {
+  padding: 3px 0;
+}
+
+.order table td:nth-of-type(2) {
+  text-align: right;
+}
+
+.order input {
+  width: calc(100% - 10px);
+  margin: 2px 0;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-family: monospace;
+}
+
+.order button {
+  margin-top: 30px;
+  padding: 5px 40px 5px 40px;
+  border: 1px solid #00b100;
+  border-radius: 4px;
+  background: #00b100;
+  color: white;
+  font-weight: 600;
+  font-family: monospace;
+  outline: none;
+  cursor: pointer;
+}
+
+.order button:disabled {
+  background: rgba(0, 177, 0, .5);
+  border: 1px solid rgba(0, 177, 0, .5);
+  cursor: default;
+}
+
+.payment-accepted-info {
+  margin-top: 200px;
 }

@@ -13,8 +13,18 @@ const AdventureSchema = mongoose.Schema({
     type: Number,
     required: true
   },
+  availability: {
+    time: {
+      type: Array,
+      required: true
+    },
+    days: {
+      type: Array,
+      required: true
+    }
+  },
   levelOfDifficulty: {
-    type: Number,
+    type: String,
     required: true
   },
   isIncluded: {

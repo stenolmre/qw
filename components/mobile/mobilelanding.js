@@ -5,6 +5,7 @@ import Navbar from './../navbar'
 import Footer from './../footer'
 import Heading from './../heading'
 import PostCard from './../postcard'
+import AdventureCard from './../adventurecard'
 import Landing from './../landing'
 import Contact from './../contact'
 import categories from './../utils/categories'
@@ -34,7 +35,7 @@ export default function MobileLanding() {
     <div className="slider">
       {
         adventureState && adventures
-          ? adventures.map(adventure => <PostCard key={adventure._id} link={`/adventures/${adventure._id}`} title={adventure.name} author={adventure.location.destination} topicon="fa-star" bottomicon="fa-map-marker-alt"/>).slice(0, 5)
+          ? adventures.map(adventure => <AdventureCard key={adventure._id} link={`/adventures/${adventure._id}`} name={adventure.name} destination={adventure.location.destination} topicon="fa-star" bottomicon="fa-map-marker-alt" src={adventure.images.map(image => image).slice(0, 1)} alt={adventure.name} price={(adventure.price / 100).toFixed(2)}/>).slice(0, 5)
           : null
       }
     </div>
@@ -45,14 +46,6 @@ export default function MobileLanding() {
           <i className={category.icon}/>
           <p>{category.name}</p>
         </div>)
-      }
-    </div>
-    <Heading name="all posts" href="/posts" link="see all"/>
-    <div className="slider">
-      {
-        postState && posts
-          ? posts.map(post => <PostCard key={post._id} link={`/posts/${post._id}`} title={post.name} author={post.author} topicon="fa-heart" bottomicon="fa-user"/>).slice(0, 5)
-          : null
       }
     </div>
     <Heading name="gallery" href="/albums" link="see all"/>
@@ -93,3 +86,12 @@ function ImageSlider() {
     </div>
   </div>
 }
+
+// <Heading name="all posts" href="/posts" link="see all"/>
+// <div className="slider">
+//   {
+//     postState && posts
+//       ? posts.map(post => <PostCard key={post._id} link={`/posts/${post._id}`} title={post.name} author={post.author} topicon="fa-heart" bottomicon="fa-user"/>).slice(0, 5)
+//       : null
+//   }
+// </div>

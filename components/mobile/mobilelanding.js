@@ -9,6 +9,7 @@ import AdventureCard from './../adventurecard'
 import Landing from './../landing'
 import Contact from './../contact'
 import categories from './../utils/categories'
+import gallery from './../utils/gallery'
 import { usePostState, usePostDispatch } from './../../context/post'
 import { getPosts } from './../../actions/post'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
@@ -75,15 +76,11 @@ function CategoryCard({ name, icon }) {
 
 function ImageSlider() {
   return <div className="image-slider">
-    <div className="image-slider-img">
-      <img src="särkitunturi.JPG" alt="" />
-    </div>
-    <div className="image-slider-img">
-      <img src="särkitunturi.JPG" alt="" />
-    </div>
-    <div className="image-slider-img">
-      <img src="särkitunturi.JPG" alt="" />
-    </div>
+    {
+      gallery.map(image => <div key={image} className="image-slider-img">
+        <img src={image} alt="" />
+      </div>)
+    }
   </div>
 }
 

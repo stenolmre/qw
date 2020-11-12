@@ -17,6 +17,13 @@ nav a:hover {
   color: #ff4500;
 }
 
+nav p {
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   height: 60px;
@@ -37,6 +44,10 @@ footer p {
   }
 
   nav a {
+    margin: 0 10px;
+  }
+
+  nav p {
     margin: 0 10px;
   }
 
@@ -300,6 +311,11 @@ main .search span {
   border-radius: 4px 0 0 4px;
 }
 
+.sidebar-media a:hover {
+  color: #ff4500;
+  transition-duration: .4s;
+}
+
 .sidebar-media-images {
   width: 100%;
   height: 100%;
@@ -496,9 +512,14 @@ main .search span {
   margin-left: 30px;
 }
 
+.contact-form label {
+  color: rgba(33, 33, 33, .5);
+  font-weight: 600;
+}
+
 .contact-form input {
   width: calc(100% - 15px);
-  margin: 2px 0;
+  margin: 2px 0 10px 0;
   padding: 5px 10px 5px 5px;
   border: 1px solid rgba(33, 33, 33, .5);
   border-radius: 4px;
@@ -526,6 +547,16 @@ main .search span {
   font-weight: 600;
   font-family: monospace;
   outline: none;
+}
+
+.contact-form-successicon {
+  margin-left: 30px;
+}
+
+.contact-form-successicon h4 {
+  color: #00b100;
+  margin: 0;
+  padding: 0;
 }
 
 .landing-content .contact-info a {

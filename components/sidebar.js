@@ -69,7 +69,6 @@ export default function Sidebar() {
         <div className="sidebar-media-container">
           <div className="sidebar-media">
             <Link href="/albums" className="sidebar-media-button"><a>+</a></Link>
-
             <div className="sidebar-media-images">
               <img src={currentImages} alt=""/>
               <div>
@@ -82,7 +81,6 @@ export default function Sidebar() {
                 <button className="something-right" onClick={number => paginateToNext(number)}>↠</button>
               </div>
             </div>
-
           </div>
         </div>
         <div className="sidebar-button">

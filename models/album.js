@@ -5,11 +5,19 @@ const AlbumSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  nimi: {
+    type: String,
+    required: true
+  },
   location: {
     type: String,
     required: true
   },
   info: {
+    type: String,
+    required: true
+  },
+  infoEst: {
     type: String,
     required: true
   },

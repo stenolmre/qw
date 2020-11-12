@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Cookies from 'js-cookie'
 import Container from './../../components/container'
 import Heading from './../../components/heading'
 import Spinner from './../../components/spinner'
@@ -11,6 +12,7 @@ export default function Albums() {
   const dispatchAlbum = useAlbumDispatch()
   const albumState = useAlbumState()
   const { albums } = albumState
+  const userLanguage = Cookies.get('lan') === 'eng'
 
   useEffect(() => {
     getAlbums(dispatchAlbum)
@@ -31,7 +33,7 @@ export default function Albums() {
                       album.images.map(image => <div key={image} className="album-preview-image" style={{ backgroundImage: `url(${image})`}}/>).slice(0, 4)
                     }
                   </div>
-                  <h4>{album.name}</h4>
+                  <h4>{userLanguage ? album.name : album.nimi}</h4>
                 </a></Link>)
               : <Spinner/>
           }

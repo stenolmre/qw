@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
 import Heading from './../../components/heading'
@@ -8,6 +9,7 @@ import PostCard from './../../components/postcard'
 import Spinner from './../../components/spinner'
 import AdventureCard from './../../components/adventurecard'
 import categories from './../../components/utils/categories'
+import categoriesEst from './../../components/utils/categoriesEst'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventures, getAdventuresByCategory } from './../../actions/adventure'
 
@@ -37,10 +39,15 @@ export default function Adventures() {
             <h4>adventures</h4>
           </div>
           {
-            categories.map(category => <div key={category.category} onClick={() => router.push(`/adventures?category=${category.category}`)}>
-              <i className={category.icon}/>
-              <h4>{category.name}</h4>
-            </div>)
+            Cookies.get('lan') === 'eng'
+              ? categories.map(category => <div key={category.category} onClick={() => router.push(`/adventures?category=${category.category}`)}>
+                  <i className={category.icon}/>
+                  <h4>{category.name}</h4>
+                </div>)
+              : categoriesEst.map(category => <div key={category.category} onClick={() => router.push(`/adventures?category=${category.category}`)}>
+                  <i className={category.icon}/>
+                  <h4>{category.name}</h4>
+                </div>)
           }
         </div>
         <div className="adventure-previews">

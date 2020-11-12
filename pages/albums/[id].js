@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
 import Heading from './../../components/heading'
@@ -14,6 +15,7 @@ export default function Album() {
   const { album } = albumState
   const router = useRouter()
   const { id } = router.query
+  const userLanguage = Cookies.get('lan') === 'eng'
 
   useEffect(() => {
     getAlbum(dispatchAlbum, id)
@@ -28,10 +30,10 @@ export default function Album() {
         {
           albumState && album
             ? <Fragment>
-                <Heading name={album.name} span={album.location}/>
-                <p className="album-info">{album.info}</p>
+                <Heading name={userLanguage ? album.name : album.nimi} span={album.location}/>
+                <p className="album-info">{userLanguage ? album.info : album.infoEst}</p>
               </Fragment>
-            : <Heading name="Album" />
+            : <Spinner/>
         }
         <div className="album">
           {

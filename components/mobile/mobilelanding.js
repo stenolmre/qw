@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
 import Navbar from './../navbar'
 import Footer from './../footer'
@@ -9,6 +10,7 @@ import AdventureCard from './../adventurecard'
 import Landing from './../landing'
 import Contact from './../contact'
 import categories from './../utils/categories'
+import categoriesEst from './../utils/categoriesEst'
 import gallery from './../utils/gallery'
 import { usePostState, usePostDispatch } from './../../context/post'
 import { getPosts } from './../../actions/post'
@@ -23,6 +25,7 @@ export default function MobileLanding() {
   const adventureState = useAdventureState()
   const { adventures } = adventureState
   const router = useRouter()
+  const userLanguage = Cookies.get('lan') === 'eng'
 
   useEffect(() => {
     getPosts(dispatchPost)
@@ -32,7 +35,7 @@ export default function MobileLanding() {
   return <div className="mobile-container">
     <LandingMobile/>
     <br/>
-    <Heading name="top rated picks" span="by customers" href="/adventures" link="see all"/>
+    <Heading name={userLanguage ? 'top rated picks' : 'populaarseimad aktiviteedid'} span={userLanguage ? 'by customers' : 'klientide eelistused'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
     <div className="slider">
       {
         adventureState && adventures
@@ -40,16 +43,21 @@ export default function MobileLanding() {
           : null
       }
     </div>
-    <Heading name="all adventures" span="by category" href="/adventures" link="see all"/>
+    <Heading name="all adventures" span={userLanguage ? 'by category' : 'kategooriad'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
     <div className="category-card-container">
       {
-        categories.map(category => <div className="category-card" key={category.category} onClick={() => router.push(`/adventures?category=${category.category}`)}>
-          <i className={category.icon}/>
-          <p>{category.name}</p>
-        </div>)
+        userLanguage
+          ? categories.map(category => <div className="category-card" key={category.category}   onClick={() => router.push(`/adventures?category=${category.category}`)}>
+              <i className={category.icon}/>
+              <p>{category.name}</p>
+            </div>)
+          : categoriesEst.map(category => <div className="category-card" key={category.category}   onClick={() => router.push(`/adventures?category=${category.category}`)}>
+              <i className={category.icon}/>
+              <p>{category.name}</p>
+            </div>)
       }
     </div>
-    <Heading name="gallery" href="/albums" link="see all"/>
+    <Heading name={userLanguage ? 'Gallery' : 'Galerii'} href="/albums" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
     <ImageSlider/>
     <Contact/>
     <Footer style={{ background: 'white', color: 'rgba(33, 33, 33)', boxShadow: '0 0 7px rgba(33, 33, 33, .2)' }}/>

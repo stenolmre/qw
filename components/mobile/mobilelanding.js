@@ -35,7 +35,7 @@ export default function MobileLanding() {
   return <div className="mobile-container">
     <LandingMobile/>
     <br/>
-    <Heading name={userLanguage ? 'top rated picks' : 'populaarseimad aktiviteedid'} span={userLanguage ? 'by customers' : 'klientide eelistused'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
+    <Heading name={userLanguage ? 'top rated picks' : 'populaarseimad elamusmatkad'} span={userLanguage ? 'by customers' : 'klientide eelistused'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
     <div className="slider">
       {
         adventureState && adventures
@@ -43,7 +43,7 @@ export default function MobileLanding() {
           : null
       }
     </div>
-    <Heading name="all adventures" span={userLanguage ? 'by category' : 'kategooriad'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
+    <Heading name={userLanguage ? 'all adventures' : 'kõik elamusmatkad'} span={userLanguage ? 'by category' : 'kategooriad'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
     <div className="category-card-container">
       {
         userLanguage

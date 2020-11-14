@@ -184,6 +184,13 @@ export default function Adventure() {
                       min={new Date().toISOString().split("T")[0]}
                       onChange={onChange}/>
 
+                      <select name="cars" id="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                      </select>
+
                     <div className="booking-times">
                       {
                         adventure.availability.time.map(clock => {

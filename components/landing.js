@@ -19,7 +19,7 @@ export default function Landing({ children }) {
             <p>Come to above artic circle to visit magical lapland and to gather amazing experiences that last forever. Our goal is to give you wonderful memories worth remembering for years.</p>
             <div className="heading-read-more">
               <hr/>
-              <Link href="/adventures"><a>Näita kõiki aktiviteete</a></Link>
+              <Link href="/adventures"><a>Vaata kõiki elamusmatku</a></Link>
             </div>
           </div>
     }

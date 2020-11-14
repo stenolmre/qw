@@ -1,5 +1,6 @@
 import { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
+import Cookies from 'js-cookie'
 import Search from './search'
 import Spinner from './spinner'
 import gallery from './utils/gallery'
@@ -11,6 +12,7 @@ export default function Sidebar() {
   const dispatchAdventures = useAdventureDispatch()
   const adventureState = useAdventureState()
   const { adventures } = adventureState
+  const userLanguage = Cookies.get('lan') === 'eng'
 
   useEffect(() => {
     getAdventures(dispatchAdventures)
@@ -84,7 +86,7 @@ export default function Sidebar() {
           </div>
         </div>
         <div className="sidebar-button">
-          <Link href="/adventures"><a>Explore all adventures ↠</a></Link>
+          <Link href="/adventures"><a>{userLanguage ? 'Explore all adventures' : 'Vaata kõiki elamusmatku'} ↠</a></Link>
         </div>
       </div>
     </div>

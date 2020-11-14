@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Cookies from 'js-cookie'
+import emailjs from 'emailjs-com'
 import Heading from './heading'
 import SuccessIcon from './successicon'
 
@@ -13,16 +14,27 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  function send(e) {
+  async function send(e) {
     e.preventDefault()
-    console.log(formData);
-    setSuccess(true)
 
-    setFormData({ name: '', email: '', textarea: ''})
+    const templateParams = {
+      client_name: name,
+      client_email: email,
+      client_message: textarea
+    };
 
-    setTimeout(() => {
-      setSuccess(false)
-    }, 5000)
+    try {
+      await emailjs.send('gmail', 'northseason', templateParams, 'user_d35Shv7J12m9DhmwjDmiA')
+
+      setSuccess(true)
+      setFormData({ name: '', email: '', textarea: ''})
+
+      setTimeout(() => {
+        setSuccess(false)
+      }, 5000)
+    } catch {
+      console.log('Error');
+    }
   }
   return <div className="mobile-contact">
     <Heading name={userLanguage ? 'contact' : 'kontakt'}/>

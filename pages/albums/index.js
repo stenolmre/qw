@@ -32,6 +32,9 @@ export default function Albums() {
                     {
                       album.images.map(image => <div key={image} className="album-preview-image" style={{ backgroundImage: `url(${image})`}}/>).slice(0, 4)
                     }
+                    <div className="album-overlay">
+                      <h2>+{album.images.length - 3}</h2>
+                    </div>
                   </div>
                   <h4>{userLanguage ? album.name : album.nimi}</h4>
                 </a></Link>)

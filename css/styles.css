@@ -21,7 +21,9 @@ button {
 
 /* ========================================= */
 .front-page-container nav {
-  background: rgba(33, 33, 33, .3);
+  background: -webkit-linear-gradient(left, rgba(33, 33, 33, .3) 0%, rgba(33, 33, 33, .2) 100%);
+  background: -o-linear-gradient(left, rgba(33, 33, 33, .3) 0%, rgba(33, 33, 33, .2) 100%);
+  background: linear-gradient(to right, rgba(33, 33, 33, .3) 0%, rgba(33, 33, 33, .2) 100%);
 }
 
 nav {
@@ -46,8 +48,12 @@ nav a:hover {
 
 nav img {
   width: 20px;
-  margin: 3px 5px 0 5px;
+  margin: 3px 0 0 0;
   cursor: pointer;
+}
+
+nav img:nth-of-type(1) {
+  margin: 3px 0 0 15px;
 }
 
 /* ========================================= */

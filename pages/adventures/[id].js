@@ -6,7 +6,7 @@ import Container from './../../components/container'
 import Heading from './../../components/utils/heading'
 import Spinner from './../../components/utils/spinner'
 import Cookies from 'js-cookie'
-import Modal from './../../components/utils/modal'
+import Slideshow from './../../components/utils/slideshow'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
@@ -20,6 +20,7 @@ export default function Adventure() {
   const [orderData, setOrderData] = useState({ title: '', adults: 1, children: 0, date: '', time: null })
   const { adults, children, date, time, price } = orderData
   const [showModal, toggleModal] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
   const [image, setImage] = useState(null)
   const [error, setError] = useState('')
 
@@ -218,7 +219,7 @@ export default function Adventure() {
       </div>
     </Container>
     {
-      showModal && <Modal onClick={() => toggleModal(!showModal)} src={image} images={adventureState && adventure && adventure.images}/>
+      showModal && <Slideshow currentPage={currentPage} setCurrentPage={setCurrentPage} gallery={adventureState && adventure && adventure.images} close={() => toggleModal(!showModal)}/>
     }
   </Fragment>
 }

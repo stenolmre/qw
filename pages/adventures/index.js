@@ -41,10 +41,10 @@ export default function Adventures() {
           <h5>{userLanguage ? 'Search by category' : 'Otsi kategooria järgi'}</h5>
           {
             userLanguage
-              ? categories.map(category => <p key={category.category} style={router.query.category === category.category ? {color: 'rgba(0, 112, 243)'} : {color: 'black'}}>
+              ? categories.map(category => <p key={category.category} style={router.query.category === category.category ? {color: '#ff4500'} : {color: 'black'}}>
                   <Link href={`/adventures?category=${category.category}`}><a>{category.name}</a></Link>
                 </p>)
-              : categoriesEst.map(category => <p key={category.category} style={router.query.category === category.category ? {color: 'rgba(0, 112, 243)'} : {color: 'black'}}>
+              : categoriesEst.map(category => <p key={category.category} style={router.query.category === category.category ? {color: '#ff4500'} : {color: 'black'}}>
                   <Link href={`/adventures?category=${category.category}`}><a>{category.name}</a></Link>
                 </p>)
           }

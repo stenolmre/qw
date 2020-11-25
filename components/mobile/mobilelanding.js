@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
@@ -91,12 +91,3 @@ function ImageSlider() {
     }
   </div>
 }
-
-// <Heading name="all posts" href="/posts" link="see all"/>
-// <div className="slider">
-//   {
-//     postState && posts
-//       ? posts.map(post => <PostCard key={post._id} link={`/posts/${post._id}`} title={post.name} author={post.author} topicon="fa-heart" bottomicon="fa-user"/>).slice(0, 5)
-//       : null
-//   }
-// </div>

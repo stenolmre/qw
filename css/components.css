@@ -1,6 +1,5 @@
 /* ========================================= */
 /* HEADING */
-
 .heading {
   display: flex;
   padding: 0 10px 0 30px;
@@ -22,13 +21,13 @@
 
 .heading a {
   color: #ff4500;
-  font-weight: 600;margin-top: 22px;
+  font-weight: 600;
+  margin-top: 22px;
   padding-right: 20px;
 }
 
 /* ========================================= */
 /* SLIDER */
-
 .slider {
   display: grid;
   grid-template-columns: 90% 90% 90% 90% 90%;
@@ -45,7 +44,6 @@
 
 /* ========================================= */
 /* SIDEBAR */
-
 .sidebar {
   width: 350px;
   height: 100vh;
@@ -89,7 +87,6 @@
 
 /* ========================================= */
 /* SEARCH */
-
 .search {
   width: 100%;
   height: 100%;
@@ -128,7 +125,6 @@
 
 /* ========================================= */
 /* SIDEBAR POSTS */
-
 .sidebar-posts-container {
   width: 100%;
   height: 100%;
@@ -185,7 +181,6 @@
 
 /* ========================================= */
 /* SIDEBAR GALLERY */
-
 .sidebar-media-container {
   width: 100%;
   height: 100%;
@@ -352,7 +347,6 @@
  */
 /* ========================================= */
 /* ADVENTURE CARD */
-
 .adventurecard-container {
   width: 100%;
   cursor: pointer;
@@ -430,11 +424,8 @@
 
 /* ========================================= */
 /* CONTACT */
-
-
 /* ========================================= */
 /* RATING */
-
 .rating {
   width: 90%;
   padding-bottom: 30px;
@@ -444,7 +435,7 @@
   color: rgba(33, 33, 33, .8);
 }
 
-.rating input[type = 'radio'] {
+.rating input[type='radio'] {
   display: none;
 }
 
@@ -460,7 +451,6 @@
 
 /* ========================================= */
 /* COMMENTS */
-
 .comments {
   width: 90%;
   padding-bottom: 30px;
@@ -509,7 +499,6 @@
 
 /* ========================================= */
 /* MODAL */
-
 .modal {
   width: 100%;
   height: 100vh;
@@ -538,8 +527,81 @@
 }
 
 /* ========================================= */
-/* SPINNER */
+/* SLIDESHOW */
+.slideshow {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .8);
+}
 
+.slideshow i {
+  cursor: pointer;
+  color: rgba(250, 250, 250, .5);
+}
+
+.slideshow i:hover {
+  color: white;
+  transition-duration: .4s;
+}
+
+.slideshow img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 4px;
+}
+
+.slideshow-left-button,
+.slideshow-right-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+}
+
+.slideshow-left-button {
+  left: 5%;
+}
+
+.slideshow-right-button {
+  right: 5%;
+}
+
+.slideshow-numbers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 4vh;
+  cursor: pointer;
+}
+
+.slideshow-numbers div {
+  width: 7px;
+  height: 7px;
+  border: none;
+  border-radius: 50%;
+  padding: none;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.close-slideshow {
+  position: absolute;
+  top: 3vh;
+  right: 5%;
+  font-size: 1.2rem;
+}
+
+/* ========================================= */
+/* SPINNER */
 .spinner-container {
   width: 100%;
   height: 100%;
@@ -582,7 +644,6 @@
 
 /* ========================================= */
 /* SUCCESS ICON */
-
 @keyframes scaleAnimation {
   0% {
     opacity: 0;

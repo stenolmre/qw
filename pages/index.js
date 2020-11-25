@@ -1,18 +1,14 @@
-import { Fragment } from 'react'
+import React, { Fragment } from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import Layout from './../components/layout'
 import Landing from './../components/landing'
 import MobileLanding from './../components/mobile/mobilelanding'
 
 export default function Index() {
   return <Fragment>
     <Head>
-      <title>qw</title>
+      <title>North Season</title>
     </Head>
-    <Layout>
-      <Landing/>
-    </Layout>
+    <Landing/>
     <MobileLanding/>
   </Fragment>
 }

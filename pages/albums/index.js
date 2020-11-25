@@ -3,8 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import Container from './../../components/container'
-import Heading from './../../components/heading'
-import Spinner from './../../components/spinner'
+import Heading from './../../components/utils/heading'
+import Spinner from './../../components/utils/spinner'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 
@@ -23,7 +23,7 @@ export default function Albums() {
       <title>qw - albums</title>
     </Head>
     <Container>
-      <div className="albums">
+      <div className="gallery">
         <div className="album-previews">
           {
             albumState && albums

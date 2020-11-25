@@ -17,7 +17,7 @@ export default function Navbar({ style }) {
       Cookies.get('lan') === 'eng'
         ? <nav>
             <Link href="/"><a>Home</a></Link>
-            <Link href="/adventures"><a>Adventures</a></Link>
+            <Link href="/adventures?category=all"><a>Adventures</a></Link>
             <Link href="/albums"><a>Gallery</a></Link>
             <Link href="/contact"><a>Contact</a></Link>
             <p onClick={est}><img src="est.png" alt=""/></p>
@@ -25,7 +25,7 @@ export default function Navbar({ style }) {
           </nav>
         : <nav>
             <Link href="/"><a>Esileht</a></Link>
-            <Link href="/adventures"><a>Elamusmatkad</a></Link>
+            <Link href="/adventures?category=all"><a>Elamusmatkad</a></Link>
             <Link href="/albums"><a>Galerii</a></Link>
             <Link href="/contact"><a>Kontakt</a></Link>
             <p onClick={est}><img src="est.png" alt=""/></p>

@@ -1,245 +1,15 @@
-.landing {
-  width: 100%;
-  min-height: 100vh;
-}
-
-.landing img {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  max-height: 100vh;
-  object-fit: cover;
-  object-position: center;
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, .3);
-}
-
-.landing-content {
-  width: 75%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60px calc(100% - 120px) 60px;
-}
-
-.landing-content nav img {
-  width: 20px;
-  height: auto;
-  margin: 7px 0 0 0;
-  object-fit: cover;
-  object-position: center;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .landing {
-    display: none;
-  }
-
-  .landing-content {
-    width: 100%;
-    display: block;
-  }
-}
-
-/* ========================================= */
-/* LANDING CONTAINER */
-.landing-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .landing-container {
-    height: calc(100vh - 60px);
-  }
-}
-
-.landing-container h1 {
-  width: 50%;
-  margin-left: 10%;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-}
-
-.landing-container p {
-  width: 50%;
-  margin-left: 10%;
-}
-
-@media (max-width: 768px) {
-  .landing-container h1 {
-    width: 80%;
-  }
-
-  .landing-container p {
-    width: 80%;
-    margin-left: 10%;
-  }
-}
-
-.heading-read-more {
-  width: 95%;
-  margin: 30px 0 0 5%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.heading-read-more hr {
-  height: 3px;
-  width: 4%;
-  margin: 0 0 0 4%;
-  border: none;
-  background-color: white;
-}
-
-.heading-read-more a {
-  width: auto;
-  margin-left: 20px;
-  padding: 7px 0 7px 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: white;
-}
-
-.heading-read-more a:hover {
-  color: #ff4500;
-  transition-duration: .4s;
-}
-
-/* ========================================= */
-/* POSTS */
-.posts-container {
-  width: calc(100% - 50px);
-  padding: 50px 25px;
-  overflow: hidden;
-}
-
-.posts {
-  width: 100%;
-  min-height: calc(100vh - 300px);
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-gap: 20px;
-  justify-content: center;
-  padding: 25px 0;
-  place-items: center;
-}
-
-@media (max-width: 980px) {
-  .posts {
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 415px) {
-  .posts {
-    width: calc(100% - 10px);
-    min-height: calc(100vh - 130px);
-    padding: 5px;
-    grid-template-columns: 100%;
-  }
-}
-
-.posts .mobile-experience-preview {
-  width: 95%;
-  height: 215px;
-  margin: 5px;
-}
-
-.posts-search {
-  width: 50%;
-  margin-left: 25%;
-  display: grid;
-  place-items: center;
-}
-
-@media (max-width: 768px) {
-  .posts-search {
-    width: 90%;
-    margin-left: 5%;
-    display: grid;
-    place-items: center;
-  }
-}
-
-/* ========================================= */
-/* POST */
-.post {
-  width: 100%;
-  min-height: calc(100vh - 145px);
-  padding-bottom: 25px;
-}
-
-.post-image {
-  width: 100%;
-  height: 50vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.post-content {
-  width: 100%;
-  height: 40vh;
-  margin-top: -40px;
-  border-radius: 24px 24px 0 0;
-  box-shadow: 5px -6px 14px rgba(33, 33, 33, .4);
-  background: white;
-  overflow: hidden;
-}
-
-.post-content h1,
-.post-content h4 {
-  width: 100%;
-  text-align: center;
-}
-
-.post-content h1 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-}
-
-.post-content h4 {
-  font-size: .8rem;
-  color: rgba(33, 33, 33, .5);
-}
-
-.post-content p {
-  width: 90%;
-  margin: 5%;
-}
-
 /* ========================================= */
 /* ALBUMS */
-.albums {
+.gallery {
   width: calc(100% - 50px);
   min-height: calc(100vh - 170px);
   padding: 25px;
 }
 
-.albums a h4 {
-  width: 240px;
-  margin-left: 30px;
-  text-transform: uppercase;
+.gallery a h4 {
+  width: 90%;
+  margin-left: 5%;
+  text-transform: capitalize;
   text-align: center;
 }
 
@@ -321,6 +91,7 @@
 
 .album-info {
   padding: 0 30px 10px 30px;
+  font-size: .875rem;
 }
 
 .album img {
@@ -331,97 +102,151 @@
 }
 
 /* ========================================= */
-/* ADVENTURES */
-.adventures {
-  width: calc(100% - 50px);
-  min-height: calc(100vh - 170px);
-  padding: 25px;
+/* CONTACT */
+.contact-container {
+  width: 100%;
+  height: calc(100vh - 120px);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
 
-.adventures a h4 {
-  width: 240px;
+.contact {
+  padding: 5%;
+}
+
+.contact-container iframe {
+  width: 95%;
+  height: 95%;
+  margin: 2.5%;
+}
+
+.contact-info {
   margin-left: 30px;
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-size: .875rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p i {
+  width: 35px;
+  font-size: 1rem;
+}
+
+.contact-info p:nth-of-type(3) i {
+  margin-left: 3px;
+}
+
+.contact-form {
+  width: calc(90% - 60px);
+  max-width: 500px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.contact-form input {
+  width: calc(80% - 15px);
+  margin: 2px 0;
+  padding: 3px 3px 3px 3px;
+  border: 1px solid rgba(33, 33, 33, .5);
+  border-radius: 2px;
+  outline: none;
+}
+
+.contact-form input:nth-of-type(2) {
+  width: calc(90% - 15px);
+}
+
+.contact-form textarea {
+  width: calc(100% - 15px);
+  min-height: 100px;
+  margin: 2px 0;
+  padding: 3px 3px 3px 3px;
+  border: 1px solid rgba(33, 33, 33, .5);
+  border-radius: 2px;
+  resize: vertical;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form button {
+  padding: 5px 40px 5px 40px;
+  border: 1px solid #00b100;
+  border-radius: 4px;
+  background: #00b100;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+.contact-form-successicon {
+  margin: 25px 0 0 30px;
+}
+
+.contact-form-successicon h4 {
+  color: #00b100;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================= */
+/* ADVENTURES */
+.adventures {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+
+.adventure-categories {
+  padding: 50px 0 0 50px
+}
+
+.adventure-categories h5 {
   text-transform: uppercase;
-  text-align: center;
+  color: rgba(33, 33, 33, .4);
+}
+
+.adventure-categories input {
+  width: 165px;
+  margin-left: -5px;
+  padding: 5px 35px 3px 3px;
+  border: 1px solid rgba(33, 33, 33, .1);
+  border-radius: 2px;
+  outline: none;
+}
+
+.adventure-categories span {
+  margin: 0 0 0 -22px;
+  color: rgba(33, 33, 33, .2);
+}
+
+.adventure-categories a {
+  display: flex;
+  align-items: center;
+}
+
+.adventure-categories p {
+  font-size: .875rem;
+  text-transform: capitalize;
 }
 
 .adventure-previews {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 50px);
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: auto auto;
   grid-gap: 20px;
   justify-content: center;
-  padding: 25px 0;
-  place-items: center;
-}
-
-@media (max-width: 980px) {
-  .adventure-previews {
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 415px) {
-  .adventures {
-    width: calc(100% - 10px);
-    min-height: calc(100vh - 130px);
-    padding: 5px;
-  }
-
-  .adventure-previews {
-    width: 100%;
-    grid-template-columns: 90%;
-    place-items: center;
-  }
-}
-
-.adventure-categories {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 10px;
-}
-
-.adventure-categories div {
-  width: 105px;
-  height: 75px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: rgba(240, 240, 240, .5);
-  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
-  cursor: pointer;
-}
-
-.adventure-categories div i {
-  font-size: .8rem;
-  color: #ff4500;
-}
-
-.adventure-categories div h4 {
-  margin: 5px 0 0 0;
-  color: rgba(33, 33, 33, .5);
-}
-
-@media (max-width: 415px) {
-  .adventure-categories {
-    justify-content: flex-start;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-
-  .adventure-categories div {
-    min-width: 105px;
-  }
-}
-
-.adventure-categories::-webkit-scrollbar {
-  display: none;
+  padding: 50px 0;
+  overflow-x: hidden;
 }
 
 /* ========================================= */
@@ -457,6 +282,7 @@
   object-fit: cover;
   object-position: center;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -496,7 +322,9 @@
 
 .adventure-first-info {
   margin-left: 30px;
+  margin-top: 20px;
   padding-right: 30px;
+  font-size: .875rem;
 }
 
 .adventure-parameters {
@@ -527,6 +355,7 @@
   box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
   border-radius: 14px;
   padding: 20px;
+  font-size: .875rem;
 }
 
 @media (max-width: 768px) {
@@ -625,8 +454,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 4px;
   background: #00b100;
   color: white;
-  font-weight: 600;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   outline: none;
   cursor: pointer;
 }
@@ -639,7 +467,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* ========================================= */
 /* CHECKOUT */
-
 .order-container {
   width: calc(100% - 50px);
   min-height: calc(100vh - 170px);
@@ -702,8 +529,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 4px;
   background: #00b100;
   color: white;
-  font-weight: 600;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   outline: none;
   cursor: pointer;
 }

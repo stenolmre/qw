@@ -1,9 +1,9 @@
-import { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
-import Search from './search'
-import Spinner from './spinner'
-import gallery from './utils/gallery'
+import Search from './utils/search'
+import Spinner from './utils/spinner'
+import gallery from './arrays/gallery'
 import { useAdventureState, useAdventureDispatch } from './../context/adventure'
 import { getAdventures } from './../actions/adventure'
 
@@ -74,13 +74,13 @@ export default function Sidebar() {
             <div className="sidebar-media-images">
               <img src={currentImages} alt=""/>
               <div>
-                <button className="something-left" onClick={number => paginateToPrevious(number)}>↞</button>
-                <div className="something-number">
+                <button className="sidebar-media-left-button" onClick={number => paginateToPrevious(number)}>↞</button>
+                <div className="sidebar-media-number-button">
                   {
                     numbers.map(number => <div key={number} style={currentPage === number ? { background: 'rgba(250, 250, 250, .7)'} : { background: 'rgba(250, 250, 250, .2)'} } onClick={() => paginate(number)}></div>)
                   }
                 </div>
-                <button className="something-right" onClick={number => paginateToNext(number)}>↠</button>
+                <button className="sidebar-media-right-button" onClick={number => paginateToNext(number)}>↠</button>
               </div>
             </div>
           </div>

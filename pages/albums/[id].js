@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
-import Heading from './../../components/heading'
-import Spinner from './../../components/spinner'
+import Heading from './../../components/utils/heading'
+import Spinner from './../../components/utils/spinner'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbum } from './../../actions/album'
 
@@ -26,7 +26,7 @@ export default function Album() {
       <title>qw - album</title>
     </Head>
     <Container>
-      <div className="albums">
+      <div className="gallery">
         {
           albumState && album
             ? <Fragment>

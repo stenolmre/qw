@@ -104,17 +104,3 @@
   object-fit: cover;
   object-position: center;
 }
-
-/* ========================================= */
-/* CONTACT */
-
- .mobile-contact {
-  width: calc(100% - 10px);
-  min-height: calc(100vh - 170px);
-  padding: 25px 5px;
-}
-
-.mobile-contact iframe {
-  width: 100%;
-  height: 50vh;
-}

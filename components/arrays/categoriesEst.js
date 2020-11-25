@@ -1,5 +1,10 @@
 const categoriesEst = [
   {
+    name: 'kõik elamusmatkad',
+    category: 'all',
+    icon: 'fas fa-grip-horizontal'
+  },
+  {
     name: 'suusatamine',
     category: 'skiing',
     icon: 'fas fa-skiing-nordic'

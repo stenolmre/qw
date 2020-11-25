@@ -3,9 +3,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
-import Heading from './../../components/heading'
-import Spinner from './../../components/spinner'
+import Heading from './../../components/utils/heading'
+import Spinner from './../../components/utils/spinner'
 import Cookies from 'js-cookie'
+import Modal from './../../components/utils/modal'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
@@ -217,32 +218,7 @@ export default function Adventure() {
       </div>
     </Container>
     {
-      !showModal ? null : <Modal onClick={() => toggleModal(!showModal)} src={image}/>
+      showModal && <Modal onClick={() => toggleModal(!showModal)} src={image} images={adventureState && adventure && adventure.images}/>
     }
   </Fragment>
-}
-
-function Modal({ onClick, src }) {
-  const modal = {
-    width: '100%',
-    height: '100vh',
-    background: 'rgba(33, 33, 33, .9)',
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-
-  const modalImage = {
-    width: 'auto',
-    height: '90vh',
-    objectFit: 'center',
-    objectPosition: 'center'
-  }
-
-  return <div style={modal} onClick={onClick}>
-    <img src={src} alt="" style={modalImage}/>
-  </div>
 }

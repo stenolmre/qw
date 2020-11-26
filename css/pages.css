@@ -255,18 +255,32 @@
   text-transform: capitalize;
 }
 
+/* ========================================= */
+/* ADVENTURES */
 .adventure-previews {
   width: 100%;
-  height: calc(100% - 50px);
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
+  min-height: calc(100% - 170px);
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 20px;
-  justify-content: center;
-  padding: 50px 0;
+  justify-content: flex-start;
+  padding: 25px 0;
   overflow-x: hidden;
+}
+
+.adventure-right-container {
+  padding: 50px 0 0 0;
+}
+
+.adventure-right-container h3 {
+  margin-left: 25px;
+}
+
+.adventure-intro {
+  width: 75%;
+  margin-left: 25px;
+  text-align: justify;
+  font-size: .875rem;
 }
 
 /* ========================================= */

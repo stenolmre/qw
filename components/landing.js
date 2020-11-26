@@ -8,7 +8,7 @@ import Footer from './footer'
 export default function Demo() {
   const language = Cookies.get('lan') === 'eng'
   return <Fragment>
-    <img className="front-cover" src="aurora.jpeg" alt="aurora-light" />
+    <img className="front-cover" src="IMG_2946.jpg" alt="aurora-light" />
     <div className="front-cover-overlay"/>
     <div className="front-page-container">
       <div>

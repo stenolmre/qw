@@ -24,8 +24,6 @@ export default function Album() {
     getAlbum(dispatchAlbum, id)
   }, [dispatchAlbum, id])
 
-  console.log(openSlideshow);
-
   return <Fragment>
     <Head>
       <title>qw - album</title>

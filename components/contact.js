@@ -5,6 +5,7 @@ import Heading from './utils/heading'
 import SuccessIcon from './utils/successicon'
 
 export default function Contact() {
+  const [error, setError] = useState(null)
   const [success, setSuccess] = useState(false)
   const [text, setText] = useState({ name: '', textarea: '' })
   const [formData, setFormData] = useState({ name: '', email: '', textarea: ''})
@@ -30,7 +31,17 @@ export default function Contact() {
       client_name: name,
       client_email: email,
       client_message: textarea
-    };
+    }
+
+    if (!name || !email || ! textarea) {
+      userLanguage ? setError('Please fill all fields with valid information.') : setError('Palun sisestage korrektne info kõikidesse väljadesse.')
+
+      setTimeout(() => {
+        setError(null)
+      }, 5000)
+
+      return
+    }
 
     try {
       await emailjs.send('gmail', 'northseason', templateParams, 'user_d35Shv7J12m9DhmwjDmiA')
@@ -61,6 +72,7 @@ export default function Contact() {
               <input type="email" name="email" value={email} onChange={onChange} placeholder="Email"/>
               <textarea name="textarea" value={textarea} onChange={onChange} placeholder={text.textarea}/><br/>
               <button onClick={send}>{userLanguage ? 'Send' : 'Saada'}</button>
+              <p>{error}</p>
             </form>
           : <div className="contact-form-successicon">
               <SuccessIcon/>

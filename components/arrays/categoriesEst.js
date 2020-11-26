@@ -10,7 +10,7 @@ const categoriesEst = [
     icon: 'fas fa-skiing-nordic'
   },
   {
-    name: 'räätsamatk',
+    name: 'räätsamatkad',
     category: 'snowshoetrekking',
     icon: 'fas fa-hiking'
   }

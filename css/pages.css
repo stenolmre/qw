@@ -203,6 +203,11 @@
   outline: none;
 }
 
+.contact-form p {
+  font-size: .875rem;
+  color: red;
+}
+
 .contact-form-successicon {
   margin: 25px 0 0 30px;
 }

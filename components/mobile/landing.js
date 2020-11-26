@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
-import Sidebar from './sidebar'
-import Navbar from './navbar'
-import Footer from './footer'
+import Sidebar from './../sidebar'
+import Navbar from './../navbar'
+import Footer from './../footer'
 
 export default function Demo() {
   const language = Cookies.get('lan') === 'eng'
@@ -30,9 +30,7 @@ export default function Demo() {
             <Link href="/adventures?category=all"><a>{language ? 'Show all experiences' : 'Vaata kõiki elamusmatku'}</a></Link>
           </div>
         </div>
-        <Footer />
       </div>
-      <Sidebar />
     </div>
   </Fragment>
 }

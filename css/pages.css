@@ -172,7 +172,7 @@
   width: calc(80% - 15px);
   margin: 2px 0;
   padding: 3px 3px 3px 3px;
-  border: 1px solid rgba(33, 33, 33, .5);
+  border: 1px solid rgba(33, 33, 33, .2);
   border-radius: 2px;
   outline: none;
 }
@@ -186,7 +186,7 @@
   min-height: 100px;
   margin: 2px 0;
   padding: 3px 3px 3px 3px;
-  border: 1px solid rgba(33, 33, 33, .5);
+  border: 1px solid rgba(33, 33, 33, .2);
   border-radius: 2px;
   resize: vertical;
   outline: none;
@@ -211,6 +211,32 @@
   color: #00b100;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    height: auto;
+    grid-template-columns: 100%;
+  }
+
+  .contact-container iframe {
+    height: 350px;
+  }
+
+  .contact {
+    padding: 0;
+  }
+
+  .contact-info {
+    margin-left: 5%;
+    color: black;
+  }
+
+  .contact-form {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px 0 20px 5%;
+  }
 }
 
 /* ========================================= */

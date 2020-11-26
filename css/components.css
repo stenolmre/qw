@@ -12,6 +12,7 @@
   font-size: 1.5rem;
   text-transform: capitalize;
   margin-bottom: 0;
+  color: black;
 }
 
 .heading span {
@@ -24,22 +25,6 @@
   font-weight: 600;
   margin-top: 22px;
   padding-right: 20px;
-}
-
-/* ========================================= */
-/* SLIDER */
-.slider {
-  display: grid;
-  grid-template-columns: 90% 90% 90% 90% 90%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  margin-bottom: 20px;
-  padding: 20px 10px;
-  grid-gap: 10px;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
 }
 
 /* ========================================= */

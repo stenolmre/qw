@@ -9,10 +9,16 @@ const AdventureSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  price: {
-    type: Number,
-    required: true
-  },
+  prices: [{
+    name: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true
+    }
+  }],
   availability: {
     time: {
       type: Array,
@@ -27,28 +33,24 @@ const AdventureSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  isIncluded: {
-    type: Array,
-    required: true
-  },
   duration: {
     type: Number,
     required: true
   },
-  categories: {
+  isIncluded: {
     type: Array,
     required: true
   },
-  excerpt: {
-    type: String,
+  isRequired: {
+    type: Array,
+    required: true
+  },
+  hashtags: {
+    type: Array,
     required: true
   },
   description: {
     type: String,
-    required: true
-  },
-  requirements: {
-    type: Array,
     required: true
   },
   location: {
@@ -59,17 +61,9 @@ const AdventureSchema = mongoose.Schema({
     finish: {
       type: String,
       required: true
-    },
-    destination: {
-      type: String,
-      required: true
     }
   },
   images: {
-    type: Array,
-    required: true
-  },
-  cancellation: {
     type: Array,
     required: true
   }

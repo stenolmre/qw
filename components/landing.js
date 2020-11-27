@@ -22,7 +22,7 @@ export default function Demo() {
                 </Fragment>
               : <Fragment>
                   <h1>Maagiline puhkus Lapimaal</h1>
-                  <p>Lapimaa – see on tundrute ja virmaliste maa. Keskööpäikese ja polaaröö maa. Jõuluvana ja põhjapõtrade maa. Põhjapolaarjoonetagune maagiline maa, mida kuus kuud aastast katab kohev helevalge lumevaip. Käegakatsutav reisielamus ja suurte seikluste alguspaik.</p>
+                  <p>Kogeda midagi erilist, näha midagi uut, teha midagi põnevat – võtame teie soovid ja mõtted ning viime need üheskoos ellu. Tule ja avasta müstilise talvemaastiku lumiseid radu või löö kaasa meie suvistel ratta- ja jalgsimatkadel.</p>
                 </Fragment>
           }
           <div className="">

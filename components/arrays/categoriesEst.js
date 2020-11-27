@@ -1,6 +1,6 @@
 const categoriesEst = [
   {
-    name: 'kõik elamusmatkad',
+    name: 'elamusmatkad',
     category: 'all',
     icon: 'fas fa-grip-horizontal'
   },

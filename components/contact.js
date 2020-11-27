@@ -16,7 +16,7 @@ export default function Contact() {
     if (userLanguage) {
       setText({ name: 'Name', textarea: 'Please write your questions, recommendations or requests here and we will get back to you during the day.' })
     } else {
-      setText({ name: 'Nimi', textarea: 'Kirjuta oma küsimused, soovitused, ettepanekud ja/või tagasiside siia ning me vastame Teile esimesel võimalusel.' })
+      setText({ name: 'Nimi', textarea: 'Kirjuta oma küsimused, soovid või tagasiside siia ning me vastame Sulle esimesel võimalusel.' })
     }
   }, [])
 
@@ -60,7 +60,7 @@ export default function Contact() {
     <div className="contact">
       <Heading name={userLanguage ? 'contact' : 'kontakt'}/>
       <div className="contact-info">
-        <p><a href="tel:37253461027"><i className="fas fa-phone"/> +372 5346 1027</a></p>
+        <p><a href="tel:37258553625"><i className="fas fa-phone"/> +372 5346 1027</a></p>
         <p><a href="mailto:stenolmre@icloud.com"><i className="fas fa-envelope"/> stenolmre@icloud.com</a></p>
         <p><i className="fas fa-map-pin"/> Levi, Lapland</p>
       </div>

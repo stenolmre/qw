@@ -9,7 +9,7 @@ export default function Info({ adventure, id }) {
       <div className="adventure-parameters">
         <div>
           <p><i className="far fa-chart-bar"/> <strong>{adventure.levelOfDifficulty}</strong></p>
-          <p><i className="fas fa-clock"/> ~<strong>{adventure.duration / 60}H</strong></p>
+          <p><i className="fas fa-clock"/> ~<strong>{adventure.duration}H</strong></p>
         </div>
         <Link href={`/adventures/${id}#cart`}><a>Buy now</a></Link>
       </div>
@@ -23,7 +23,7 @@ export default function Info({ adventure, id }) {
       <div className="adventure-list">
         <h3>Requirements:</h3>
         {
-          adventure.requirements.map(requirement => <p key={requirement}><i className="fas fa-exclamation"/> {requirement}</p>)
+          adventure.isRequired.map(requirement => <p key={requirement}><i className="fas fa-exclamation"/> {requirement}</p>)
         }
       </div>
       <div className="adventure-location">
@@ -33,7 +33,7 @@ export default function Info({ adventure, id }) {
       </div>
       <div className="adventure-hashtags">
         {
-          adventure.categories.map(category => <span key={category} className="adventure-hashtag">#{category}</span>)
+          adventure.hashtags.map(category => <span key={category} className="adventure-hashtag">#{category}</span>)
         }
       </div>
     </div>

@@ -1,6 +1,6 @@
 const categories = [
   {
-    name: 'all adventures',
+    name: 'adventures',
     category: 'all',
     icon: 'fas fa-grip-horizontal'
   },

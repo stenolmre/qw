@@ -24,8 +24,9 @@ export default function Cart({ adventure }) {
     console.log(orderData);
   }
 
-  const adultFee = adventure.price / 100
-  const childFee = Math.ceil(adultFee * 0.7)
+  const adultFee = adventure.prices[0].price / 100
+  const youthFee = adventure.prices[1].price / 100
+  const childFee = adventure.prices[2].price / 100
   const totalPrice = ((adultFee * adults) + (childFee * children)).toFixed(2)
 
   return <div className="adventure-cart-container" id="cart">
@@ -34,11 +35,15 @@ export default function Cart({ adventure }) {
       <table>
         <tbody>
           <tr>
-            <td>Adult:</td>
+            <td>Adult</td>
             <td><strong>{(adultFee).toFixed(2)}</strong> €</td>
           </tr>
           <tr>
-            <td>Child (6-11):</td>
+            <td>Youth (12-18)</td>
+            <td><strong>{(youthFee).toFixed(2)}</strong> €</td>
+          </tr>
+          <tr>
+            <td>Child (6-11)</td>
             <td><strong>{(childFee).toFixed(2)}</strong> €</td>
           </tr>
         </tbody>
@@ -69,7 +74,7 @@ export default function Cart({ adventure }) {
       <input type="number" min="0" value={children} name="children" onChange={onChange}/>
       <span onClick={() => setOrderData({ ...orderData, children: children + 1 })}>+</span>
       <br/>
-      <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.date} onChange={date => setOrderData({ ...orderData, date: date })} includeDates={array.map(date => new Date(date))} />
+      <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.date} onChange={date => setOrderData({ ...orderData, date: date })} includeDates={adventure.availability.days.map(date => new Date(date))} />
 
       <div className="booking-times">
         {

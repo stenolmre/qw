@@ -562,24 +562,32 @@ input::-webkit-inner-spin-button {
 
 .adventure-cart input[type='number'] {
   width: 45px;
-  padding: 5px;
+  padding: 5px 0;
   margin-bottom: 20px;
   text-align: center;
   border: 1px solid #eee;
   border-radius: 4px;
-  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .1);
   outline: none;
+}
+
+.adventure-cart-label {
+  margin-right: 20px;
+}
+
+.adventure-cart-label:nth-of-type(1) {
+  margin-right: 35px;
 }
 
 .adventure-cart span {
   width: 25px;
   height: 25px;
-  padding: 5px 10px;
-  margin: 0 1px;
+  padding: 4px 10px;
+  margin: 0 4px;
   text-align: center;
   border: 1px solid #eee;
   border-radius: 4px;
-  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .1);
   cursor: pointer;
 }
 
@@ -602,24 +610,21 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-input[type="date"] {
+.react-datepicker__current-month {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.react-datepicker__input-container input {
   background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
   border: 1px solid #eee;
   border-radius: 4px;
-  padding: 3px 5px;
+  padding: 10px;
   box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
-  width: 50%;
+  width: 90%;
+  cursor: pointer;
 }
 
-input[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-
-.adventure-cart button {
+.adventure-cart-button {
   padding: 5px 40px 5px 40px;
   border: 1px solid #00b100;
   border-radius: 4px;
@@ -630,7 +635,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-.adventure-cart button:disabled {
+.adventure-cart-button:disabled {
   background: rgba(0, 177, 0, .5);
   border: 1px solid rgba(0, 177, 0, .5);
   cursor: default;

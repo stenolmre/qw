@@ -12,7 +12,6 @@ export async function getAdventures(dispatch) {
   } catch (err) {
     dispatch({
       type: ADVENTURE_ERROR,
-      payload: err.message
     })
   }
 }
@@ -28,7 +27,6 @@ export async function getAdventuresByCategory(dispatch, category) {
   } catch (err) {
     dispatch({
       type: ADVENTURE_ERROR,
-      payload: err.message
     })
   }
 }
@@ -44,7 +42,6 @@ export async function getAdventure(dispatch, adventureId) {
   } catch (err) {
     dispatch({
       type: ADVENTURE_ERROR,
-      payload: err.response.data.msg
     })
   }
 }

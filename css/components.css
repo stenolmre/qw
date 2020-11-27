@@ -262,94 +262,18 @@
 }
 
 /* ========================================= */
-/* POSTCARD */
-/*
-.postcard {
-  width: calc(100% - 6px);
-  max-width: 375px;
-  height: 245px;
-  padding: 3px;
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #eee;
-  color: white;
-  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
-  cursor: pointer;
-}
-
-.postcard:hover {
-  transform: scale(1.02);
-}
-
-.postcard img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 21px;
-}
-
-.postcard-overlay {
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  background: linear-gradient(180deg, rgba(33, 33, 33, 0) 50%, rgba(33, 33, 33, .8) 100%);
-  border-radius: 21px;
-}
-
-.postcard .icon {
-  width: 30px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  border: 1px solid rgba(250, 250, 250, .7);
-  border-radius: 100%;
-}
-
-.postcard-add-info {
-  width: calc(100% - 40px);
-  padding: 0 20px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-}
-
-.postcard-add-info h3 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
-.postcard-add-info p {
-  font-size: .9rem;
-  margin: 10px 0 0 0;
-}
- */
-/* ========================================= */
 /* ADVENTURE CARD */
-.adventurecard-container {
-  width: 100%;
-  cursor: pointer;
-  margin: 0 15px;
-}
-
-.adventurecard-container h3 {
+.adventure-name {
   width: 90%;
-  margin-left: 5%;
   text-align: center;
   text-transform: capitalize;
-  font-size: .975rem;
 }
 
 .adventurecard {
-  width: calc(100% - 6px);
+  width: 90%;
   max-width: 400px;
   height: 245px;
+  margin: 0 5%;
   padding: 3px;
   position: relative;
   border-radius: 24px;
@@ -410,6 +334,8 @@
   font-weight: 600;
   font-size: .75rem;
 }
+
+@media (max-width: 768px) {}
 
 /* ========================================= */
 /* RATING */
@@ -584,7 +510,7 @@
   position: absolute;
   top: 3vh;
   right: 5%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /* ========================================= */

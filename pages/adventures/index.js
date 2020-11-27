@@ -39,6 +39,7 @@ export default function Adventures() {
           <input onChange={e => setSearch(e.target.value)}/>
           <span><i className="fas fa-search"/></span>
           <h5>{userLanguage ? 'Search by category' : 'Otsi kategooria järgi'}</h5>
+          <div>
           {
             userLanguage
               ? categories.map(category => <p key={category.category} style={router.query.category === category.category ? {color: '#ff4500'} : {color: 'black'}}>
@@ -48,6 +49,7 @@ export default function Adventures() {
                   <Link href={`/adventures?category=${category.category}`}><a>{category.name}</a></Link>
                 </p>)
           }
+          </div>
         </div>
         <div className="adventure-right-container">
           <Texts router={router} userLanguage={userLanguage}/>

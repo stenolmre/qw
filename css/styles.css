@@ -102,6 +102,24 @@ main footer {
   box-shadow: 0 0 14px rgba(33, 33, 33, .2);
 }
 
+main nav {
+  height: 100px;
+}
+
+main nav a {
+  font-size: .875rem;
+}
+
+@media (max-width: 768px) {
+  main nav {
+    height: 75px;
+  }
+
+  main nav a {
+    font-size: .75rem;
+  }
+}
+
 /* ========================================= */
 .front-cover {
   position: absolute;

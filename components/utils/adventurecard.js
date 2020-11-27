@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export default function AdventureCard({ name, src, alt, link, topicon, bottomicon, destination, price }) {
-  const router = useRouter()
 
-  return <div className="adventurecard-container" onClick={() => router.push(link)}>
+  return <Link href={link}><a>
     <div className="adventurecard">
       <img src={src} alt={alt}/>
       <div className="adventure-overlay"/>
@@ -16,6 +15,6 @@ export default function AdventureCard({ name, src, alt, link, topicon, bottomico
         <p>{price}€</p>
       </div>
     </div>
-    <h3>{name}</h3>
-  </div>
+    <h3 className="adventure-name">{name}</h3>
+  </a></Link>
 }

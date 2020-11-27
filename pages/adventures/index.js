@@ -56,8 +56,12 @@ export default function Adventures() {
           <div className="adventure-previews">
             {
               adventureState && adventures
-                ? adventures.filter(item =>       item.name.toLowerCase().includes(search.toLowerCase())).map(adventure => <div key={adventure._id}>
-                    <AdventureCard link={`/adventures/${adventure._id}`} author={adventure.location.destination} topicon="fa-star" bottomicon="fa-map-marker-alt" destination={adventure.location.destination} name={adventure.name} src={adventure.images.map(image => image).slice(0, 1)} alt={adventure.name} price={(adventure.prices[0].price / 100).toFixed(2)}/>
+                ? userLanguage
+                  ? adventures.filter(item =>       item.name.toLowerCase().includes(search.toLowerCase())).map(adventure => <div key={adventure._id}>
+                    <AdventureCard link={`/adventures/${adventure._id}`} topicon="fa-star" destination={adventure.location.start} name={adventure.name} src={adventure.images.map(image => image).slice(0, 1)} alt={adventure.name} price={(adventure.prices[0].price / 100).toFixed(2)}/>
+                  </div>)
+                  : adventures.filter(item =>       item.nimi.toLowerCase().includes(search.toLowerCase())).map(adventure => <div key={adventure._id}>
+                    <AdventureCard link={`/adventures/${adventure._id}`} topicon="fa-star" destination={adventure.location.start} name={adventure.nimi} src={adventure.images.map(image => image).slice(0, 1)} alt={adventure.nimi} price={(adventure.prices[0].price / 100).toFixed(2)}/>
                   </div>)
                 : <Spinner/>
             }

@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from 'react'
-import Cookies from 'js-cookie'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'

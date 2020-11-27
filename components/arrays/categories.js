@@ -10,7 +10,7 @@ const categories = [
     icon: 'fas fa-skiing-nordic'
   },
   {
-    name: 'snowshoe',
+    name: 'snowshoeing',
     category: 'snowshoetrekking',
     icon: 'fas fa-hiking'
   }

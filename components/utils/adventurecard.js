@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 
-export default function AdventureCard({ name, src, alt, link, topicon, bottomicon, destination, price }) {
+export default function AdventureCard({ name, src, alt, link, topicon, destination, price }) {
 
   return <Link href={link}><a>
     <div className="adventurecard">
@@ -11,7 +11,7 @@ export default function AdventureCard({ name, src, alt, link, topicon, bottomico
         <i className={`fas ${ topicon }`}/>
       </div>
       <div className="adventurecard-add-info">
-        <p><i className="fas fa-map-marker-alt"/> {destination}</p>
+        <p><i className="fas fa-map-pin"/>{destination}</p>
         <p>{price}€</p>
       </div>
     </div>

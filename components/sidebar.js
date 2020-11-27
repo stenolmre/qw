@@ -60,9 +60,14 @@ export default function Sidebar() {
           <div className="sidebar-posts">
             {
               adventureState && adventures
-                ? adventures.filter(item => item.name.toLowerCase().includes(search.toLowerCase())).map((post, i) => <div className="sidebar-post" key={i}>
-                    <Link href={`/adventures/${post._id}`}><a><h3><span>0{i + 1}</span> { post.name }</h3></a></Link>
-                    <p>{(post.price / 100).toFixed(2)}€</p>
+                ? userLanguage
+                  ? adventures.filter(item => item.name.toLowerCase().includes(search.toLowerCase())).map((post, i) => <div className="sidebar-post" key={i}>
+                    <Link href={`/adventures/${post._id}`}><a><h3><span>0{i + 1}</span> {post.name}</h3></a></Link>
+                    <p>{(post.prices[0].price / 100).toFixed(2)}€</p>
+                  </div>).slice(0, 2)
+                  : adventures.filter(item => item.nimi.toLowerCase().includes(search.toLowerCase())).map((post, i) => <div className="sidebar-post" key={i}>
+                    <Link href={`/adventures/${post._id}`}><a><h3><span>0{i + 1}</span> {post.nimi}</h3></a></Link>
+                    <p>{(post.prices[0].price / 100).toFixed(2)}€</p>
                   </div>).slice(0, 2)
                 : null
             }
@@ -86,7 +91,7 @@ export default function Sidebar() {
           </div>
         </div>
         <div className="sidebar-button">
-          <Link href="/adventures"><a>{userLanguage ? 'Explore all adventures' : 'Vaata kõiki elamusmatku'} ↠</a></Link>
+          <Link href="/adventures"><a>{userLanguage ? 'Explore all adventures' : 'Vaata elamusmatku'} ↠</a></Link>
         </div>
       </div>
     </div>

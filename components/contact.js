@@ -60,7 +60,7 @@ export default function Contact() {
     <div className="contact">
       <Heading name={userLanguage ? 'contact' : 'kontakt'}/>
       <div className="contact-info">
-        <p><a href="tel:37258553625"><i className="fas fa-phone"/> +372 5346 1027</a></p>
+        <p><a href="tel:37258553625"><i className="fas fa-phone"/> +372 5855 3625</a></p>
         <p><a href="mailto:stenolmre@icloud.com"><i className="fas fa-envelope"/> stenolmre@icloud.com</a></p>
         <p><i className="fas fa-map-pin"/> Levi, Lapland</p>
       </div>

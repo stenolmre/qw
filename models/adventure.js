@@ -9,6 +9,10 @@ const AdventureSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  nimi: {
+    type: String,
+    required: true
+  },
   prices: [{
     name: {
       type: String,
@@ -33,6 +37,10 @@ const AdventureSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  raskusaste: {
+    type: String,
+    required: true
+  },
   duration: {
     type: Number,
     required: true
@@ -41,7 +49,15 @@ const AdventureSchema = mongoose.Schema({
     type: Array,
     required: true
   },
+  hinnas: {
+    type: Array,
+    required: true
+  },
   isRequired: {
+    type: Array,
+    required: true
+  },
+  nõudmised: {
     type: Array,
     required: true
   },
@@ -50,6 +66,10 @@ const AdventureSchema = mongoose.Schema({
     required: true
   },
   description: {
+    type: String,
+    required: true
+  },
+  kirjeldus: {
     type: String,
     required: true
   },

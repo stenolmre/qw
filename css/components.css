@@ -335,6 +335,10 @@
   font-size: .75rem;
 }
 
+.adventurecard-add-info i {
+  margin-right: 10px;
+}
+
 @media (max-width: 768px) {}
 
 /* ========================================= */
@@ -452,6 +456,7 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, .8);
+  z-index: 1000000;
 }
 
 .slideshow i {

@@ -394,7 +394,7 @@
 
 .adventure-content h1 {
   width: 90%;
-  margin: 30px 25px;
+  margin: 0px 25px;
   text-transform: capitalize;
   font-size: 1.5rem;
 }
@@ -457,6 +457,7 @@
   border: 1px solid #eee;
   border-radius: 4px;
   box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .1);
+  font-size: .75rem;
 }
 
 @media (max-width: 768px) {
@@ -496,7 +497,7 @@
   }
 
   .adventure-content h1 {
-    margin: 30px 5%;
+    margin: 20px 5% 10px 5%;
   }
 
   .adventure-parameters {
@@ -525,7 +526,7 @@
   border: 1px solid #eee;
   box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
   border-radius: 14px;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   font-size: .875rem;
 }
 
@@ -560,23 +561,29 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.cart-input-container {
+  width: 100%;
+  margin: 5px 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-inputs {
+  display: flex;
+  align-items: center;
+}
+
 .adventure-cart input[type='number'] {
   width: 45px;
   padding: 5px 0;
-  margin-bottom: 20px;
   text-align: center;
   border: 1px solid #eee;
   border-radius: 4px;
   box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .1);
   outline: none;
-}
-
-.adventure-cart-label {
-  margin-right: 20px;
-}
-
-.adventure-cart-label:nth-of-type(1) {
-  margin-right: 35px;
+  background: none;
 }
 
 .adventure-cart span {
@@ -589,6 +596,13 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
+.cart-display-right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .adventure-cart input[type='radio'] {
   display: none;
 }
@@ -596,7 +610,6 @@ input::-webkit-inner-spin-button {
 .booking-times {
   display: flex;
   align-items: flex-start;
-  margin: 20px 0;
 }
 
 .booking-time {
@@ -616,7 +629,7 @@ input::-webkit-inner-spin-button {
   background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
   border: 1px solid #eee;
   border-radius: 4px;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .1);
   width: 90%;
   cursor: pointer;

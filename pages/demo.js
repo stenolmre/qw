@@ -1,37 +1,67 @@
-import React, { useState, useEffect } from 'react'
-import DatePicker from 'react-datepicker'
-import "react-datepicker/dist/react-datepicker.css"
+import React, { Fragment, useState } from 'react'
 
-export default function MyComponent() {
-  const [startDate, setStartDate] = useState(null)
+export default function Demo() {
+  const [open, setOpen] = useState(false)
+  return <Fragment>
+    <div className={!open ? '' : 'show-div'}>
+      <a className={!open ? '' : 'show-a'}>Hello</a>
+      <a className={!open ? '' : 'show-a'}>Hello</a>
+      <a className={!open ? '' : 'show-a'}>Hello</a>
+    </div>
+    <button onClick={() => setOpen(!open)}>{!open ? 'Open' : 'Close'}</button>
+      <style jsx>{`
+        div {
+          width: 100%;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #eee;
+          box-shadow: 1px 2px 11px rgba(33, 33, 33, .3);
+        }
 
-  const array = [
-    '2020-12-2', '2020-12-4', '2020-12-6'
-  ]
+        a {
+          margin: 0 25px;
+          text-transform: uppercase;
+        }
 
-  useEffect(() => {
-    setStartDate(new Date(array[0]))
-  }, [])
+        button {
+          display: none;
+        }
 
-  const days = () => array.map(date => new Date(date))
+        @media (max-width: 1000px) {
+          div {
+            width: 300px;
+            height: 90vh;
+            margin-left: -300px;
+            transition: .4s ease-out;
+            flex-direction: column;
+          }
 
-  return <div>
-    <DatePicker
-      dateFormat="dd/MM/yyyy"
-      selected={startDate}
-      onChange={date => setStartDate(date)}
-      includeDates={days()}
-    />
+          .show-div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 0;
+            transition: .7s ease-out;
+          }
 
-  <style jsx>{`
-      div {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: black;
-      }
-  `}</style>
-  </div>
+          a {
+            opacity: 0;
+          }
+
+          .show-a {
+            opacity: 1;
+            transition: .4s ease-out;
+          }
+
+          button {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 5vh;
+          }
+        }
+      `}</style>
+  </Fragment>
 }

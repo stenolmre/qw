@@ -580,8 +580,6 @@ input::-webkit-inner-spin-button {
 }
 
 .adventure-cart span {
-  width: 25px;
-  height: 25px;
   padding: 4px 10px;
   margin: 0 4px;
   text-align: center;
@@ -606,7 +604,7 @@ input::-webkit-inner-spin-button {
   padding: 5px 10px;
   border: 1px solid #eee;
   border-radius: 4px;
-  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .1);
   cursor: pointer;
 }
 
@@ -619,7 +617,7 @@ input::-webkit-inner-spin-button {
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 10px;
-  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .2);
+  box-shadow: 1px 2px 8px -1px rgba(33, 33, 33, .1);
   width: 90%;
   cursor: pointer;
 }
@@ -633,6 +631,8 @@ input::-webkit-inner-spin-button {
   font-family: 'Montserrat', sans-serif;
   outline: none;
   cursor: pointer;
+  box-shadow: 1px 2px 8px -1px rgba(0, 177, 0, .8);
+  box-shadow: 0px 1px 21px rgb(0, 177, 0, .4);
 }
 
 .adventure-cart-button:disabled {

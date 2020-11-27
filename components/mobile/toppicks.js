@@ -4,7 +4,7 @@ import AdventureCard from './../utils/adventurecard'
 
 export default function TopPicks({ userLanguage, adventureState }) {
   return <div className="mobile-section">
-    <Heading name={userLanguage ? 'top rated picks' : 'populaarseimad elamusmatkad'} span={userLanguage ? 'by customers' : 'klientide eelistused'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
+    <Heading name={userLanguage ? 'top rated picks' : 'populaarseimad elamusmatkad'} span={userLanguage ? 'by customers' : 'klientide eelistused'} href="/adventures" link={<i className="fas fa-grip-horizontal"/>}/>
     <div className="slider">
       {
         adventureState && adventureState.adventures

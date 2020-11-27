@@ -11,10 +11,9 @@ export default function Cart({ adventure }) {
   const array = [
     '2020-12-2', '2020-12-4', '2020-12-6', '2021-1-2', '2021-1-7'
   ]
-  const days = () => array.map(date => new Date(date))
 
   useEffect(() => {
-    setOrderData({ ...orderData, date: new Date(array[0]) })
+    setOrderData({ ...orderData, date: new Date(array[0]), title: adventure.name })
   }, [])
 
   function onChange(e) {
@@ -70,7 +69,7 @@ export default function Cart({ adventure }) {
       <input type="number" min="0" value={children} name="children" onChange={onChange}/>
       <span onClick={() => setOrderData({ ...orderData, children: children + 1 })}>+</span>
       <br/>
-      <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.date} onChange={date => setOrderData({ ...orderData, date: date })} includeDates={days()} />
+      <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.date} onChange={date => setOrderData({ ...orderData, date: date })} includeDates={array.map(date => new Date(date))} />
 
       <div className="booking-times">
         {

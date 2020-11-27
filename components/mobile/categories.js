@@ -6,9 +6,9 @@ import categoriesEst from './../arrays/categoriesEst'
 
 export default function Categories({ userLanguage }) {
   const router = useRouter()
-  
+
   return <div className="mobile-section">
-    <Heading name={userLanguage ? 'all adventures' : 'kõik elamusmatkad'} span={userLanguage ? 'by category' : 'kategooriad'} href="/adventures" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
+    <Heading name={userLanguage ? 'all adventures' : 'kõik elamusmatkad'} span={userLanguage ? 'by category' : 'kategooriad'} href="/adventures" link={<i className="fas fa-grip-horizontal"/>}/>
     <div className="category-card-container">
       {
         userLanguage

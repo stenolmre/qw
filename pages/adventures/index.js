@@ -72,13 +72,13 @@ export default function Adventures() {
 function Texts({ router, userLanguage }) {
   return <Fragment>
     {
-      router.query.category === 'all' && <h3>{userLanguage ? 'All Adventures' : 'Kõik Elamusmatkad'}</h3>
+      router.query.category === 'all' && <h3>{userLanguage ? 'Adventures' : 'Elamusmatkad'}</h3>
     }
     {
-      router.query.category === 'snowshoetrekking' && <h3>{userLanguage ? 'Hiking with Snowshoess' : 'Elamusmatkad Räätsadega'}</h3>
+      router.query.category === 'snowshoetrekking' && <h3>{userLanguage ? 'Hiking with Snowshoes' : 'Elamusmatkad Räätsadega'}</h3>
     }
     {
-      router.query.category === 'skiing' && <h3>{userLanguage ? 'Skiing Adventures' : 'Suusatamine'}</h3>
+      router.query.category === 'skiing' && <h3>{userLanguage ? 'Skiing' : 'Suusatamine'}</h3>
     }
     {
       router.query.category === 'all' && <p className="adventure-intro">{userLanguage ? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'}</p>

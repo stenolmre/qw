@@ -280,12 +280,12 @@
   overflow: hidden;
   background: #eee;
   color: rgba(250, 250, 250, 1);
-  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .9);
+  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
 }
 
-.mobile .adventurecard {
+/* .mobile .adventurecard {
   background: #212121;
-}
+} */
 
 .adventurecard:hover {
   transform: scale(1.02);

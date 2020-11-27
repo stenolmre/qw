@@ -15,7 +15,7 @@ export default function Gallery({ userLanguage }) {
   }, [dispatchAlbum])
 
   return <div className="mobile-section">
-    <Heading name={userLanguage ? 'Gallery' : 'Galerii'} href="/albums" link={userLanguage ? 'see all' : 'vaata kõiki'}/>
+    <Heading name={userLanguage ? 'Gallery' : 'Galerii'} href="/albums" link={<i className="fas fa-grip-horizontal"/>} span={userLanguage ? 'albums from adventures' : 'albumid elamusmatkadest'}/>
     <div className="image-slider">
       {
         albumState && albums

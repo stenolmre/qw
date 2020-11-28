@@ -195,6 +195,7 @@ main nav a {
   }
 
   .front-page {
+    height: calc(100vh - 75px);
     width: 90%;
     margin: 0 5%;
   }
@@ -220,8 +221,7 @@ main nav a {
 }
 
 /* ========================================= */
-.desktop,
-.hide-nav {
+.desktop {
   display: block;
 }
 

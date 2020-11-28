@@ -24,7 +24,7 @@ export default function Info({ adventure, id }) {
         }
       </div>
       <div className="adventure-list">
-        <h3>Requirements:</h3>
+        <h3>{userLanguage ? 'Requirements' : 'Soovitused'}:</h3>
         {
           userLanguage ? adventure.isRequired.map(requirement => <p key={requirement}><i className="fas fa-exclamation"/> {requirement}</p>) : adventure.nõudmised.map(requirement => <p key={requirement}><i className="fas fa-exclamation"/> {requirement}</p>)
         }

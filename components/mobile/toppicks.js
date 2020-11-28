@@ -3,7 +3,7 @@ import Heading from './../utils/heading'
 import AdventureCard from './../utils/adventurecard'
 
 export default function TopPicks({ userLanguage, adventureState }) {
-  return <div className="mobile-section">
+  return <div className="mobile-section" style={{marginTop: '-100px'}}>
     <Heading name={userLanguage ? 'top rated picks' : 'populaarseimad elamusmatkad'} span={userLanguage ? 'by customers' : 'klientide eelistused'} href="/adventures" link={<i className="fas fa-grip-horizontal"/>}/>
     <div className="slider">
       {

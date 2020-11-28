@@ -16,7 +16,8 @@ export default function Navbar() {
     {
       Cookies.get('lan') === 'eng'
         ? <nav>
-            <Link href="/"><a>Home</a></Link>
+            <Link href="/"><a className="mobile"><i className="fas fa-home"/></a></Link>
+            <Link href="/"><a className="desktop">Home</a></Link>
             <Link href="/adventures?category=all"><a>Adventures</a></Link>
             <Link href="/albums"><a>Gallery</a></Link>
             <Link href="/contact"><a>Contact</a></Link>

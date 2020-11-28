@@ -25,7 +25,7 @@ export default function Demo() {
                   <p>Kogeda midagi erilist, näha midagi uut, teha midagi põnevat – võtame teie soovid ja mõtted ning viime need üheskoos ellu. Tule ja avasta müstilise talvemaastiku lumiseid radu või löö kaasa meie suvistel ratta- ja jalgsimatkadel.</p>
                 </Fragment>
           }
-          <div className="">
+          <div>
             <hr/>
             <Link href="/adventures?category=all"><a>{language ? 'Show all experiences' : 'Vaata kõiki elamusmatku'}</a></Link>
           </div>

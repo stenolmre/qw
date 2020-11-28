@@ -25,7 +25,8 @@ export default function Navbar() {
             <p onClick={eng}><img src="https://etreeningud.ee/media/images/stenolmre/eng.png" alt=""/></p>
           </nav>
         : <nav>
-            <Link href="/"><a>Esileht</a></Link>
+            <Link href="/"><a className="mobile"><i className="fas fa-home"/></a></Link>
+            <Link href="/"><a className="desktop">Esileht</a></Link>
             <Link href="/adventures?category=all"><a>Elamusmatkad</a></Link>
             <Link href="/albums"><a>Galerii</a></Link>
             <Link href="/contact"><a>Kontakt</a></Link>

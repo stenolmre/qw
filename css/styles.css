@@ -145,6 +145,10 @@ main nav a {
   .front-cover {
     height: 100vh;
   }
+
+  .front-cover-overlay {
+    height: 100vh;
+  }
 }
 
 /* ========================================= */
@@ -227,20 +231,24 @@ main nav a {
 }
 
 /* ========================================= */
-.desktop {
+.desktop,
+nav .desktop {
   display: block;
 }
 
-.mobile {
+.mobile,
+nav .mobile {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .desktop {
+  .desktop,
+  nav .desktop {
     display: none;
   }
 
-  .mobile {
+  .mobile,
+  nav .mobile {
     display: block;
   }
 }

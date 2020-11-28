@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 
-export default function Navbar({ style }) {
+export default function Navbar() {
   function est() {
     Cookies.set('lan', 'est')
     location.reload()

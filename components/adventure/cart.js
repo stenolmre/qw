@@ -10,10 +10,6 @@ export default function Cart({ adventure }) {
   const [error, setError] = useState('')
   const userLanguage = Cookies.get('lan') === 'eng'
 
-  const array = [
-    '2020-12-2', '2020-12-4', '2020-12-6', '2021-1-2', '2021-1-7'
-  ]
-
   useEffect(() => {
     setOrderData({ ...orderData, title: adventure.name })
   }, [])
@@ -22,21 +18,13 @@ export default function Cart({ adventure }) {
     setOrderData({ ...orderData, [e.target.name]: e.target.value })
   }
 
-  function removeTicket(person) {
-    if (person === 0 || person < 0) {
-      setOrderData({ ...orderData, person: 0 })
-    } else {
-      setOrderData({ ...orderData, person: person - 1 })
-    }
-  }
-
   function onClick() {
     console.log(orderData);
   }
 
-  const adultFee = adventure.prices[0].price / 100
-  const youthFee = adventure.prices[1].price / 100
-  const childFee = adventure.prices[2].price / 100
+  const adultFee = (adventure.prices[0].price / 100).toFixed(2)
+  const youthFee = (adventure.prices[1].price / 100).toFixed(2)
+  const childFee = (adventure.prices[2].price / 100).toFixed(2)
   const totalPrice = ((adultFee * adults) + (youthFee * youth) + (childFee * children)).toFixed(2)
 
   return <div className="adventure-cart-container" id="cart">
@@ -46,15 +34,15 @@ export default function Cart({ adventure }) {
         <tbody>
           <tr>
             <td>{userLanguage ? 'Adult' : 'Täiskasvanu'}</td>
-            <td><strong>{(adultFee).toFixed(2)}</strong> €</td>
+            <td><strong>{adultFee}</strong> €</td>
           </tr>
           <tr>
             <td>{userLanguage ? 'Youth' : 'Teismeline'} (12-18)</td>
-            <td><strong>{(youthFee).toFixed(2)}</strong> €</td>
+            <td><strong>{youthFee}</strong> €</td>
           </tr>
           <tr>
             <td>{userLanguage ? 'Child' : 'Laps'} (6-11)</td>
-            <td><strong>{(childFee).toFixed(2)}</strong> €</td>
+            <td><strong>{childFee}</strong> €</td>
           </tr>
         </tbody>
       </table>
@@ -134,15 +122,8 @@ export default function Cart({ adventure }) {
       </div>
 
       <div className="cart-display-right">
-        <button className="adventure-cart-button" disabled={price < 1} onClick={onClick}>{userLanguage ? 'Buy' : 'Osta'}</button>
+        <button className="adventure-cart-button" disabled={price < 1} onClick={onClick}>{userLanguage ? 'Checkout' : 'Kassa'}</button>
       </div>
-
-
-
-
-
-
-      <br/>
       <p style={{ color: 'red', fontWeight: '600', marginTop: '30px' }}>{ error }</p>
     </div>
   </div>

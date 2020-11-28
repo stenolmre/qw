@@ -141,6 +141,12 @@ main nav a {
   z-index: -1;
 }
 
+@media (max-width: 768px) {
+  .front-cover {
+    height: 100vh;
+  }
+}
+
 /* ========================================= */
 .front-page-container {
   width: 100%;

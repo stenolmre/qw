@@ -2,11 +2,10 @@ import { Fragment, useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
-import Spinner from './../../components/utils/spinner'
+import Loading from './../../components/utils/loading'
 import Images from './../../components/adventure/images'
 import Info from './../../components/adventure/info'
 import Cart from './../../components/adventure/cart'
-
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
@@ -34,7 +33,7 @@ export default function Adventure() {
                 <Info adventure={adventure} id={adventure._id}/>
                 <Cart adventure={adventure}/>
               </Fragment>
-            : <Spinner/>
+            : <Loading/>
         }
       </div>
     </Container>

@@ -686,21 +686,21 @@ input::-webkit-inner-spin-button {
 
 .order-header {
   width: 100%;
+  margin-bottom: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.order table {
-  width: 100%;
+.order-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.order table tr td {
-  padding: 3px 0;
-}
-
-.order table td:nth-of-type(2) {
-  text-align: right;
+.order-line p {
+  margin: 3px 0;
+  font-size: .875rem;
 }
 
 .order input {
@@ -709,7 +709,6 @@ input::-webkit-inner-spin-button {
   padding: 5px;
   border: none;
   outline: none;
-  font-family: monospace;
 }
 
 .order button {

@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 export default function Loading() {
   return <Fragment>
       <div className="loading-container" data-title=".dot-pulse">
-        <img src="northseason_1.png" alt=""/>
+        <img src="../northseason_1.png" alt=""/>
         <div className="dot-pulse"></div>
       </div>
     <style jsx="jsx">
@@ -16,7 +16,7 @@ export default function Loading() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background: rgba(33, 33, 33);
+          background: #212121;
           position: fixed;
           top: 0;
           left: 0;

@@ -70,7 +70,6 @@ export const CARD_ELEMENT_OPTIONS = {
   style: {
     base: {
       color: 'black',
-      fontFamily: 'monospace',
       fontSmoothing: 'antialiased',
       fontSize: '14px',
       '::placeholder': {

@@ -1,17 +1,19 @@
 import React, { Fragment, useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import Cookies from 'js-cookie'
 
 export default function Cart({ adventure }) {
   const [radio, setRadio] = useState(false)
-  const [orderData, setOrderData] = useState({ title: '', adults: 1, youth: 0, children: 0, date: undefined, time: null })
+  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, date: undefined, time: null })
   const { adults, youth, children, date, time, price } = orderData
   const [error, setError] = useState('')
+  const router = useRouter()
   const userLanguage = Cookies.get('lan') === 'eng'
 
   useEffect(() => {
-    setOrderData({ ...orderData, title: adventure.name })
+    setOrderData({ ...orderData, id: adventure._id })
   }, [])
 
   function onChange(e) {
@@ -19,7 +21,29 @@ export default function Cart({ adventure }) {
   }
 
   function onClick() {
-    console.log(orderData);
+    if (time === null) {
+      setError('Please choose the preferred time of the event.')
+
+      setTimeout(() => {
+        setError('')
+      }, 5000)
+
+      return
+    }
+
+    if (date === '' || date === undefined) {
+      setError('Please choose the preferred date of the event.')
+
+      setTimeout(() => {
+        setError('')
+      }, 5000)
+
+      return
+    }
+
+    Cookies.set('order', orderData)
+
+    router.push('/checkout')
   }
 
   const adultFee = (adventure.prices[0].price / 100).toFixed(2)
@@ -129,31 +153,4 @@ export default function Cart({ adventure }) {
   </div>
 }
 
-
-// function onClick() {
 //   const day = new Date(date).getUTCDay()
-//
-//   if (time === null) {
-//     setError('Please choose the preferred time of the event.')
-//
-//     setTimeout(() => {
-//       setError('')
-//     }, 5000)
-//
-//     return
-//   }
-//
-//   if (date === '') {
-//     setError('Please choose the preferred date of the event.')
-//
-//     setTimeout(() => {
-//       setError('')
-//     }, 5000)
-//
-//     return
-//   }
-//
-//   Cookies.set('order', orderData)
-//
-//   router.push('/checkout')
-// }

@@ -21,6 +21,10 @@ const AlbumSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  thumbnails: {
+    type: Array,
+    required: true
+  },
   images: {
     type: Array,
     required: true

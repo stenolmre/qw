@@ -267,6 +267,11 @@
   width: 90%;
   text-align: center;
   text-transform: capitalize;
+  color: black;
+}
+
+.mobile .adventure-name {
+  width: 100%;
 }
 
 .adventurecard {

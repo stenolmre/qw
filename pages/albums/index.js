@@ -30,7 +30,7 @@ export default function Albums() {
               ? albums.map(album => <Link key={album._id} href={`/albums/${album._id}`}><a>
                   <div className="album-preview">
                     {
-                      album.images.map(image => <div key={image} className="album-preview-image" style={{ backgroundImage: `url(${image})`}}/>).slice(0, 4)
+                      album.thumbnails.map(image => <div key={image} className="album-preview-image" style={{ backgroundImage: `url(${image})`}}/>)
                     }
                     <div className="album-overlay">
                       <h2>+{album.images.length - 3}</h2>

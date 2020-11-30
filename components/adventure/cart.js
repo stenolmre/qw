@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 
 export default function Cart({ adventure }) {
   const [radio, setRadio] = useState(false)
-  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, date: undefined, time: null })
+  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, day: '', time: null })
   const { adults, youth, children, date, time, price } = orderData
   const [error, setError] = useState('')
   const router = useRouter()
@@ -21,30 +21,33 @@ export default function Cart({ adventure }) {
   }
 
   function onClick() {
-    if (time === null) {
-      setError('Please choose the preferred time of the event.')
-
-      setTimeout(() => {
-        setError('')
-      }, 5000)
-
-      return
-    }
-
-    if (date === '' || date === undefined) {
-      setError('Please choose the preferred date of the event.')
-
-      setTimeout(() => {
-        setError('')
-      }, 5000)
-
-      return
-    }
-
+    // if (time === null) {
+    //   setError('Please choose the preferred time of the event.')
+    //
+    //   setTimeout(() => {
+    //     setError('')
+    //   }, 5000)
+    //
+    //   return
+    // }
+    //
+    // if (date === '' || date === undefined) {
+    //   setError('Please choose the preferred date of the event.')
+    //
+    //   setTimeout(() => {
+    //     setError('')
+    //   }, 5000)
+    //
+    //   return
+    //
+    // Cookies.set('order', orderData)
+    //
+    // router.push('/checkout')
+    console.log(orderData)
     Cookies.set('order', orderData)
-
-    router.push('/checkout')
   }
+
+  const order = Cookies.get('order') ? JSON.parse(Cookies.get('order')) : null
 
   const adultFee = (adventure.prices[0].price / 100).toFixed(2)
   const youthFee = (adventure.prices[1].price / 100).toFixed(2)
@@ -71,6 +74,7 @@ export default function Cart({ adventure }) {
         </tbody>
       </table>
       <hr/>
+      <p>{order.day}</p>
       <h3>{userLanguage ? 'Book an adventure' : 'Osta Elamusmatk'}</h3>
 
       <div className="cart-input-container">
@@ -123,7 +127,7 @@ export default function Cart({ adventure }) {
 
       <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
         <label className="adventure-cart-label">{userLanguage ? 'Date' : 'Kuupäev'}</label>
-        <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.date} onChange={date => setOrderData({ ...orderData, date: date })} includeDates={adventure.availability.days.map(date => new Date(date))} />
+        <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(date => new Date(date))} />
       </div>
 
       <div className="cart-input-container">

@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from 'react'
-import axios from 'axios'
 import Cookies from 'js-cookie'
 import Head from './../../components/utils/head'
 import { useRouter } from 'next/router'
@@ -11,8 +10,7 @@ import Cart from './../../components/adventure/cart'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
-export default function Adventure({ name }) {
-  console.log(name);
+export default function Adventure() {
   const dispatchAdventure = useAdventureDispatch()
   const adventureState = useAdventureState()
   const { adventure } = adventureState
@@ -43,13 +41,4 @@ export default function Adventure({ name }) {
       </div>
     </Container>
   </Fragment>
-}
-
-async function getInitialProps({ name }) {
-  const router = useRouter()
-  const { id } = router.query
-
-  const { data } = await axios.get(`https://stenolmre.com/api/albums/get/?albumId=${id}`)
-
-  return { props: { name: data.name }}
 }

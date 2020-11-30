@@ -10,7 +10,8 @@ import Cart from './../../components/adventure/cart'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
-export default function Adventure() {
+export default function Adventure({ name }) {
+  console.log(name);
   const dispatchAdventure = useAdventureDispatch()
   const adventureState = useAdventureState()
   const { adventure } = adventureState
@@ -41,4 +42,13 @@ export default function Adventure() {
       </div>
     </Container>
   </Fragment>
+}
+
+async function getInitialProps({ name }) {
+  const router = useRouter()
+  const { id } = router.query
+
+  const { data } = await axios.get(`https://stenolmre.com/api/albums/get/?albumId=${id}`)
+
+  return { props: { name: data.name }}
 }

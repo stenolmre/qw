@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 
 export default function Cart({ adventure }) {
   const [radio, setRadio] = useState(false)
-  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, day: '', time: null })
+  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, day: null, time: null })
   const { adults, youth, children, date, time, price } = orderData
   const [error, setError] = useState('')
   const router = useRouter()

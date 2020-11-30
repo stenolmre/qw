@@ -74,7 +74,6 @@ export default function Cart({ adventure }) {
         </tbody>
       </table>
       <hr/>
-      <p>{order.day}</p>
       <h3>{userLanguage ? 'Book an adventure' : 'Osta Elamusmatk'}</h3>
 
       <div className="cart-input-container">
@@ -127,7 +126,7 @@ export default function Cart({ adventure }) {
 
       <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
         <label className="adventure-cart-label">{userLanguage ? 'Date' : 'Kuupäev'}</label>
-        <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(date => new Date(date))} />
+
       </div>
 
       <div className="cart-input-container">
@@ -156,5 +155,7 @@ export default function Cart({ adventure }) {
     </div>
   </div>
 }
+
+// <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(date => new Date(date))} />
 
 //   const day = new Date(date).getUTCDay()

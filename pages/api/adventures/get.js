@@ -3,7 +3,7 @@ import Adventure from './../../../models/adventure'
 
 connectDB()
 
-export default async function (req, res) {
+export default async function get(req, res) {
   const { adventureId } = req.query
 
   try {

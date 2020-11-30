@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import axios from 'axios'
 import Head from './../../components/utils/head'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
@@ -10,7 +11,7 @@ import Spinner from './../../components/utils/spinner'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbum } from './../../actions/album'
 
-export default function Album() {
+function Album(props) {
   const dispatchAlbum = useAlbumDispatch()
   const albumState = useAlbumState()
   const { album } = albumState
@@ -24,14 +25,8 @@ export default function Album() {
     getAlbum(dispatchAlbum, id)
   }, [dispatchAlbum, id])
 
-  const title = albumState && album && album.name
-  const titleEst = albumState && album && album.nimi
-  const description = albumState && album && album.info
-  const descriptionEst = albumState && album && album.infoEst
-
-
   return <Fragment>
-    <Head title={userLanguage ? `North Season - ${title}` : `North Season - ${titleEst}`} description={userLanguage ? `${description}` : descriptionEst} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/albums/1" />
+    <Head title={userLanguage ? `${props.data.name}` : `${props.data.nimi}`} description={userLanguage ? `${props.data.description}` : props.data.kirjeldus} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/albums/1" />
     <Container>
       <div className="gallery">
         {
@@ -59,3 +54,13 @@ export default function Album() {
     }
   </Fragment>
 }
+
+Album.getInitialProps = async ({ req, query }) => {
+  const { id } = query
+
+  const { data } = await axios.get(`https://stenolmre.com/api/albums/get/?albumId=${id}`)
+
+  return { data }
+}
+
+export default Album

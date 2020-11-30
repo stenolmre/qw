@@ -64,7 +64,7 @@ export default function Cart({ adventure }) {
             <td><strong>{adultFee}</strong> €</td>
           </tr>
           <tr>
-            <td>{userLanguage ? 'Youth' : 'Teismeline'} (12-18)</td>
+            <td>{userLanguage ? 'Youth' : 'Nooruk'} (12-18)</td>
             <td><strong>{youthFee}</strong> €</td>
           </tr>
           <tr>
@@ -93,7 +93,7 @@ export default function Cart({ adventure }) {
       </div>
 
       <div className="cart-input-container">
-        <label className="adventure-cart-label">{userLanguage ? 'Youth' : 'Teismeline'}</label>
+        <label className="adventure-cart-label">{userLanguage ? 'Youth' : 'Nooruk'}</label>
         <div className="cart-inputs">
           <span
             onClick={() => {

@@ -22,7 +22,7 @@ function Order({ success }) {
   const userLanguage = Cookies.get('lan') === 'eng'
 
   const order = Cookies.get('order') ? JSON.parse(Cookies.get('order')) : null
-  const eventDate = order && `${order.date}.${order.date.slice(5, 7)}.${order.date.slice(0, 4)}`
+  const eventDate = order && new Date(order.day).toLocaleDateString()
   const id = order && `${order.id}`
 
   useEffect(() => {

@@ -6,8 +6,8 @@ import Cookies from 'js-cookie'
 
 export default function Cart({ adventure }) {
   const [radio, setRadio] = useState(false)
-  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, day: null, time: null })
-  const { adults, youth, children, date, time, price } = orderData
+  const [orderData, setOrderData] = useState({ id: '', adults: 1, youth: 0, children: 0, day: null, time: null, totalPrice: totalPrice })
+  const { adults, youth, children, day, time, price } = orderData
   const [error, setError] = useState('')
   const router = useRouter()
   const userLanguage = Cookies.get('lan') === 'eng'
@@ -21,33 +21,30 @@ export default function Cart({ adventure }) {
   }
 
   function onClick() {
-    // if (time === null) {
-    //   setError('Please choose the preferred time of the event.')
-    //
-    //   setTimeout(() => {
-    //     setError('')
-    //   }, 5000)
-    //
-    //   return
-    // }
-    //
-    // if (date === '' || date === undefined) {
-    //   setError('Please choose the preferred date of the event.')
-    //
-    //   setTimeout(() => {
-    //     setError('')
-    //   }, 5000)
-    //
-    //   return
-    //
-    // Cookies.set('order', orderData)
-    //
-    // router.push('/checkout')
-    console.log(orderData)
-    Cookies.set('order', orderData)
-  }
+    if (time === null) {
+      setError('Please choose the preferred time of the event.')
 
-  const order = Cookies.get('order') ? JSON.parse(Cookies.get('order')) : null
+      setTimeout(() => {
+        setError('')
+      }, 5000)
+
+      return
+    }
+
+    if (day === '' || day === undefined) {
+      setError('Please choose the preferred date of the event.')
+
+      setTimeout(() => {
+        setError('')
+      }, 5000)
+
+      return
+    }
+
+    Cookies.set('order', orderData)
+
+    router.push('/checkout')
+  }
 
   const adultFee = (adventure.prices[0].price / 100).toFixed(2)
   const youthFee = (adventure.prices[1].price / 100).toFixed(2)
@@ -126,7 +123,7 @@ export default function Cart({ adventure }) {
 
       <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
         <label className="adventure-cart-label">{userLanguage ? 'Date' : 'Kuupäev'}</label>
-
+        <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(x => new Date(x))} />
       </div>
 
       <div className="cart-input-container">
@@ -155,7 +152,3 @@ export default function Cart({ adventure }) {
     </div>
   </div>
 }
-
-// <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(date => new Date(date))} />
-
-//   const day = new Date(date).getUTCDay()

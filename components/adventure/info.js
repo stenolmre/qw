@@ -32,7 +32,7 @@ export default function Info({ adventure, id }) {
         <p><i className="fas fa-flag-checkered"/>{adventure.location.finish}</p>
       </List>
       <hr/>
-      <Social userLanguage={userLanguage} eng="Share" est="Jaga Sõpradega">
+      <Social userLanguage={userLanguage} eng="Share with friends" est="Jaga Sõpradega">
         <div className="adventure-social-share">
           <a href={`http://www.facebook.com/sharer.php?u=https://stenolmre.com/adventures/${adventure._id}=${adventure.name}`} title={adventure.name} rel="nofollow noopener"><i className="fab fa-facebook" style={{ color: '#4267B2' }}/></a>
           <a href={`http://twitter.com/home?status=${adventure.name}+https://stenolmre.com/adventures/${adventure._id}`} title={adventure.name} rel="nofollow noopener"><i className="fab fa-twitter" style={{ color: '#1DA1F2' }}/></a>

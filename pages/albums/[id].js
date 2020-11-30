@@ -26,7 +26,7 @@ function Album(props) {
   }, [dispatchAlbum, id])
 
   return <Fragment>
-    <Head title={userLanguage ? `${props.data.name}` : `${props.data.nimi}`} description={userLanguage ? `${props.data.description}` : props.data.kirjeldus} image={props.data.images[0]} url={userLanguage ? `https://stenolmre.com/albums/${props.data.name}` : `https://stenolmre.com/albums/${props.data.nimi}`} />
+    <Head title={userLanguage ? `${props.data.name}` : `${props.data.nimi}`} description={userLanguage ? `${props.data.description}` : props.data.kirjeldus} image={props.data.socialimage} url={userLanguage ? `https://stenolmre.com/albums/${props.data.name}` : `https://stenolmre.com/albums/${props.data.nimi}`} />
     <Container>
       <div className="gallery">
         {

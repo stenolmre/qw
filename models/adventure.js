@@ -86,6 +86,10 @@ const AdventureSchema = mongoose.Schema({
   images: {
     type: Array,
     required: true
+  },
+  socialimage: {
+    type: String,
+    required: true
   }
 }, {
   timestamps: true

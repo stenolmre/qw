@@ -29,6 +29,10 @@ const AlbumSchema = mongoose.Schema({
     type: Array,
     required: true
   },
+  socialimage: {
+    type: String,
+    required: true
+  },
   ratings: [
     {
       rating: {

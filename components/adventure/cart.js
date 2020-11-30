@@ -12,6 +12,11 @@ export default function Cart({ adventure }) {
   const router = useRouter()
   const userLanguage = Cookies.get('lan') === 'eng'
 
+  const adultFee = (adventure.prices[0].price / 100).toFixed(2)
+  const youthFee = (adventure.prices[1].price / 100).toFixed(2)
+  const childFee = (adventure.prices[2].price / 100).toFixed(2)
+  const totalPrice = ((adultFee * adults) + (youthFee * youth) + (childFee * children)).toFixed(2)
+
   useEffect(() => {
     setOrderData({ ...orderData, id: adventure._id })
   }, [])
@@ -22,7 +27,9 @@ export default function Cart({ adventure }) {
 
   function onClick() {
     if (time === null) {
-      setError('Please choose the preferred time of the event.')
+      userLanguage
+        ? setError('Please choose the preferred time of the event.')
+        : setError('Palun valige elamusmatka toimumise kellaaeg.')
 
       setTimeout(() => {
         setError('')
@@ -32,7 +39,9 @@ export default function Cart({ adventure }) {
     }
 
     if (day === '' || day === undefined) {
-      setError('Please choose the preferred date of the event.')
+      userLanguage
+        ? setError('Please choose the preferred date of the event.')
+        : setError('Palun valige kalendrist kuupäev.')
 
       setTimeout(() => {
         setError('')
@@ -41,15 +50,20 @@ export default function Cart({ adventure }) {
       return
     }
 
-    Cookies.set('order', orderData)
+    if (totalPrice > 1) {
+      Cookies.set('order', orderData)
 
-    router.push('/checkout')
+      router.push('/checkout')
+    } else {
+      userLanguage
+        ? setError('You haven\'t chosed any tickets.')
+        : setError('Palun valige endale pilet enne kassasse siirdumist.')
+
+      setTimeout(() => {
+        setError('')
+      }, 5000)
+    }
   }
-
-  const adultFee = (adventure.prices[0].price / 100).toFixed(2)
-  const youthFee = (adventure.prices[1].price / 100).toFixed(2)
-  const childFee = (adventure.prices[2].price / 100).toFixed(2)
-  const totalPrice = ((adultFee * adults) + (youthFee * youth) + (childFee * children)).toFixed(2)
 
   return <div className="adventure-cart-container" id="cart">
     <div className="adventure-cart">
@@ -58,15 +72,15 @@ export default function Cart({ adventure }) {
         <tbody>
           <tr>
             <td>{userLanguage ? 'Adult' : 'Täiskasvanu'}</td>
-            <td><strong>{adultFee}</strong> €</td>
+            <td><strong>{adultFee} €</strong></td>
           </tr>
           <tr>
             <td>{userLanguage ? 'Youth' : 'Nooruk'} (12-18)</td>
-            <td><strong>{youthFee}</strong> €</td>
+            <td><strong>{youthFee} €</strong></td>
           </tr>
           <tr>
             <td>{userLanguage ? 'Child' : 'Laps'} (6-11)</td>
-            <td><strong>{childFee}</strong> €</td>
+            <td><strong>{childFee} €</strong></td>
           </tr>
         </tbody>
       </table>

@@ -410,6 +410,14 @@
   font-size: .875rem;
 }
 
+.adventure-first-info hr {
+  width: 45px;
+  margin: 20px 0;
+  height: 6px;
+  background: #eee;
+  border: none;
+}
+
 .adventure-parameters {
   display: flex;
   justify-content: space-between;
@@ -434,16 +442,20 @@
 }
 
 .adventure-list i {
+  min-width: 20px;
+  margin-right: 10px;
   font-size: .6rem;
-  margin-right: 5px;
+  display: flex;
+  justify-content: center;
 }
 
-.adventure-location i {
-  margin-right: 20px;
+.adventure-social-share {
+  display: flex;
 }
 
-.adventure-location p:nth-of-type(1) i {
-  margin: 0 22px 0 3px;
+.adventure-social-share a i {
+  margin: 0 7px 25px 0;
+  font-size: 1.3rem;
 }
 
 .adventure-hashtags {

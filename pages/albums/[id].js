@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import Head from 'next/head'
+import Head from './../../components/utils/head'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
@@ -24,10 +24,14 @@ export default function Album() {
     getAlbum(dispatchAlbum, id)
   }, [dispatchAlbum, id])
 
+  const title = albumState && album && album.name
+  const titleEst = albumState && album && album.nimi
+  const description = albumState && album && album.info
+  const descriptionEst = albumState && album && album.infoEst
+
+
   return <Fragment>
-    <Head>
-      <title>qw - album</title>
-    </Head>
+    <Head title={userLanguage ? `North Season - ${title}` : `North Season - ${titleEst}`} description={userLanguage ? `${description}` : descriptionEst} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/albums/1" />
     <Container>
       <div className="gallery">
         {

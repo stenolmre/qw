@@ -36,18 +36,20 @@ export default function Info({ adventure, id }) {
         <div className="adventure-social-share">
           <a href={`http://www.facebook.com/sharer.php?u=https://stenolmre.com/adventures/${adventure._id}=${adventure.name}`} title={adventure.name} rel="nofollow noopener"><i className="fab fa-facebook" style={{ color: '#4267B2' }}/></a>
           <a href={`http://twitter.com/home?status=${adventure.name}+https://stenolmre.com/adventures/${adventure._id}`} title={adventure.name} rel="nofollow noopener"><i className="fab fa-twitter" style={{ color: '#1DA1F2' }}/></a>
-          <a href={`fb-messenger://share/?link=https://stenolmre.com/adventures/${adventure._id}`}><i class="fab fa-facebook-messenger" style={{ color: '#0078FF' }}/></a>
+          <a rel="nofollow noopener" href={`fb-messenger://share/?link=https://stenolmre.com/adventures/${adventure._id}`}><i class="fab fa-facebook-messenger" style={{ color: '#0078FF' }}/></a>
           <a rel="nofollow noopener" href={`https://api.whatsapp.com/send?text=https://stenolmre.com/adventures/${adventure._id}`}><i className="fab fa-whatsapp" style={{ color: '#25D366' }}/></a>
         </div>
-        {
-          adventure.hashtags.map(category => <span key={category} className="adventure-hashtag">#{category}</span>)
-        }
+        <div className="adventure-hashtags">
+          {
+            adventure.hashtags.map(category => <span key={category} className="adventure-hashtag">#{category}</span>)
+          }
+        </div>
       </Social>
       <hr/>
-      <List userLanguage={userLanguage} eng="Discount For Groups" est="Grupisoodustus">
+      <List userLanguage={userLanguage} eng="Discount For Groups" est="Soodustus Gruppidele">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </List>
-      <List userLanguage={userLanguage} eng="Ticket Refund" est="Piletite Tühistamine">
+      <List userLanguage={userLanguage} eng="Booking Refund" est="Broneeringu Tühistamine">
         <p><i className="fas fa-undo-alt"/> Cancelling 7 days before the event, we will refund 100% of the ticket fee.</p>
         <p><i className="fas fa-undo"/> Cancelling less than 7 days before the event, we will refund 50% of the ticket fee.</p>
       </List>

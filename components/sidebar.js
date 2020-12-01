@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import Search from './utils/search'
-import Spinner from './utils/spinner'
+import Loading from './utils/loading'
 import gallery from './arrays/gallery'
 import { useAdventureState, useAdventureDispatch } from './../context/adventure'
 import { getAdventures } from './../actions/adventure'
@@ -69,7 +69,7 @@ export default function Sidebar() {
                     <Link href={`/adventures/${post._id}`}><a><h3><span>0{i + 1}</span> {post.nimi}</h3></a></Link>
                     <p>{(post.prices[0].price / 100).toFixed(2)}€</p>
                   </div>).slice(0, 2)
-                : null
+                : <Loading />
             }
           </div>
         </div>

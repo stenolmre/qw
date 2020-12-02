@@ -449,6 +449,15 @@
   justify-content: center;
 }
 
+.adventure-list h6 {
+  font-size: .875rem;
+  font-weight: 400;
+}
+
+.adventure-list h6 a {
+  text-decoration: underline;
+}
+
 .adventure-social-share {
   display: flex;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import Heading from './../utils/heading'
@@ -32,6 +32,28 @@ export default function Info({ adventure, id }) {
         <p><i className="fas fa-flag-checkered"/>{adventure.location.finish}</p>
       </List>
       <hr/>
+      <List userLanguage={userLanguage} eng="Discount For Groups" est="Soodustus Gruppidele">
+        {
+          userLanguage
+            ? <h6 className="txt-js">We offer special discount for groups bigger than 7 people. Please contact us for more information via email <a href="mailto:northseason@gmail.com">northseason@gmail.com</a> or call us on <a href="tel:37258553625">+372 5855 3625</a>.</h6>
+            : <h6 className="txt-js">Me pakume soodustust gruppidele, kus on rohkem kui 7 inimest. Lisa info saamiseks, palun võta meiega ühendust emaili  <a href="mailto:northseason@gmail.com">northseason@gmail.com</a> teel või helista meile numbrile <a href="tel:37258553625">+372 5855 3625</a>.</h6>
+        }
+      </List>
+      <List userLanguage={userLanguage} eng="Booking Refund" est="Broneeringu Tühistamine">
+        {
+          userLanguage
+            ? <Fragment>
+                <p className="txt-js"><i className="fas fa-undo-alt"/> Cancelling 7 days before the event, we will refund 100% of the ticket fee.</p>
+                <p className="txt-js"><i className="fas fa-undo"/> Cancelling less than 7 days before the event, we will refund 50% of the ticket fee.</p>
+              </Fragment>
+            : <Fragment>
+                <p className="txt-js"><i className="fas fa-undo-alt"/> Me tagastame 100% summast kui broneering tühistatakse 7 või rohkem päevi enne matka algust.</p>
+                <p className="txt-js"><i className="fas fa-undo"/> Me tagastame 50% summast kui broneering tühistatakse vähem kui 7 päeva enne matka algust.</p>
+              </Fragment>
+        }
+
+      </List>
+      <hr/>
       <Social userLanguage={userLanguage} eng="Share with friends" est="Jaga Sõpradega">
         <div className="adventure-social-share">
           <a href={`http://www.facebook.com/sharer.php?u=https://stenolmre.com/adventures/${adventure._id}=${adventure.name}`} title={adventure.name} rel="nofollow noopener"><i className="fab fa-facebook" style={{ color: '#4267B2' }}/></a>
@@ -45,14 +67,6 @@ export default function Info({ adventure, id }) {
           }
         </div>
       </Social>
-      <hr/>
-      <List userLanguage={userLanguage} eng="Discount For Groups" est="Soodustus Gruppidele">
-        <p className="txt-js">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </List>
-      <List userLanguage={userLanguage} eng="Booking Refund" est="Broneeringu Tühistamine">
-        <p className="txt-js"><i className="fas fa-undo-alt"/> Cancelling 7 days before the event, we will refund 100% of the ticket fee.</p>
-        <p className="txt-js"><i className="fas fa-undo"/> Cancelling less than 7 days before the event, we will refund 50% of the ticket fee.</p>
-      </List>
     </div>
   </div>
 }

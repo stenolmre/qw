@@ -136,12 +136,12 @@ export default function Cart({ adventure }) {
       </div>
 
       <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
-        <label className="adventure-cart-label">{userLanguage ? 'Date' : 'Kuupäev'}</label>
+        <label className="adventure-cart-label">{userLanguage ? 'Date' : 'Kuupäev'}*</label>
         <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(x => new Date(x))} />
       </div>
 
       <div className="cart-input-container">
-        <label className="adventure-cart-label">{userLanguage ? 'Time' : 'Kellaaeg'}</label>
+        <label className="adventure-cart-label">{userLanguage ? 'Time' : 'Kellaaeg'}*</label>
         <div className="booking-times">
           {
             adventure.availability.time.map(clock => {
@@ -153,6 +153,8 @@ export default function Cart({ adventure }) {
           }
         </div>
       </div>
+      <br/>
+      <small>* {userLanguage ? 'If your preferred date or time is different than what is offered, then please contact us and we try to find the best solution for you.' : 'Kui meie poolt pakutud kuupäev või kellaaeg ei kattu sinu omaga, siis palun võta ühendust meiega ja leiame parima lahenduse.'}</small>
 
       <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
         <h4>{userLanguage ? 'Total Price' : 'Hind Kokku'}</h4>

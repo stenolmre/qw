@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import emailjs from 'emailjs-com'
 import Heading from './utils/heading'
@@ -48,10 +48,6 @@ export default function Contact() {
 
       setSuccess(true)
       setFormData({ name: '', email: '', textarea: ''})
-
-      setTimeout(() => {
-        setSuccess(false)
-      }, 5000)
     } catch {
       console.log('Error');
     }
@@ -76,7 +72,21 @@ export default function Contact() {
             </form>
           : <div className="contact-form-successicon">
               <SuccessIcon/>
-              <h4>{userLanguage ? 'Thank You!' : 'Suur Aitäh!'}</h4>
+              <Fragment>
+                {
+                  userLanguage
+                    ? <Fragment>
+                        <p>Successfully sent!</p>
+                        <p>Thank you for your submission, we will get back to you as soon as possible.</p>
+                        <p>Best regards,<br/>North Season</p>
+                      </Fragment>
+                    : <Fragment>
+                        <p>Saatmine õnnestus!</p>
+                        <p>Täname Teid kirja eest, võtame Teiega ühendust esimesel võimalusel.</p>
+                        <p>Lugupidamisega,<br/>North Season</p>
+                      </Fragment>
+                }
+              </Fragment>
             </div>
       }
     </div>

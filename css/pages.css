@@ -215,12 +215,6 @@
   margin: 25px 0 0 30px;
 }
 
-.contact-form-successicon h4 {
-  color: #00b100;
-  margin: 0;
-  padding: 0;
-}
-
 @media (max-width: 768px) {
   .contact-container {
     height: auto;

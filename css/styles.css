@@ -19,6 +19,10 @@ button {
   cursor: pointer;
 }
 
+.txt-js {
+  text-align: justify;
+}
+
 /* ========================================= */
 .front-page-container nav {
   background: -webkit-linear-gradient(left, rgba(33, 33, 33, .3) 0%, rgba(33, 33, 33, .2) 100%);

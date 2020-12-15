@@ -6,6 +6,10 @@ body {
   color: white;
 }
 
+.content {
+  color: green;
+}
+
 a {
   text-decoration: none;
   color: inherit;

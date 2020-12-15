@@ -1,7 +1,7 @@
 const categoriesEst = [
   {
     name: 'elamusmatkad',
-    category: 'all',
+    category: '/',
     icon: 'fas fa-grip-horizontal'
   },
   {
@@ -11,7 +11,7 @@ const categoriesEst = [
   },
   {
     name: 'räätsamatkad',
-    category: 'snowshoetrekking',
+    category: 'snowshoeing',
     icon: 'fas fa-hiking'
   }
 ]

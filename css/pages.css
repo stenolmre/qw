@@ -311,7 +311,7 @@
 /* ADVENTURES */
 .adventure-previews {
   width: 100%;
-  min-height: calc(100% - 170px);
+  min-height: calc(100% - 160px);
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 20px;
@@ -321,7 +321,7 @@
 }
 
 .adventure-right-container {
-  padding: 50px 0 0 0;
+  padding: 50px 0 25px 0;
 }
 
 .adventure-right-container h3 {

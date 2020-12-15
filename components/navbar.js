@@ -18,7 +18,7 @@ export default function Navbar() {
         ? <nav>
             <Link href="/"><a className="mobile"><i className="fas fa-home"/></a></Link>
             <Link href="/"><a className="desktop">Home</a></Link>
-            <Link href="/adventures?category=all"><a>Adventures</a></Link>
+            <Link href="/adventures"><a>Adventures</a></Link>
             <Link href="/albums"><a>Gallery</a></Link>
             <Link href="/contact"><a>Contact</a></Link>
             <p onClick={est}><img src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/></p>
@@ -27,7 +27,7 @@ export default function Navbar() {
         : <nav>
             <Link href="/"><a className="mobile"><i className="fas fa-home"/></a></Link>
             <Link href="/"><a className="desktop">Esileht</a></Link>
-            <Link href="/adventures?category=all"><a>Elamusmatkad</a></Link>
+            <Link href="/adventures"><a>Elamusmatkad</a></Link>
             <Link href="/albums"><a>Galerii</a></Link>
             <Link href="/contact"><a>Kontakt</a></Link>
             <p onClick={est}><img src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/></p>

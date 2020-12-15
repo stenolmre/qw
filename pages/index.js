@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
-import Cookies from 'js-cookie'
+import cookies from 'next-cookies'
 import Head from './../components/utils/head'
 import Landing from './../components/landing'
 import Mobile from './../components/mobile/mobile'
 import { landingeng, landingest } from './../components/texts/landing'
 
-export default function Index() {
-  const userLanguage = Cookies.get('lan') === 'est'
+function Index({ language }) {
+  const user_lang = language === 'eng' ? true : false
   return <Fragment>
-    <Head title={userLanguage ? "North Season - Puhka Maailmas Reisides" : "North Season - Travel to Inspire Your Life"} description={landingeng} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com" />
+    <Head title={!user_lang ? "North Season - Puhka Maailmas Reisides" : "North Season - Travel to Inspire Your Life"} description={!user_lang ? landingest : landingeng} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com" />
     <div className="desktop">
       <Landing/>
     </div>
@@ -17,3 +17,10 @@ export default function Index() {
     </div>
   </Fragment>
 }
+
+Index.getInitialProps = async ctx => {
+  const { lan } = cookies(ctx)
+  return { language: lan }
+}
+
+export default Index

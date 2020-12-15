@@ -1,6 +1,6 @@
-import { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Link from 'next/link'
-import Cookies from 'js-cookie'
+import cookies from 'next-cookies'
 import Head from './../../components/utils/head'
 import Container from './../../components/container'
 import Heading from './../../components/utils/heading'
@@ -9,18 +9,18 @@ import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 import { landingeng, landingest } from './../../components/texts/landing'
 
-export default function Albums() {
+function Albums({ language }) {
+  const user_lang = language === 'eng' ? true : false
   const dispatchAlbum = useAlbumDispatch()
   const albumState = useAlbumState()
   const { albums } = albumState
-  const userLanguage = Cookies.get('lan') === 'eng'
 
   useEffect(() => {
     getAlbums(dispatchAlbum)
   }, [dispatchAlbum])
 
   return <Fragment>
-    <Head title={userLanguage ? 'North Season - Gallery' : 'North Season - Galerii'} description={userLanguage ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/albums" />
+    <Head title={user_lang ? 'North Season - Gallery' : 'North Season - Galerii'} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/albums" />
     <Container>
       <div className="gallery">
         <div className="album-previews">
@@ -35,7 +35,7 @@ export default function Albums() {
                       <h2>+{album.images.length - 3}</h2>
                     </div>
                   </div>
-                  <h4>{userLanguage ? album.name : album.nimi}</h4>
+                  <h4>{user_lang ? album.name : album.nimi}</h4>
                 </a></Link>)
               : <Spinner/>
           }
@@ -44,3 +44,10 @@ export default function Albums() {
     </Container>
   </Fragment>
 }
+
+Albums.getInitialProps = async ctx => {
+  const { lan } = cookies(ctx)
+  return { language: lan }
+}
+
+export default Albums

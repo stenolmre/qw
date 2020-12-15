@@ -7,14 +7,18 @@
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.10.0",
     "axios": "^0.20.0",
+    "cookies": "^0.8.0",
     "emailjs-com": "^2.6.3",
     "js-cookie": "^2.2.1",
     "mongoose": "^5.10.9",
     "next": "^10.0.3",
+    "next-cookies": "^2.0.3",
     "nookies": "^2.4.1",
     "react": "^16.13.1",
+    "react-calendar": "^3.2.1",
     "react-datepicker": "^3.3.0",
     "react-dom": "^16.13.1",
+    "react-palette": "^1.0.2",
     "stripe": "^8.119.0"
   },
   "devDependencies": {

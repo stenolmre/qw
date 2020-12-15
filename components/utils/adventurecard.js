@@ -5,7 +5,7 @@ export default function AdventureCard({ name, src, alt, link, topicon, destinati
 
   return <Link href={link}><a>
     <div className="adventurecard">
-      <img src={src} alt={alt}/>
+      <img src={src} alt={name}/>
       <div className="adventure-overlay"/>
       <div className="adventure-icon">
         <i className={`fas ${ topicon }`}/>

@@ -1,7 +1,7 @@
 const categories = [
   {
     name: 'adventures',
-    category: 'all',
+    category: '/',
     icon: 'fas fa-grip-horizontal'
   },
   {
@@ -11,7 +11,7 @@ const categories = [
   },
   {
     name: 'snowshoeing',
-    category: 'snowshoetrekking',
+    category: 'snowshoeing',
     icon: 'fas fa-hiking'
   }
 ]

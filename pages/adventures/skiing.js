@@ -4,23 +4,23 @@ import Head from './../../components/utils/head'
 import Adv_Layout from './../../components/adventures/layout'
 import AdventureCard from './../../components/utils/adventurecard'
 import { useAdventureState } from './../../context/adventure'
-import { adventures_ad_eng, adventures_ad_est } from './../../components/texts/adventures'
+import { skiing_ad_eng, skiing_ad_est } from './../../components/texts/adventures'
 import { landingeng, landingest } from './../../components/texts/landing'
 
-function Adventures({ language }) {
+function Skiing({ language }) {
   const user_lang = language === 'eng' ? true : false
   const { adventures, loading } = useAdventureState()
   const [search, setSearch] = useState('')
 
   const content = () => {
-    return {__html: `${user_lang ? adventures_ad_eng : adventures_ad_est}`};
+    return {__html: `${user_lang ? skiing_ad_eng : skiing_ad_est}`};
   }
 
   return <Fragment>
-    <Head title={user_lang ? "Adventures" : "Elamusmatkad"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures/skiing" />
+    <Head title={user_lang ? "Skiing Adventures" : "Elamusmatkad Suuskadel"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures/skiing" />
       <Adv_Layout userLanguage={user_lang} onChange={e => setSearch(e.target.value)}>
         <div className="adventure-right-container">
-          <h3>{user_lang ? 'Adventures' : 'Elamusmatkad'}</h3>
+          <h3>{user_lang ? 'Skiing' : 'Suusatamine'}</h3>
           <div className="adventure-intro" dangerouslySetInnerHTML={content()}/>
           <div className="adventure-previews">
             {
@@ -40,9 +40,9 @@ function Adventures({ language }) {
   </Fragment>
 }
 
-Adventures.getInitialProps = async ctx => {
+Skiing.getInitialProps = async ctx => {
   const { lan } = cookies(ctx)
   return { language: lan }
 }
 
-export default Adventures
+export default Skiing

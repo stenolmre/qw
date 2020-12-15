@@ -20,10 +20,5 @@ export default function MobileLanding() {
 
   return <Fragment>
     <Landing />
-    <TopPicks userLanguage={userLanguage} adventureState={adventureState}/>
-    <Categories userLanguage={userLanguage}/>
-    <Gallery userLanguage={userLanguage}/>
-    <Contact/>
-    <Footer/>
   </Fragment>
 }

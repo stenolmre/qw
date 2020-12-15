@@ -1,37 +1,35 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, Fragment } from 'react'
 import Link from 'next/link'
-import Heading from './../utils/heading'
-import gallery from './../arrays/gallery'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 
 export default function Gallery({ userLanguage }) {
   const dispatchAlbum = useAlbumDispatch()
-  const albumState = useAlbumState()
-  const { albums } = albumState
+  const { albums } = useAlbumState()
 
   useEffect(() => {
     getAlbums(dispatchAlbum)
   }, [dispatchAlbum])
 
-  return <div className="mobile-section">
-    <Heading name={userLanguage ? 'Gallery' : 'Galerii'} href="/albums" link={<i className="fas fa-grip-horizontal"/>} span={userLanguage ? 'albums from adventures' : 'albumid elamusmatkadest'}/>
-    <div className="image-slider">
-      {
-        albumState && albums
-          ? albums.map(album => <Link key={album._id} href={`/albums/${album._id}`}><a>
-              <div className="album-preview">
-                {
-                  album.images.map(image => <div key={image} className="album-preview-image" style={{ backgroundImage: `url(${image})`}}/>).slice(0, 4)
-                }
-                <div className="album-overlay">
-                  <h2>+{album.images.length - 3}</h2>
-                </div>
-              </div>
-              <h4>{userLanguage ? album.name : album.nimi}</h4>
-            </a></Link>)
-          : <Spinner/>
-      }
+  return <div className="mobile-albums-container">
+    <div className="mobile-albums">
+      <div style={{ marginLeft: '6%' }} className="mobile-landing-heading">
+        <h1>{ userLanguage ? 'Gallery' : 'Galerii' }</h1>
+        <i className="fas fa-ellipsis-h"/>
+      </div>
+      <div className="mobile-albums-flex">
+        {
+          albums && albums.map(e => <div key={e._id} className="mobile-album-container">
+            <div className="mobile-album">
+              {
+                e.images.map(img => <img src={img} alt={img}/>).slice(0, 4)
+              }
+            </div>
+            <h2>{userLanguage ? e.name : e.nimi}</h2>
+          </div>)
+        }
+        <p style={{ color: 'white' }}>&</p>
+      </div>
     </div>
   </div>
 }

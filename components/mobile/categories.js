@@ -1,26 +1,20 @@
 import React from 'react'
-import { useRouter } from 'next/router'
-import Heading from './../utils/heading'
 import categories from './../arrays/categories'
-import categoriesEst from './../arrays/categoriesEst'
 
 export default function Categories({ userLanguage }) {
-  const router = useRouter()
-
-  return <div className="mobile-section">
-    <Heading name={userLanguage ? 'all adventures' : 'kõik elamusmatkad'} span={userLanguage ? 'by category' : 'kategooriad'} href="/adventures" link={<i className="fas fa-grip-horizontal"/>}/>
-    <div className="category-card-container">
+  return <div className="mobile-adventures-categories-container">
+    <div style={{ marginLeft: '4%' }} className="mobile-landing-heading">
+      <h1>{ userLanguage ? 'Categories' : 'Kategooriad' }</h1>
+      <i className="fas fa-ellipsis-h"/>
+    </div>
+    <div className="mobile-adventures-categories">
       {
-        userLanguage
-          ? categories.filter(x => x.category !== 'all').map(category => <div className="category-card" key={category.category}   onClick={() => router.push(`/adventures?category=${category.category}`)}>
-              <i className={category.icon}/>
-              <p>{category.name}</p>
-            </div>)
-          : categoriesEst.filter(x => x.category !== 'all').map(category => <div className="category-card" key={category.category}   onClick={() => router.push(`/adventures?category=${category.category}`)}>
-              <i className={category.icon}/>
-              <p>{category.name}</p>
-            </div>)
+        categories.map(e => <div key={e.name}>
+          <i className={e.icon}/>
+          <h3>{e.name}</h3>
+        </div>).slice(1)
       }
+      <p style={{ color: 'rgba(30, 30, 34)' }}>&</p>
     </div>
   </div>
 }

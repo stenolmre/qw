@@ -1,3 +1,162 @@
+.mobile-landing {
+  width: 100%;
+  height: 85vh;
+  margin: -25px 0 25px 0;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 0 21px 4px rgba(33, 33, 33, .8);
+  background-image: url('https://images.unsplash.com/photo-1576490266057-119a4b34cd78?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=514&q=80');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 3;
+  overflow: none;
+}
+
+/* ========================================= */
+.mobile-adventures-container {
+  width: 100%;
+  height: 400px;
+  background: rgba(30, 30, 34);
+}
+
+.mobile-adventures {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 35px 0;
+  background: white;
+  color: rgba(96, 49, 22);
+}
+
+/* ========================================= */
+.mobile-adventures-categories-container {
+  width: 98%;
+  margin-left: 2%;
+  padding: 25px 0 50px 0;
+  border-radius: 35px 0 0 35px;
+  box-shadow: 0 0 21px 2px rgba(30, 30, 34, .4);
+  background: rgba(30, 30, 34);
+  color: rgba(155, 94, 58);
+  z-index: 1;
+  position: relative;
+}
+
+.mobile-adventures-categories {
+  padding-left: 7px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.mobile-adventures-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-adventures-categories div {
+  min-width: 150px;
+  margin: 10px;
+  padding: 60px 10px 40px 10px;
+  border-radius: 11px;
+  box-shadow: 0 0 11px 1px rgba(155, 94, 58, .2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-adventures-categories div i {
+  font-size: 2rem;
+}
+
+/* ========================================= */
+.mobile-albums-container {
+  width: 100%;
+  background: rgba(30, 30, 34);
+  z-index: -1;
+}
+
+.mobile-albums {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+  border-radius: 0 35px 35px 0;
+  background: white;
+  color: rgba(96, 49, 22);
+}
+
+.mobile-albums-flex {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: scroll;
+}
+
+.mobile-albums-flex::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-album-container {
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: .925rem;
+}
+
+.mobile-album {
+  width: 300px;
+  height: 300px;
+  padding: 6px;
+  display: grid;
+  grid-template-columns: 147px 147px;
+  grid-template-rows: 147px 147px;
+  grid-gap: 6px;
+  border-radius: 25px;
+  background: #eee;
+  box-shadow: 0 0 21px 1px rgba(30, 30, 34, .4);
+}
+
+.mobile-album img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px;
+}
+
+/* ========================================= */
+.mobile-contact-container {
+  width: 100%;
+  height: 400px;
+  background: white;
+}
+
+.mobile-contact {
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 34);
+  color: rgba(155, 94, 58);
+}
+
+/* ========================================= */
+.mobile-landing-heading {
+  height: 50px;
+  width: 90%;
+  padding: 15px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-landing-heading h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.mobile-landing-heading i {
+  font-size: 1.5rem;
+}
+
+/* ========================================= */
 .mobile-section {
   padding: 25px 0 0 0;
   margin: 0;

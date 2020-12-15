@@ -13,7 +13,7 @@ function Index({ language }) {
       <Landing/>
     </div>
     <div className="mobile">
-      <Mobile/>
+      <Mobile userLanguage={user_lang}/>
     </div>
   </Fragment>
 }

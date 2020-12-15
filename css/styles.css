@@ -65,6 +65,12 @@ nav img:nth-of-type(1) {
 }
 
 @media (max-width: 768px) {
+  nav {
+    height: 75px;
+    padding-bottom: 20px;
+    background: black;
+  }
+
   nav a {
     margin: 0 7px;
   }

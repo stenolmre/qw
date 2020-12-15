@@ -1,35 +1,32 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-import Cookies from 'js-cookie'
-import Sidebar from './../sidebar'
 import Navbar from './../navbar'
-import Footer from './../footer'
+import Categories from './categories'
+import Gallery from './gallery'
 import { landingest, landingeng } from './../texts/landing'
+import categories from './../arrays/categories'
+import categoriesEst from './../arrays/categoriesEst'
 
-export default function Demo() {
-  const language = Cookies.get('lan') === 'eng'
+export default function MobileLanding({ userLanguage }) {
   return <Fragment>
-    <img className="front-cover" src="https://etreeningud.ee/media/images/stenolmre/FP_IMG_2946.jpg" alt="Levi, Lapland" />
-    <div className="front-cover-overlay"/>
-    <div className="front-page-container">
-      <div>
-        <Navbar />
-        <div className="front-page">
-          {
-            language
-              ? <Fragment>
-                  <h1>Travel to inspire your life</h1>
-                  <p>{landingeng}</p>
-                </Fragment>
-              : <Fragment>
-                  <h1>Puhka Maailmas Reisides</h1>
-                  <p>{landingest}</p>
-                </Fragment>
-          }
-          <div>
-            <hr/>
-            <Link href="/adventures?category=all"><a>{language ? 'Show all experiences' : 'Vaata kõiki elamusmatku'}</a></Link>
-          </div>
+    <div className="mobile-landing">
+
+    </div>
+    <div className="mobile-adventures-container">
+      <div className="mobile-adventures">
+        <div style={{ marginLeft: '6%' }} className="mobile-landing-heading">
+          <h1>{ userLanguage ? 'Adventures' : 'Elamusmatkad' }</h1>
+          <i className="fas fa-ellipsis-h"/>
+        </div>
+      </div>
+    </div>
+    <Categories/>
+    <Gallery />
+    <div className="mobile-contact-container">
+      <div className="mobile-contact">
+        <div style={{ marginLeft: '6%' }} className="mobile-landing-heading">
+          <h1>{ userLanguage ? 'Contact' : 'Kontakt' }</h1>
+          <i className="fas fa-ellipsis-h"/>
         </div>
       </div>
     </div>

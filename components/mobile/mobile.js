@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import Landing from './landing.js'
-import TopPicks from './toppicks'
 import Categories from './categories'
 import Gallery from './gallery'
 import Contact from './../contact'

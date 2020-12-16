@@ -4,7 +4,7 @@ import categories from './../arrays/categories'
 export default function Categories({ userLanguage }) {
   return <div className="mobile-adventures-categories-container">
     <div style={{ marginLeft: '4%' }} className="mobile-landing-heading">
-      <h1>{ userLanguage ? 'Categories' : 'Kategooriad' }</h1>
+      <h1>{ userLanguage ? 'Activities' : 'Tegevused' }</h1>
       <i className="fas fa-ellipsis-h"/>
     </div>
     <div className="mobile-adventures-categories">

@@ -22,7 +22,7 @@ export default function Gallery({ userLanguage }) {
           albums && albums.map(e => <div key={e._id} className="mobile-album-container">
             <div className="mobile-album">
               {
-                e.images.map(img => <img src={img} alt={img}/>).slice(0, 4)
+                e.images.map(img => <img key={img} src={img} alt={img}/>).slice(0, 4)
               }
             </div>
             <h2>{userLanguage ? e.name : e.nimi}</h2>

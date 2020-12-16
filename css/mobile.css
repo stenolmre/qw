@@ -10,29 +10,53 @@
   background-size: cover;
   z-index: 3;
   overflow: none;
+  position: relative;
+}
+
+.mobile-landing h1 {
+  width: 90%;
+  position: absolute;
+  bottom: 50px;
+  left: 5%;
+  font-size: 3.5rem;
+  /* background: linear-gradient(to right, rgba(33, 33, 33, 0) 0%, rgba(33, 33, 33, .4) 50%, rgba(33, 33, 33, 0) 100%), linear-gradient(to bottom, rgba(33, 33, 33, 0) 0%, rgba(33, 33, 33, .4) 50%, rgba(33, 33, 33, 0) 100%); */
+  text-shadow: 1px 1px 2px rgba(33, 33, 33, .4), 0 0 25px rgba(33, 33, 33, .4), 0 0 5px rgba(33, 33, 33, .4);
 }
 
 /* ========================================= */
 .mobile-adventures-container {
   width: 100%;
-  height: 400px;
   background: rgba(30, 30, 34);
 }
 
 .mobile-adventures {
   width: 100%;
   height: 100%;
+  padding: 25px 0 25px 0;
   border-radius: 0 0 35px 0;
   background: white;
   color: rgba(96, 49, 22);
 }
 
+.mobile-adventures-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobile-adventures-flex::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-adventures-flex .adventurecard {
+  margin-top: 20px;
+}
+
 /* ========================================= */
 .mobile-adventures-categories-container {
-  width: 98%;
-  margin-left: 2%;
+  width: 100%;
   padding: 25px 0 50px 0;
-  border-radius: 35px 0 0 35px;
+  border-radius: 35px 0 35px 0;
   box-shadow: 0 0 21px 2px rgba(30, 30, 34, .4);
   background: rgba(30, 30, 34);
   color: rgba(155, 94, 58);
@@ -78,7 +102,7 @@
   width: 100%;
   height: 100%;
   padding: 50px 0;
-  border-radius: 0 35px 35px 0;
+  border-radius: 35px 0 35px 0;
   background: white;
   color: rgba(96, 49, 22);
 }
@@ -132,6 +156,7 @@
 .mobile-contact {
   width: 100%;
   height: 100%;
+  border-radius: 35px 0 0 0;
   background: rgba(30, 30, 34);
   color: rgba(155, 94, 58);
 }

@@ -1,47 +1,70 @@
 .mobile-landing {
   width: 100%;
-  height: 85vh;
-  margin: -25px 0 25px 0;
-  border-radius: 0 0 25px 25px;
-  box-shadow: 0 0 21px 4px rgba(33, 33, 33, .8);
-  background-image: url('https://images.unsplash.com/photo-1576490266057-119a4b34cd78?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=514&q=80');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 3;
+  height: 50vh;
   overflow: none;
   position: relative;
+  background: rgb(90, 95, 223);
+  z-index: -1;
 }
 
 .mobile-landing h1 {
-  width: 90%;
+  width: 75%;
+  margin: 0;
+  padding: 0;
   position: absolute;
-  bottom: 50px;
+  top: 70px;
   left: 5%;
-  font-size: 3.5rem;
-  /* background: linear-gradient(to right, rgba(33, 33, 33, 0) 0%, rgba(33, 33, 33, .4) 50%, rgba(33, 33, 33, 0) 100%), linear-gradient(to bottom, rgba(33, 33, 33, 0) 0%, rgba(33, 33, 33, .4) 50%, rgba(33, 33, 33, 0) 100%); */
-  text-shadow: 1px 1px 2px rgba(33, 33, 33, .4), 0 0 25px rgba(33, 33, 33, .4), 0 0 5px rgba(33, 33, 33, .4);
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.menu-icon {
+  width: 35px;
+  padding: 20px;
+  position: absolute;
+  top: 68px;
+  right: 5%;
+  border-radius: 4px;
+  background: rgb(118, 102, 246, .7);
+}
+
+.menu-icon-top {
+  width: 75%;
+  height: 4px;
+  margin: 0 0 5px 25%;
+  border-radius: 3px;
+  background: white;
+}
+
+.menu-icon-bottom {
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  background: white;
 }
 
 /* ========================================= */
 .mobile-adventures-container {
   width: 100%;
-  background: rgba(30, 30, 34);
+
+  margin-top: -2px;
+  position: absolute;
+  top: 40vh;
+  left: 0;
 }
 
 .mobile-adventures {
-  width: 100%;
-  height: 100%;
-  padding: 25px 0 25px 0;
-  border-radius: 0 0 35px 0;
-  background: white;
+  width: calc(100% - 5%);
+  height: 55vh;
+  padding: 0 0 25px 5%;
+  border-radius: 0 0 0 0;
   color: rgba(96, 49, 22);
 }
 
 .mobile-adventures-flex {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  overflow-x: scroll;
 }
 
 .mobile-adventures-flex::-webkit-scrollbar {
@@ -49,7 +72,22 @@
 }
 
 .mobile-adventures-flex .adventurecard {
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+.mobile-adventure {
+  min-width: 80%;
+  height: 425px;
+  margin: 0 20px 0 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.mobile-adventure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* ========================================= */

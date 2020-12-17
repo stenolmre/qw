@@ -14,24 +14,16 @@ export default function MobileAdventures({ userLanguage }) {
 
   return <div className="mobile-adventures-container">
     <div className="mobile-adventures">
-      <div style={{ marginLeft: '6%' }} className="mobile-landing-heading">
-        <h1>{ userLanguage ? 'Adventures' : 'Elamusmatkad' }</h1>
-        <i className="fas fa-ellipsis-h"/>
-      </div>
       <div className="mobile-adventures-flex">
         {
-          adventures && adventures.map(e => <AdventureCard
-            key={e._id}
-            link={`/adventures/${e._id}`}
-            name={userLanguage ? e.name : e.nimi}
-            src={e.images.map(image => image).slice(0, 1)}
-            topicon="fa-star"
-            destination={e.location.start}
-            price={(e.prices[0].price / 100).toFixed(2)}
-          />)
+          adventures && adventures.map(e => <div className="mobile-adventure">
+            <img src={e.images[0]} alt={e.name}/>
+          </div>).slice(1)
         }
-        <p style={{ color: 'white' }}>&</p>
+        <p style={{ opacity: '0' }}>&</p>
       </div>
     </div>
   </div>
 }
+
+// <img src={e.images[0]} alt={e.name}/>

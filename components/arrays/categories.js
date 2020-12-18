@@ -13,6 +13,11 @@ const categories = [
     name: 'snowshoeing',
     category: 'snowshoeing',
     icon: 'fas fa-hiking'
+  },
+  {
+    name: 'bike touring',
+    category: 'biketouring',
+    icon: 'fas fa-biking'
   }
 ]
 

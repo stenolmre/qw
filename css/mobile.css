@@ -3,7 +3,6 @@ rgba(113, 90, 255, 1);
 rgba(88, 135, 255, 1);
 rgba(85, 193, 255, 1);
 rgba(16, 46, 74, 1); */
-
 .mobile-container {
   width: 100%;
   min-height: 100vh;
@@ -19,6 +18,14 @@ rgba(16, 46, 74, 1); */
   transform: rotate(62deg);
   text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.1);
   color: #e5eeff;
+}
+
+.mobile-landing-heading {
+  margin: 0 0 -5px 35px;
+  font-size: 2.5rem;
+  color: #e5eeff;
+  text-shadow: 10px 6px 53px rgba(81, 81, 81, 1), 20px -20px 29px rgba(255, 255, 255, 1);
+  outline: none;
 }
 
 /* ========================================= */
@@ -92,22 +99,18 @@ rgba(16, 46, 74, 1); */
 .mobile-adventures-container {
   width: 100%;
   padding: 50px 0;
-  border-radius: 25px 25px 0 0 ;
-
-background: #e5eeff;
-box-shadow: inset 8px 8px 16px #a5abb8,
-            inset -8px -8px 16px #ffffff;
 }
 
 .mobile-adventures {
-  width: calc(100% - 5%);
+  width: 100%;
   height: 55vh;
-  padding: 0 0 25px 5%;
+  padding: 0 0 100px 0;
   border-radius: 0 0 0 0;
   color: rgba(96, 49, 22);
 }
 
 .mobile-adventures-flex {
+  padding: 25px 0 25px 10px;
   display: flex;
   align-items: flex-start;
   overflow-x: scroll;
@@ -117,39 +120,69 @@ box-shadow: inset 8px 8px 16px #a5abb8,
   display: none;
 }
 
-.mobile-adventures-flex .adventurecard {
-  margin-top: 30px;
-}
-
 .mobile-adventure {
+  width: 80%;
   min-width: 80%;
   height: 425px;
-  margin: 0 20px 0 0;
+  margin: 0 10px;
   border-radius: 24px;
-  overflow: hidden;
+  background: linear-gradient(315deg, #ced6e6, #f5ffff);
+  box-shadow: -8px -8px 23px #dae2f2, 8px 8px 23px #f0faff;
+  position: relative;
 }
 
 .mobile-adventure img {
-  width: 100%;
-  height: 100%;
+  width: 96%;
+  height: 97%;
+  margin: 2% 2% 1.5% 2%;
+  border-radius: 18px;
   object-fit: cover;
   object-position: center;
+}
+
+.mobile-adventure-glass {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  border-radius: 11px 11px 14px 14px;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-adventure-glass h1 {
+  margin: 15px 0;
+  padding: 0;
+  font-size: 1.5rem;
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, .4), 6px -6px 15px rgba(255, 255, 255, 1);
+}
+
+.mobile-adventure-price {
+  position: absolute;
+  top: 24px;
+  left: 2%;
+  border-radius: 0 4px 4px 0;
+  background: rgba(166, 130, 255, .7);
+  color: white;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.mobile-adventure-price p {
+  margin: 0;
+  padding: 6px 15px;
 }
 
 /* ========================================= */
 .mobile-adventures-categories-container {
   width: 100%;
-  padding: 25px 0 50px 0;
-  border-radius: 35px 0 35px 0;
-  box-shadow: 0 0 21px 2px rgba(30, 30, 34, .4);
-  background: rgba(30, 30, 34);
-  color: rgba(155, 94, 58);
-  z-index: 1;
-  position: relative;
+  padding: 50px 0;
 }
 
 .mobile-adventures-categories {
-  padding-left: 7px;
+  padding: 25px 0 25px 10px;
   display: flex;
   align-items: center;
   overflow-x: scroll;
@@ -159,39 +192,49 @@ box-shadow: inset 8px 8px 16px #a5abb8,
   display: none;
 }
 
-.mobile-adventures-categories div {
+.mobile-adventures-category {
   min-width: 150px;
   margin: 10px;
-  padding: 60px 10px 40px 10px;
+  padding: 50px 10px 25px 10px;
   border-radius: 11px;
-  box-shadow: 0 0 11px 1px rgba(155, 94, 58, .2);
+  background: #e5eeff;
+  box-shadow: 5px 5px 14px #b9c1cf, -5px -5px 14px #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.mobile-adventures-categories div i {
+.mobile-adventures-category-icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(166, 130, 255, .4), #f5ffff);
+  box-shadow: 9px 9px 20px #a0a7b3, -9px -9px 20px #ffffff;
+  display: grid;
+  place-items: center;
   font-size: 2rem;
+  color: rgba(113, 90, 255, 1);
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+}
+
+.mobile-adventures-category h3 {
+  color: rgba(113, 90, 255, 1);
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
 }
 
 /* ========================================= */
 .mobile-albums-container {
   width: 100%;
-  background: rgba(30, 30, 34);
-  z-index: -1;
+  padding: 25px 0 50px 0;
 }
 
 .mobile-albums {
   width: 100%;
-  height: 100%;
-  padding: 50px 0;
-  border-radius: 35px 0 35px 0;
-  background: white;
-  color: rgba(96, 49, 22);
 }
 
 .mobile-albums-flex {
+  padding: 25px 0;
   display: flex;
   align-items: flex-start;
   overflow-x: scroll;
@@ -202,11 +245,13 @@ box-shadow: inset 8px 8px 16px #a5abb8,
 }
 
 .mobile-album-container {
-  margin: 20px 10px;
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: .925rem;
+  color: rgba(113, 90, 255, 1);
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
 }
 
 .mobile-album {
@@ -218,8 +263,9 @@ box-shadow: inset 8px 8px 16px #a5abb8,
   grid-template-rows: 147px 147px;
   grid-gap: 6px;
   border-radius: 25px;
-  background: #eee;
-  box-shadow: 0 0 21px 1px rgba(30, 30, 34, .4);
+  background: linear-gradient(145deg, #f5ffff, #ced6e6);
+  box-shadow: 7px 7px 18px #acb3bf, -7px -7px 18px #ffffff;
+  position: relative;
 }
 
 .mobile-album img {
@@ -228,6 +274,21 @@ box-shadow: inset 8px 8px 16px #a5abb8,
   object-fit: cover;
   object-position: center;
   border-radius: 25px;
+}
+
+.mobile-album-blur {
+  width: 147px;
+  height: 147px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  color: rgba(250, 250, 250, .6);
+  font-size: 4rem;
+  font-weight: 600;
 }
 
 /* ========================================= */

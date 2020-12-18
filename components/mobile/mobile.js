@@ -21,5 +21,7 @@ export default function MobileLanding() {
   return <div className="mobile-container">
     <Landing />
     <Adventures/>
+    <Categories />
+    <Gallery />
   </div>
 }

@@ -13,10 +13,7 @@ export default function Gallery({ userLanguage }) {
 
   return <div className="mobile-albums-container">
     <div className="mobile-albums">
-      <div style={{ marginLeft: '6%' }} className="mobile-landing-heading">
-        <h1>{ userLanguage ? 'Gallery' : 'Galerii' }</h1>
-        <i className="fas fa-ellipsis-h"/>
-      </div>
+      <h2 className="mobile-landing-heading">GALLERY</h2>
       <div className="mobile-albums-flex">
         {
           albums && albums.map(e => <div key={e._id} className="mobile-album-container">
@@ -24,6 +21,9 @@ export default function Gallery({ userLanguage }) {
               {
                 e.images.map(img => <img key={img} src={img} alt={img}/>).slice(0, 4)
               }
+              <div className="mobile-album-blur">
+                +{e.images.length - 3}
+              </div>
             </div>
             <h2>{userLanguage ? e.name : e.nimi}</h2>
           </div>)

@@ -1,39 +1,19 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React from 'react'
 import categories from './../arrays/categories'
 
 export default function Categories({ userLanguage }) {
-  const [state, setState] = useState()
-  const e = useRef()
-
-  useEffect(() => {
-    if (e) {
-      setState(e.current.getBoundingClientRect().top)
-    }
-  }, [])
-
-  console.log(state);
-
-  return <div ref={e} className="mobile-adventures-categories-container">
-    <div style={{ marginLeft: '4%' }} className="mobile-landing-heading">
-      <h1>{ userLanguage ? 'Activities' : 'Tegevused' }</h1>
-      <i className="fas fa-ellipsis-h"/>
-    </div>
+  return <div className="mobile-adventures-categories-container">
+    <h2 className="mobile-landing-heading">ACTIVITIES</h2>
     <div className="mobile-adventures-categories">
       {
-        categories.map(e => <div key={e.name}>
-          <i className={e.icon}/>
+        categories.map(e => <div className="mobile-adventures-category" key={e.name}>
+          <div className="mobile-adventures-category-icon">
+            <i className={e.icon}/>
+          </div>
           <h3>{e.name}</h3>
         </div>).slice(1)
       }
-      <p style={{ color: 'rgba(30, 30, 34)' }}>&</p>
+      <p style={{ opacity: '0' }}>&</p>
     </div>
-
-
-    
-    <style jsx>
-      {`
-
-      `}
-    </style>
   </div>
 }

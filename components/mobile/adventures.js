@@ -16,7 +16,7 @@ export default function MobileAdventures({ userLanguage }) {
     <div className="mobile-adventures">
       <div className="mobile-adventures-flex">
         {
-          adventures && adventures.map(e => <div className="mobile-adventure">
+          adventures && adventures.map(e => <div key={e._id} className="mobile-adventure">
             <img src={e.images[0]} alt={e.name}/>
           </div>).slice(1)
         }

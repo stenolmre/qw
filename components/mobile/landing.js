@@ -10,7 +10,7 @@ import categories from './../arrays/categories'
 import categoriesEst from './../arrays/categoriesEst'
 
 export default function MobileLanding({ userLanguage }) {
-  return <div className="mobile-container">
+  return <div className="mobile-landing">
     <div className="mobile-watermark">LAPLAND</div>
     <div className="mobile-landing-header">
       <p><i className="fas fa-route"/>&nbsp; NorthSeason</p>

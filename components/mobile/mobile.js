@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import Landing from './landing.js'
+import Adventures from './adventures'
 import Categories from './categories'
 import Gallery from './gallery'
 import Contact from './../contact'
@@ -17,7 +18,8 @@ export default function MobileLanding() {
     getAdventures(dispatchAdventure)
   }, [dispatchAdventure])
 
-  return <Fragment>
+  return <div className="mobile-container">
     <Landing />
-  </Fragment>
+    <Adventures/>
+  </div>
 }

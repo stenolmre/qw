@@ -98,7 +98,7 @@ rgba(16, 46, 74, 1); */
 /* ========================================= */
 .mobile-adventures-container {
   width: 100%;
-  padding: 50px 0;
+  padding: 50px 0 25px 0;
 }
 
 .mobile-adventures {
@@ -178,7 +178,7 @@ rgba(16, 46, 74, 1); */
 /* ========================================= */
 .mobile-adventures-categories-container {
   width: 100%;
-  padding: 50px 0;
+  padding: 75px 0 25px 0;
 }
 
 .mobile-adventures-categories {
@@ -226,7 +226,7 @@ rgba(16, 46, 74, 1); */
 /* ========================================= */
 .mobile-albums-container {
   width: 100%;
-  padding: 25px 0 50px 0;
+  padding: 50px 0 25px 0;
 }
 
 .mobile-albums {
@@ -293,21 +293,56 @@ rgba(16, 46, 74, 1); */
 
 /* ========================================= */
 .mobile-contact-container {
-  width: 100%;
-  height: 400px;
-  background: white;
+  width: calc(100% - 40px);
+  padding: 50px 20px 25px 20px;
 }
 
 .mobile-contact {
   width: 100%;
   height: 100%;
-  border-radius: 35px 0 0 0;
-  background: rgba(30, 30, 34);
-  color: rgba(155, 94, 58);
+}
+
+.mobile-contact-detail {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-contact-detail p {
+  color: rgba(166, 130, 255, .7);
+  font-size: 1rem;
+  font-weight: 700;
+  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.8);
+}
+
+.mobile-contact-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #f5ffff, #ced6e6);
+  box-shadow: 5px 5px 31px #9ea4b0, -5px -5px 31px #ffffff;
+  font-size: 1.5rem;
+  color: rgba(113, 90, 255, 1);
 }
 
 /* ========================================= */
-.mobile-landing-heading {
+.mobile-footer {
+  width: 100%;
+  height: 100px;
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  color: rgba(166, 130, 255, .4);
+  font-size: .7rem;
+  font-weight: 700;
+  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================= */
+/* .mobile-landing-heading {
   height: 50px;
   width: 90%;
   padding: 15px 0 0 0;
@@ -326,14 +361,11 @@ rgba(16, 46, 74, 1); */
   font-size: 1.5rem;
 }
 
-/* ========================================= */
 .mobile-section {
   padding: 25px 0 0 0;
   margin: 0;
 }
 
-/* ========================================= */
-/* SLIDER */
 .slider {
   display: grid;
   grid-template-columns: 90% 90% 90% 90% 90%;
@@ -348,8 +380,6 @@ rgba(16, 46, 74, 1); */
   display: none;
 }
 
-/* ========================================= */
-/* CATEGORY CARD */
 .category-card-container {
   margin-bottom: 20px;
   padding: 20px 10px;
@@ -400,8 +430,6 @@ rgba(16, 46, 74, 1); */
   color: #ff4500;
 }
 
-/* ========================================= */
-/* MOBILE GALLERY */
 .image-slider {
   width: 100%;
   margin: 0 0 10px 0;
@@ -437,7 +465,7 @@ rgba(16, 46, 74, 1); */
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
+} */
 
 /* SCSS Gradient */
 /* $gradient-top: linear-gradient(0deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);

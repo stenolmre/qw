@@ -342,130 +342,212 @@ rgba(16, 46, 74, 1); */
 }
 
 /* ========================================= */
-/* .mobile-landing-heading {
-  height: 50px;
+.mobile-adventure-page {
+  width: 100%;
+  height: 300px;
+  padding: 0 0 100px 0;
+  position: relative;
+}
+
+.mobile-adventure-page h1 {
   width: 90%;
-  padding: 15px 0 0 0;
+  margin: 50px 0 0 5%;
+  padding-bottom: 25px;
+  color: rgba(113, 90, 255);
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-adventure-page-description {
+  width: calc(100% - 40px);
+  margin: 20px;
+  color: #1c1c1c;
+  text-align: justify;
+  font-size: .875rem;
+}
+
+/* ========================================= */
+.mobile-adventure-page-images {
+  position: relative;
+}
+
+.mobile-adventure-page-image {
+  width: 60%;
+  height: 275px;
+  margin: 0 20%;
+  background: linear-gradient(145deg, #BCC4D2, #FFFFFF);
+  border-radius: 100%;
+  box-shadow: 16.03px 16.03px 42px #AFB6C3, -16.03px -16.03px 42px #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-adventure-page-image img {
+  width: 96%;
+  height: 96%;
+  margin: 2%;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 2;
+}
+
+.mobile-adventure-page-images button {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50px;
+  background: #fff;
+  box-shadow: inset 4px 4px 8px #b8bdc6, inset -4px -4px 8px #ffffff;
+  border: none;
+  outline: none;
+  transform: translateY(-25px);
+  color: rgba(113, 90, 255, 1);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.mobile-adventure-page-images button:nth-of-type(1) {
+  left: 10px;
+}
+
+.mobile-adventure-page-images button:nth-of-type(2) {
+  right: 10px;
+}
+
+/* ========================================= */
+.mobile-adventure-page-social {
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  color: rgba(166, 130, 255, .7);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.mobile-landing-heading h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 1.5rem;
-}
-
-.mobile-landing-heading i {
-  font-size: 1.5rem;
-}
-
-.mobile-section {
-  padding: 25px 0 0 0;
-  margin: 0;
-}
-
-.slider {
-  display: grid;
-  grid-template-columns: 90% 90% 90% 90% 90%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  margin: 0 0 0 -5px;
-  padding: 20px 10px 0 0;
-  grid-gap: 10px;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.category-card-container {
-  margin-bottom: 20px;
-  padding: 20px 10px;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  grid-gap: 10px;
-}
-
-.category-card-container::-webkit-scrollbar {
-  display: none;
-}
-
-.category-card {
-  width: 150px;
-  height: 125px;
+.mobile-adventure-page-social-icon-container {
+  width: 100%;
+  padding: 3px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 24px;
-  background: #eee;
-  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .2);
-  position: relative;
 }
 
-.category-card img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 24px;
-  z-index: -1;
-}
-
-.category-card p {
-  width: 100%;
-  text-align: center;
-  font-size: 1rem;
+.mobile-adventure-page-social-icon {
+  width: 25px;
+  height: 25px;
+  padding: 7px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  color: rgba(166, 130, 255, .7);
   font-weight: 600;
-  padding: 10px 0 0 0;
-  margin: 0;
-  color: rgba(33, 33, 33, 1);
+  font-size: 1.2rem;
 }
 
-.category-card i {
-  font-size: 1.7rem;
-  color: #ff4500;
+.mobile-adventure-page-social a {
+  font-size: 1.5rem;
+  margin: 0 0 0 15px;
 }
 
-.image-slider {
-  width: 100%;
-  margin: 0 0 10px 0;
-  padding: 20px 0;
-  display: flex;
-  overflow-y: hidden;
+/* ========================================= */
+.mobile-adventure-page-details {
+  margin: 50px 0 0 0;
+  padding: 50px 0 100px 20px;
+  border-radius: 55px 55px 0 0;
+  box-shadow: 3px 10px 41px rgba(33, 33, 33, .4);
+  color: #1c1c1c;
+  position: relative;
+  overflow: hidden;
 }
 
-.image-slider .album-preview {
-  margin: 0 10px;
+.mobile-adventure-page-details h1 {
+  position: absolute;
+  top: -50px;
+  left: -40px;
+  font-size: 6rem;
+  z-index: -2;
+  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.1);
+  color: #efeeff;
+  opacity: .4;
+  transform: rotate(7deg);
 }
 
-.image-slider h4 {
-  width: 80%;
-  margin-left: 10%;
-  color: black;
-  text-align: center;
-}
-
-.image-slider::-webkit-scrollbar {
-  display: none;
-}
-
-.image-slider-img {
-  width: calc(100% - 1px);
-  height: 380px;
-  margin: 0 2px 0 0;
+.mobile-adventure-page-details hr {
+  width: 40%;
+  height: 4px;
+  margin-top: -25px;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 1px;
+  background: rgba(166, 130, 255, .7);
+  z-index: 4;
   position: relative;
 }
 
-.image-slider-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-} */
+.mobile-adventure-page-details-list h3 {
+  margin: 50px 0 0 15px;
+  font-size: 1.5rem;
+  color: rgba(166, 130, 255, .7);
+  text-shadow: 10px 6px 53px rgba(81, 81, 81, .2), 20px -20px 29px rgba(166, 130, 255, .4);
+  outline: none;
+  z-index: 1;
+  position: relative;
+}
+
+.mobile-adventure-page-details-list i {
+  font-size: .75rem;
+  margin-right: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.mobile-adventure-page-details-list a {
+  text-decoration: underline;
+}
+
+/* ========================================= */
+.mobile-adventure-page-info {
+  margin: -50px 0 0 0;
+  padding: 50px 20px;
+  border-radius: 55px 55px 0 0;
+  box-shadow: 3px 10px 41px rgba(33, 33, 33, .4);
+  color: #1c1c1c;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  background: white;
+}
+
+.mobile-adventure-page-info h1 {
+  position: absolute;
+  top: -50px;
+  left: -60px;
+  font-size: 6rem;
+  z-index: -2;
+  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.1);
+  color: #efeeff;
+  opacity: .4;
+  transform: rotate(7deg);
+}
+
+.mobile-adventure-page-info hr {
+  width: 40%;
+  height: 4px;
+  margin-top: -25px;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 1px;
+  background: rgba(166, 130, 255, .7);
+  z-index: 4;
+  position: relative;
+}
 
 /* SCSS Gradient */
 /* $gradient-top: linear-gradient(0deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);

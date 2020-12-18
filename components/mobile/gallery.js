@@ -16,17 +16,19 @@ export default function Gallery({ userLanguage }) {
       <h2 className="mobile-landing-heading">GALLERY</h2>
       <div className="mobile-albums-flex">
         {
-          albums && albums.map(e => <div key={e._id} className="mobile-album-container">
-            <div className="mobile-album">
-              {
-                e.images.map(img => <img key={img} src={img} alt={img}/>).slice(0, 4)
-              }
-              <div className="mobile-album-blur">
-                +{e.images.length - 3}
+          albums && albums.map(e => <Link href={`/albums/${e._id}`} key={e._id}><a>
+            <div className="mobile-album-container">
+              <div className="mobile-album">
+                {
+                  e.images.map(img => <img key={img} src={img} alt={img}/>).slice(0, 4)
+                }
+                <div className="mobile-album-blur">
+                  +{e.images.length - 3}
+                </div>
               </div>
+              <h2>{userLanguage ? e.name : e.nimi}</h2>
             </div>
-            <h2>{userLanguage ? e.name : e.nimi}</h2>
-          </div>)
+          </a></Link>)
         }
         <p style={{ color: 'white' }}>&</p>
       </div>

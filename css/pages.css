@@ -480,6 +480,7 @@
     grid-template-columns: 100%;
     width: calc(100% - 20px);
     margin: 0 10px 2px 10px;
+    display: none;
   }
 
   .adventure-images {

@@ -11,6 +11,8 @@ import Cart from './../../components/adventure/cart'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
+import MobileAdventure from './../../components/mobile/adventure/adventure'
+
 function Adventure(props) {
   const dispatchAdventure = useAdventureDispatch()
   const adventureState = useAdventureState()
@@ -24,9 +26,10 @@ function Adventure(props) {
   }, [dispatchAdventure, id])
 
   return <Fragment>
-    <Head title={userLanguage ? `${props.data.name}` : `${props.data.nimi}`} description={userLanguage ? "Lapland. A land in the Arctic Circle with sweeping fells and northern lights, midnight sun and polar night. A home to reindeers, elves and Santa Claus, where for half a year, the trees wear winter coats. This could be the place where your next adventure awaits!" : "Kogeda midagi erilist, näha midagi uut, teha midagi põnevat – võtame teie soovid ja mõtted ning viime need üheskoos ellu. Tule ja avasta müstilise talvemaastiku lumiseid radu või löö kaasa meie suvistel ratta- ja jalgsimatkadel."} image={props.data.socialimage} url="https://stenolmre.com/adventures/1" />
-    <Container>
+    <Head title={userLanguage ? 'ss' : 'ss'} description={userLanguage ? "Lapland. A land in the Arctic Circle with sweeping fells and northern lights, midnight sun and polar night. A home to reindeers, elves and Santa Claus, where for half a year, the trees wear winter coats. This could be the place where your next adventure awaits!" : "Kogeda midagi erilist, näha midagi uut, teha midagi põnevat – võtame teie soovid ja mõtted ning viime need üheskoos ellu. Tule ja avasta müstilise talvemaastiku lumiseid radu või löö kaasa meie suvistel ratta- ja jalgsimatkadel."} url="https://stenolmre.com/adventures/1" />
+
       <div className="adventure">
+        <Container>
         {
           adventureState && adventure
             ? <Fragment>
@@ -36,19 +39,11 @@ function Adventure(props) {
               </Fragment>
             : <Loading/>
         }
+        </Container>
       </div>
-    </Container>
+      <MobileAdventure/>
+
   </Fragment>
-}
-
-Adventure.getInitialProps = async ({ query }) => {
-  const { id } = query
-
-  const { data } = await axios.get(`https://stenolmre.com/api/adventures/get/?adventureId=${id}`)
-
-  return {
-    data
-  }
 }
 
 export default Adventure

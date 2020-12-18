@@ -17,13 +17,14 @@ export default function Demo() {
           padding: 20px 0 0 0;
           background: linear-gradient(145deg, #B3BACA, #F2FCFF);
         }
+
         .demo {
           width: calc(100% - 40px);
           height: 350px;
           margin: 0 20px;
-          background: linear-gradient(145deg, #FFFFFF, #9EA5B3);
+          background: linear-gradient(145deg, #FFFFFF, rgba(113, 90, 255));
           border-radius: 100%;
-          box-shadow: 18.02px 18.02px 28px rgba(33, 33, 33, .6), -18.02px -18.02px 28px #F5FFFF;
+          box-shadow: 18.02px 18.02px 28px rgba(113, 90, 255, .6), -18.02px -18.02px 28px #F5FFFF;
           overflow: hidden;
         }
 
@@ -39,11 +40,11 @@ export default function Demo() {
         .text {
           width: 80%;
           margin: 50px 0 0 10%;
-	        color: #1c1c1c;
+	        color: rgba(113, 90, 255);
           text-align: center;
 	        font-size: 3rem;
 	        font-weight: 900;
-	        text-shadow: -6px 6px 15px rgba(33, 33, 33, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+	        text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
 	        position: relative;
         }
 

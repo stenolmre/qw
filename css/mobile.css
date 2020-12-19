@@ -627,3 +627,53 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 .mobile-adventure-page-details-list {
   width: 90%;
 }
+
+/* ========================================= */
+.mobile-contact-page {
+  width: calc(100% - 40px);
+  padding: 25px 20px 0 20px;
+}
+
+.mobile-contact-page .mobile-contact-icon {
+  border-radius: 100%;
+  background: #ffffff;
+  box-shadow: inset 5px 5px 10px #ededed, inset -5px -5px 10px #ffffff;
+}
+
+.mobile-contact-page form {
+  width: 100%;
+  margin: 50px 0 0 0;
+}
+
+.mobile-contact-page input,
+.mobile-contact-page textarea {
+  width: calc(100% - 24px);
+  margin: 4px 0;
+  padding: 12px;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: inset 5px 5px 10px #e8e8e8, inset -5px -5px 10px #ffffff;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  font-size: .875rem;
+}
+
+.mobile-contact-page textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+.mobile-contact-page button {
+  margin: 10px 0 0 0;
+  padding: 7px 25px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+background: #a682ff;
+box-shadow:  5px 5px 6px rgba(166, 130, 255, .2), -5px -5px 6px #ffffff;
+  color: white;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}

@@ -25,7 +25,7 @@ export default function Navbar() {
         }
 
         .mobile-landing-header {
-          position: ${showNavbar && 'fixed'}
+          position: ${showNavbar ? 'fixed' : 'block'}
         }
       `}
     </style>

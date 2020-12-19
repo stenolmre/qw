@@ -11,7 +11,7 @@ export default function Categories({ filter }) {
 
   return <div className="mobile-galleries-categories">
     {
-      categories.map((e, i) => <div onClick={() => onClick(i, e.category)}>
+      categories.map((e, i) => <div key={i} onClick={() => onClick(i, e.category)}>
         <p><i className={`fas ${e.icon}`}/></p>
       </div>)
     }

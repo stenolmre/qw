@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
-import Navbar from './navbar'
-import Adventures from './adventures'
+import Navbar from './../navbar'
+import Adventures from './../adventures'
 import Categories from './categories'
 import Gallery from './gallery'
 import MobileContact from './contact'
-import { landingest, landingeng } from './../texts/landing'
-import categories from './../arrays/categories'
-import categoriesEst from './../arrays/categoriesEst'
+import { landingest, landingeng } from './../../texts/landing'
+import categories from './../../arrays/categories'
+import categoriesEst from './../../arrays/categoriesEst'
 
 export default function MobileLanding({ userLanguage }) {
   return <div className="mobile-landing">

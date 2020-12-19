@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import categories from './../arrays/categories'
+import categories from './../../arrays/categories'
 
 export default function Categories({ userLanguage }) {
   return <div className="mobile-adventures-categories-container">

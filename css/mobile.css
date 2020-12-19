@@ -33,7 +33,7 @@ rgba(16, 46, 74, 1); */
   padding-bottom: 25px;
   color: rgba(113, 90, 255);
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
   position: relative;
@@ -315,8 +315,9 @@ rgba(16, 46, 74, 1); */
   grid-gap: 6px;
   border-radius: 25px;
   background: linear-gradient(145deg, #f5ffff, #ced6e6);
-  box-shadow: 7px 7px 18px #acb3bf, -7px -7px 18px #ffffff;
+  box-shadow: 1px 1px 4px #b9c1cf, -2px -2px 9px #ffffff;
   position: relative;
+  text-shadow: none;
 }
 
 .mobile-album img {
@@ -324,7 +325,7 @@ rgba(16, 46, 74, 1); */
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 25px;
+  border-radius: 21px;
 }
 
 .mobile-album-blur {
@@ -335,7 +336,7 @@ rgba(16, 46, 74, 1); */
   position: absolute;
   right: 6px;
   bottom: 6px;
-  border-radius: 25px;
+  border-radius: 21px;
   backdrop-filter: blur(5px);
   color: rgba(250, 250, 250, .6);
   font-size: 4rem;
@@ -589,37 +590,16 @@ rgba(16, 46, 74, 1); */
 }
 
 /* ========================================= */
-.mobile-galleries-sub-heading {
-  margin-bottom: 50px;
-  color: #1c1c1c;
-  font-size: .875rem;
-  text-align: center;
-}
-
-.mobile-galleries-page-flex {
+.mobile-galleries-page {
   width: calc(100% - 40px);
-  padding: 50px 20px 20px 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 55px 55px 0 0;
-  box-shadow: 0px -8px 12px 0px rgba(99, 99, 99, .08);
 }
 
-.mobile-galleries-page-flex hr {
-  width: 40%;
-  height: 4px;
-  margin-top: -25px;
-  margin-bottom: 25px;
-  border: none;
-  border-radius: 1px;
-  background: rgba(166, 130, 255, .7);
-  z-index: 4;
-  position: relative;
-}
-
-.mobile-galleries-page-flex .mobile-album-container {
+.mobile-galleries-page .mobile-album-container {
   display: flex;
   align-items: center;
   margin: 20px 10px;
@@ -650,6 +630,13 @@ rgba(16, 46, 74, 1); */
   font-size: .875rem;
 }
 
+/* ========================================= */
+.mobile-album-page-images img {
+  width: 94%;
+  margin: 0 3%;
+  border-radius: 11px;
+}
+
 /* SCSS Gradient */
 /* $gradient-top: linear-gradient(0deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
 $gradient-right: linear-gradient(90deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
@@ -660,3 +647,64 @@ $gradient-bottom-right: linear-gradient(135deg, #a682ffff, #715affff, #5887ffff,
 $gradient-top-left: linear-gradient(225deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
 $gradient-bottom-left: linear-gradient(315deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
 $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff); */
+
+/* ========================================= */
+.mobile-layout-heading {
+  width: 94%;
+  margin: 25px 0 0 3%;
+  padding-bottom: 25px;
+  color: rgba(113, 90, 255);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 2;
+  text-transform: capitalize;
+}
+
+.mobile-layout-subheading {
+  margin-bottom: 50px;
+  color: #1c1c1c;
+  font-size: .875rem;
+  text-align: center;
+}
+
+.mobile-layout-social {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-layout-social div {
+  width: 55px;
+  height: 55px;
+  margin: -15px 5px 50px 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 2px 2px 6px rgba(33, 33, 33, .2), -4px -4px 10px #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  color: rgba(113, 90, 255, 1);
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.1), 1px -2px 15px rgba(255, 255, 255, 0.8);
+}
+
+.mobile-layout-children {
+  padding: 50px 0 0 0;
+  border-radius: 55px 55px 0 0;
+  box-shadow: 0px -8px 12px 0px rgba(99, 99, 99, .08);
+}
+
+.mobile-layout-children hr {
+  width: 40%;
+  height: 4px;
+  margin-top: -25px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 1px;
+  background: rgba(166, 130, 255, .7);
+  z-index: 4;
+  position: relative;
+}

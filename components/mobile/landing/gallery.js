@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment } from 'react'
 import Link from 'next/link'
-import { useAlbumState, useAlbumDispatch } from './../../context/album'
-import { getAlbums } from './../../actions/album'
+import { useAlbumState, useAlbumDispatch } from './../../../context/album'
+import { getAlbums } from './../../../actions/album'
 
 export default function Gallery({ userLanguage }) {
   const dispatchAlbum = useAlbumDispatch()

@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState } from 'react'
-import axios from 'axios'
-import Cookies from 'js-cookie'
+import cookies from 'next-cookies'
 import Head from './../../components/utils/head'
 import { useRouter } from 'next/router'
 import Container from './../../components/container'
@@ -13,25 +12,25 @@ import { getAdventure } from './../../actions/adventure'
 
 import MobileAdventure from './../../components/mobile/adventure/adventure'
 
-function Adventure(props) {
+function Adventure({ language }) {
   const dispatchAdventure = useAdventureDispatch()
-  const adventureState = useAdventureState()
-  const { adventure } = adventureState
-  const router = useRouter()
-  const { id } = router.query
-  const userLanguage = Cookies.get('lan') === 'eng'
+  const { adventure } = useAdventureState()
+  const { query } = useRouter()
+  const user_lang = language === 'eng' ? true : false
 
   useEffect(() => {
-    getAdventure(dispatchAdventure, id)
-  }, [dispatchAdventure, id])
+    getAdventure(dispatchAdventure, query.id)
+  }, [dispatchAdventure, query])
 
   return <Fragment>
-    <Head title={userLanguage ? 'ss' : 'ss'} description={userLanguage ? "Lapland. A land in the Arctic Circle with sweeping fells and northern lights, midnight sun and polar night. A home to reindeers, elves and Santa Claus, where for half a year, the trees wear winter coats. This could be the place where your next adventure awaits!" : "Kogeda midagi erilist, näha midagi uut, teha midagi põnevat – võtame teie soovid ja mõtted ning viime need üheskoos ellu. Tule ja avasta müstilise talvemaastiku lumiseid radu või löö kaasa meie suvistel ratta- ja jalgsimatkadel."} url="https://stenolmre.com/adventures/1" />
+    {
+      adventure && <Head title={user_lang ? 'ss' : adventure.nimi} description={user_lang ? adventure.description : adventure.kirjeldus} image={adventure.images[0]} url={`https://stenolmre.com/adventures/${adventure._id}`}/>
+    }
 
       <div className="adventure">
         <Container>
         {
-          adventureState && adventure
+          adventure
             ? <Fragment>
                 <Images adventure={adventure}/>
                 <Info adventure={adventure} id={adventure._id}/>
@@ -42,8 +41,13 @@ function Adventure(props) {
         </Container>
       </div>
       <MobileAdventure/>
-
   </Fragment>
+}
+
+Adventure.getInitialProps = ctx => {
+  const { lan } = cookies(ctx)
+
+  return { language: lan || '' }
 }
 
 export default Adventure

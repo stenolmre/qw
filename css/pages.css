@@ -70,6 +70,10 @@
   .album {
     grid-template-columns: 50% 50%;
   }
+
+  .gallery {
+    display: none;
+  }
 }
 
 @media (max-width: 415px) {

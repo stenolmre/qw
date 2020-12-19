@@ -1,6 +1,10 @@
 import mongoose from 'mongoose'
 
 const AlbumSchema = mongoose.Schema({
+  category: {
+    type: String,
+    required: true
+  },
   name: {
     type: String,
     required: true

@@ -18,11 +18,10 @@ export default function Categories({ filter }) {
     <style>{`
       .mobile-galleries-categories div:nth-of-type(${active + 1}) {
         color: rgba(113, 90, 255, 1);
-        padding: 8px 16px;
         margin-top: 2px;
         border-radius: 3px;
         background: #ffffff;
-        box-shadow: inset 5px 5px 6px #e8e8e8, inset -5px -5px 6px #ffffff;
+        box-shadow: inset 2px 2px 3px #e1e1e1, inset -5px -5px 6px #ffffff;
       }
     `}</style>
   </div>

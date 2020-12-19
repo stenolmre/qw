@@ -11,13 +11,16 @@ export default function Galleries({ userLanguage }) {
 
   return <Fragment>
     <Navbar/>
-    <Categories filter={el => setFilterAlbums(el)}/>
+    <h1 className="mobile-page-heading">spectacular scenary, lifelong memories.</h1>
+    <p className="mobile-galleries-sub-heading">Explore adventures through our eyes.</p>
     <div className="mobile-galleries-page-flex">
-    {
-      filterAlbums !== '/'
-        ? albums.filter(e => e.category === filterAlbums).map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
-        : albums.map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
-    }
+      <hr/>
+      <Categories filter={el => setFilterAlbums(el)}/>
+      {
+        filterAlbums !== '/'
+          ? albums.filter(e => e.category === filterAlbums).map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
+          : albums.map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
+      }
     </div>
     <div className="mobile-footer">
       <p>copyright @ 2020 by North Season</p>

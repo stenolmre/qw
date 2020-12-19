@@ -21,7 +21,7 @@ export default function MobileAdventure() {
       adventure && <div className="mobile-adventure-page">
         <Navbar/>
         <Images/>
-        <h1>{adventure.name}</h1>
+        <h1 style={{ marginTop: '50px' }} className="mobile-page-heading">{adventure.name}</h1>
         <Social/>
         <p className="mobile-adventure-page-description">{adventure.description}</p>
         <Details/>

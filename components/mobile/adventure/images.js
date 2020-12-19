@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useAdventureState } from './../../../context/adventure'
+import Slideshow from './../../utils/slideshow'
 
 export default function Images() {
+  const [currentSlide, setCurrentSlide] = useState(1)
+  const [showSlideshow, setShowSlideshow] = useState(false)
   const { adventure } = useAdventureState()
   const image = useRef()
   const [dimensions, setDimensions] = useState()
@@ -33,9 +36,15 @@ export default function Images() {
 
   return <div className="mobile-adventure-page-images">
     <div style={{ height: dimensions !== undefined && dimensions.width }} ref={image} className="mobile-adventure-page-image">
-      <img src={adventure.images.slice(indexOfFirstImage, indexOfLastImage)} alt=""/>
+      <img src={adventure.images.slice(indexOfFirstImage, indexOfLastImage)} alt="" onClick={() => {
+        setShowSlideshow(!showSlideshow)
+        setCurrentSlide(currentPage)
+      }}/>
     </div>
     <button style={{ top: dimensions !== undefined && dimensions.width / 2 }} onClick={paginateToNext}><i className="fas fa-arrow-left"/></button>
     <button style={{ top: dimensions !== undefined && dimensions.width / 2 }} onClick={paginateToNext}><i className="fas fa-arrow-right"/></button>
+    {
+      showSlideshow && <Slideshow currentPage={currentSlide} setCurrentPage={setCurrentSlide} close={() => setShowSlideshow(!showSlideshow)} gallery={adventure.images}/>
+    }
   </div>
 }

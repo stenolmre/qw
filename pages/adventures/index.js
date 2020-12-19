@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import cookies from 'next-cookies'
 import Head from './../../components/utils/head'
-import Adv_Layout from './../../components/adventures/layout'
-import AdventureCard from './../../components/utils/adventurecard'
+import MobileAdventures from './../../components/mobile/adventures/adventures'
 import { useAdventureState } from './../../context/adventure'
 import { adventures_ad_eng, adventures_ad_est } from './../../components/texts/adventures'
 import { landingeng, landingest } from './../../components/texts/landing'
@@ -18,25 +17,7 @@ function Adventures({ language }) {
 
   return <Fragment>
     <Head title={user_lang ? "Adventures" : "Elamusmatkad"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures/skiing" />
-      <Adv_Layout userLanguage={user_lang} onChange={e => setSearch(e.target.value)}>
-        <div className="adventure-right-container">
-          <h3>{user_lang ? 'Adventures' : 'Elamusmatkad'}</h3>
-          <div className="adventure-intro" dangerouslySetInnerHTML={content()}/>
-          <div className="adventure-previews">
-            {
-              adventures && adventures.map(e => <AdventureCard
-                key={e._id}
-                link={`/adventures/${e._id}`}
-                name={user_lang ? e.name : e.nimi}
-                src={e.images.map(image => image).slice(0, 1)}
-                topicon="fa-star"
-                destination={e.location.start}
-                price={(e.prices[0].price / 100).toFixed(2)}
-              />)
-            }
-          </div>
-        </div>
-      </Adv_Layout>
+    <MobileAdventures/>
   </Fragment>
 }
 

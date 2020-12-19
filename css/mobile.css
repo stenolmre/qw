@@ -204,6 +204,7 @@ rgba(16, 46, 74, 1); */
   padding: 0;
   font-size: 1.5rem;
   text-shadow: -6px 6px 15px rgba(113, 90, 255, .4), 6px -6px 15px rgba(255, 255, 255, 1);
+  text-align: center;
 }
 
 .mobile-adventure-price {
@@ -395,23 +396,143 @@ rgba(16, 46, 74, 1); */
 }
 
 /* ========================================= */
-.mobile-adventure-page {
-  width: 100%;
-  height: 300px;
-  padding: 0 0 100px 0;
-  position: relative;
+
+
+/* SCSS Gradient */
+/* $gradient-top: linear-gradient(0deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-right: linear-gradient(90deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-bottom: linear-gradient(180deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-left: linear-gradient(270deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-top-right: linear-gradient(45deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-bottom-right: linear-gradient(135deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-top-left: linear-gradient(225deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-bottom-left: linear-gradient(315deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
+$gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff); */
+
+/* ========================================= */
+.mobile-galleries-page {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.mobile-adventure-page-description {
-  width: calc(100% - 40px);
-  margin: 20px;
+.mobile-galleries-page .mobile-album-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.mobile-galleries-categories {
+  width: calc(100% - 80px);
+  margin: 25px 40px 25px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-galleries-categories div {
   color: #1c1c1c;
-  text-align: justify;
+  margin: 0 15px;
+  padding: 8px 14px;
+  border-radius: 3px;
+  background: #ffffff;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #ffffff, #fefefe);
+  box-shadow: 5px 5px 2px #fafafa, -5px -5px 2px #ffffff;
+}
+
+.mobile-galleries-categories div p {
+  margin: 0;
+  padding: 0;
   font-size: .875rem;
 }
 
 /* ========================================= */
+.mobile-album-page-images img {
+  width: 94%;
+  margin: 0 3%;
+  border-radius: 11px;
+}
+
+/* ========================================= */
+.mobile-layout-heading {
+  width: 94%;
+  margin: 25px 0 0 3%;
+  padding-bottom: 25px;
+  color: rgba(113, 90, 255);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 2;
+  text-transform: capitalize;
+}
+
+.mobile-layout-subheading {
+  width: 90%;
+  margin: 0 5%;
+  margin-bottom: 50px;
+  color: #1c1c1c;
+  font-size: .875rem;
+  text-align: justify;
+}
+
+.mobile-layout-social {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-layout-social div {
+  width: 55px;
+  height: 55px;
+  margin: -15px 5px 50px 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 2px 2px 6px rgba(33, 33, 33, .2), -4px -4px 10px #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  color: rgba(113, 90, 255, 1);
+  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.1), 1px -2px 15px rgba(255, 255, 255, 0.8);
+}
+
+.mobile-layout-children {
+  padding: 50px 0 0 0;
+  border-radius: 55px 55px 0 0;
+  box-shadow: 0px -8px 12px 0px rgba(99, 99, 99, .08);
+}
+
+.mobile-layout-children hr {
+  width: 40%;
+  height: 4px;
+  margin-top: -25px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 1px;
+  background: rgba(166, 130, 255, .7);
+  z-index: 4;
+  position: relative;
+}
+
+/* ========================================= */
+.mobile-adventures-page {
+  padding-top: 15px;
+}
+
+.mobile-adventures-page .mobile-adventure {
+  width: 90%;
+  margin: 20px 5%;
+}
+
+/* ========================================= */
 .mobile-adventure-page-images {
+  margin-bottom: 50px;
   position: relative;
 }
 
@@ -463,45 +584,8 @@ rgba(16, 46, 74, 1); */
 }
 
 /* ========================================= */
-.mobile-adventure-page-social {
-  width: calc(100% - 40px);
-  margin: 0 20px;
-  color: rgba(166, 130, 255, .7);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mobile-adventure-page-social-icon-container {
-  width: 100%;
-  padding: 3px;
-  display: flex;
-  align-items: center;
-}
-
-.mobile-adventure-page-social-icon {
-  width: 25px;
-  height: 25px;
-  padding: 7px;
-  display: grid;
-  place-items: center;
-  border-radius: 3px;
-  color: rgba(166, 130, 255, .7);
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.mobile-adventure-page-social a {
-  font-size: 1.5rem;
-  margin: 0 0 0 15px;
-}
-
-/* ========================================= */
 .mobile-adventure-page-details {
-  margin: 50px 0 0 0;
-  padding: 50px 0 100px 20px;
-  border-radius: 55px 55px 0 0;
-  box-shadow: 0px -2px 12px 0px rgba(33, 33, 33, .1);
+  padding: 0 0 25px 20px;
   color: #1c1c1c;
   position: relative;
   overflow: hidden;
@@ -509,7 +593,7 @@ rgba(16, 46, 74, 1); */
 
 .mobile-adventure-page-details h1 {
   position: absolute;
-  top: -50px;
+  top: -75px;
   left: -40px;
   font-size: 6rem;
   z-index: -2;
@@ -517,18 +601,6 @@ rgba(16, 46, 74, 1); */
   color: #efeeff;
   opacity: .4;
   transform: rotate(7deg);
-}
-
-.mobile-adventure-page-details hr {
-  width: 40%;
-  height: 4px;
-  margin-top: -25px;
-  margin-bottom: 50px;
-  border: none;
-  border-radius: 1px;
-  background: rgba(166, 130, 255, .7);
-  z-index: 4;
-  position: relative;
 }
 
 .mobile-adventure-page-details-list h3 {
@@ -552,159 +624,6 @@ rgba(16, 46, 74, 1); */
   text-decoration: underline;
 }
 
-/* ========================================= */
-.mobile-adventure-page-info {
-  margin: -50px 0 0 0;
-  padding: 50px 20px;
-  border-radius: 55px 55px 0 0;
-  box-shadow: 0px -2px 12px 0px rgba(33, 33, 33, .1);
-  color: #1c1c1c;
-  position: relative;
-  overflow: hidden;
-  z-index: 10;
-  background: white;
-}
-
-.mobile-adventure-page-info h1 {
-  position: absolute;
-  top: -50px;
-  left: -60px;
-  font-size: 6rem;
-  z-index: -2;
-  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.1);
-  color: #efeeff;
-  opacity: .4;
-  transform: rotate(7deg);
-}
-
-.mobile-adventure-page-info hr {
-  width: 40%;
-  height: 4px;
-  margin-top: -25px;
-  margin-bottom: 50px;
-  border: none;
-  border-radius: 1px;
-  background: rgba(166, 130, 255, .7);
-  z-index: 4;
-  position: relative;
-}
-
-/* ========================================= */
-.mobile-galleries-page {
-  width: calc(100% - 40px);
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.mobile-galleries-page .mobile-album-container {
-  display: flex;
-  align-items: center;
-  margin: 20px 10px;
-}
-
-.mobile-galleries-categories {
-  width: calc(100% - 80px);
-  margin: 25px 40px 25px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-galleries-categories div {
-  color: #1c1c1c;
-  margin: 0 15px;
-  padding: 8px 14px;
-  border-radius: 3px;
-  background: #ffffff;
-  border-radius: 4px;
-  background: linear-gradient(145deg, #ffffff, #fefefe);
-  box-shadow: 5px 5px 2px #fafafa, -5px -5px 2px #ffffff;
-}
-
-.mobile-galleries-categories div p {
-  margin: 0;
-  padding: 0;
-  font-size: .875rem;
-}
-
-/* ========================================= */
-.mobile-album-page-images img {
-  width: 94%;
-  margin: 0 3%;
-  border-radius: 11px;
-}
-
-/* SCSS Gradient */
-/* $gradient-top: linear-gradient(0deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-right: linear-gradient(90deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-bottom: linear-gradient(180deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-left: linear-gradient(270deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-top-right: linear-gradient(45deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-bottom-right: linear-gradient(135deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-top-left: linear-gradient(225deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-bottom-left: linear-gradient(315deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
-$gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff); */
-
-/* ========================================= */
-.mobile-layout-heading {
-  width: 94%;
-  margin: 25px 0 0 3%;
-  padding-bottom: 25px;
-  color: rgba(113, 90, 255);
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 900;
-  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
-  position: relative;
-  z-index: 2;
-  text-transform: capitalize;
-}
-
-.mobile-layout-subheading {
-  margin-bottom: 50px;
-  color: #1c1c1c;
-  font-size: .875rem;
-  text-align: center;
-}
-
-.mobile-layout-social {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mobile-layout-social div {
-  width: 55px;
-  height: 55px;
-  margin: -15px 5px 50px 5px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 2px 2px 6px rgba(33, 33, 33, .2), -4px -4px 10px #ffffff;
-  display: grid;
-  place-items: center;
-  font-size: 1.4rem;
-  color: rgba(113, 90, 255, 1);
-  text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.1), 1px -2px 15px rgba(255, 255, 255, 0.8);
-}
-
-.mobile-layout-children {
-  padding: 50px 0 0 0;
-  border-radius: 55px 55px 0 0;
-  box-shadow: 0px -8px 12px 0px rgba(99, 99, 99, .08);
-}
-
-.mobile-layout-children hr {
-  width: 40%;
-  height: 4px;
-  margin-top: -25px;
-  margin-bottom: 25px;
-  border: none;
-  border-radius: 1px;
-  background: rgba(166, 130, 255, .7);
-  z-index: 4;
-  position: relative;
+.mobile-adventure-page-details-list {
+  width: 90%;
 }

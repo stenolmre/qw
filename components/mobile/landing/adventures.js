@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
-import { getAdventures } from './../../actions/adventure'
+import { useAdventureState, useAdventureDispatch } from './../../../context/adventure'
+import { getAdventures } from './../../../actions/adventure'
 
 export default function MobileAdventures({ userLanguage }) {
   const dispatchAdventure = useAdventureDispatch()

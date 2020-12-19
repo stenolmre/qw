@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import Landing from './landing/landing.js'
-import Adventures from './adventures'
+import Adventures from './landing/adventures'
 import Categories from './landing/categories'
 import Gallery from './landing/gallery'
 import Contact from './landing/contact'

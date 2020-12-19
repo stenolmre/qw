@@ -1,10 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Navbar from './../navbar'
-import Images from './images'
-import Social from './social'
+import MobileLayout from './../layout'
 import Details from './details'
-import Info from './info'
 import { useAdventureState, useAdventureDispatch } from './../../../context/adventure'
 import { getAdventure } from './../../../actions/adventure'
 
@@ -18,15 +15,9 @@ export default function MobileAdventure() {
   }, [dispatchAdventure, query])
   return <Fragment>
     {
-      adventure && <div className="mobile-adventure-page">
-        <Navbar/>
-        <Images/>
-        <h1 style={{ marginTop: '50px' }} className="mobile-page-heading">{adventure.name}</h1>
-        <Social/>
-        <p className="mobile-adventure-page-description">{adventure.description}</p>
+      adventure && <MobileLayout adventure paragraph heading={adventure.name} subheading={adventure.description} id={adventure._id}>
         <Details/>
-        <Info/>
-      </div>
+      </MobileLayout>
     }
   </Fragment>
 }

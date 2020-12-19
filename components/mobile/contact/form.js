@@ -46,7 +46,7 @@ export default function Form() {
       <textarea name="message" value={message} onChange={onChange} placeholder="Please type your message here."/>
       <button>Send</button>
     </form>
-    <p style={{ color: response.color }} className="mobile-contact-page-form-response">
+    <p style={{ color: response.color, fontWeight: '600' }} className="mobile-contact-page-form-response">
       { response.message }
     </p>
   </Fragment>

@@ -18,25 +18,13 @@ export default function Form() {
 
       setTimeout(() => {
         setResponse({ message: null, color: null })
-      }, 5000)
+      }, 9000)
     } else if (email === '') {
       setResponse({ message: 'Please enter valid email.', color: '#ff4500' })
-
-      setTimeout(() => {
-        setResponse({ message: null, color: null })
-      }, 5000)
     } else if (message === '') {
       setResponse({ message: 'Message is empty.', color: '#ff4500' })
-
-      setTimeout(() => {
-        setResponse({ message: null, color: null })
-      }, 5000)
     } else {
       setResponse({ message: 'Oops. Something went wrong. Please try again.', color: '#ff4500' })
-
-      setTimeout(() => {
-        setResponse({ message: null, color: null })
-      }, 5000)
     }
   }
 

@@ -13,7 +13,7 @@ export default function Gallery({ userLanguage }) {
 
   return <div className="mobile-albums-container">
     <div className="mobile-albums">
-      <h2 className="mobile-landing-heading">GALLERY</h2>
+      <h2 className="mobile-landing-heading">Traveller's Gallery</h2>
       <div className="mobile-albums-flex">
         {
           albums && albums.map(e => <Link href={`/albums/${e._id}`} key={e._id}><a>
@@ -30,7 +30,7 @@ export default function Gallery({ userLanguage }) {
             </div>
           </a></Link>)
         }
-        <p style={{ color: 'white' }}>&</p>
+        <p style={{ color: 'white' }}>&&</p>
       </div>
     </div>
   </div>

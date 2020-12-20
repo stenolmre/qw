@@ -18,6 +18,11 @@ const categories = [
     name: 'bike touring',
     category: 'biketouring',
     icon: 'fas fa-biking'
+  },
+  {
+    name: 'hiking',
+    category: 'hiking',
+    icon: 'fas fa-hiking'
   }
 ]
 

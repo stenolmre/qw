@@ -19,7 +19,7 @@ export default function Navbar() {
     <div className="mobile-landing-header-container">
       <div className="mobile-landing-header">
         <Link href="/"><a>
-          <p><i className="fas fa-route"/>&nbsp; NorthSeason</p>
+          <p><i className="fas fa-route"/>&nbsp; North Season</p>
         </a></Link>
       <i style={{ padding: '15px' }} className={`fas fa-${showNavbar ? 'times' : 'ellipsis-h'}`} onClick={() => setShowNavbar(!showNavbar)}/>
       </div>

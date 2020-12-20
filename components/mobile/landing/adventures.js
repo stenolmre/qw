@@ -11,9 +11,8 @@ export default function MobileAdventures({ userLanguage }) {
     getAdventures(dispatchAdventure)
   }, [dispatchAdventure])
 
-  return <div className="mobile-adventures-container">
-    <div className="mobile-adventures">
-      <h2 className="mobile-landing-heading">ADVENTURES</h2>
+  return <div className="mobile-adventures">
+      <h2 className="mobile-landing-heading">Best Experiences</h2>
       <div className="mobile-adventures-flex">
         {
           adventures && adventures.map(e => <div key={e._id} className="mobile-adventure">
@@ -31,5 +30,4 @@ export default function MobileAdventures({ userLanguage }) {
         <p style={{ opacity: '0' }}>&</p>
       </div>
     </div>
-  </div>
 }

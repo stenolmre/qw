@@ -20,12 +20,14 @@ export default function MobileLanding() {
 
   return <div className="mobile-container">
     <Landing />
-    <Adventures/>
     <Categories />
+    <Adventures />
     <Gallery />
-    <Contact />
     <div className="mobile-footer">
       <p>copyright @ 2020 by North Season</p>
+      <div>
+        <i className="fab fa-instagram"/>
+      </div>
     </div>
   </div>
 }

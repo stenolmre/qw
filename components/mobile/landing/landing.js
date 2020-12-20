@@ -23,7 +23,7 @@ export default function MobileLanding({ userLanguage }) {
     <div className="mobile-watermark">LAPLAND</div>
     <Navbar/>
     <div className="mobile-landing-image" style={{ height: dimensions !== undefined && dimensions.width }} ref={image}>
-      <img src="https://etreeningud.ee/media/images/stenolmre/albums/Front_Page/IMG_0002.jpg" alt=""/>
+      <img src="desktop.jpg" alt=""/>
     </div>
     <h1>Travel to inspire your life!</h1>
   </div>

@@ -1,53 +1,57 @@
-import React, { Fragment, useRef, useEffect } from 'react'
+import React from 'react'
+import Navbar from './../components/mobile/navbar'
 
 export default function Demo() {
-  const graph = useRef()
-
-  useEffect(() => {
-    const ciclegraph = graph.current
-    const circleElements = ciclegraph.childNodes
-
-    let angle = 360 - 90
-    let dangle = 360 / circleElements.length
-
-    for (let i = 0; i < circleElements.length; i++) {
-      let circle = circleElements[i];
-      angle += dangle;
-      circle.style.transform = `rotate(${angle}deg) translate(${ciclegraph.clientWidth /
-        2}px) rotate(-${angle}deg)`;
-    }
-  }, [])
-
-  return <Fragment>
-    <div className="ciclegraph" ref={graph}>
-        <div className="circle" />
-        <div className="circle" />
-        <div className="circle" />
-        <div className="circle" />
-        <div className="circle" />
-      </div>
+  return <section>
+    <Navbar/>
+    <h1>LAPLAND</h1>
+    <h2>Travel to inspire your life.</h2>
     <style jsx>
-      {
-        ` .ciclegraph {
-  position: relative;
-  width: calc(100% - 100px);
-  height: 300px;
-  margin: 50px;
-  background: red;
-}
+      {`
+        section {
+          min-height: 100vh;
+          background: #fff;
+        }
+        h1 {
+          font-size: 10rem;
+          text-align: left;
+          margin: 30px 0 0 15%;
+          color: #fff;
+          text-shadow: -8px -8px 12px rgba(255, 255, 255, .02), 8px 8px 12px rgba(0, 0, 0, .06);
+          caret-color: #262626;
+          outline: none;
+        }
 
-.ciclegraph .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin: calc(-50px / 2);
-  background: teal;
-  border-radius: 50%;
-}
+        p {
+          width: 325px;
+          margin: 0;
+          font-size: .875rem;
+        }
 
-         `
-      }</style>
-  </Fragment>
+        main {
+          margin: 25px 15% 0 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        main img {
+          min-width: 275px;
+          height: 325px;
+          margin: 0 10px;
+        }
+
+        h2 {
+          width: 50%;
+          font-size: 4.5rem;
+          margin: -100px 25% 20px 25%;
+
+          color: rgba(113, 90, 255);
+          text-align: center;
+          font-weight: 900;
+          text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+        }
+      `}
+    </style>
+  </section>
 }

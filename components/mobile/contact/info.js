@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Link from 'next/link'
 
 export default function Info() {
-  return <Fragment>
+  return <div>
     <Link href="tel:37258553625"><a>
       <div className="mobile-contact-detail">
         <div className="mobile-contact-icon">
@@ -27,5 +27,5 @@ export default function Info() {
         <p>Levi, Lapland</p>
       </div>
     </a></Link>
-  </Fragment>
+</div>
 }

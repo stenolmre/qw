@@ -6,7 +6,8 @@ rgba(16, 46, 74, 1); */
 .mobile-container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(145deg, #e5eeff, #F2FCFF);
+  /* background: linear-gradient(145deg, #e5eeff, #F2FCFF); */
+  background: #fff;
   overflow: hidden;
 }
 
@@ -16,15 +17,19 @@ rgba(16, 46, 74, 1); */
   left: -195px;
   font-size: 10.5rem;
   transform: rotate(62deg);
-  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.1);
-  color: #e5eeff;
+  color: #fff;
+  text-shadow: -8px -8px 12px rgba(255, 255, 255, .1), 8px 8px 12px rgba(0, 0, 0, .1);
+  caret-color: #262626;
+  outline: none;
 }
 
 .mobile-landing-heading {
   margin: 0 0 -5px 35px;
   font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 4px 10px 43px rgba(255, 255, 255), 40px 0px 100px rgba(33, 33, 33, .8);
+  color: #fff;
+  text-shadow: -8px -8px 12px rgba(255, 255, 255, .02), 2px 2px 32px rgba(0, 0, 0, .2);
+  caret-color: #262626;
+  outline: none;
 }
 
 .mobile-page-heading {
@@ -92,14 +97,21 @@ rgba(16, 46, 74, 1); */
   box-shadow: 1px 3px 10px rgba(33, 33, 33, .4);
   text-shadow: -6px 6px 15px rgba(113, 90, 255, .3), 6px -6px 15px rgba(255, 255, 255, 0.8);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, 1);
   color: rgba(113, 90, 255, 1);
 }
 
 .mobile-navbar a {
   margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+  .mobile-landing-header {
+    width: calc(80% - 80px);
+    margin: 0 calc(10% + 40px);
+  }
 }
 
 /* ========================================= */
@@ -113,9 +125,9 @@ rgba(16, 46, 74, 1); */
   width: calc(100% - 40px);
   height: 350px;
   margin: 0 20px;
-  background: linear-gradient(145deg, #BCC4D2, #FFFFFF);
+  background: linear-gradient(145deg, #eee, #FFFFFF);
   border-radius: 100%;
-  box-shadow: 30.03px 30.03px 52px #AFB6C3, -30.03px -30.03px 52px #FFFFFF;
+  box-shadow: 6px 6px 12px rgba(33, 33, 33, .2), -6px -6px 12px #FFFFFF;
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -377,8 +389,8 @@ rgba(16, 46, 74, 1); */
   padding: 5px;
   display: grid;
   place-items: center;
-  border-radius: 4px;
-  background: rgb(242, 252, 255, 1);
+  border-radius: 100%;
+  background: #fff;
   box-shadow: inset 5px 5px 3px rgb(250, 252, 255, .7), inset -1px -1px 5px rgb(206, 214, 230, .6);
   font-size: 1.5rem;
   color: rgba(113, 90, 255, 1);
@@ -398,8 +410,6 @@ rgba(16, 46, 74, 1); */
 }
 
 /* ========================================= */
-
-
 /* SCSS Gradient */
 /* $gradient-top: linear-gradient(0deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
 $gradient-right: linear-gradient(90deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
@@ -410,7 +420,6 @@ $gradient-bottom-right: linear-gradient(135deg, #a682ffff, #715affff, #5887ffff,
 $gradient-top-left: linear-gradient(225deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
 $gradient-bottom-left: linear-gradient(315deg, #a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff);
 $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #102e4aff); */
-
 /* ========================================= */
 .mobile-galleries-page {
   width: calc(100% - 40px);
@@ -520,6 +529,43 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   background: rgba(166, 130, 255, .7);
   z-index: 4;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .mobile-layout-subheading {
+    width: 400px;
+    margin: 0 calc(50% - 200px);
+    margin-bottom: 50px;
+    color: #1c1c1c;
+    font-size: .875rem;
+    text-align: justify;
+  }
+
+  .mobile-layout-social div {
+    width: 45px;
+    height: 45px;
+    margin: -15px 5px 50px 5px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 2px 2px 6px rgba(33, 33, 33, .2), -4px -4px 10px #ffffff;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    color: rgba(113, 90, 255, 1);
+    text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.1), 1px -2px 15px rgba(255, 255, 255, 0.8);
+  }
+
+  .mobile-layout-children {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .mobile-layout-children hr {
+    width: 45px;
+    height: 2px;
+    margin-top: 0;
+  }
 }
 
 /* ========================================= */
@@ -672,10 +718,35 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   border: none;
   outline: none;
   border-radius: 4px;
-background: #a682ff;
-box-shadow:  5px 5px 6px rgba(166, 130, 255, .2), -5px -5px 6px #ffffff;
+  background: #a682ff;
+  box-shadow: 5px 5px 6px rgba(166, 130, 255, .2), -5px -5px 6px #ffffff;
   color: white;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mobile-contact-page {
+    width: 700px;
+    margin: 0 calc(50% - 370px);
+    padding: 25px 20px 0 20px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .mobile-contact-page .mobile-contact-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .mobile-contact-page .mobile-contact-detail p {
+    font-size: .875rem;
+  }
+
+  .mobile-contact-page form {
+    width: 100%;
+    margin: 0 0 0 100px;
+  }
 }

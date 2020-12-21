@@ -189,8 +189,8 @@ rgba(16, 46, 74, 1); */
 
 .mobile-adventure img {
   width: 96%;
-  height: 97%;
-  margin: 2% 2% 1.5% 2%;
+  height: 96%;
+  margin: 2%;
   border-radius: 18px;
   object-fit: cover;
   object-position: center;
@@ -541,12 +541,10 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
     margin: -15px 5px 50px 5px;
     border-radius: 50%;
     background: #ffffff;
-    box-shadow: 2px 2px 6px rgba(33, 33, 33, .2), -4px -4px 10px #ffffff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .1), -1px -1px 3px #ffffff;
     display: grid;
     place-items: center;
     font-size: 1.2rem;
-    color: rgba(113, 90, 255, 1);
-    text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.1), 1px -2px 15px rgba(255, 255, 255, 0.8);
   }
 
   .mobile-layout-children {
@@ -564,7 +562,7 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 
 /* ========================================= */
 .mobile-adventures-page {
-  padding-top: 15px;
+  padding: 15px 0 50px 0;
 }
 
 .mobile-adventures-page .mobile-adventure {
@@ -582,9 +580,9 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   width: 60%;
   height: 275px;
   margin: 0 20%;
-  background: linear-gradient(145deg, #BCC4D2, #FFFFFF);
   border-radius: 100%;
-  box-shadow: 16.03px 16.03px 42px #AFB6C3, -16.03px -16.03px 42px #FFFFFF;
+  background: rgba(33, 33, 33, .03);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .1), -1px -1px 3px #ffffff;
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -608,7 +606,7 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   place-items: center;
   border-radius: 50px;
   background: #fff;
-  box-shadow: inset 4px 4px 8px #b8bdc6, inset -4px -4px 8px #ffffff;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, .1), inset -2px -2px 4px #ffffff;
   border: none;
   outline: none;
   transform: translateY(-25px);
@@ -633,23 +631,9 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   overflow: hidden;
 }
 
-.mobile-adventure-page-details h1 {
-  position: absolute;
-  top: -75px;
-  left: -40px;
-  font-size: 6rem;
-  z-index: -2;
-  text-shadow: -6px 6px 15px rgba(33, 33, 33, .2), 6px -6px 15px rgba(255, 255, 255, 0.1);
-  color: #efeeff;
-  opacity: .4;
-  transform: rotate(7deg);
-}
-
 .mobile-adventure-page-details-list h3 {
-  margin: 50px 0 0 15px;
-  font-size: 1.5rem;
-  color: rgba(166, 130, 255, .7);
-  text-shadow: 10px 6px 53px rgba(81, 81, 81, .2), 20px -20px 29px rgba(166, 130, 255, .4);
+  margin: 25px 0 0 15px;
+  font-size: 1.2rem;
   outline: none;
   z-index: 1;
   position: relative;

@@ -8,9 +8,10 @@ import Slideshow from './../../components/utils/slideshow'
 function Album({ language, album }) {
   const [currentPage, setCurrentPage] = useState(1)
   const [showSlideshow, setShowSlideshow] = useState(false)
+  const user_lang = language === 'eng' ? true : false
 
   return <Fragment>
-    <MobileLayout heading={album.name} subheading={album.info} id={album._id}>
+    <MobileLayout heading={user_lang ? album.name : album.nimi} subheading={user_lang ? album.info : album.infoEst} id={album._id}>
       <div className="mobile-album-page-images">
       {
         album.images.map((e, i) => <img key={e} src={e} alt={album.name} onClick={() => {

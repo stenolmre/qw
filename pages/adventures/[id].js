@@ -40,7 +40,7 @@ function Adventure({ language }) {
         }
         </Container>
       </div>
-      <MobileAdventure/>
+      <MobileAdventure userLanguage={user_lang}/>
   </Fragment>
 }
 

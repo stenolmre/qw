@@ -17,7 +17,7 @@ function Adventures({ language }) {
 
   return <Fragment>
     <Head title={user_lang ? "Adventures" : "Elamusmatkad"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures/skiing" />
-    <MobileAdventures/>
+    <MobileAdventures userLanguage={user_lang}/>
   </Fragment>
 }
 

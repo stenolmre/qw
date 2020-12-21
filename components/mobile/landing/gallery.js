@@ -13,7 +13,7 @@ export default function Gallery({ userLanguage }) {
 
   return <div className="mobile-albums-container">
     <div className="mobile-albums">
-      <h2 className="mobile-landing-heading">Traveller's Gallery</h2>
+      <h2 className="mobile-landing-heading">{userLanguage ? 'Traveller\'s gallery' : 'Matka silmade läbi'}</h2>
       <div className="mobile-albums-flex">
         {
           albums && albums.map(e => <Link href={`/albums/${e._id}`} key={e._id}><a>

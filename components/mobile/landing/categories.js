@@ -16,7 +16,7 @@ export default function Categories({ userLanguage }) {
               }
             </div>
           </div>
-          <h3>{e.name}</h3>
+          <h3>{userLanguage ? e.name : e.nimi}</h3>
         </a></Link>).slice(1)
       }
       <p style={{ opacity: '0' }}>&</p>

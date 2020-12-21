@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 
-export default function Navbar() {
+export default function Navbar({ userLanguage }) {
   const [showNavbar, setShowNavbar] = useState(false)
 
   function est() {
@@ -25,14 +25,15 @@ export default function Navbar() {
       </div>
     </div>
     <div className="mobile-navbar">
-      <Link href="/"><a>Home</a></Link>
-      <Link href="/adventures"><a>Adventures</a></Link>
-      <Link href="/albums"><a>Gallery</a></Link>
-      <Link href="/contact"><a>Contact</a></Link>
+      <Link href="/"><a><i className="fas fa-home"/> {userLanguage ? 'Home' : 'Esileht'}</a></Link>
+      <Link href="/adventures"><a><i className="fas fa-hiking"/> {userLanguage ? 'Adventures' : 'Elamusmatkad'}</a></Link>
+      <Link href="/albums"><a><i className="fas fa-images"/> {userLanguage ? 'Gallery' : 'Galerii'}</a></Link>
+      <Link href="/contact"><a><i className="fas fa-phone-alt"/> {userLanguage ? 'Contact' : 'Kontakt'}</a></Link>
       <div>
-        <img onClick={est} src="https://s.svgbox.net/flags-hd.svg?ic=ee&fill=000000" alt="estonian_flag"/>
-        <img onClick={eng} src="https://s.svgbox.net/flags-hd.svg?ic=gb&fill=000000" alt="united_kingdom_flag"/>
+        <img onClick={est} src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/>
+        <img onClick={eng} src="https://etreeningud.ee/media/images/stenolmre/eng.png" alt=""/>
       </div>
+      <a className="mobile-navbar-social-icon" href=""><i className="fab fa-instagram"/></a>
     </div>
     <style jsx>
       {`
@@ -42,15 +43,6 @@ export default function Navbar() {
 
         .mobile-landing-header {
           position: ${showNavbar ? 'fixed' : 'block'}
-        }
-
-        .mobile-navbar div {
-          margin-top: 20px;
-        }
-
-        .mobile-navbar img {
-          width: 32px;
-          margin-right: 10px;
         }
       `}
     </style>

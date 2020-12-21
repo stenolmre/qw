@@ -8,7 +8,7 @@ import Footer from './../footer'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventures } from './../../actions/adventure'
 
-export default function MobileLanding() {
+export default function MobileLanding({ userLanguage }) {
   const dispatchAdventure = useAdventureDispatch()
   const adventureState = useAdventureState()
 
@@ -17,11 +17,11 @@ export default function MobileLanding() {
   }, [dispatchAdventure])
 
   return <div className="mobile-container">
-    <Landing />
-    <Categories />
-    <Adventures />
-    <Gallery />
-    <Contact />
+    <Landing userLanguage={userLanguage}/>
+    <Categories userLanguage={userLanguage}/>
+    <Adventures userLanguage={userLanguage}/>
+    <Gallery userLanguage={userLanguage}/>
+    <Contact userLanguage={userLanguage}/>
     <div className="mobile-footer">
       <p>copyright @ 2020 by North Season</p>
       <div>

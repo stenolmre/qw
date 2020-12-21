@@ -12,7 +12,7 @@ export default function MobileAdventures({ userLanguage }) {
   }, [dispatchAdventure])
 
   return <div className="mobile-adventures">
-      <h2 className="mobile-landing-heading">Best Experiences</h2>
+      <h2 className="mobile-landing-heading">{userLanguage ? 'Best Experiences' : 'Parimad elamused'}</h2>
       <div className="mobile-adventures-flex">
         {
           adventures && adventures.map(e => <div key={e._id} className="mobile-adventure">
@@ -22,7 +22,10 @@ export default function MobileAdventures({ userLanguage }) {
               <p>{(e.prices[0].price / 100).toFixed(2)}€</p>
             </div>
             <div className="mobile-adventure-glass">
-              <h1>{e.name}</h1>
+              <h1>{userLanguage ? e.name : e.nimi}</h1>
+              <div>
+                <i className="fas fa-chevron-right"/>
+              </div>
             </div>
             </a></Link>
           </div>).slice(0, 2).reverse()

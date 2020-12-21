@@ -1,9 +1,17 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
+import Cookies from 'js-cookie'
 
-export default function Form() {
+export default function Form({ userLanguage }) {
+  const [placeholder, setPlaceholder] = useState({ email: '', message: '' })
   const [response, setResponse] = useState({ message: null, color: null })
   const [data, setData] = useState({ email: '', message: '' })
   const { email, message } = data
+
+  useEffect(() => {
+    Cookies.get('lan') === 'eng'
+      ? setPlaceholder({ email: 'Please enter your email.', message: 'Please type your message here.' })
+      : setPlaceholder({ email: 'Email', message: 'Kirjuta oma küsimused, soovid või tagasiside siia ning me vastame Sulle esimesel võimalusel.' })
+  }, [])
 
   const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
 
@@ -30,8 +38,8 @@ export default function Form() {
 
   return <Fragment>
     <form className="mobile-contact-form" onSubmit={sendMessage}>
-      <input type="email" name="email" value={email} onChange={onChange} placeholder="Please enter your email."/>
-      <textarea name="message" value={message} onChange={onChange} placeholder="Please type your message here."/>
+      <input type="email" name="email" value={email} onChange={onChange} placeholder={placeholder.email}/>
+      <textarea name="message" value={message} onChange={onChange} placeholder={placeholder.message}/>
       <button>Send</button>
     </form>
     <p style={{ color: response.color, fontWeight: '600' }} className="mobile-contact-page-form-response">

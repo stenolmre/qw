@@ -30,7 +30,7 @@ export default function Gallery({ userLanguage }) {
             </div>
           </a></Link>)
         }
-        <p style={{ color: 'white' }}>&&</p>
+        <p style={{ color: 'white' }}>&</p>
       </div>
     </div>
   </div>

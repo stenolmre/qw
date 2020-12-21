@@ -22,6 +22,10 @@ export default function Navbar({ userLanguage }) {
           <p><i className="fas fa-route"/>&nbsp; North Season</p>
         </a></Link>
       <i style={{ padding: '15px' }} className={`fas fa-${showNavbar ? 'times' : 'ellipsis-h'}`} onClick={() => setShowNavbar(!showNavbar)}/>
+      <div>
+        <img onClick={est} src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/>
+        <img onClick={eng} src="https://etreeningud.ee/media/images/stenolmre/eng.png" alt=""/>
+      </div>
       </div>
     </div>
     <div className="mobile-navbar">
@@ -42,7 +46,17 @@ export default function Navbar({ userLanguage }) {
         }
 
         .mobile-landing-header {
-          position: ${showNavbar ? 'fixed' : 'block'}
+          position: ${showNavbar ? 'fixed' : 'relative'}
+        }
+
+        @media (min-width: 768px) {
+          .mobile-navbar {
+            left: 25%;
+          }
+
+          .mobile-landing-header {
+            position: relative;
+          }
         }
       `}
     </style>

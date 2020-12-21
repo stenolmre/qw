@@ -5,7 +5,7 @@ import MobileAdventures from './../../components/mobile/adventures/adventures'
 import { useAdventureState } from './../../context/adventure'
 import { landingeng, landingest } from './../../components/texts/landing'
 
-function Skiing({ language }) {
+function BikeTouring({ language }) {
   const user_lang = language === 'eng' ? true : false
   const { adventures, loading } = useAdventureState()
   const [search, setSearch] = useState('')
@@ -15,14 +15,14 @@ function Skiing({ language }) {
   }
 
   return <Fragment>
-    <Head title={user_lang ? "Skiing Adventures" : "Elamusmatkad Suuskadel"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures/skiing" />
-    <MobileAdventures userLanguage={user_lang}/>
+    <Head title={user_lang ? "Snowshoeing Adventures" : "Elamusmatkad Räätsadel"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures/snowshoeing" />
+    <MobileAdventures userLanguage={user_lang} message="Unfortunately there are no bike touring adventures available."/>
   </Fragment>
 }
 
-Skiing.getInitialProps = async ctx => {
+BikeTouring.getInitialProps = async ctx => {
   const { lan } = cookies(ctx)
   return { language: lan }
 }
 
-export default Skiing
+export default BikeTouring

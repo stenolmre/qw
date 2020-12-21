@@ -498,6 +498,12 @@ rgba(16, 46, 74, 1); */
   font-size: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .mobile-footbar {
+    display: none;
+  }
+}
+
 /* ========================================= */
 .mobile-footer {
   width: calc(100% - 40px);
@@ -734,16 +740,58 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   margin: 20px 5%;
 }
 
+.mobile-adventures-page-categories svg {
+  width: 20px;
+  height: 20px;
+  fill: black;
+}
+
+.mobile-adventures-page-categories {
+  width: calc(100% - 80px);
+  margin: 50px 40px 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-adventures-page-categories a {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  color: #1c1c1c;
+  margin: 0 15px;
+  border-radius: 3px;
+  background: #ffffff;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #ffffff, #fefefe);
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #ffffff;
+  cursor: pointer;
+}
+
+.mobile-adventures-page-error {
+  width: 90%;
+  margin-left: 5%;
+  font-size: .875rem;
+}
+
 @media (min-width: 768px) {
   .mobile-adventures-page {
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .mobile-adventures-page .mobile-adventure {
     width: 325px;
     min-width: 275px;
     margin: 20px;
+  }
+
+  .mobile-adventures-page-error {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
   }
 }
 

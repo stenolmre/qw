@@ -258,7 +258,7 @@ rgba(16, 46, 74, 1); */
   width: 75px;
   height: 75px;
   border-radius: 15px;
-  background: #f5ffff
+  background: #f5ffff;
   background: -webkit-linear-gradient(55deg, rgba(33, 33, 33, .05), #f5ffff);
   background: -o-linear-gradient(55deg, rgba(33, 33, 33, .05), #f5ffff);
   background: linear-gradient(145deg, rgba(33, 33, 33, .05), #f5ffff);

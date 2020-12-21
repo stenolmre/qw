@@ -6,8 +6,8 @@ import Form from './../contact/form'
 export default function MobileContact({ userLanguage }) {
   return <div className="mobile-contact">
     <h2 className="mobile-landing-heading">Contact with us</h2>
-      <br/>
-      <Info />
-      <Form />
+    <br/>
+    <Info />
+    <Form />
   </div>
 }

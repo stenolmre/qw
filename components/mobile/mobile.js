@@ -5,6 +5,7 @@ import Categories from './landing/categories'
 import Gallery from './landing/gallery'
 import Contact from './landing/contact'
 import Footer from './../footer'
+import Footbar from './footbar'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventures } from './../../actions/adventure'
 
@@ -28,5 +29,6 @@ export default function MobileLanding({ userLanguage }) {
         <i className="fab fa-instagram"/>
       </div>
     </div>
+    <Footbar/>
   </div>
 }

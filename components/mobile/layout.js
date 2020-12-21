@@ -27,7 +27,7 @@ export default function MobileLayout({ userLanguage, adventure, paragraph, child
     <div className="mobile-footer">
       <p>copyright @ 2020 by North Season</p>
       <div>
-        <i className="fab fa-instagram"/>
+        <a href="https://instagram.com/me_and_olmre" target="_blank"><i className="fab fa-instagram"/></a>
       </div>
     </div>
   </Fragment>

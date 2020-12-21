@@ -13,7 +13,10 @@ export default function MobileAdventures({ userLanguage }) {
   }, [dispatchAdventure])
 
   return <div className="mobile-adventures">
-      <h2 className="mobile-landing-heading">{userLanguage ? 'Best Experiences' : 'Parimad elamused'}</h2>
+      <div className="mobile-landing-heading">
+        <h2>{userLanguage ? 'Best Experiences' : 'Parimad elamused'}</h2>
+        <i className="fas fa-arrow-right"/>
+      </div>
       <div className="mobile-adventures-flex">
         {
           adventures && adventures.map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />).slice(0, 2).reverse()

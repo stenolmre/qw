@@ -2,17 +2,11 @@ import React, { useState, Fragment } from 'react'
 import Link from 'next/link'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
+import navs from './../arrays/navs'
 
 export default function Navbar({ userLanguage }) {
   const [showNavbar, setShowNavbar] = useState(false)
   const { pathname } = useRouter()
-
-  const page = pathname.slice(1)
-
-  function changeLanguage(el) {
-    Cookies.set('lan', el)
-    location.reload()
-  }
 
   return <div style={{ position: 'relative' }}>
     <div className="mobile-landing-header-container">
@@ -21,31 +15,28 @@ export default function Navbar({ userLanguage }) {
           <p><i className="fas fa-route"/>&nbsp; North Season</p>
         </a></Link>
       <i style={{ padding: '15px' }} className={`fas fa-${showNavbar ? 'times' : 'ellipsis-h'}`} onClick={() => setShowNavbar(!showNavbar)}/>
-      <div>
-        <img onClick={() => changeLanguage('est')} src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/>
-        <img onClick={() => changeLanguage('eng')} src="https://etreeningud.ee/media/images/stenolmre/eng.png" alt=""/>
-      </div>
+      <Flags />
       </div>
     </div>
     <div className="mobile-navbar">
-      <Link href="/"><a className={pathname === '/' ? 'active-nav' : ''}><i className="fas fa-home"/> {userLanguage ? 'Home' : 'Esileht'}</a></Link>
-      <Link href="/adventures"><a className={page.includes('adventures') ? 'active-nav' : ''}><i className="fas fa-hiking"/> {userLanguage ? 'Adventures' : 'Elamusmatkad'}</a></Link>
-      <Link href="/albums"><a className={page.includes('albums') ? 'active-nav' : ''}><i className="fas fa-images"/> {userLanguage ? 'Gallery' : 'Galerii'}</a></Link>
-      <Link href="/contact"><a className={page.includes('contact') ? 'active-nav' : ''}><i className="fas fa-phone-alt"/> {userLanguage ? 'Contact' : 'Kontakt'}</a></Link>
-      <div>
-        <img onClick={() => changeLanguage('est')} src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/>
-        <img onClick={() => changeLanguage('eng')} src="https://etreeningud.ee/media/images/stenolmre/eng.png" alt=""/>
-      </div>
+      {
+        navs.map((e, i) => <Link href={`${e.path}`}>
+          <a className={e.path === '/' ? pathname === '/' ? 'active-nav' : '' : pathname.includes(e.path) ? 'active-nav' : ''}>
+            <i className={e.icon}/> {userLanguage ? e.name : e.nimi}
+          </a>
+        </Link>)
+      }
+      <Flags />
       <a className="mobile-navbar-social-icon" href=""><i className="fab fa-instagram"/></a>
     </div>
     <style jsx>
       {`
         .mobile-navbar {
-          left: ${!showNavbar ? '-70%' : '0'}
+          left: ${!showNavbar ? '-70%' : '0'};
         }
 
         .mobile-landing-header {
-          position: ${showNavbar ? 'fixed' : 'relative'}
+          position: ${showNavbar ? 'fixed' : 'relative'};
         }
 
         .active-nav {
@@ -63,5 +54,17 @@ export default function Navbar({ userLanguage }) {
         }
       `}
     </style>
+  </div>
+}
+
+function Flags() {
+  function changeLanguage(el) {
+    Cookies.set('lan', el)
+    location.reload()
+  }
+
+  return <div>
+    <img onClick={() => changeLanguage('est')} src="https://etreeningud.ee/media/images/stenolmre/est.png" alt=""/>
+    <img onClick={() => changeLanguage('eng')} src="https://etreeningud.ee/media/images/stenolmre/eng.png" alt=""/>
   </div>
 }

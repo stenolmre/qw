@@ -5,7 +5,10 @@ import Form from './../contact/form'
 
 export default function MobileContact({ userLanguage }) {
   return <div className="mobile-contact">
-    <h2 className="mobile-landing-heading">{userLanguage ? 'Contact with us' : 'Võta meiega ühendust'}</h2>
+    <div className="mobile-landing-heading">
+      <h2>{userLanguage ? 'Contact with us' : 'Võta meiega ühendust'}</h2>
+      <i className="fas fa-arrow-right"/>
+    </div>
     <br/>
     <Info />
     <Form />

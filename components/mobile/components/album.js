@@ -12,7 +12,7 @@ export default function AlbumDisplay({ e, userLanguage }) {
           +{e.images.length - 3}
         </div>
       </div>
-      <h2>{e.name}</h2>
+      <h2>{userLanguage ? e.name : e.nimi}</h2>
     </div>
   </a></Link>
 }

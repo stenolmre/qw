@@ -39,6 +39,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 nav a {
@@ -186,11 +187,13 @@ main nav a {
   font-size: 4rem;
   font-weight: 900;
   text-transform: capitalize;
+  color: white;
 }
 
 .front-page p {
   font-size: .875rem;
   line-height: 1.5;
+  color: white;
 }
 
 .front-page div {
@@ -203,13 +206,18 @@ main nav a {
   width: 35px;
   height: 4px;
   margin: 0 10px 0 -25px;
-  background: white;
+  background: black;
   border: none;
 }
 
 .front-page a {
   font-size: .875rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  color: white;
+  border: 1px solid black;
+  background: black;
+  padding: 7px 15px;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {

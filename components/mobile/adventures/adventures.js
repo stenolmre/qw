@@ -15,7 +15,7 @@ export default function MobileAdventure({ userLanguage }) {
 
   return <Fragment>
     {
-      adventures && <MobileLayout userLanguage={userLanguage} paragraph heading="Adventure is worthwile in itself." subheading={userLanguage ? adventures_ad_eng : adventures_ad_est}>
+      adventures && <MobileLayout userLanguage={userLanguage} paragraph heading={userLanguage ? 'Adventure is worthwile in itself.' : '-'} subheading={userLanguage ? adventures_ad_eng : adventures_ad_est}>
         <div className="mobile-adventures-page">
           {
             adventures && adventures.map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />).reverse()

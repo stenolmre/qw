@@ -23,13 +23,26 @@ rgba(16, 46, 74, 1); */
   outline: none;
 } */
 .mobile-landing-heading {
-  margin: 25px 0 0 20px;
+  width: calc(100% - 40px);
+  margin: 25px 20px 0 20px;
   color: rgba(0, 0, 0, .2);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.mobile-landing-heading h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-landing-heading i {
+  font-size: 1.3rem;
 }
 
 .mobile-page-heading {
-  width: 94%;
-  margin: 25px 0 0 3%;
+  width: calc(100% - 40px);
+  margin: 25px 20px 0 20px;
   padding-bottom: 25px;
   color: rgba(113, 90, 255);
   text-align: center;
@@ -92,6 +105,7 @@ rgba(16, 46, 74, 1); */
   font-size: 1rem;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 1);
+  text-transform: capitalize;
 }
 
 .mobile-navbar a {
@@ -148,7 +162,7 @@ rgba(16, 46, 74, 1); */
 
   .mobile-landing-header div img {
     width: 25px;
-    margin: 0 5px;
+    margin: -10px 5px 0 5px;
     cursor: pointer;
   }
 
@@ -234,11 +248,6 @@ rgba(16, 46, 74, 1); */
   height: 55vh;
   padding: 0 0 100px 0;
   border-radius: 0 0 0 0;
-}
-
-.mobile-adventures h2 {
-  margin: 25px 0 0 20px;
-  color: rgba(0, 0, 0, .2);
 }
 
 .mobile-adventures-flex {
@@ -471,6 +480,27 @@ rgba(16, 46, 74, 1); */
   box-shadow: inset 3px 3px 3px rgb(250, 255, 255, .1), inset -1px -1px 5px rgb(206, 214, 230, .6);
   font-size: 1.5rem;
   color: rgba(113, 90, 255, 1);
+}
+
+/* ========================================= */
+.mobile-footbar {
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  background: rgba(113, 90, 255, 1);
+}
+
+.mobile-footbar i {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1.5rem;
 }
 
 /* ========================================= */

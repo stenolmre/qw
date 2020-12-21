@@ -26,6 +26,9 @@ export default function MobileLayout({ adventure, paragraph, children, heading, 
     </div>
     <div className="mobile-footer">
       <p>copyright @ 2020 by North Season</p>
+      <div>
+        <i className="fab fa-instagram"/>
+      </div>
     </div>
   </Fragment>
 }

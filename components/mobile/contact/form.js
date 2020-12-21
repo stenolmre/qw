@@ -29,7 +29,7 @@ export default function Form() {
   }
 
   return <Fragment>
-    <form onSubmit={sendMessage}>
+    <form className="mobile-contact-form" onSubmit={sendMessage}>
       <input type="email" name="email" value={email} onChange={onChange} placeholder="Please enter your email."/>
       <textarea name="message" value={message} onChange={onChange} placeholder="Please type your message here."/>
       <button>Send</button>

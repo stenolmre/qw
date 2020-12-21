@@ -134,6 +134,7 @@ rgba(16, 46, 74, 1); */
   .mobile-landing-header-container {
     border-bottom: 1px solid rgba(33, 33, 33, .05);
   }
+
   .mobile-landing-header {
     width: calc(80% - 80px);
     height: 98px;
@@ -183,10 +184,16 @@ rgba(16, 46, 74, 1); */
     font-size: .75rem;
     backdrop-filter: none;
     background: none;
+    text-transform: uppercase;
   }
 
   .mobile-navbar a {
     margin: 0 15px;
+  }
+
+  .mobile-navbar a:hover {
+    color: rgba(113, 90, 255, 1);
+    transition-duration: .4s;
   }
 
   .mobile-navbar a:nth-of-type(1) {
@@ -572,7 +579,6 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   border-radius: 11px;
 }
 
-
 @media (min-width: 768px) {
   .mobile-album-page-images {
     min-height: 100%;
@@ -656,11 +662,13 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 
 @media (min-width: 768px) {
   .mobile-layout-heading {
-    margin-top: 50px
+    width: 380px;
+    margin: 50px calc(50% - 190px) 0 calc(50% - 190px);
   }
+
   .mobile-layout-subheading {
-    width: 400px;
-    margin: 0 calc(50% - 200px) 50px calc(50% - 200px);
+    width: 500px;
+    margin: 0 calc(50% - 250px) 50px calc(50% - 250px);
     color: #1c1c1c;
     font-size: .875rem;
     text-align: justify;
@@ -699,6 +707,19 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 .mobile-adventures-page .mobile-adventure {
   width: 90%;
   margin: 20px 5%;
+}
+
+@media (min-width: 768px) {
+  .mobile-adventures-page {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-adventures-page .mobile-adventure {
+    width: 325px;
+    min-width: 275px;
+    margin: 20px;
+  }
 }
 
 /* ========================================= */

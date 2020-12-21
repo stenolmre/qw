@@ -26,21 +26,7 @@ function Adventure({ language }) {
     {
       adventure && <Head title={user_lang ? 'ss' : adventure.nimi} description={user_lang ? adventure.description : adventure.kirjeldus} image={adventure.images[0]} url={`https://stenolmre.com/adventures/${adventure._id}`}/>
     }
-
-      <div className="adventure">
-        <Container>
-        {
-          adventure
-            ? <Fragment>
-                <Images adventure={adventure}/>
-                <Info adventure={adventure} id={adventure._id}/>
-                <Cart adventure={adventure}/>
-              </Fragment>
-            : <Loading/>
-        }
-        </Container>
-      </div>
-      <MobileAdventure userLanguage={user_lang}/>
+    <MobileAdventure userLanguage={user_lang}/>
   </Fragment>
 }
 

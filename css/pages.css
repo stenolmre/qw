@@ -396,6 +396,7 @@
   margin: 0px 25px;
   text-transform: capitalize;
   font-size: 1.5rem;
+  color: rgba(113, 90, 255, 1);
 }
 
 .adventure-first-info {
@@ -411,7 +412,7 @@
 .adventure-first-info hr {
   width: 45px;
   margin: 20px 0;
-  height: 6px;
+  height: 3px;
   background: #eee;
   border: none;
 }
@@ -479,72 +480,11 @@
   font-size: .75rem;
 }
 
-@media (max-width: 768px) {
-  .adventure {
-    grid-template-columns: 100%;
-    width: calc(100% - 20px);
-    margin: 0 10px 2px 10px;
-    display: none;
-  }
-
-  .adventure-images {
-    width: 108%;
-    height: 275px;
-    margin-left: -5%;
-    display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    grid-gap: 1px;
-  }
-
-  .adventure-images::-webkit-scrollbar {
-    display: none;
-  }
-
-  .adventure-images img {
-    width: 90%;
-    height: 100%;
-    margin: 0 1px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0;
-  }
-
-  .adventure-content {
-    width: 100%;
-    padding: 0 0 25px 0;
-  }
-
-  .adventure-content h1 {
-    margin: 20px 5% 10px 5%;
-  }
-
-  .adventure-parameters {
-    justify-content: space-between;
-  }
-
-  .adventure-parameters a {
-    padding: 7px 20px;
-    background: #00b100;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    font-size: .875rem;
-    display: block;
-  }
-
-  .adventure-first-info {
-    width: 90%;
-    margin: 15px 5%;
-  }
-}
-
 /* ========================================= */
 /* ADVENTURE CART */
 .adventure-cart {
   border: 1px solid #eee;
-  box-shadow: 0 .4rem .8rem -.1rem rgba(33, 33, 33, .2), 0 0 0 1px #f0f2f7;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
   border-radius: 14px;
   padding: 20px 20px 0 20px;
   font-size: .875rem;
@@ -561,7 +501,7 @@
 .adventure-cart hr {
   width: 45px;
   margin: 20px 0;
-  height: 6px;
+  height: 3px;
   background: #eee;
   border: none;
 }
@@ -648,15 +588,15 @@ input::-webkit-inner-spin-button {
 
 .adventure-cart-button {
   padding: 5px 40px 5px 40px;
-  border: 1px solid #00b100;
+  border: 1px solid rgba(113, 90, 255, 1);
   border-radius: 4px;
-  background: #00b100;
+  background: rgba(113, 90, 255, 1);
   color: white;
   font-family: 'Montserrat', sans-serif;
   outline: none;
   cursor: pointer;
-  box-shadow: 1px 2px 8px -1px rgba(0, 177, 0, .8);
-  box-shadow: 0px 1px 21px rgb(0, 177, 0, .4);
+  box-shadow: 1px 2px 8px -1px rgba(113, 90, 255, .7);
+  box-shadow: 0px 1px 21px rgba(113, 90, 255, .3);
 }
 
 .adventure-cart-button:disabled {

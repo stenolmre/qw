@@ -6,7 +6,7 @@ function Contact({ language }) {
   const user_lang = language === 'eng' ? true : false
 
   return <Fragment>
-    <MobileContact/>
+    <MobileContact userLanguage={user_lang}/>
   </Fragment>
 }
 

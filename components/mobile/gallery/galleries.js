@@ -9,7 +9,7 @@ export default function Galleries({ userLanguage }) {
   const [filterAlbums, setFilterAlbums] = useState('/')
 
   return <Fragment>
-    <MobileLayout heading="spectacular scenary. lifelong memories." subheading="Explore adventures through our eyes.">
+    <MobileLayout userLanguage={userLanguage} heading="spectacular scenary. lifelong memories." subheading="Explore adventures through our eyes.">
       <div className="mobile-galleries-page">
         <Categories filter={el => setFilterAlbums(el)}/>
         {

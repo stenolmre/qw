@@ -46,7 +46,7 @@ function Albums({ language }) {
         </Container>
       </div>
       {
-        albums && <MobileGalleries/>
+        albums && <MobileGalleries userLanguage={user_lang}/>
       }
   </Fragment>
 }

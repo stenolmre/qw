@@ -3,9 +3,9 @@ import Navbar from './navbar'
 import Images from './adventure/images'
 import share from './../arrays/share'
 
-export default function MobileLayout({ adventure, paragraph, children, heading, subheading, id }) {
+export default function MobileLayout({ userLanguage, adventure, paragraph, children, heading, subheading, id }) {
   return <Fragment>
-    <Navbar />
+    <Navbar userLanguage={userLanguage}/>
     {
       adventure && <Images/>
     }

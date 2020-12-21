@@ -29,6 +29,6 @@ export default function MobileLanding({ userLanguage }) {
         <i className="fab fa-instagram"/>
       </div>
     </div>
-    <Footbar/>
+    <Footbar userLanguage={userLanguage}/>
   </div>
 }

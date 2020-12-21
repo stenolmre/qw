@@ -10,13 +10,16 @@ export default function Categories() {
 
   return <div className="mobile-adventures-page-categories">
     {
-      categories.map((e, i) => <Link href={`${e.path}`} key={i}><a className={pathname === e.path ? 'active-category' : ''}>
-        {
-          e.category === 'snowshoeing'
-            ? <SnowshoeingIcon />
-            : <i className={e.icon}/>
-        }
-      </a></Link>)
+      categories.map((e, i) => <div className="mobile-adventures-page-category">
+        <Link href={`${e.path}`} key={i}><a className={pathname === e.path ? 'active-category' : ''}>
+          {
+            e.category === 'snowshoeing'
+              ? <SnowshoeingIcon />
+              : <i className={e.icon}/>
+          }
+        </a></Link>
+      <p className={pathname === e.path ? 'active-category-p' : ''}>{e.name}</p>
+      </div>)
     }
     <style jsx>{`
       .active-category {
@@ -29,6 +32,10 @@ export default function Categories() {
 
       .active-category svg {
         fill: rgba(113, 90, 255, 1);
+      }
+
+      .active-category-p {
+        display: block;
       }
     `}</style>
   </div>

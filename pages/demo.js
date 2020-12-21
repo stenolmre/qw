@@ -32,7 +32,7 @@ export default function Demo() {
           color: rgba(113, 90, 255);
           text-align: center;
           font-weight: 900;
-          text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.5), 6px -6px 15px rgba(255, 255, 255, 0.8);
+          text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.3), 6px -6px 15px rgba(255, 255, 255, 0.8);
         }
          `
       }</style>

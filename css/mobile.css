@@ -803,7 +803,7 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 
 .mobile-adventures-page-error {
   width: 90%;
-  margin-left: 5%;
+  margin: 0 0 75px 5%;
   font-size: .875rem;
 }
 

@@ -26,10 +26,10 @@ export default function MobileAdventure({ userLanguage, message }) {
               ? adventures.map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />).reverse()
               : adventures.filter(e => e.type === pathname.slice(12)).map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />)
           }
-          {
-            adventures && adventures.filter(e => e.type === pathname.slice(12)).length < 1 && <p className="mobile-adventures-page-error">{message}</p>
-          }
         </div>
+        {
+          adventures && adventures.filter(e => e.type === pathname.slice(12)).length < 1 && <p className="mobile-adventures-page-error">{message}</p>
+        }
       </MobileLayout>
     }
   </Fragment>

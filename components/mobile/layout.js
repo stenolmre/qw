@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Navbar from './navbar'
 import Images from './adventure/images'
+import Footbar from './footbar'
 import share from './../arrays/share'
 
 export default function MobileLayout({ userLanguage, adventure, paragraph, children, heading, subheading, id }) {
@@ -24,6 +25,7 @@ export default function MobileLayout({ userLanguage, adventure, paragraph, child
       <hr/>
       { children }
     </div>
+    <Footbar />
     <div className="mobile-footer">
       <p>copyright @ 2020 by North Season</p>
       <div>

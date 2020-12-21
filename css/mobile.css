@@ -11,17 +11,20 @@ rgba(16, 46, 74, 1); */
   overflow: hidden;
 }
 
-/* .mobile-watermark {
+.mobile-watermark {
+  margin: 0;
+  padding: 0;
   position: absolute;
-  top: 37%;
-  left: -195px;
-  font-size: 10.5rem;
-  transform: rotate(62deg);
+  top: 50px;
+  left: -15px;
+  font-size: 5.5rem;
+  /* transform: rotate(2deg); */
   color: #fff;
-  text-shadow: -8px -8px 12px rgba(255, 255, 255, .1), 8px 8px 12px rgba(0, 0, 0, .1);
+  text-shadow: -2px -2px 12px rgba(255, 255, 255, .2), 2px 2px 12px rgba(0, 0, 0, .07);
   caret-color: #262626;
   outline: none;
-} */
+}
+
 .mobile-landing-heading {
   width: calc(100% - 40px);
   margin: 25px 20px 0 20px;
@@ -245,13 +248,10 @@ rgba(16, 46, 74, 1); */
 /* ========================================= */
 .mobile-adventures {
   width: 100%;
-  height: 55vh;
-  padding: 0 0 100px 0;
-  border-radius: 0 0 0 0;
 }
 
 .mobile-adventures-flex {
-  padding: 25px 0;
+  padding: 25px 0 50px 0;
   display: flex;
   align-items: flex-start;
   overflow-x: scroll;
@@ -368,17 +368,12 @@ rgba(16, 46, 74, 1); */
 }
 
 /* ========================================= */
-.mobile-albums-container {
-  width: 100%;
-  padding: 25px 0 25px 0;
-}
-
 .mobile-albums {
   width: 100%;
 }
 
 .mobile-albums-flex {
-  padding: 25px 0;
+  padding: 25px 0 50px 0;
   display: flex;
   align-items: flex-start;
   overflow-x: scroll;
@@ -449,7 +444,7 @@ rgba(16, 46, 74, 1); */
 .mobile-contact {
   width: 100%;
   height: 100%;
-  padding-bottom: 50px;
+  padding: 0 0 50px 0;
 }
 
 .mobile-contact form {
@@ -485,7 +480,7 @@ rgba(16, 46, 74, 1); */
 /* ========================================= */
 .mobile-footbar {
   width: 100%;
-  height: 75px;
+  height: 65px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -507,7 +502,7 @@ rgba(16, 46, 74, 1); */
 .mobile-footer {
   width: calc(100% - 40px);
   height: 98px;
-  padding: 0 20px;
+  padding: 0 20px 65px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -759,10 +754,10 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 }
 
 .mobile-adventure-page-image {
-  width: 60%;
-  height: 275px;
-  margin: 0 20%;
-  border-radius: 100%;
+  width: calc(96% - 6px);
+  margin: 0 2% 10px 2%;
+  padding: 3px;
+  border-radius: 35px;
   background: rgba(33, 33, 33, .03);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .1), -1px -1px 3px #ffffff;
   overflow: hidden;
@@ -771,10 +766,9 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 }
 
 .mobile-adventure-page-image img {
-  width: 96%;
-  height: 96%;
-  margin: 2%;
-  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 31px;
   object-fit: cover;
   object-position: center;
   z-index: 2;
@@ -783,15 +777,14 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 .mobile-adventure-page-images button {
   width: 50px;
   height: 50px;
-  position: absolute;
+  margin: 0 5px;
   display: grid;
   place-items: center;
-  border-radius: 50px;
+  border-radius: 100%;
   background: #fff;
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, .1), inset -2px -2px 4px #ffffff;
   border: none;
   outline: none;
-  transform: translateY(-25px);
   color: rgba(113, 90, 255, 1);
   font-weight: 600;
   font-size: 1.2rem;
@@ -817,15 +810,11 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   margin: 25px 0 0 15px;
   font-size: 1.2rem;
   outline: none;
-  z-index: 1;
-  position: relative;
 }
 
 .mobile-adventure-page-details-list i {
   font-size: .75rem;
   margin-right: 10px;
-  z-index: 1;
-  position: relative;
 }
 
 .mobile-adventure-page-details-list a {

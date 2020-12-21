@@ -20,7 +20,7 @@ export default function Navbar({ userLanguage }) {
     </div>
     <div className="mobile-navbar">
       {
-        navs.map((e, i) => <Link href={`${e.path}`}>
+        navs.map((e, i) => <Link key={i} href={`${e.path}`}>
           <a className={e.path === '/' ? pathname === '/' ? 'active-nav' : '' : pathname.includes(e.path) ? 'active-nav' : ''}>
             <i className={e.icon}/> {userLanguage ? e.name : e.nimi}
           </a>

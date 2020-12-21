@@ -35,14 +35,16 @@ export default function Images() {
   const paginateToPrevious = () => currentPage === 1 ? setCurrentPage(totalPages) : setCurrentPage(currentPage - 1)
 
   return <div className="mobile-adventure-page-images">
-    <div style={{ height: dimensions !== undefined && dimensions.width }} ref={image} className="mobile-adventure-page-image">
+    <div style={{ height: dimensions !== undefined && dimensions.width * .7 }} ref={image} className="mobile-adventure-page-image">
       <img src={adventure.images.slice(indexOfFirstImage, indexOfLastImage)} alt="" onClick={() => {
         setShowSlideshow(!showSlideshow)
         setCurrentSlide(currentPage)
       }}/>
     </div>
-    <button style={{ top: dimensions !== undefined && dimensions.width / 2 }} onClick={paginateToNext}><i className="fas fa-arrow-left"/></button>
-    <button style={{ top: dimensions !== undefined && dimensions.width / 2 }} onClick={paginateToNext}><i className="fas fa-arrow-right"/></button>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <button style={{ top: dimensions !== undefined && dimensions.width / 2 }} onClick={paginateToNext}><i className="fas fa-arrow-left"/></button>
+      <button style={{ top: dimensions !== undefined && dimensions.width / 2 }} onClick={paginateToNext}><i className="fas fa-arrow-right"/></button>
+    </div>
     {
       showSlideshow && <Slideshow currentPage={currentSlide} setCurrentPage={setCurrentSlide} close={() => setShowSlideshow(!showSlideshow)} gallery={adventure.images}/>
     }

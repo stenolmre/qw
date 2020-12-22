@@ -2,12 +2,14 @@ import React from 'react'
 import Navbar from './../components/mobile/navbar'
 
 export default function Demo() {
-  document.onkeydown = e => {
-    if (e.which == 39) {
-      console.log('Key Pressed');
-      return false
+  if (process.browser) (
+    document.onkeydown = e => {
+      if (e.which == 39) {
+        console.log('Key Pressed');
+        return false
+      }
     }
-  }
+  )
 
   return <section>
     <Navbar/>

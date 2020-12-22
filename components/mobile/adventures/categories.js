@@ -6,12 +6,11 @@ import categories from './../../arrays/categories'
 
 export default function Categories() {
   const { pathname } = useRouter()
-  console.log(pathname);
 
   return <div className="mobile-adventures-page-categories">
     {
-      categories.map((e, i) => <div className="mobile-adventures-page-category">
-        <Link href={`${e.path}`} key={i}><a className={pathname === e.path ? 'active-category' : ''}>
+      categories.map((e, i) => <div className="mobile-adventures-page-category" key={i}>
+        <Link href={`${e.path}`}><a className={pathname === e.path ? 'active-category' : ''}>
           {
             e.category === 'snowshoeing'
               ? <SnowshoeingIcon />

@@ -2,10 +2,11 @@ import React, { Fragment, useState } from 'react'
 import MobileLayout from './../layout'
 import Categories from './categories'
 import AlbumDisplay from './../components/album'
+import Loader from './../components/loader'
 import { useAlbumState } from './../../../context/album'
 
 export default function Galleries({ userLanguage }) {
-  const { albums } = useAlbumState()
+  const { albums, loading } = useAlbumState()
   const [filterAlbums, setFilterAlbums] = useState('/')
 
   return <Fragment>
@@ -13,9 +14,11 @@ export default function Galleries({ userLanguage }) {
       <div className="mobile-galleries-page">
         <Categories filter={el => setFilterAlbums(el)}/>
         {
-          filterAlbums !== '/'
-            ? albums.filter(e => e.category === filterAlbums).map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
-            : albums.map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
+          loading
+            ? <Loader />
+            : filterAlbums !== '/'
+                ? albums.filter(e => e.category === filterAlbums).map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
+                : albums.map(e => <AlbumDisplay key={e._id} e={e} userLanguage={userLanguage}/>)
         }
       </div>
     </MobileLayout>

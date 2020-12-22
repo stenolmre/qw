@@ -14,25 +14,24 @@ export default function Slideshow({ gallery, close, currentPage, setCurrentPage 
   const currentImages = gallery.slice(indexOfFirstImage, indexOfLastImage);
   const totalPages = Math.ceil(totalImages / imagesPerPage);
 
-  const paginate = number => {
-    setCurrentPage(number)
-  }
+  const paginate = number => setCurrentPage(number)
 
-  const paginateToNext = () => {
-    if (currentPage === totalPages) {
-      setCurrentPage(1);
+  const paginateToNext = () => currentPage === totalPages ? setCurrentPage(1) : setCurrentPage(currentPage + 1)
+
+  const paginateToPrevious = () => currentPage === 1 ? setCurrentPage(totalPages) : setCurrentPage(currentPage - 1)
+
+  document.onkeydown = e => {
+    if (e.which == 39) {
+      paginateToNext()
+      return false
+    } else if (e.which == 37) {
+      paginateToPrevious()
+      return false
     } else {
-      setCurrentPage(currentPage + 1);
+      return false
     }
   }
 
-  const paginateToPrevious = () => {
-    if (currentPage === 1) {
-      setCurrentPage(totalPages);
-    } else {
-      setCurrentPage(currentPage - 1)
-    }
-  }
   return <div className="slideshow">
     <i onClick={number => paginateToPrevious(number)} className="fas fa-chevron-left slideshow-left-button"/>
     <img src={currentImages} alt=""/>

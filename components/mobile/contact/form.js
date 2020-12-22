@@ -1,50 +1,52 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState } from 'react'
 import Cookies from 'js-cookie'
+import SuccessIcon from './../../utils/successicon'
 
 export default function Form() {
-  const [placeholder, setPlaceholder] = useState({ email: '', message: '' })
-  const [response, setResponse] = useState({ message: null, color: null })
+  const [error, setError] = useState({ email: null, message: null })
+  const [success, setSuccess] = useState('')
   const [data, setData] = useState({ email: '', message: '' })
   const { email, message } = data
   const userLanguage = Cookies.get('lan') === 'eng'
 
-  useEffect(() => {
-    userLanguage
-      ? setPlaceholder({ email: 'Please enter your email.', message: 'Please type your message here.' })
-      : setPlaceholder({ email: 'Email', message: 'Kirjuta oma küsimused, soovid või tagasiside siia ning me vastame Sulle esimesel võimalusel.' })
-  }, [])
-
   const onChange = e => setData({ ...data, [e.target.name]: e.target.value })
+
+  function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
 
   function sendMessage(e) {
     e.preventDefault()
 
-    if (email !== '' && message !== '') {
+    if (validateEmail(email) && message !== '') {
       console.log(data)
 
+      setError({ email: null, message: null })
       setData({ email: '', message: '' })
-      setResponse({ message: 'Thanks for your message! We make sure to get back to your during the day.', color: '#00b100' })
+      setSuccess(userLanguage ? 'Thanks for your message! We make sure to get back to your during the day.' : 'Aitäh sõnumi eest. Me teeme endast oleneva, et saaksime teile tagasi kirjutada päeva jooksul.')
 
-      setTimeout(() => {
-        setResponse({ message: null, color: null })
-      }, 9000)
-    } else if (email === '') {
-      setResponse({ message: 'Please enter valid email.', color: '#ff4500' })
+    } else if (!validateEmail(email) && message === '') {
+      setError({ email: userLanguage ? 'Please enter valid email.' : 'Palun sisestage korrektne emaili aadress.', message: userLanguage ? 'Message is empty.' : 'Sõnumi väli on tühi.' })
+    } else if (!validateEmail(email)) {
+      setError({ email: userLanguage ? 'Please enter valid email.' : 'Palun sisestage korrektne emaili aadress.' })
     } else if (message === '') {
-      setResponse({ message: 'Message is empty.', color: '#ff4500' })
+      setError({ message: userLanguage ? 'Message is empty.' : 'Sõnumi väli on tühi.' })
     } else {
-      setResponse({ message: 'Oops. Something went wrong. Please try again.', color: '#ff4500' })
+      setError({ message: userLanguage ? 'Oops. Something went wrong. Please try again. We apologize for your inconvenience' : 'Oops. Midagi on läinud valesti. Palun proovige uuesti kiri teele saata. Vabandame ebameeldivuste pärast.' })
     }
   }
 
   return <Fragment>
     <form className="mobile-contact-form" onSubmit={sendMessage}>
-      <input type="email" name="email" value={email} onChange={onChange} placeholder={placeholder.email}/>
-      <textarea name="message" value={message} onChange={onChange} placeholder={placeholder.message}/>
+      <label>Email<span>*</span></label>
+      <input type="text" name="email" value={email} onChange={onChange}/>
+      <p>{error.email}</p>
+      <label>{userLanguage ? 'Please type your message here.' : 'Kirjuta oma küsimused, soovid või tagasiside siia ning me vastame Sulle esimesel võimalusel.'}<span>*</span></label>
+      <textarea name="message" value={message} onChange={onChange}/>
+      <p>{error.message}</p>
       <button>{userLanguage ? 'Send' : 'Saada'}</button>
     </form>
-    <p style={{ color: response.color, fontWeight: '600' }} className="mobile-contact-page-form-response">
-      { response.message }
-    </p>
+    <p style={{ color: '#00b100', fontWeight: '600', margin: '25px 0 0 0' }}>{success}</p>
   </Fragment>
 }

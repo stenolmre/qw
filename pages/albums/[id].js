@@ -11,7 +11,7 @@ function Album({ language, album }) {
   const user_lang = language === 'eng' ? true : false
 
   return <Fragment>
-    <MobileLayout heading={user_lang ? album.name : album.nimi} subheading={user_lang ? album.info : album.infoEst} id={album._id}>
+    <MobileLayout userLanguage={user_lang} heading={user_lang ? album.name : album.nimi} subheading={user_lang ? album.info : album.infoEst} id={album._id}>
       <div className="mobile-album-page-images">
       {
         album.images.map((e, i) => <img key={e} src={e} alt={album.name} onClick={() => {

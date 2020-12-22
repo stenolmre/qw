@@ -21,9 +21,7 @@ export default function Cart({ adventure }) {
     setOrderData({ ...orderData, id: adventure._id })
   }, [])
 
-  function onChange(e) {
-    setOrderData({ ...orderData, [e.target.name]: e.target.value })
-  }
+  const onChange = e => setOrderData({ ...orderData, [e.target.name]: e.target.value })
 
   function onClick() {
     if (time === null) {
@@ -65,28 +63,23 @@ export default function Cart({ adventure }) {
     }
   }
 
-  return <div className="adventure-cart-container" id="cart">
+  return <div className="adventure-cart-container">
     <div className="adventure-cart">
-      <h3>{userLanguage ? 'Prices' : 'Hinnakiri'}</h3>
-      <table>
-        <tbody>
-          <tr>
-            <td>{userLanguage ? 'Adult' : 'Täiskasvanu'}</td>
-            <td><strong>{adultFee} €</strong></td>
-          </tr>
-          <tr>
-            <td>{userLanguage ? 'Youth' : 'Nooruk'} (12-18)</td>
-            <td><strong>{youthFee} €</strong></td>
-          </tr>
-          <tr>
-            <td>{userLanguage ? 'Child' : 'Laps'} (6-11)</td>
-            <td><strong>{childFee} €</strong></td>
-          </tr>
-        </tbody>
-      </table>
-      <hr/>
-      <h3>{userLanguage ? 'Book an adventure' : 'Osta Elamusmatk'}</h3>
+      <h4>{userLanguage ? 'Prices' : 'Hinnakiri'}</h4>
+      <div className="adventure-cart-prices">
+        <p>{userLanguage ? 'Adult' : 'Täiskasvanu'}</p>
+        <p>{adultFee} €</p>
+      </div>
+      <div className="adventure-cart-prices">
+        <p>{userLanguage ? 'Youth' : 'Nooruk'} (12-18)</p>
+        <p>{youthFee} €</p>
+      </div>
+      <div className="adventure-cart-prices">
+        <p>{userLanguage ? 'Child' : 'Laps'} (6-11)</p>
+        <p>{childFee} €</p>
+      </div>
 
+      <h4>{userLanguage ? 'Book an adventure' : 'Osta Elamusmatk'}</h4>
       <div className="cart-input-container">
         <label className="adventure-cart-label">{userLanguage ? 'Adult' : 'Täiskasvanu'}</label>
         <div className="cart-inputs">
@@ -137,22 +130,25 @@ export default function Cart({ adventure }) {
 
       <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
         <label className="adventure-cart-label">{userLanguage ? 'Date' : 'Kuupäev'}*</label>
-        <DatePicker dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(x => new Date(x))} />
+        <DatePicker minDate={new Date()} dateFormat="dd/MM/yyyy" selected={orderData.day} onChange={date => setOrderData({ ...orderData, day: date })} includeDates={adventure.availability.days.map(x => new Date(x))}/>
       </div>
 
       <div className="cart-input-container">
         <label className="adventure-cart-label">{userLanguage ? 'Time' : 'Kellaaeg'}*</label>
         <div className="booking-times">
           {
-            adventure.availability.time.map(clock => {
-              return <Fragment key={clock}>
-                <input type="radio" id={clock} name="time" value={clock} onClick={() => setOrderData({ ...orderData, time: clock })} required/>
-                <label style={ time === clock ? { background: 'rgba(33, 33, 33)', color: 'white' } : null } className="booking-time" htmlFor={clock}>{clock}</label>
-              </Fragment>
-            })
+            adventure.availability.time.length === 1
+              ? <p style={{ paddingRight: '5px' }}>{adventure.availability.time[0]}</p>
+              : adventure.availability.time.map(clock => {
+                return <Fragment key={clock}>
+                  <input type="radio" id={clock} name="time" value={clock} onClick={() => setOrderData({ ...orderData, time: clock })} required/>
+                  <label style={ time === clock ? { background: 'rgba(33, 33, 33)', color: 'white' } : null } className="booking-time" htmlFor={clock}>{clock}</label>
+                </Fragment>
+              })
           }
         </div>
       </div>
+
       <br/>
       <small>* {userLanguage ? 'If your preferred date or time is different than what is offered, then please contact us and we try to find the best solution for you.' : 'Kui meie poolt pakutud kuupäev või kellaaeg ei kattu sinu omaga, siis palun võta ühendust meiega ja leiame parima lahenduse.'}</small>
 

@@ -5,15 +5,17 @@ export default function Images({ adventure }) {
   const [showModal, toggleModal] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
 
+  function openImage(el) {
+    setCurrentPage(el)
+    toggleModal(!showModal)
+  }
+
   return <Fragment>
     <div className="adventure-images">
       {
-        adventure.images.map((image, i) => <img
-          onClick={() => {
-            setCurrentPage(i + 1)
-            toggleModal(!showModal)
-          }}
-          key={image} src={image} alt='Illustration'/>)
+        adventure.images.map((image, i) => <div className="adventure-image" key={image}>
+          <img onClick={() => openImage(i + 1)} src={image} alt='Illustration'/>
+        </div>)
       }
     </div>
     {

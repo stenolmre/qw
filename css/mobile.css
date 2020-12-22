@@ -262,6 +262,10 @@ rgba(16, 46, 74, 1); */
   display: none;
 }
 
+.mobile-adventures-flex svg {
+  margin: 25px 0 0 20px;
+}
+
 .mobile-adventure {
   width: 80%;
   min-width: 80%;
@@ -382,6 +386,10 @@ rgba(16, 46, 74, 1); */
 
 .mobile-albums-flex::-webkit-scrollbar {
   display: none;
+}
+
+.mobile-albums-flex svg {
+  margin: 25px 0 0 20px;
 }
 
 .mobile-album-container {
@@ -566,6 +574,10 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.mobile-galleries-page svg {
+  margin: 50px 0 25px 0;
 }
 
 .mobile-galleries-page .mobile-album-container {
@@ -810,6 +822,7 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 @media (min-width: 768px) {
   .mobile-adventures-page {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
@@ -911,6 +924,10 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   padding: 25px 20px 50px 20px;
 }
 
+.mobile-contact-page .mobile-contact-detail {
+  margin-left: 0;
+}
+
 .mobile-contact-page .mobile-contact-icon {
   border-radius: 100%;
   background: #ffffff;
@@ -926,10 +943,18 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   width: 90%;
 }
 
+.mobile-contact-form label {
+  font-size: .875rem;
+}
+
+.mobile-contact-form label span {
+  color: red;
+}
+
 .mobile-contact-form input,
 .mobile-contact-form textarea {
   width: calc(100% - 24px);
-  margin: 4px 0;
+  margin: 4px 0 5px 0;
   padding: 12px;
   border-radius: 4px;
   background: #ffffff;
@@ -940,13 +965,24 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
   font-size: .875rem;
 }
 
+.mobile-contact-form input:focus,
+.mobile-contact-form textarea:focus {
+  outline: 1px solid #a682ff;
+}
+
 .mobile-contact-form textarea {
   min-height: 75px;
   resize: vertical;
 }
 
+.mobile-contact-form p {
+  margin: 0 0 20px 0;
+  font-size: .75rem;
+  color: red;
+}
+
 .mobile-contact-form button {
-  margin: 10px 0 0 0;
+  margin: 0;
   padding: 10px 35px;
   border: none;
   outline: none;
@@ -962,11 +998,9 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 
 @media (min-width: 768px) {
   .mobile-contact-page {
-    width: 700px;
-    margin: 0 calc(50% - 370px);
-    padding: 25px 20px 50px 20px;
-    display: flex;
-    align-items: flex-start;
+    width: 500px;
+    margin: 0 calc(50% - 250px);
+    padding: 25px 0 50px 0;
   }
 
   .mobile-contact-page .mobile-contact-icon {
@@ -981,6 +1015,5 @@ $gradient-radial: radial-gradient(#a682ffff, #715affff, #5887ffff, #55c1ffff, #1
 
   .mobile-contact-form {
     width: 100%;
-    margin: 0 0 0 100px;
   }
 }

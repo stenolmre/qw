@@ -2,7 +2,6 @@ import { Fragment, useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
 import Head from 'next/head'
 import Link from 'next/link'
-import Container from './../container'
 import OrderDetails from './orderdetails'
 import CheckoutForm from './checkoutform'
 import PaymentAccepted from './paymentaccepted'
@@ -37,7 +36,6 @@ function Order({ success }) {
     <Head>
       <title>qw - order</title>
     </Head>
-    <Container>
       <div className="order-container">
         <OrderDetails order={order} userLanguage={userLanguage}/>
         <br/>
@@ -47,7 +45,6 @@ function Order({ success }) {
           </Elements>
         </div>
       </div>
-    </Container>
   </Fragment>
 }
 

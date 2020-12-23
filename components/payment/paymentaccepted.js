@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import Cookies from 'js-cookie'
 import Head from 'next/head'
-import Container from './../container'
 
 export default function PaymentAccepted() {
   const order = Cookies.get('order')
@@ -13,7 +12,6 @@ export default function PaymentAccepted() {
     <Head>
       <title>qw - order</title>
     </Head>
-    <Container>
       <div className="order-container">
         <div className="order">
           <div className="order-header">
@@ -72,6 +70,5 @@ export default function PaymentAccepted() {
           <p className="payment-accepted-info">NB! If you have any questions or complications regarding your order, payment, or the event you have purchased then please contact us via email. Furthermore, we will send a proper invoice in the email provided for us. Thank you for your order!</p>
         </div>
       </div>
-    </Container>
   </Fragment>
 }

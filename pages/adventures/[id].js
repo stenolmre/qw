@@ -1,23 +1,17 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useEffect } from 'react'
 import cookies from 'next-cookies'
 import Head from './../../components/utils/head'
 import { useRouter } from 'next/router'
-import Container from './../../components/container'
-import Loading from './../../components/utils/loading'
-import Images from './../../components/adventure/images'
-import Info from './../../components/adventure/info'
-import Cart from './../../components/adventure/cart'
+import MobileAdventure from './../../components/mobile/adventure/adventure'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
-import MobileAdventure from './../../components/mobile/adventure/adventure'
-
-function Adventure({ language }) {
+function Adventure({ language, person }) {
   const dispatchAdventure = useAdventureDispatch()
   const { adventure } = useAdventureState()
   const { query } = useRouter()
   const user_lang = language === 'eng' ? true : false
-
+  console.log(person);
   useEffect(() => {
     getAdventure(dispatchAdventure, query.id)
   }, [dispatchAdventure, query])
@@ -33,7 +27,11 @@ function Adventure({ language }) {
 Adventure.getInitialProps = ctx => {
   const { lan } = cookies(ctx)
 
-  return { language: lan || '' }
+  const person = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+    ? 'Development'
+    : 'Sten Olmre'
+
+  return { language: lan || '', person: person }
 }
 
 export default Adventure

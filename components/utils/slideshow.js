@@ -20,15 +20,17 @@ export default function Slideshow({ gallery, close, currentPage, setCurrentPage 
 
   const paginateToPrevious = () => currentPage === 1 ? setCurrentPage(totalPages) : setCurrentPage(currentPage - 1)
 
-  document.onkeydown = e => {
-    if (e.which == 39) {
-      paginateToNext()
-      return false
-    } else if (e.which == 37) {
-      paginateToPrevious()
-      return false
-    } else {
-      return false
+  if (process.browser) {
+    document.onkeydown = e => {
+      if (e.which == 39) {
+        paginateToNext()
+        return false
+      } else if (e.which == 37) {
+        paginateToPrevious()
+        return false
+      } else {
+        return false
+      }
     }
   }
 

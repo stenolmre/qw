@@ -2,13 +2,14 @@ import React, { Fragment, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import MobileLayout from './../layout'
 import AdventureDisplay from './../components/adventure'
+import Loader from './../components/loader'
 import Categories from './categories'
 import { useAdventureState, useAdventureDispatch } from './../../../context/adventure'
 import { getAdventures } from './../../../actions/adventure'
 import { adventures_ad_eng, adventures_ad_est } from './../../texts/adventures'
 
 export default function MobileAdventure({ userLanguage, message }) {
-  const { adventures } = useAdventureState()
+  const { adventures, loading } = useAdventureState()
   const dispatchAdventure = useAdventureDispatch()
   const { pathname } = useRouter()
 
@@ -22,9 +23,11 @@ export default function MobileAdventure({ userLanguage, message }) {
         <Categories />
         <div className="mobile-adventures-page">
           {
-            adventures && pathname === '/adventures'
-              ? adventures.map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />).reverse()
-              : adventures.filter(e => e.type === pathname.slice(12)).map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />)
+            loading
+              ? <Loader />
+              : adventures && pathname === '/adventures'
+                  ? adventures.map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />).reverse()
+                  : adventures.filter(e => e.type === pathname.slice(12)).map(e => <AdventureDisplay key={e._id} userLanguage={userLanguage} e={e} />)
           }
         </div>
         {

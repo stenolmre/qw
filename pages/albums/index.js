@@ -1,10 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
-import Link from 'next/link'
 import cookies from 'next-cookies'
 import Head from './../../components/utils/head'
-import Container from './../../components/container'
-import Heading from './../../components/utils/heading'
-import Spinner from './../../components/utils/spinner'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 import { landingeng, landingest } from './../../components/texts/landing'
@@ -14,8 +10,7 @@ import MobileGalleries from './../../components/mobile/gallery/galleries'
 function Albums({ language }) {
   const user_lang = language === 'eng' ? true : false
   const dispatchAlbum = useAlbumDispatch()
-  const albumState = useAlbumState()
-  const { albums } = albumState
+  const { albums } = useAlbumState()
 
   useEffect(() => {
     getAlbums(dispatchAlbum)

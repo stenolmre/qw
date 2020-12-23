@@ -29,7 +29,7 @@ export default function Demo() {
           text-align: left;
           margin: 30px 0 0 15%;
           color: #fff;
-          text-shadow: -8px -8px 12px rgba(255, 255, 255, .02), 8px 8px 12px rgba(0, 0, 0, .06);
+          text-shadow: -8px -8px 12px rgba(255, 255, 255, .02), 8px 8px 12px rgba(0, 0, 0, .04);
           caret-color: #262626;
           outline: none;
         }

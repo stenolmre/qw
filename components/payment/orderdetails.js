@@ -1,5 +1,4 @@
 import React, { useEffect, Fragment } from 'react'
-import Loading from './../utils/loading'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 

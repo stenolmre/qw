@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react'
 import Cookies from 'js-cookie'
-import SuccessIcon from './../../utils/successicon'
 
 export default function Form() {
   const [error, setError] = useState({ email: null, message: null })
@@ -50,3 +49,33 @@ export default function Form() {
     <p style={{ color: '#00b100', fontWeight: '600', margin: '25px 0 0 0' }}>{success}</p>
   </Fragment>
 }
+
+
+// async function send(e) {
+//   e.preventDefault()
+//
+//   const templateParams = {
+//     client_name: name,
+//     client_email: email,
+//     client_message: textarea
+//   }
+//
+//   if (!name || !email || ! textarea) {
+//     userLanguage ? setError('Please fill all fields with valid information.') : setError('Palun sisestage korrektne info kõikidesse väljadesse.')
+//
+//     setTimeout(() => {
+//       setError(null)
+//     }, 5000)
+//
+//     return
+//   }
+//
+//   try {
+//     await emailjs.send('gmail', 'northseason', templateParams, 'user_d35Shv7J12m9DhmwjDmiA')
+//
+//     setSuccess(true)
+//     setFormData({ name: '', email: '', textarea: ''})
+//   } catch {
+//     console.log('Error');
+//   }
+// }

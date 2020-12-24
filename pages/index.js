@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import cookies from 'next-cookies'
 import Head from './../components/utils/head'
-import Landing from './../components/landing'
 import Mobile from './../components/mobile/mobile'
+import Landing from './../components/landing/landing'
 import { landingeng, landingest } from './../components/texts/landing'
 
 function Index({ language }) {
@@ -10,7 +10,7 @@ function Index({ language }) {
   return <Fragment>
     <Head title={!user_lang ? "North Season - Puhka Maailmas Reisides" : "North Season - Travel to Inspire Your Life"} description={!user_lang ? landingest : landingeng} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com" />
     <div className="desktop">
-      <Landing/>
+      <Landing userLanguage={user_lang}/>
     </div>
     <div className="mobile">
       <Mobile userLanguage={user_lang}/>

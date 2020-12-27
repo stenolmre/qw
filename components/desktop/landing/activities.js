@@ -7,7 +7,7 @@ export default function Activities({ userLanguage }) {
     <h4>Activities</h4>
     <div className="desktop-activities">
       {
-        categories.map(e => <div className="desktop-activity">
+        categories.map(e => <div key={e.name} className="desktop-activity">
           {
             e.category === 'snowshoeing'
               ? <SnowshoeingIcon />

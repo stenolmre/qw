@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import cookies from 'next-cookies'
 import Head from './../components/utils/head'
-import Mobile from './../components/mobile/mobile'
+import MobileLanding from './../components/mobile/landing/landing'
 import Landing from './../components/desktop/landing/landing'
 import { landingeng, landingest } from './../components/texts/landing'
 
@@ -13,7 +13,7 @@ function Index({ language }) {
       <Landing userLanguage={user_lang}/>
     </div>
     <div className="mobile">
-      <Mobile userLanguage={user_lang}/>
+      <MobileLanding userLanguage={user_lang}/>
     </div>
   </Fragment>
 }

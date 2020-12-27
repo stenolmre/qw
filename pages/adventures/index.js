@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import cookies from 'next-cookies'
 import Head from './../../components/utils/head'
-import MobileAdventures from './../../components/mobile/adventures/adventures'
+import MobileAdventures from './../../components/mobile/adventures'
 import DesktopAdventures from './../../components/desktop/adventures'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventures } from './../../actions/adventure'
@@ -22,7 +22,7 @@ function Adventures({ language }) {
           <DesktopAdventures adventures={adventures} userLanguage={user_lang} loading={loading}/>
         </div>
         <div className="mobile">
-          <MobileAdventures userLanguage={user_lang}/>
+          <MobileAdventures adventures={adventures} loading={loading} userLanguage={user_lang}/>
         </div>
       </Fragment>
     }

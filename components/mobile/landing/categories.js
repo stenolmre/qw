@@ -6,7 +6,7 @@ import categories from './../../arrays/categories'
 export default function Categories({ userLanguage }) {
   return <div className="mobile-adventures-categories">
       {
-        categories.map(e => <Link href={`/adventures/${e.name}`} key={e.name}><a>
+        categories.map(e => <Link href="/adventures" key={e.name}><a>
           <div className="mobile-adventures-category">
             <div className="mobile-adventures-category-icon">
               {

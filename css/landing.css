@@ -151,20 +151,6 @@
 /* ========================================= */
 /* ========================================= */
 /* MOBILE */
-.mobile-watermark {
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 50px;
-  left: -15px;
-  font-size: 5.5rem;
-  color: #fff;
-  text-shadow: -2px -2px 12px rgba(255, 255, 255, .2), 2px 2px 12px rgba(0, 0, 0, .07);
-  caret-color: #262626;
-  outline: none;
-}
-
-/* ========================================= */
 .mobile-landing {
   width: 100%;
   position: relative;
@@ -176,22 +162,7 @@
   font-size: 2.5rem;
   font-weight: 900;
   position: relative;
-  color: rgba(33, 33, 33);
-}
-
-.mobile-landing h1 span {
-  color: rgba(113, 90, 255);
-}
-
-@media (min-width: 768px) {
-  .mobile-landing h1 {
-    width: 850px;
-    font-size: 3.5rem;
-    margin: 170px 0 20px 20%;
-    text-align: center;
-    font-weight: 900;
-    text-shadow: -6px 6px 15px rgba(113, 90, 255, 0.3), 6px -6px 15px rgba(255, 255, 255, 0.8);
-  }
+  color: var(--purple);
 }
 
 /* ========================================= */
@@ -254,7 +225,7 @@
 }
 
 .mobile-adventure {
-  width: 80%;
+  width: calc(80% - 8px);
   min-width: 80%;
   height: 425px;
   margin: 0 10px;
@@ -320,18 +291,6 @@
   padding: 6px 15px;
 }
 
-@media (min-width: 768px) {
-  .mobile-adventures {
-    width: calc(80% - 80px);
-    margin: 0 calc(10% + 20px);
-  }
-
-  .mobile-adventure {
-    width: 325px;
-    min-width: 325px;
-  }
-}
-
 /* ========================================= */
 .mobile-contact {
   width: 100%;
@@ -367,11 +326,4 @@
   box-shadow: inset 3px 3px 3px rgb(250, 255, 255, .1), inset -1px -1px 5px rgb(206, 214, 230, .6);
   font-size: 1.5rem;
   color: rgba(113, 90, 255, 1);
-}
-
-@media (min-width: 768px) {
-  .mobile-contact {
-    width: calc(80% - 80px);
-    margin: 0 calc(10% + 20px);
-  }
 }

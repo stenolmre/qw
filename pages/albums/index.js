@@ -5,7 +5,7 @@ import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 import { landingeng, landingest } from './../../components/texts/landing'
 import DesktopAlbums from './../../components/desktop/albums'
-import MobileGalleries from './../../components/mobile/gallery/galleries'
+import MobileAlbums from './../../components/mobile/albums/albums'
 
 function Albums({ language }) {
   const user_lang = language === 'eng' ? true : false
@@ -24,7 +24,7 @@ function Albums({ language }) {
           <DesktopAlbums userLanguage={user_lang} albums={albums}/>
         </div>
         <div className="mobile">
-          <MobileGalleries userLanguage={user_lang}/>
+          <MobileAlbums userLanguage={user_lang}/>
         </div>
       </Fragment>
     }

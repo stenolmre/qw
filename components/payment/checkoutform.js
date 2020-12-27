@@ -59,7 +59,10 @@ export default function CheckoutForm({ amount, success, description, userLanguag
     <label>Email</label><br/>
     <input type="text" name="email" value={email} onChange={onChange}/><br/>
     <h5>{userLanguage ? 'Payment Information' : 'Makse Info'}</h5>
-    <CardElement options={CARD_ELEMENT_OPTIONS}/>
+    <label>{userLanguage ? 'Card Info' : 'Kaardi Andmed'}</label><br/>
+    <div className="desktop-checkout-card-form">
+      <CardElement options={CARD_ELEMENT_OPTIONS}/>
+    </div>
     <button onClick={payFor} disabled={isProcessing || !stripe}>
       {
         isProcessing
@@ -78,7 +81,7 @@ export const CARD_ELEMENT_OPTIONS = {
       fontSmoothing: 'antialiased',
       fontSize: '14px',
       '::placeholder': {
-        color: 'rgba(33, 33, 33, .8)'
+        color: 'rgba(33, 33, 33, .8)',
       }
     },
     invalid: {

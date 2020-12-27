@@ -12,15 +12,15 @@
 /* ADVENTURE IMAGES */
 .adventure-images {
   width: 100%;
+  margin: 25px 0 10px 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 .adventure-image {
-  width: 75px;
-  height: 75px;
-  margin: 4px;
+  width: 55px;
+  height: 55px;
+  margin: 0 8px 0 0;
   padding: 2px;
   border-radius: 4px;
   box-shadow: 1px 1px 4px rgba(33, 33, 33, .2), -1px -1px 3px #fff;

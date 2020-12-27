@@ -7,7 +7,8 @@ import { getAdventure } from './../../actions/adventure'
 
 export default function Cart() {
   const user_lang = Cookies.get('lan') === 'eng' ? true : false
-  const { query } = useRouter()
+  const router = useRouter()
+  const { query } = router
 
   const dispatchAdventure = useAdventureDispatch()
   const { adventure } = useAdventureState()
@@ -17,24 +18,28 @@ export default function Cart() {
   const [people, setPeople] = useState({ adult: 1, youth: 0, child: 0 })
   const [selectedDay, setSelectedDay] = useState(null)
   const [chosenTime, setChosenTime] = useState('')
-  const [error, setError] = useState({ date: '', time: '' })
+  const [processing, setProcessing] = useState(false)
 
   const onChange = e => setPeople({ ...people, [e.target.name]: e.target.value })
 
-  const placeOrder = e => {
+  const placeOrder = async e => {
     e.preventDefault()
+    setProcessing(true)
 
-    if (people.adult < 1 && people.youth < 1 && people.child < 1) return console.log('How many?')
-    if (selectedDay === null || chosenTime === '') return console.log('When?')
+    try {
+      await Cookies.set('cus_order', {
+        id: query.id,
+        adult: people.adult,
+        youth: people.youth,
+        child: people.child,
+        date: selectedDay,
+        time: chosenTime
+      });
 
-    console.log({
-      id: query.id,
-      adult: people.adult,
-      youth: people.youth,
-      child: people.child,
-      date: selectedDay,
-      time: chosenTime
-    });
+      router.push('/checkout')
+    } catch (err) {
+      setProcessing(false)
+    }
   }
 
   const calculatePrice = (value, person) => adventure && (adventure.prices[value].price * person / 100)
@@ -74,7 +79,7 @@ export default function Cart() {
           }
         </div>
         <h5>{user_lang ? 'Total' : 'Kokku'}: {(calculatePrice(0, people.adult) + calculatePrice(1, people.youth) + calculatePrice(2, people.child)).toFixed(2)}€</h5>
-        <button>{user_lang ? 'Checkout' : 'Kassa'}</button>
+        <button disabled={people.adult < 1 && people.youth < 1 && people.child < 1 || selectedDay === null || chosenTime === '' || processing}>{user_lang ? 'Checkout' : 'Kassa'}</button>
       </form>
     }
   </Fragment>

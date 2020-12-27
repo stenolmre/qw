@@ -1,51 +1,37 @@
-import { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
-import Head from 'next/head'
-import Link from 'next/link'
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+import DesktopLayout from './../desktop/layout'
+import AdventureSidebar from './../desktop/sidebars/adventuresidebar'
 import OrderDetails from './orderdetails'
 import CheckoutForm from './checkoutform'
 import PaymentAccepted from './paymentaccepted'
-import { loadStripe } from '@stripe/stripe-js'
-import { Elements } from '@stripe/react-stripe-js'
 import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
 const stripePromise = loadStripe(`${process.env.STRIPE_PK_TEST}`)
 
-function Order({ success }) {
+export default function Order({ success }) {
   const dispatchAdventure = useAdventureDispatch()
-  const adventureState = useAdventureState()
-  const [orderData, setOrderData] = useState({ adults: 1, children: 0, date: '', time: '' })
-  const { adults, children, date, time, price } = orderData
+  const { adventure, loading } = useAdventureState()
   const [payment, setPayment] = useState('processing')
-  const userLanguage = Cookies.get('lan') === 'eng'
+  const user_lang = Cookies.get('lan') === 'eng'
 
-  const order = Cookies.get('order') ? JSON.parse(Cookies.get('order')) : null
-  const eventDate = order && new Date(order.day).toLocaleDateString()
-  const id = order && `${order.id}`
+  const order = Cookies.get('cus_order') ? JSON.parse(Cookies.get('cus_order')) : null
+  const id = order && order.id
 
-  useEffect(() => {
-    getAdventure(dispatchAdventure, id)
-  }, [dispatchAdventure, id])
+  useEffect(() => { getAdventure(dispatchAdventure, id) }, [dispatchAdventure, id])
 
-  if (payment === 'success') {
-    return <PaymentAccepted/>
-  }
+  if (payment === 'success') return <PaymentAccepted/>
 
-  return <Fragment>
-    <Head>
-      <title>qw - order</title>
-    </Head>
-      <div className="order-container">
-        <OrderDetails order={order} userLanguage={userLanguage}/>
-        <br/>
-        <div className="order">
-          <Elements stripe={stripePromise}>
-            <CheckoutForm amount={order && Math.floor(order.price * 100)} description={order && order.title} success={() => setPayment('success')}/>
-          </Elements>
-        </div>
-      </div>
-  </Fragment>
+  return <DesktopLayout sidebar={<AdventureSidebar/>}>
+    <div className="desktop-checkout-page">
+      <OrderDetails userLanguage={user_lang} adventure={adventure} loading={loading} order={order}/>
+      <h2>{user_lang ? 'Checkout' : 'Kassa'}</h2>
+      <Elements stripe={stripePromise}>
+        <CheckoutForm userLanguage={user_lang} amount={order && Math.floor(order.price * 100)} description={order && order.title} success={() => setPayment('success')}/>
+      </Elements>
+    </div>
+  </DesktopLayout>
 }
-
-export default Order

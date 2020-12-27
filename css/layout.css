@@ -11,7 +11,7 @@
   height: calc(100vh - 125px);
   min-height: 595px;
   padding: 75px 50px 50px 50px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;

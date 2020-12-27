@@ -3,11 +3,13 @@ import DesktopLayout from './../layout'
 import Details from './../../adventure/details'
 import Cart from './cart'
 import share from './../../arrays/share'
+import Images from './../../adventure/images'
 
 export default function Adventure({ adventure, userLanguage }) {
   return <DesktopLayout sidebar={<Cart userLanguage={userLanguage}/>}>
     <div className="desktop-adventure-page">
       <h1 className="desktop-page-heading">{userLanguage ? adventure.name : adventure.nimi}</h1>
+      <Images />
       <Details />
     </div>
   </DesktopLayout>

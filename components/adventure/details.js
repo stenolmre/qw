@@ -19,7 +19,7 @@ export default function AdventureDetails() {
       adventure && <Fragment>
         <div className="adventure-subheader">
           <div>
-            <span><i className="fas fa-chart-bar"/>{adventure.levelOfDifficulty}</span>
+            <span><i className="fas fa-chart-bar"/>{user_lang ? adventure.levelOfDifficulty : adventure.raskusaste}</span>
             <span><i className="fas fa-clock"/>~{adventure.duration}H</span>
           </div>
           <div className="adventure-social">

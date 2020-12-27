@@ -26,7 +26,7 @@ export default function Navbar() {
           ? <Link href="/"><a>{user_lang ? 'Home' : 'Esileht'}</a></Link>
           : <Link href="/"><a className={pathname === '/' ? 'active' : null}>{user_lang ? 'Popular' : 'Populaarseim'}</a></Link>
       }
-      <Link href="/adventures"><a className={pathname.includes('adventures') ? 'active' : null}>{user_lang ? 'All Adventures' : 'Kõik Elamusmatkad'}</a></Link>
+      <Link href="/adventures"><a className={pathname.includes('adventures') ? 'active' : null}>{user_lang ? 'Adventures' : 'Elamusmatkad'}</a></Link>
       <Link href="/albums"><a className={pathname.includes('albums') ? 'active' : null}>{user_lang ? 'Gallery' : 'Galerii'}</a></Link>
       <Link href="/contact"><a className={pathname === '/contact' ? 'active' : null}>{user_lang ? 'Contact' : 'Kontakt'}</a></Link>
     </nav>

@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import axios from 'axios'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
-export default function CheckoutForm({ amount, success, description }) {
+export default function CheckoutForm({ amount, success, description, userLanguage }) {
   const [paymentData, setPaymentData] = useState({ name: '', email: '' })
   const { name, email } = paymentData
   const [error, setError] = useState('')
@@ -11,8 +11,11 @@ export default function CheckoutForm({ amount, success, description }) {
   const stripe = useStripe();
   const elements = useElements();
 
-  function onChange(e) {
-    setPaymentData({ ...paymentData, [e.target.name]: e.target.value })
+  const onChange = e => setPaymentData({ ...paymentData, [e.target.name]: e.target.value })
+
+  function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
   }
 
   async function payFor(e) {
@@ -50,10 +53,12 @@ export default function CheckoutForm({ amount, success, description }) {
   }
 
   return <Fragment>
-    <h3>billing information</h3>
-    <input type="text" name="name" value={name} placeholder="Full Name" onChange={onChange}/>
-    <input type="email" name="email" value={email} placeholder="Email" onChange={onChange}/>
-    <h3>payment information</h3>
+    <h5>{userLanguage ? 'Billing Information' : 'Kliendi Info'}</h5>
+    <label>{userLanguage ? 'Full Name' : 'Ees- ja Perekonnanimi'}</label><br/>
+    <input type="text" name="name" value={name} onChange={onChange}/><br/>
+    <label>Email</label><br/>
+    <input type="text" name="email" value={email} onChange={onChange}/><br/>
+    <h5>{userLanguage ? 'Payment Information' : 'Makse Info'}</h5>
     <CardElement options={CARD_ELEMENT_OPTIONS}/>
     <button onClick={payFor} disabled={isProcessing || !stripe}>
       {

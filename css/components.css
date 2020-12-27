@@ -196,6 +196,11 @@ input::-webkit-inner-spin-button {
   color: white;
 }
 
+.adventure-cart-form button:disabled {
+  background: rgba(113, 90, 255, .5);
+  cursor: default;
+}
+
 .DatePicker__input.-ltr {
   margin: 5px 0 15px 0 !important;
   text-align: left !important;

@@ -215,6 +215,10 @@ input::-webkit-inner-spin-button {
   padding: 0 !important;
 }
 
+.Calendar__weekDay {
+  color: black !important;
+}
+
 .Calendar__yearText,
 .Calendar__monthText {
   margin: 0 10px !important;

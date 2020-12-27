@@ -69,7 +69,7 @@ export default function Cart() {
         </div>
 
         <label>{user_lang ? 'Choose Date' : 'Vali Kuupäev'}</label><br/>
-        <Calendar adventure={adventure} selectedDay={selectedDay} setSelectedDay={setSelectedDay}/><br/>
+        <Calendar adventure={adventure} selectedDay={selectedDay} setSelectedDay={setSelectedDay} userLanguage={user_lang}/><br/>
         <label>{user_lang ? 'Choose Time' : 'Vali Kellaaeg'}</label><br/>
         <div className="adventure-cart-form-times">
           {

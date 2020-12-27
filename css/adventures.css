@@ -115,134 +115,43 @@
   text-decoration: underline;
 }
 
-/* ========================================= */
-/* ADVENTURE CART */
-.adventure-cart {
-  border: 1px solid #eee;
-  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
-  border-radius: 14px;
-  padding: 0 20px 0 20px;
-  font-size: .875rem;
-  background: #fafafa;
+.adventure-list p span {
+  width: 150px;
 }
 
-.adventure-cart h4 {
-  margin: 50px 0 15px 0;
-}
-
-.adventure-cart-prices {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.adventure-cart-prices p {
-  margin: 5px 0;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.cart-input-container {
+.adventure-subheader {
   width: 100%;
-  margin: 5px 0;
-  padding: 0;
+  height: 50px;
+  margin: 10px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: .75rem;
 }
 
-.cart-input-container h4 {
-  margin: 25px 0;
+.adventure-subheader div i {
+  margin-right: 5px;
 }
 
-.cart-inputs {
+.adventure-subheader div span:nth-of-type(2) i {
+  margin-left: 15px;
+}
+
+.adventure-social {
   display: flex;
-  align-items: center;
 }
 
-.adventure-cart input[type='number'],
-.adventure-cart span {
+.adventure-social a {
+  width: 35px;
+  height: 35px;
+  margin: 0 0 0 5px;
   display: grid;
   place-items: center;
-  border-radius: 4px;
+  border-radius: 100%;
   box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
-  background: #ffffff;
-  text-align: center;
 }
 
-.adventure-cart input[type='number'] {
-  width: 35px;
-  margin: 5px 4px 15px 4px;
-  padding: 5px 0;
-  border: none;
-  outline: none;
-}
-
-.adventure-cart span {
-  width: 26px;
-  height: 26px;
-  margin: 5px 0 15px 0;
-  cursor: pointer;
-}
-
-.cart-display-right {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.adventure-cart input[type='radio'] {
-  display: none;
-}
-
-.booking-times {
-  display: flex;
-  align-items: flex-start;
-}
-
-.booking-times input,
-.booking-times select {
-  width: 100px;
-  margin: 5px 0 15px 0;
-  padding: 5px;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
-  background: #ffffff;
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.booking-time {
-  margin: 5px 0 15px 0;
-  padding: 5px 10px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 3px rgba(33, 33, 33, .2), -1px -1px 3px #fff;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-.adventure-cart-button {
-  padding: 7px 40px 7px 40px;
-  border: 1px solid rgba(113, 90, 255, 1);
-  border-radius: 4px;
-  background: rgba(113, 90, 255, 1);
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 1px 2px 8px -1px rgba(113, 90, 255, .7);
-  box-shadow: 0px 1px 21px rgba(113, 90, 255, .3);
-}
-
-.adventure-cart-button:disabled {
-  background: rgba(113, 90, 255, .5);
-  border: 1px solid rgba(113, 90, 255, .5);
-  cursor: default;
+.adventure-social a i {
+  margin: 0;
+  color: var(--purple);
 }

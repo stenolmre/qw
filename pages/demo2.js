@@ -1,52 +1,41 @@
-import React, { useState } from 'react'
-import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import DatePicker from 'react-modern-calendar-datepicker';
-import { utils } from "react-modern-calendar-datepicker";
+import React, { Fragment } from 'react'
 
 export default function Demo2() {
-  const defaultValue = {
-    year: 2020,
-    month: 12,
-    day: 16,
-  };
+  return <Fragment>
+    <div>
+      <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <path fill="#FF0066" d="M59.3,-42.9C72.3,-31,75,-6.6,67.1,10.3C59.3,27.3,40.8,36.8,21.2,47.6C1.7,58.3,-19,70.3,-38.3,66.1C-57.6,62,-75.5,41.6,-81.6,17.8C-87.8,-6.1,-82.1,-33.5,-66.5,-46C-51,-58.5,-25.5,-56,-1.2,-55.1C23.2,-54.1,46.3,-54.8,59.3,-42.9Z" transform="translate(70 70)" />
+</svg>
 
-  const maximumDate = {
-    year: 2021,
-    month: 4,
-    day: 30
-  }
+      <h4>Book and adventure</h4>
+    </div>
+    <style jsx>
+      {`
+        div {
+          width: 260px;
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          background: #eee;
+        }
 
-  const disabledDays = [
-    {
-      year: 2020,
-      month: 12,
-      day: 26,
-    },
-    {
-      year: 2020,
-      month: 12,
-      day: 25,
-    },
-    {
-      year: 2021,
-      month: 1,
-      day: 1
-    }
-  ];
+        div svg {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 1;
+          display:block;
+          vertical-align:top;
+        }
 
-  const [selectedDay, setSelectedDay] = useState(defaultValue);
-
-  const handleDisabledSelect = disabledDay => {
-    console.log('Tried selecting a disabled day', disabledDay);
-  };
-
-  return <DatePicker
-    value={selectedDay}
-      onChange={setSelectedDay}
-      disabledDays={disabledDays}
-      minimumDate={utils().getToday()}
-      maximumDate={maximumDate}
-      onDisabledDayError={handleDisabledSelect}
-      shouldHighlightWeekends
-  />
+        h4 {
+          z-index: 2;
+          color: white;
+          margin-left: -15px;
+        }
+      `}
+    </style>
+  </Fragment>
 }

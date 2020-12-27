@@ -4,6 +4,7 @@ import './../css/pages.css'
 import './../css/mobile.css'
 import './../css/adventures.css'
 import './../css/landing.css'
+import './../css/layout.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import GlobalState from './../context/context'
 import { useEffect } from 'react'

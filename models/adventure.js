@@ -24,11 +24,21 @@ const AdventureSchema = mongoose.Schema({
     }
   }],
   availability: {
+    disabledDays: [{
+      year: {
+        type: Number,
+        required: true
+      },
+      month: {
+        type: Number,
+        required: true
+      },
+      day: {
+        type: Number,
+        required: true
+      }
+    }],
     time: {
-      type: Array,
-      required: true
-    },
-    days: {
       type: Array,
       required: true
     }

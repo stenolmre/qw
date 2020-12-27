@@ -1,452 +1,240 @@
-/* ========================================= */
-/* HEADING */
-.heading {
-  display: flex;
-  padding: 0 10px 0 30px;
-  justify-content: space-between;
-  align-items: flex-start;
+.desktop-page-heading {
+  margin: 0;
+  color: var(--purple);
+  font-weight: 900;
 }
 
-.heading h1 {
-  width: 70%;
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  margin-bottom: 0;
-  color: black;
-}
-
-.heading span {
-  font-size: .8rem;
-  color: rgba(33, 33, 33, .5);
-}
-
-.heading a {
-  color: #ff4500;
-  font-weight: 600;
-  margin-top: 22px;
-  padding-right: 20px;
+.desktop-page-description {
+  width: 450px;
 }
 
 /* ========================================= */
-/* SIDEBAR */
-.sidebar {
-  width: 350px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  border-left: 1px solid rgba(250, 250, 250, .4);
-  backdrop-filter: blur(7px);
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-}
-
-.sidebar-content {
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50% calc(50% - 60px) 60px;
-}
-
-.sidebar-button {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-button a {
-  text-decoration: none;
-  text-transform: capitalize;
-  font-size: .75rem;
-  color: white;
-}
-
-/* ========================================= */
-/* SEARCH */
-.search {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search input {
-  width: 70%;
-  height: 20px;
-  padding: 0 20px 0 3px;
-  background-color: transparent;
-  border: none;
-  border-radius: 2px;
-  color: white;
-  font-size: .875rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.search input:focus {
-  outline: none;
-}
-
-.search input::placeholder {
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-  font-size: .875rem;
-}
-
-.search span {
-  border: none;
-  background-color: transparent;
-  color: white;
-}
-
-/* ========================================= */
-/* SIDEBAR POSTS */
-.sidebar-posts-container {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 60px calc(100% - 60px);
-}
-
-.sidebar-posts {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .3);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.sidebar-post {
-  width: 100%;
-  margin-top: 30px;
-  color: white;
-  text-decoration: none;
-}
-
-.sidebar-post h3 {
-  width: 80%;
-  margin-left: 5%;
-  text-transform: capitalize;
-  font-size: .9rem;
-  font-weight: 600;
-}
-
-.sidebar-post span {
-  color: #ff4500;
-  font-weight: 600;
-  margin-right: 5px;
-}
-
-.sidebar-post p {
-  width: 80%;
-  margin-left: 5%;
-  opacity: .5;
-  font-size: .825rem;
-}
-
-.sidebar-post hr {
-  width: 80%;
-  height: .5px;
-  margin-left: 5%;
-  border: none;
-  background-color: rgba(250, 250, 250, .4);
-}
-
-/* ========================================= */
-/* SIDEBAR GALLERY */
-.sidebar-media-container {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .3);
-}
-
-.sidebar-media {
-  width: 120%;
-  height: 80%;
-  margin: 10% 0 10% -30%;
+.desktop-adventure-card {
+  width: 260px;
+  height: 190px;
+  margin: 0 20px 25px 0;
   border-radius: 4px;
-  display: grid;
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 100%;
-}
-
-.sidebar-media a {
-  width: 100%;
-  height: 100%;
-  background-color: #212121;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 4px 0 0 4px;
-}
-
-.sidebar-media a:hover {
-  color: #ff4500;
-  transition-duration: .4s;
-}
-
-.sidebar-media-images {
-  width: 100%;
-  height: 100%;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
   position: relative;
+  overflow: hidden;
 }
 
-.sidebar-media-images img {
+.desktop-adventure-card img {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 40px);
   object-fit: cover;
   object-position: center;
-  border-radius: 0 2px 2px 0;
 }
 
-.sidebar-media-left-button {
+.desktop-adventure-card-price {
+  margin: 0;
+  padding: 3px 10px;
   position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  outline: none;
-  border: none;
+  top: 15px;
+  left: 0;
+  border-radius: 0 2px 2px 0;
+  background: var(--lightpurple);
   color: white;
-  font-size: 1rem;
-  cursor: pointer;
+  font-size: .75rem;
 }
 
-.sidebar-media-number-button {
-  width: 100%;
+.desktop-adventure-card div {
+  width: calc(100% - 20px);
+  height: 40px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: absolute;
-  bottom: 10px;
-  cursor: pointer;
+  bottom: 0;
+  left: 0;
 }
 
-.sidebar-media-number-button div {
-  width: 7px;
-  height: 7px;
-  border: none;
-  border-radius: 50%;
-  padding: none;
-  margin: 0 4px;
-  cursor: pointer;
+.desktop-adventure-card div p {
+  width: calc(100% - 35px);
+  margin: 0;
+  font-weight: 600;
 }
 
-.sidebar-media-right-button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  outline: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+.desktop-adventure-card div i {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
+  display: grid;
+  place-items: center;
+  font-size: .75rem;
+  color: var(--lightpurple);
 }
 
 /* ========================================= */
-/* ADVENTURE CARD */
-.adventure-name {
-  width: 90%;
-  text-align: center;
-  text-transform: capitalize;
-  color: black;
+.desktop-album-container {
+  margin: 0 25px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.mobile .adventure-name {
-  width: 100%;
-}
-
-.adventurecard {
-  width: 90%;
-  max-width: 400px;
-  height: 245px;
-  margin: 0 5%;
-  padding: 3px;
+.desktop-album {
+  width: 200px;
+  height: 200px;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: 98px 98px;
+  grid-template-rows: 98px 98px;
+  grid-gap: 4px;
+  border-radius: 11px;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .1), -1px -1px 3px #fff;
   position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #eee;
-  color: rgba(250, 250, 250, 1);
-  box-shadow: 5px 5px 15px -5px rgba(33, 33, 33, .5);
 }
 
-/* .mobile .adventurecard {
-  background: #212121;
-} */
-
-.adventurecard:hover {
-  transform: scale(1.02);
-}
-
-.adventurecard img {
+.desktop-album img {
   width: 100%;
   height: 100%;
+  border-radius: 9px;
   object-fit: cover;
   object-position: center;
-  border-radius: 21px;
 }
 
-.adventure-overlay {
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  background: linear-gradient(180deg, rgba(33, 33, 33, 0) 50%, rgba(33, 33, 33, .8) 100%);
-  border-radius: 21px;
+.desktop-album-container h4 {
+  width: 190px;
+  text-align: center;
 }
 
-.adventure-icon {
-  width: 30px;
-  height: 30px;
+.desktop-album-blur {
+  width: 98px;
+  height: 98px;
   display: grid;
   place-items: center;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  border: 1px solid rgba(250, 250, 250, .7);
-  border-radius: 100%;
-  color: #ffc107;
-}
-
-.adventurecard-add-info {
-  width: calc(100% - 70px);
-  padding: 0 20px;
-  position: absolute;
-  bottom: 10px;
-  left: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 600;
-  font-size: .75rem;
-}
-
-.adventurecard-add-info i {
-  margin-right: 10px;
-}
-
-@media (max-width: 768px) {}
-
-/* ========================================= */
-/* RATING */
-.rating {
-  width: 90%;
-  padding-bottom: 30px;
-}
-
-.gray {
-  color: rgba(33, 33, 33, .8);
-}
-
-.rating input[type='radio'] {
-  display: none;
-}
-
-.rating label {
-  padding: 0 2px;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.rating label:nth-of-type(1) {
-  margin-left: -3px;
+  right: 4px;
+  bottom: 4px;
+  border-radius: 9px;
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, .5);
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 /* ========================================= */
-/* COMMENTS */
-.comments {
-  width: 90%;
-  padding-bottom: 30px;
+/* ADVENTURE CART */
+.adventure-cart-form {
+  width: 260px;
 }
 
-.comments form {
-  width: 100%;
-  max-width: 450px;
-  margin-bottom: 50px;
+.adventure-cart-form label {
+  font-size: .825rem;
 }
 
-.comments form textarea {
-  width: calc(100% - 15px);
-  height: 100px;
-  margin: 2px 0;
-  padding: 5px 10px 5px 5px;
-  border: 1px solid rgba(33, 33, 33, .4);
-  border-radius: 4px;
-  outline: none;
-  font-family: monospace;
-  resize: vertical;
-}
-
-.comments form button {
-  padding: 5px 40px 5px 40px;
-  border: 1px solid #00b100;
-  border-radius: 4px;
-  background: #00b100;
-  color: white;
-  font-weight: 600;
-  font-family: monospace;
-  outline: none;
-}
-
-.hide-comments {
-  display: none;
-}
-
-.comments hr {
-  width: 45px;
-  height: 4px;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
+}
+
+.adventure-cart-form input[type=number],
+.adventure-form-people-button {
+  height: 25px;
+  margin: 5px 0 15px 0;
+  border-radius: 2px;
+}
+
+.adventure-cart-form input[type=number] {
+  width: 35px;
+  padding: 0;
   border: none;
-  background: rgba(33, 33, 33, .2);
+  outline: none;
+  text-align: center;
+  box-shadow: 0px 0px 11px -3px rgba(33, 33, 33, .2);
 }
 
-/* ========================================= */
-/* MODAL */
-.modal {
-  width: 100%;
-  height: 100vh;
-  background: rgba(33, 33, 33, .9);
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal img {
-  max-width: 90%;
-  max-height: 90vh;
-  object-fit: center;
-  object-position: center;
-}
-
-.modal i {
-  font-size: 1.2rem;
+.adventure-form-people-button {
+  width: 25px;
+  display: grid;
+  place-items: center;
   cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 50px
+  background: var(--lightpurple);
+  color: white;
 }
+
+.adventure-form-people-button:nth-of-type(1) {
+  border-radius: 100% 0 0 100%;
+}
+
+.adventure-form-people-button:nth-of-type(2) {
+  border-radius: 0 100% 100% 0;
+}
+
+.adventure-cart-form-times {
+  display: flex;
+}
+
+.adventure-cart-form-time,
+.chosenTime {
+  width: 55px;
+  margin: 5px 10px 25px 0;
+  padding: 5px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .2), -1px -1px 3px #fff;
+  text-align: center;
+  cursor: pointer;
+  font-size: .825rem;
+}
+
+.chosenTime {
+  background: var(--lightpurple);
+  color: #fff;
+}
+
+.adventure-cart-form button {
+  padding: 8px 35px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background: var(--purple);
+  color: white;
+}
+
+.DatePicker__input.-ltr {
+  margin: 5px 0 15px 0 !important;
+  text-align: left !important;
+  border-radius: 2px !important;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, .2), -1px -1px 3px #fff !important;
+  border: none !important;
+}
+
+.responsive-calendar {
+  width: 300px !important;
+  font-size: 7px !important;
+  padding: 0 !important;
+}
+
+.Calendar__yearText,
+.Calendar__monthText {
+  margin: 0 10px !important;
+  padding: 5px !important;
+  color: black !important;
+}
+
+.Calendar__yearText,
+.Calendar__monthText:hover {
+  background: none !important;
+  transform: none !important;
+}
+
+.Calendar__header button span {
+  color: green !important;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.Calendar__monthSelectorItemText,
+.Calendar__yearSelectorText {
+  color: #000 !important;
+  padding: 5px !important;
+}
+
 
 /* ========================================= */
 /* SLIDESHOW */
@@ -521,131 +309,4 @@
   top: 3vh;
   right: 5%;
   font-size: 1.5rem;
-}
-
-/* ========================================= */
-/* SPINNER */
-.spinner-container {
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 120px);
-  display: grid;
-  place-items: center;
-  background: transparent;
-}
-
-.spinner {
-  background: transparent;
-  border: 4px solid rgba(250, 250, 250, .1);
-  border-radius: 50%;
-  border-top: 4px solid #ff4500;
-  width: 30px;
-  height: 30px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* ========================================= */
-/* SUCCESS ICON */
-@keyframes scaleAnimation {
-  0% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes drawCircle {
-  0% {
-    stroke-dashoffset: 151px;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes drawCheck {
-  0% {
-    stroke-dashoffset: 36px;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-#successAnimationCircle {
-  stroke-dasharray: 151px 151px;
-  stroke: #00b100;
-}
-
-#successAnimationCheck {
-  stroke-dasharray: 36px 36px;
-  stroke: #00b100;
-}
-
-#successAnimationResult {
-  fill: #00b100;
-  opacity: 0;
-}
-
-#successAnimation.animated {
-  animation: 1s ease-out 0s 1 both scaleAnimation;
-}
-
-#successAnimation.animated #successAnimationCircle {
-  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
-}
-
-#successAnimation.animated #successAnimationCheck {
-  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
-}
-
-#successAnimation.animated #successAnimationResult {
-  animation: 0.3s linear 0.9s both fadeIn;
 }

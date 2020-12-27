@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import cookies from 'next-cookies'
 import Head from './../components/utils/head'
 import Mobile from './../components/mobile/mobile'
-import Landing from './../components/landing/landing'
+import Landing from './../components/desktop/landing/landing'
 import { landingeng, landingest } from './../components/texts/landing'
 
 function Index({ language }) {

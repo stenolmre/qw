@@ -1,95 +1,81 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Cookies from 'js-cookie'
-import Prices from './cart/prices'
-import AddPeople from './cart/addpeople'
-import DateTime from './cart/datetime'
+import { useRouter } from 'next/router'
+import Calendar from './calendar'
+import { useAdventureDispatch, useAdventureState } from './../../context/adventure'
+import { getAdventure } from './../../actions/adventure'
 
-export default function Cart({ adventure }) {
-  const userLanguage = Cookies.get('lan') === 'eng'
-  const router = useRouter()
+export default function Cart() {
+  const user_lang = Cookies.get('lan') === 'eng' ? true : false
+  const { query } = useRouter()
 
-  const [order, setOrder] = useState({
-    id: '', adults: 1, youth: 0, children: 0, day: null, time: null
-  })
-  const [error, setError] = useState('')
-  const [processing, setProcessing] = useState(false)
+  const dispatchAdventure = useAdventureDispatch()
+  const { adventure } = useAdventureState()
 
+  useEffect(() => { getAdventure(dispatchAdventure, query.id) }, [dispatchAdventure, query])
 
-  const calculateFee = num => (adventure.prices[num].price / 100).toFixed(2)
-  const totalPrice = ((calculateFee(0) * order.adults) + (calculateFee(1) * order.youth) + (calculateFee(2) * order.children)).toFixed(2)
+  const [people, setPeople] = useState({ adult: 1, youth: 0, child: 0 })
+  const [selectedDay, setSelectedDay] = useState(null)
+  const [chosenTime, setChosenTime] = useState('')
+  const [error, setError] = useState({ date: '', time: '' })
 
-  useEffect(() => { setOrder({ ...order, id: adventure._id }) }, [])
+  const onChange = e => setPeople({ ...people, [e.target.name]: e.target.value })
 
-  function Input({ name, person, reduce, add }) {
-    return <Fragment>
-      <label className="adventure-cart-label">{name}</label>
-      <div className="cart-inputs">
-        <span
-          onClick={reduce}>-</span>
-        <input disabled type="number" min="0" value={person} name={person} onChange={onChange}/>
-        <span onClick={add}>+</span>
-      </div>
-    </Fragment>
+  const placeOrder = e => {
+    e.preventDefault()
+
+    if (people.adult < 1 && people.youth < 1 && people.child < 1) return console.log('How many?')
+    if (selectedDay === null || chosenTime === '') return console.log('When?')
+
+    console.log({
+      id: query.id,
+      adult: people.adult,
+      youth: people.youth,
+      child: people.child,
+      date: selectedDay,
+      time: chosenTime
+    });
   }
 
-  return <div className="adventure-cart-container">
-    <div className="adventure-cart">
-      <Prices userLanguage={userLanguage} adult={calculateFee(0)} youth={calculateFee(1)} child={calculateFee(2)}/>
-      <h4>{userLanguage ? 'Book an adventure' : 'Osta Elamusmatk'}</h4>
-      <AddPeople userLanguage={userLanguage} order={order} setOrder={setOrder} />
-      <DateTime userLanguage={userLanguage} adventure={adventure} order={order} setOrder={setOrder}/>
+  const calculatePrice = (value, person) => adventure && (adventure.prices[value].price * person / 100)
 
-      <div className="cart-input-container" style={{margin: '30px 0 0 0'}}>
-        <h4>{userLanguage ? 'Total Price' : 'Hind Kokku'}</h4>
-        <h4>{totalPrice} €</h4>
-      </div>
+  return <Fragment>
+    {
+      adventure && <form className="adventure-cart-form" onSubmit={placeOrder}>
+        <label>{user_lang ? 'Adult' : 'Täiskasvanu'}</label><br/>
+        <div style={{ display: 'flex' }}>
+          <div className="adventure-form-people-button" onClick={() => people.adult < 1 ? setPeople({ ...people, adult: 0 }) : setPeople({ ...people, adult: people.adult - 1 })}>-</div>
+          <input type="number" name="adult" value={people.adult} onChange={onChange}/>
+          <div className="adventure-form-people-button" onClick={() => setPeople({ ...people, adult: Number(people.adult) + 1 })}>+</div>
+        </div>
 
-      <div className="cart-display-right">
-        <button className="adventure-cart-button" disabled={totalPrice < 1 || processing} onClick={() => console.log(order)}>{userLanguage ? 'Checkout' : 'Kassa'}</button>
-      </div>
-      <p style={{ color: 'red', fontWeight: '600', marginTop: '30px' }}>{ error }</p>
-    </div>
-  </div>
+        <label>{user_lang ? 'Youth' : 'Nooruk'}</label><br/>
+        <div style={{ display: 'flex' }}>
+          <div className="adventure-form-people-button" onClick={() => people.youth < 1 ? setPeople({ ...people, youth: 0 }) : setPeople({ ...people, youth: people.youth - 1 })}>-</div>
+          <input type="number" name="youth" value={people.youth} onChange={onChange}/>
+          <div className="adventure-form-people-button" onClick={() => setPeople({ ...people, youth: Number(people.youth) + 1 })}>+</div>
+        </div>
+
+        <label>{user_lang ? 'Child' : 'Laps'}</label><br/>
+        <div style={{ display: 'flex' }}>
+          <div className="adventure-form-people-button" onClick={() => people.child < 1 ? setPeople({ ...people, child: 0 }) : setPeople({ ...people, child: people.child - 1 })}>-</div>
+          <input type="number" name="child" value={people.child} onChange={onChange}/>
+          <div className="adventure-form-people-button" onClick={() => setPeople({ ...people, child: Number(people.child) + 1 })}>+</div>
+        </div>
+
+        <label>{user_lang ? 'Choose Date' : 'Vali Kuupäev'}</label><br/>
+        <Calendar adventure={adventure} selectedDay={selectedDay} setSelectedDay={setSelectedDay}/><br/>
+        <label>{user_lang ? 'Choose Time' : 'Vali Kellaaeg'}</label><br/>
+        <div className="adventure-cart-form-times">
+          {
+            adventure.availability.time.map(e => <div onClick={() => setChosenTime(e)} key={e} className={chosenTime === e ? 'chosenTime' : 'adventure-cart-form-time'}>
+              {e}
+            </div>)
+          }
+        </div>
+        <h5>{user_lang ? 'Total' : 'Kokku'}: {(calculatePrice(0, people.adult) + calculatePrice(1, people.youth) + calculatePrice(2, people.child)).toFixed(2)}€</h5>
+        <button>{user_lang ? 'Checkout' : 'Kassa'}</button>
+      </form>
+    }
+  </Fragment>
 }
-
-
-// function onClick() {
-//   if (time === null) {
-//     userLanguage
-//       ? setError('Please choose the preferred time of the event.')
-//       : setError('Palun valige elamusmatka toimumise kellaaeg.')
-//
-//     setTimeout(() => {
-//       setError('')
-//     }, 5000)
-//
-//     return
-//   }
-//
-//   if (day === '' || day === undefined) {
-//     userLanguage
-//       ? setError('Please choose the preferred date of the event.')
-//       : setError('Palun valige kalendrist kuupäev.')
-//
-//     setTimeout(() => {
-//       setError('')
-//     }, 5000)
-//
-//     return
-//   }
-//
-//   if (totalPrice > 1) {
-//     Cookies.set('order', order)
-//
-//     router.push('/checkout')
-//   } else {
-//     userLanguage
-//       ? setError('You haven\'t chosed any tickets.')
-//       : setError('Palun valige endale pilet enne kassasse siirdumist.')
-//
-//     setTimeout(() => {
-//       setError('')
-//     }, 5000)
-//   }
-// }

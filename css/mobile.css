@@ -3,13 +3,6 @@ rgba(113, 90, 255, 1);
 rgba(88, 135, 255, 1);
 rgba(85, 193, 255, 1);
 rgba(16, 46, 74, 1); */
-.logo {
-  padding-left: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  text-shadow: -6px 6px 15px rgba(33, 33, 33, .1), 6px -6px 15px rgba(255, 255, 255, 0.8);
-  font-family: 'Nanum Pen Script', cursive;
-}
 
 .mobile-container {
   width: 100%;

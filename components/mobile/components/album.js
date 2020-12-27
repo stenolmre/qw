@@ -6,7 +6,7 @@ export default function AlbumDisplay({ e, userLanguage }) {
     <div className="mobile-album-container">
       <div className="mobile-album">
         {
-          e.images.map(img => <img key={img} src={img} alt={img}/>).slice(0, 4)
+          e.thumbnails.map(img => <img key={img} src={img} alt={img}/>).slice(0, 4)
         }
         <div className="mobile-album-blur">
           +{e.images.length - 3}

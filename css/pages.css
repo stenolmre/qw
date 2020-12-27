@@ -1,4 +1,87 @@
 /* ========================================= */
+.desktop-adventures-page {
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ========================================= */
+.desktop-adventure-page p {
+  /* width: 750px; */
+}
+
+/* ========================================= */
+.desktop-albums-page {
+  margin: 50px 0 0 -5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ========================================= */
+.desktop-album-page {
+  width: 100%;
+  display: grid;
+  margin: 25px 0 0 0;
+  grid-template-columns: calc(33.33% - 2px) calc(33.33% - 2px) calc(33.33% - 2px);
+  grid-gap: 3px;
+}
+
+.desktop-album-page img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+/* ========================================= */
+.desktop-contact-page p {
+  width: 450px;
+  margin-bottom: 25px;
+}
+
+.desktop-contact-page .contact-detail {
+  width: 250px;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-detail-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  border-radius: 100%;
+  background: #fff;
+  box-shadow: inset 3px 3px 3px rgb(250, 255, 255, .1), inset -1px -1px 5px rgb(206, 214, 230, .6);
+  font-size: 1rem;
+  color: rgba(113, 90, 255, 1);
+}
+
+.desktop-contact-page form {
+  width: 450px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================= */
 /* ALBUMS */
 .gallery {
   width: calc(100% - 50px);

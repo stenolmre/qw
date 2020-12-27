@@ -4,7 +4,7 @@ import Head from './../../components/utils/head'
 import { useAlbumState, useAlbumDispatch } from './../../context/album'
 import { getAlbums } from './../../actions/album'
 import { landingeng, landingest } from './../../components/texts/landing'
-
+import DesktopAlbums from './../../components/desktop/albums'
 import MobileGalleries from './../../components/mobile/gallery/galleries'
 
 function Albums({ language }) {
@@ -19,7 +19,14 @@ function Albums({ language }) {
   return <Fragment>
     <Head title={user_lang ? 'North Season - Gallery' : 'North Season - Galerii'} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/albums" />
     {
-      albums && <MobileGalleries userLanguage={user_lang}/>
+      albums && <Fragment>
+        <div className="desktop">
+          <DesktopAlbums userLanguage={user_lang} albums={albums}/>
+        </div>
+        <div className="mobile">
+          <MobileGalleries userLanguage={user_lang}/>
+        </div>
+      </Fragment>
     }
   </Fragment>
 }

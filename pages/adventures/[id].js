@@ -3,19 +3,23 @@ import cookies from 'next-cookies'
 import axios from 'axios'
 import Head from './../../components/utils/head'
 import MobileAdventure from './../../components/mobile/adventure/adventure'
+import DesktopAdventure from './../../components/desktop/adventure/adventure'
 
 function Adventure({ language, adventure }) {
   const user_lang = language === 'eng' ? true : false
 
   return <Fragment>
     {
-      adventure && <Head
-        title={user_lang ? adventure.name : adventure.nimi}
-        description={user_lang ? adventure.description : adventure.kirjeldus}
-        image={adventure.images[0]}
-        url={`https://stenolmre.com/adventures/${adventure._id}`}/>
+      adventure && <Fragment>
+        <Head title={user_lang ? adventure.name : adventure.nimi} description={user_lang ? adventure.description : adventure.kirjeldus} image={adventure.images[0]} url={`https://stenolmre.com/adventures/${adventure._id}`}/>
+        <div className="desktop">
+          <DesktopAdventure userLanguage={user_lang} adventure={adventure}/>
+        </div>
+        <div className="mobile">
+          <MobileAdventure userLanguage={user_lang} adventure={adventure}/>
+        </div>
+      </Fragment>
     }
-    <MobileAdventure userLanguage={user_lang}/>
   </Fragment>
 }
 

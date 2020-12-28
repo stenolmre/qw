@@ -6,6 +6,38 @@
 }
 
 /* ========================================= */
+.mobile-adventure-page {
+  width: 90%;
+  margin: 0 5%;
+  padding: 0 0 50px 0;
+}
+
+.mobile-adventure-page-cart {
+  width: 105%;
+  margin: 50px 0 -30px -5%;
+  padding: 25px 0 125px 5%;
+  border-top: 3px solid var(--purple);
+  background: #fefefe;
+}
+
+.mobile-adventure-page-cart h4:nth-of-type(2) {
+  color: var(--purple);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.mobile-adventure-page-cart h5 {
+  font-size: 1rem;
+}
+
+.mobile-adventure-page-cart .adventure-prices p {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========================================= */
 .desktop-albums-page {
   margin: 50px 0 0 -5px;
   display: flex;

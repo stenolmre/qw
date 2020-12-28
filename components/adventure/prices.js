@@ -16,10 +16,10 @@ export default function Prices() {
   return <Fragment>
     <h4>{user_lang ? 'Prices' : 'Hinnakiri'}</h4>
     {
-      adventure && <div>
+      adventure && <div className="adventure-prices">
         <p><span>{user_lang ? 'Adult' : 'Täiskasvanu'}</span>{(adventure.prices[0].price / 100).toFixed(2)}€</p>
-        <p><span>{user_lang ? 'Youth' : 'Nooruk'}</span>{(adventure.prices[1].price / 100).toFixed(2)}€</p>
-        <p><span>{user_lang ? 'Child' : 'Laps'}</span>{(adventure.prices[2].price / 100).toFixed(2)}€</p>
+        <p><span>{user_lang ? 'Youth' : 'Nooruk'} (11-18)</span>{(adventure.prices[1].price / 100).toFixed(2)}€</p>
+        <p><span>{user_lang ? 'Child' : 'Laps'} (6-11)</span>{(adventure.prices[2].price / 100).toFixed(2)}€</p>
       </div>
     }
     <style jsx>

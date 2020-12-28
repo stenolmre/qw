@@ -5,7 +5,7 @@ import share from './../arrays/share'
 import { useAdventureDispatch, useAdventureState } from './../../context/adventure'
 import { getAdventure } from './../../actions/adventure'
 
-export default function AdventureDetails() {
+export default function AdventureDetails({ mobile }) {
   const user_lang = Cookies.get('lan') === 'eng' ? true : false
   const { query } = useRouter()
 
@@ -17,18 +17,27 @@ export default function AdventureDetails() {
   return <Fragment>
     {
       adventure && <Fragment>
-        <div className="adventure-subheader">
-          <div>
-            <span><i className="fas fa-chart-bar"/>{user_lang ? adventure.levelOfDifficulty : adventure.raskusaste}</span>
-            <span><i className="fas fa-clock"/>~{adventure.duration}H</span>
-          </div>
-          <div className="adventure-social">
-            {
-              share.map(e => <a key={e.name} href={e.link}><i className={`fab fa-${e.icon}`}/></a>)
-            }
-          </div>
-        </div>
-        <p>{user_lang ? adventure.description : adventure.kirjeldus}</p>
+        {
+          mobile
+            ? <List name={user_lang ? 'Level of Difficulty & Duration' : 'Raskusaste & Kestvus'}>
+                <p><i className="fas fa-chart-bar"/>{user_lang ? adventure.levelOfDifficulty : adventure.raskusaste}</p>
+                <p><i className="fas fa-clock"/>~{adventure.duration}H</p>
+              </List>
+            : <Fragment>
+                <div className="adventure-subheader">
+                  <div>
+                    <span><i className="fas fa-chart-bar"/>{user_lang ? adventure.levelOfDifficulty : adventure.raskusaste}</span>
+                    <span><i className="fas fa-clock"/>~{adventure.duration}H</span>
+                  </div>
+                  <div className="adventure-social">
+                    {
+                      share.map(e => <a key={e.name} href={e.link}><i className={`fab fa-${e.icon}`}/></a>)
+                    }
+                  </div>
+                </div>
+                <p>{user_lang ? adventure.description : adventure.kirjeldus}</p>
+              </Fragment>
+        }
         <List name={user_lang ? 'What is included?' : 'Mida hind sisaldab?'}>
           {
             user_lang

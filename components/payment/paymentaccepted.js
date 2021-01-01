@@ -8,7 +8,7 @@ export default function PaymentAccepted({ adventure, loading }) {
 
   return <Fragment>
     {
-      order && <h1 className="desktop-page-heading">{user_lang ? 'Payment Accepted' : 'Makse Õnnestus'}</h1>
+      order && <Fragment><h1 className="desktop-page-heading">{user_lang ? 'Payment Accepted' : 'Makse Õnnestus'}</h1>
       <h4>{user_lang ? 'Order Details' : 'Tellimuse Info'}</h4>
       <OrderDetails accepted userLanguage={user_lang} adventure={adventure} loading={loading} order={order}/>
       <h4>{user_lang ? 'Payment Details' : 'Makse Info'}</h4>
@@ -45,6 +45,7 @@ export default function PaymentAccepted({ adventure, loading }) {
         </div>
       </div>
       <p className="payment-accepted-info">NB! If you have any questions or complications regarding your order, payment, or the event you have purchased then please contact us via email. Furthermore, we will send a proper invoice in the email provided for us. Thank you for your order!</p>
+      </Fragment>
     }
   </Fragment>
 }

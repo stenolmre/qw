@@ -7,7 +7,7 @@ import Loader from './../mobile/components/loader'
 
 export default function DesktopAdventures({ adventures, loading, userLanguage }) {
   return <DesktopLayout sidebar={<AlbumSidebar/>}>
-    <h1 className="desktop-page-heading">{userLanguage ? <Fragment>Inspired Life.<br/>Deserved Happiness.</Fragment> : <Fragment>Inspireeritud meel.<br/>Rikkalikud Emotsioonid.</Fragment>}</h1>
+    <h1 className="desktop-page-heading">{userLanguage ? <Fragment>Inspired Life.<br/>Deserved Happiness.</Fragment> : <Fragment>Inspireerivad Elamused.<br/>Rikkalikud Emotsioonid.</Fragment>}</h1>
     <p>{userLanguage ? 'Experience jaw-dropping adventures.' : 'Koge unustamatuid seiklusi.'}</p>
     <div className="desktop-adventures-page">
       {

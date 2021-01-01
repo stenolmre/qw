@@ -16,7 +16,7 @@ export default function AdventureSidebar() {
   return <Fragment>
     <div className="desktop-layout-header">
       <div className="desktop-layout-sidebar-header">
-        <h4>{user_lang ? <Fragment>Inspired Life.<br/>Deserved Happiness.</Fragment> : <Fragment>Inspireeritud meel.<br/>Rikkalikud Emotsioonid.</Fragment>}</h4>
+        <h4>{user_lang ? <Fragment>Inspired Life.<br/>Deserved Happiness.</Fragment> : <Fragment>Inspireerivad Elamused.<br/>Rikkalikud Emotsioonid.</Fragment>}</h4>
         <p>{user_lang ? 'Experience jaw-dropping adventures.' : 'Koge unustamatuid seiklusi.'}</p>
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function DesktopAlbum({ userLanguage, album }) {
     {
       album && <Fragment>
         <h1 className="desktop-page-heading">{userLanguage ? album.name : album.nimi}</h1>
-        <p className="desktop-page-description">{userLanguage ? album.info : album.infoEst}</p>
+        <p>{userLanguage ? album.info : album.infoEst}</p>
         <div className="desktop-album-page">
           {
             album.images.map((e, i) => <img key={i} src={e} alt={e} onClick={() => {

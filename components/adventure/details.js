@@ -1,18 +1,18 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import Cookies from 'js-cookie'
-import { useRouter } from 'next/router'
 import share from './../arrays/share'
-import { useAdventureDispatch, useAdventureState } from './../../context/adventure'
-import { getAdventure } from './../../actions/adventure'
+import { useAdventureState } from './../../context/adventure'
 
 export default function AdventureDetails({ mobile }) {
   const user_lang = Cookies.get('lan') === 'eng' ? true : false
-  const { query } = useRouter()
-
-  const dispatchAdventure = useAdventureDispatch()
   const { adventure } = useAdventureState()
 
-  useEffect(() => { getAdventure(dispatchAdventure, query.id) }, [dispatchAdventure, query])
+  function List({ children, name }) {
+    return <div className="adventure-list">
+      <h4>{name}</h4>
+      {children}
+    </div>
+  }
 
   return <Fragment>
     {
@@ -63,11 +63,4 @@ export default function AdventureDetails({ mobile }) {
       </Fragment>
     }
   </Fragment>
-}
-
-function List({ children, name }) {
-  return <div className="adventure-list">
-    <h4>{name}</h4>
-    {children}
-  </div>
 }

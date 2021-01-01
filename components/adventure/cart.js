@@ -2,18 +2,12 @@ import React, { Fragment, useState, useEffect } from 'react'
 import Cookies from 'js-cookie'
 import { useRouter } from 'next/router'
 import Calendar from './calendar'
-import { useAdventureDispatch, useAdventureState } from './../../context/adventure'
-import { getAdventure } from './../../actions/adventure'
+import { useAdventureState } from './../../context/adventure'
 
 export default function Cart() {
   const user_lang = Cookies.get('lan') === 'eng' ? true : false
   const router = useRouter()
-  const { query } = router
-
-  const dispatchAdventure = useAdventureDispatch()
   const { adventure } = useAdventureState()
-
-  useEffect(() => { getAdventure(dispatchAdventure, query.id) }, [dispatchAdventure, query])
 
   const [people, setPeople] = useState({ adult: 1, youth: 0, child: 0 })
   const [selectedDay, setSelectedDay] = useState(null)
@@ -28,12 +22,13 @@ export default function Cart() {
 
     try {
       await Cookies.set('cus_order', {
-        id: query.id,
+        id: adventure._id,
         adult: people.adult,
         youth: people.youth,
         child: people.child,
         date: selectedDay,
-        time: chosenTime
+        time: chosenTime,
+        order_date: new Date()
       });
 
       router.push('/checkout')

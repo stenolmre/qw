@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function AdventureDisplay({ userLanguage, e }) {
   return <div className="mobile-adventure">
-    <Link href={`/adventures/${e._id}`}><a>
+    <Link href={`/adventures/${e._id}?${e.name.split(' ').join('-')}`}><a>
     <img src={e.images[0]} alt={userLanguage ? e.name : e.nimi}/>
     <div className="mobile-adventure-price">
       <p>{(e.prices[0].price / 100).toFixed(2)}€</p>

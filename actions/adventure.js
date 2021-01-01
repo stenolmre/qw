@@ -46,6 +46,19 @@ export async function getAdventure(dispatch, adventureId) {
   }
 }
 
+export async function addToAdventureState(dispatch, data) {
+  try {
+    dispatch({
+      type: GET_ADVENTURE,
+      payload: data
+    })
+  } catch (err) {
+    dispatch({
+      type: ADVENTURE_ERROR,
+    })
+  }
+}
+
 // export async function comment(dispatch, adventureId, commentData) {
 //   try {
 //     const config = { headers: { 'Content-Type': 'application/json' } }

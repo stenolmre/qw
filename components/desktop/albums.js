@@ -16,7 +16,7 @@ export default function DesktopAlbums({ userLanguage, albums }) {
 }
 
 function AlbumDisplay({ e, userLanguage }) {
-  return <Link href={`/albums/${e._id}`}><a>
+  return <Link href={`/albums/${e._id}?${(userLanguage ? e.name : e.nimi).split(' ').join('-')}`}><a>
     <div className="desktop-album-container">
       <div className="desktop-album">
         {

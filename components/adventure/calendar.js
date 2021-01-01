@@ -4,7 +4,7 @@ import DatePicker, { utils } from "react-modern-calendar-datepicker"
 import { etLocale, enLocale } from './locale'
 
 export default function eCalendar({ adventure, selectedDay, setSelectedDay, userLanguage }) {
-  const maximumDate = adventure && adventure.availability.days[adventure.availability.days.length - 1]
+  const maximumDate = adventure && adventure.availability.disabledDays[adventure.availability.disabledDays.length - 1]
 
   const formatInputValue = () => {
     if (!selectedDay) return '';
@@ -14,9 +14,9 @@ export default function eCalendar({ adventure, selectedDay, setSelectedDay, user
   return <Fragment>
     {
       adventure && <DatePicker
-        minimumDate={adventure.availability.days[0]}
+        minimumDate={adventure.availability.disabledDays[0]}
         maximumDate={maximumDate}
-        disabledDays={adventure.availability.days}
+        disabledDays={adventure.availability.disabledDays}
         value={selectedDay}
         onChange={setSelectedDay}
         formatInputText={formatInputValue}

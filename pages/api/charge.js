@@ -14,9 +14,6 @@ export default async function (req, res) {
     });
 
     res.status(200).send({
-      amount: payment.amount,
-      currency: payment.currency,
-      receipt_email: payment.receipt_email,
       payment
     });
   } catch (err) {

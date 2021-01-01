@@ -1,8 +1,7 @@
 export const etLocale = {
   months: ['Jaanuar', 'Veebruar', 'Märts', 'Aprill', 'Mai', 'Juuni', 'Juuli', 'August', 'September', 'Oktoober', 'November', 'Detsember'],
 
-  weekDays: [
-    {
+  weekDays: [{
       name: 'Esmaspäev',
       short: 'E',
     },
@@ -82,24 +81,10 @@ export const etLocale = {
 
 export const enLocale = {
   // months list by order
-  months: [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-  ],
+  months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 
   // week days by order
-  weekDays: [
-    {
+  weekDays: [{
       name: 'Monday',
       short: 'M',
     },

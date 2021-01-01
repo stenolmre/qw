@@ -1,6 +1,11 @@
 import mongoose from 'mongoose'
+import { nanoid } from 'nanoid'
 
 const AdventureSchema = mongoose.Schema({
+  _id: {
+    type: String,
+    default: () => nanoid(7)
+  },
   type: {
     type: String,
     required: true
@@ -14,7 +19,15 @@ const AdventureSchema = mongoose.Schema({
     required: true
   },
   prices: [{
+    _id: {
+      type: String,
+      default: () => nanoid(7)
+    },
     name: {
+      type: String,
+      required: true
+    },
+    nimi: {
       type: String,
       required: true
     },
@@ -25,6 +38,10 @@ const AdventureSchema = mongoose.Schema({
   }],
   availability: {
     disabledDays: [{
+      _id: {
+        type: String,
+        default: () => nanoid(7)
+      },
       year: {
         type: Number,
         required: true

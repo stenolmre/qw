@@ -41,6 +41,8 @@ export default function CheckoutForm({ amount, success, description, userLanguag
           description: description
         })
 
+        console.log(data);
+
         success()
       } catch (err) {
         setProcessingTo(false)

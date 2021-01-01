@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Loader from './../mobile/components/loader'
 
-export default function OrderDetails({ userLanguage, adventure, loading, order }) {
+export default function OrderDetails({ userLanguage, adventure, loading, order, accepted }) {
   const calculatePrice = (person, num) => (person * adventure.prices[num].price / 100)
 
   return <Fragment>
@@ -9,7 +9,9 @@ export default function OrderDetails({ userLanguage, adventure, loading, order }
       loading
         ? <Loader/>
         : adventure && <Fragment>
-            <h1 className="desktop-page-heading">{userLanguage ? 'Order' : 'Tellimus'}</h1>
+            {
+              accepted ? null : <h1 className="desktop-page-heading">{userLanguage ? 'Order' : 'Tellimus'}</h1>
+            }
             <div className="desktop-order-details-table">
               <div>
                 <p>{userLanguage ? 'Adventure' : 'Elamusmatk'}</p>
@@ -40,16 +42,22 @@ export default function OrderDetails({ userLanguage, adventure, loading, order }
                 <p>{order.child}</p>
                 <p>{calculatePrice(order.child, 2).toFixed(2)}€</p>
               </div>
-              <div style={{ margin: '25px 0' }}>
-                <p>{userLanguage ? 'Tax' : 'Käibemaks'}</p>
-                <p>0%</p>
-                <p>0€</p>
-              </div>
-              <div style={{ fontWeight: '600' }}>
-                <p>{userLanguage ? 'Total' : 'Kokku'}</p>
-                <p></p>
-                <p>{(calculatePrice(order.adult, 0) + calculatePrice(order.youth, 1) + calculatePrice(order.child, 2)).toFixed(2)}€</p>
-              </div>
+              {
+                accepted
+                  ? null
+                  : <Fragment>
+                      <div style={{ margin: '25px 0' }}>
+                        <p>{userLanguage ? 'Tax' : 'Käibemaks'}</p>
+                        <p>0%</p>
+                        <p>0€</p>
+                      </div>
+                      <div style={{ fontWeight: '600' }}>
+                        <p>{userLanguage ? 'Total' : 'Kokku'}</p>
+                        <p></p>
+                        <p>{(calculatePrice(order.adult, 0) + calculatePrice(order.youth, 1) + calculatePrice(order.child, 2)).toFixed(2)}€</p>
+                      </div>
+                    </Fragment>
+              }
             </div>
 
           </Fragment>

@@ -20,7 +20,7 @@ export default function OrderDetails({ userLanguage, adventure, loading, order, 
               <div style={{ margin: '25px 0 0 0' }}>
                 <p>{userLanguage ? 'Date' : 'Kuupäev'}</p>
                 <p></p>
-                <p>{order.date.day}/{order.date.month}/{order.date.year}</p>
+                <p>{order.date.day}-{order.date.month < 10 ? 0 : null}{order.date.month}-{order.date.year}</p>
               </div>
               <div style={{ margin: '0 0 25px 0' }}>
                 <p>{userLanguage ? 'Time' : 'Kellaaeg'}</p>

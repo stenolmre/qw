@@ -1,11 +1,12 @@
-import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR } from './../actions/types'
+import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, PAYMENT_ACCEPTED } from './../actions/types'
 
 export const initialState = {
   adventure: null,
   adventures: [],
   adventuresByCategory: [],
   loading: true,
-  error: null
+  error: null,
+  paymentAccepted: null
 }
 
 export function AdventureReducer(state = initialState, action) {
@@ -31,6 +32,13 @@ export function AdventureReducer(state = initialState, action) {
         ...state,
         error: payload,
         loading: false
+      }
+    case PAYMENT_ACCEPTED:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        paymentAccepted: payload
       }
     default:
       return state;

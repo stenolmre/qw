@@ -27,7 +27,7 @@ export default function Order() {
 
   return <DesktopLayout sidebar={<AdventureSidebar/>}>
     {
-      payment !== 'success'
+      payment === 'success'
         ? <PaymentAccepted adventure={adventure} loading={loading}/>
         : <div className="desktop-checkout-page">
           <OrderDetails userLanguage={user_lang} adventure={adventure} loading={loading} order={order}/>

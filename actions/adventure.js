@@ -1,4 +1,4 @@
-import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, GET_ADVENTURES_BY_CATEGORY } from './types'
+import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, GET_ADVENTURES_BY_CATEGORY, PAYMENT_ACCEPTED } from './types'
 import axios from 'axios'
 
 export async function getAdventures(dispatch) {
@@ -50,6 +50,19 @@ export async function addToAdventureState(dispatch, data) {
   try {
     dispatch({
       type: GET_ADVENTURE,
+      payload: data
+    })
+  } catch (err) {
+    dispatch({
+      type: ADVENTURE_ERROR,
+    })
+  }
+}
+
+export async function paymentAccepted(dispatch, data) {
+  try {
+    dispatch({
+      type: PAYMENT_ACCEPTED,
       payload: data
     })
   } catch (err) {

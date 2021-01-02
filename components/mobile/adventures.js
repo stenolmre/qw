@@ -6,7 +6,7 @@ import { adventures_ad_eng, adventures_ad_est } from './../texts/adventures'
 
 export default function MobileAdventure({ userLanguage, adventures, loading }) {
   return <Fragment>
-    <MobileLayout userLanguage={userLanguage} paragraph heading={userLanguage ? 'Adventure is worthwile in itself.' : '-'} subheading={userLanguage ? adventures_ad_eng : adventures_ad_est}>
+    <MobileLayout userLanguage={userLanguage} paragraph heading={userLanguage ? <Fragment>Inspired Life.<br/>Deserved Happiness.</Fragment> : <Fragment>Inspireerivad Elamused.<br/>Rikkalikud Emotsioonid.</Fragment>} subheading={userLanguage ? adventures_ad_eng : adventures_ad_est}>
       {
         loading
           ? <Loader />

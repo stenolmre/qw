@@ -15,7 +15,7 @@ function Adventures({ language }) {
   useEffect(() => { getAdventures(dispatchAdventure) }, [dispatchAdventure])
 
   return <Fragment>
-    <Head title={user_lang ? "Adventures" : "Elamusmatkad"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures" />
+    <Head title={user_lang ? "North Season - Adventures" : "North Season - Elamusmatkad"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures" />
     {
       adventures && <Fragment>
         <div className="desktop">

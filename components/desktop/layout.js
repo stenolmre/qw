@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import Navbar from './navbar'
 
-export default function DesktopLayout({ children, sidebar, heading, subheading }) {
+export default function DesktopLayout({ children, sidebar }) {
   const [windowHeight, setWindowHeight] = useState(null)
 
   useEffect(() => {

@@ -1,8 +1,11 @@
 import { Fragment, useState } from 'react'
 import axios from 'axios'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { useAdventureDispatch } from './../../context/adventure'
+import { paymentAccepted } from './../../actions/adventure'
 
 export default function CheckoutForm({ amount, success, description, userLanguage }) {
+  const dispatchAdventure = useAdventureDispatch()
   const [paymentData, setPaymentData] = useState({ name: '', email: '' })
   const { name, email } = paymentData
   const [error, setError] = useState('')
@@ -41,7 +44,7 @@ export default function CheckoutForm({ amount, success, description, userLanguag
           description: description
         })
 
-        console.log(data);
+        paymentAccepted(dispatchAdventure, data)
 
         success()
       } catch (err) {

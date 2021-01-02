@@ -25,9 +25,9 @@ export default function AlbumSidebar() {
           ? <Loader />
           : albums && albums.map(e => <Link href={`/albums/${e._id}`} key={e._id}><a className="desktop-landing-sidebar-album-container">
               <div className="desktop-landing-sidebar-album">
-                <img src={e.thumbnails[0]} alt={user_lang ? e.name : e.nimi} />
-                <img src={e.thumbnails[1]} alt={user_lang ? e.name : e.nimi} />
-                <img src={e.thumbnails[2]} alt={user_lang ? e.name : e.nimi} />
+                {
+                  e.thumbnails.map(el => <img key={el} src={el} alt={user_lang ? e.name : e.nimi} />).slice(0, 3)
+                }
                 <div className="desktop-landing-sidebar-album-overlay">+{e.images.length - 3}</div>
               </div>
               <h4>{user_lang ? e.name : e.nimi}</h4>

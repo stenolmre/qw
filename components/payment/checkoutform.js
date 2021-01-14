@@ -1,25 +1,20 @@
 import { Fragment, useState } from 'react'
 import axios from 'axios'
+import Personal from './checkoutform/personal'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { useAdventureDispatch } from './../../context/adventure'
 import { paymentAccepted } from './../../actions/adventure'
 
 export default function CheckoutForm({ amount, success, description, userLanguage }) {
-  const dispatchAdventure = useAdventureDispatch()
-  const [paymentData, setPaymentData] = useState({ name: '', email: '' })
-  const { name, email } = paymentData
+  const [personalData, setPersonalData] = useState({ name: '', email: '' })
+  const { name, email } = personalData
   const [error, setError] = useState('')
   const [isProcessing, setProcessingTo] = useState(false);
 
   const stripe = useStripe();
   const elements = useElements();
 
-  const onChange = e => setPaymentData({ ...paymentData, [e.target.name]: e.target.value })
-
-  function validateEmail(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-  }
+  const validateEmail = email => /\S+@\S+\.\S+/.test(email)
 
   async function payFor(e) {
     e.preventDefault()
@@ -44,8 +39,6 @@ export default function CheckoutForm({ amount, success, description, userLanguag
           description: description
         })
 
-        paymentAccepted(dispatchAdventure, data)
-
         success()
       } catch (err) {
         setProcessingTo(false)
@@ -58,11 +51,7 @@ export default function CheckoutForm({ amount, success, description, userLanguag
   }
 
   return <Fragment>
-    <h5>{userLanguage ? 'Billing Information' : 'Kliendi Info'}</h5>
-    <label>{userLanguage ? 'Full Name' : 'Ees- ja Perekonnanimi'}</label><br/>
-    <input type="text" name="name" value={name} onChange={onChange}/><br/>
-    <label>Email</label><br/>
-    <input type="text" name="email" value={email} onChange={onChange}/><br/>
+    <Personal personalData={personalData} setPersonalData={setPersonalData}/>
     <h5>{userLanguage ? 'Payment Information' : 'Makse Info'}</h5>
     <label>{userLanguage ? 'Card Info' : 'Kaardi Andmed'}</label><br/>
     <div className="desktop-checkout-card-form">

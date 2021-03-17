@@ -1,4 +1,4 @@
-import { GET_ALBUM, GET_ALBUMS, ALBUM_ERROR } from './../actions/types'
+import { GET_ALBUM, GET_ALBUMS, ALBUM_ERROR } from '@/actions/types'
 
 export const initialState = {
   album: null,

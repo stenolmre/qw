@@ -61,15 +61,11 @@ const AdventureSchema = mongoose.Schema({
     }
   },
   levelOfDifficulty: {
-    type: String,
-    required: true
-  },
-  raskusaste: {
-    type: String,
+    type: Number,
     required: true
   },
   duration: {
-    type: Number,
+    type: String,
     required: true
   },
   isIncluded: {
@@ -85,10 +81,6 @@ const AdventureSchema = mongoose.Schema({
     required: true
   },
   nõudmised: {
-    type: Array,
-    required: true
-  },
-  hashtags: {
     type: Array,
     required: true
   },

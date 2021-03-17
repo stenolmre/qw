@@ -1,9 +1,9 @@
-import { GET_ALBUM, GET_ALBUMS, ALBUM_ERROR } from './types'
-import axios from 'axios';
+import { GET_ALBUM, GET_ALBUMS, ALBUM_ERROR } from '@/actions/types'
+import axios from 'axios'
 
 export async function getAlbums(dispatch) {
   try {
-    const { data } = await axios.get('/api/albums/getalbums');
+    const { data } = await axios.get('/api/albums/_get');
 
     dispatch({
       type: GET_ALBUMS,

@@ -1,6 +1,11 @@
 import mongoose from 'mongoose'
+import { nanoid } from 'nanoid'
 
 const AlbumSchema = mongoose.Schema({
+  _id: {
+    type: String,
+    default: () => nanoid(7)
+  },
   category: {
     type: String,
     required: true

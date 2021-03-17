@@ -1,5 +1,5 @@
-import { GET_POST, GET_POSTS, POST_ERROR } from './types'
-import axios from 'axios';
+import { GET_POST, GET_POSTS, POST_ERROR } from '@/actions/types'
+import axios from 'axios'
 
 export async function getPosts(dispatch) {
   try {

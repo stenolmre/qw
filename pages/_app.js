@@ -1,14 +1,10 @@
-import './../css/styles.css'
-import './../css/components.css'
-import './../css/pages.css'
-import './../css/mobile.css'
-import './../css/adventures.css'
-import './../css/landing.css'
-import './../css/layout.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import GlobalState from './../context/context'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Cookies from 'js-cookie'
+
+import GlobalState from './../context/context'
+
+import './../css/styles.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -21,8 +17,7 @@ export default function MyApp({ Component, pageProps }) {
   return <GlobalState>
     <Component {...pageProps} />
     <style jsx>{`
-      @import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Montserrat:wght@400;600;700;900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@400;600;700;900&display=swap');
     `}</style>
   </GlobalState>
 }

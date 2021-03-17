@@ -1,4 +1,4 @@
-import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, PAYMENT_ACCEPTED } from './../actions/types'
+import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, PAYMENT_ACCEPTED } from '@/actions/types'
 
 export const initialState = {
   adventure: null,

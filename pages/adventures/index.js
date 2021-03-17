@@ -1,37 +1,28 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment } from 'react'
+import { useRouter } from 'next/router'
 import cookies from 'next-cookies'
-import Head from './../../components/utils/head'
-import MobileAdventures from './../../components/mobile/adventures'
-import DesktopAdventures from './../../components/desktop/adventures'
-import { useAdventureState, useAdventureDispatch } from './../../context/adventure'
-import { getAdventures } from './../../actions/adventure'
-import { landingeng, landingest } from './../../components/texts/landing'
 
-function Adventures({ language }) {
+import Layout from '@/components/layout'
+import Adventures from '@/components/adventures'
+
+const Index = ({ language }) => {
   const user_lang = language === 'eng' ? true : false
-  const { adventures, loading } = useAdventureState()
-  const dispatchAdventure = useAdventureDispatch()
-
-  useEffect(() => { getAdventures(dispatchAdventure) }, [dispatchAdventure])
+  const { query } = useRouter()
 
   return <Fragment>
-    <Head title={user_lang ? "North Season - Adventures" : "North Season - Elamusmatkad"} description={user_lang ? landingeng : landingest} image="https://etreeningud.ee/media/images/stenolmre/OG_IMG_2946.jpg" url="https://stenolmre.com/adventures" />
-    {
-      adventures && <Fragment>
-        <div className="desktop">
-          <DesktopAdventures adventures={adventures} userLanguage={user_lang} loading={loading}/>
-        </div>
-        <div className="mobile">
-          <MobileAdventures adventures={adventures} loading={loading} userLanguage={user_lang}/>
-        </div>
-      </Fragment>
-    }
+    <Layout>
+      <h1 className="adventures_layout_title">{user_lang ? 'Adventures' : 'Elamusmatkad'}</h1>
+      <div className="adventures_layout">
+        {query.search && <p className="search_result_title">{user_lang ? `Search results for the word "${query.search}"` : `Otsingutulemused sõnale "${query.search}"`}</p>}
+        <Adventures />
+      </div>
+    </Layout>
   </Fragment>
 }
 
-Adventures.getInitialProps = async ctx => {
+Index.getInitialProps = async ctx => {
   const { lan } = cookies(ctx)
   return { language: lan }
 }
 
-export default Adventures
+export default Index

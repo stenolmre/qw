@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*", "components/layout/*", "components/landing/*", "components/utils/*", "components/contact/*", "components/adventures/*"],
+      "@/utils/*": ["utils/*"],
+      "@/actions/*": ["actions/*"],
+      "@/context/*": ["context/*"],
+      "@/models/*": ["models/*"]
+    }
+  }
+}

@@ -1,9 +1,9 @@
-import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, GET_ADVENTURES_BY_CATEGORY, PAYMENT_ACCEPTED } from './types'
+import { GET_ADVENTURE, GET_ADVENTURES, ADVENTURE_ERROR, GET_ADVENTURES_BY_CATEGORY, PAYMENT_ACCEPTED } from '@/actions/types'
 import axios from 'axios'
 
 export async function getAdventures(dispatch) {
   try {
-    const { data } = await axios.get('/api/adventures/getadventures');
+    const { data } = await axios.get('/api/adventures/_get');
 
     dispatch({
       type: GET_ADVENTURES,

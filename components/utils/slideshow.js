@@ -1,48 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 
-export default function Slideshow({ gallery, close, currentPage, setCurrentPage }) {
+const Slideshow = ({ totalImages, imagesPerPage = 1, images, currentPage, setCurrentPage, close }) => {
   const numbers = []
-  const [imagesPerPage] = useState(1)
-  const totalImages = gallery.length
 
   for (let i = 1; i <= Math.ceil(totalImages / imagesPerPage); i++) {
-    numbers.push(i);
+    numbers.push(i)
   }
 
-  const indexOfLastImage = currentPage * imagesPerPage;
-  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
-  const currentImages = gallery.slice(indexOfFirstImage, indexOfLastImage);
-  const totalPages = Math.ceil(totalImages / imagesPerPage);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
-  const paginate = number => setCurrentPage(number)
+  const paginateToNext = () => currentPage === totalImages ? setCurrentPage(totalImages) : setCurrentPage(currentPage + 1)
 
-  const paginateToNext = () => currentPage === totalPages ? setCurrentPage(1) : setCurrentPage(currentPage + 1)
+  const paginateToPrevious = () => currentPage === 1 ? setCurrentPage(1) : setCurrentPage(currentPage - 1)
 
-  const paginateToPrevious = () => currentPage === 1 ? setCurrentPage(totalPages) : setCurrentPage(currentPage - 1)
-
-  if (process.browser) {
-    document.onkeydown = e => {
-      if (e.which == 39) {
-        paginateToNext()
-        return false
-      } else if (e.which == 37) {
-        paginateToPrevious()
-        return false
-      } else {
-        return false
-      }
-    }
-  }
+  const indexOfLastImage = currentPage * imagesPerPage
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage
 
   return <div className="slideshow">
-    <i onClick={number => paginateToPrevious(number)} className="fas fa-chevron-left slideshow-left-button"/>
-    <img src={currentImages} alt=""/>
-    <div className="slideshow-numbers">
+    <i className="fas fa-times" onClick={close}/>
+    {
+      images.map(el => <img key={el} src={el} alt={el}/>).slice(indexOfFirstImage, indexOfLastImage)
+    }
+    <button disabled={currentPage === 1} onClick={paginateToPrevious}>
+      <i className="fas fa-chevron-left"/>
+    </button>
+    <div className="slideshow_dots">
       {
-        numbers.map(number => <div key={number} style={currentPage === number ? { background: 'rgba(250, 250, 250, .7)'} : { background: 'rgba(250, 250, 250, .2)'} } onClick={() => paginate(number)}></div>)
+        numbers.map(number => <div key={number + 1} onClick={() => paginate(number)} style={currentPage === number ? { background: '#fff' } : null}/>)
       }
     </div>
-    <i onClick={number => paginateToNext(number)} className="fas fa-chevron-right slideshow-right-button"/>
-    <i className="fas fa-times close-slideshow" onClick={close}/>
+    <button disabled={totalImages === currentPage} onClick={paginateToNext}>
+      <i className="fas fa-chevron-right"/>
+    </button>
   </div>
 }
+
+export default Slideshow

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import cookies from 'next-cookies'
+import Head from '@/utils/head'
 
 import Layout from '@/components/layout'
 import Hero from '@/components/hero'
@@ -10,6 +11,7 @@ const Index = ({ language }) => {
   const user_lang = language === 'eng' ? true : false
 
   return <Fragment>
+    <Head title="North Season"/>
     <Layout>
       <div className="landing_content">
         <div className="landing_content_left">

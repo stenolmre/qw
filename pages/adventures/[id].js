@@ -26,7 +26,7 @@ Index.getInitialProps = async ctx => {
 
   const { data } = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
     ? await axios.get(`http://localhost:3000/api/adventures/get?adventureId=${id}`)
-    : await axios.get(`https://etreeningud.ee/api/adventures/get?adventureId=${id}`)
+    : await axios.get(`https://qw-kappa.vercel.app/api/adventures/get?adventureId=${id}`)
 
   return { language: lan, adventure: data }
 }

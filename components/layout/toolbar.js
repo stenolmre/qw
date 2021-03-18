@@ -28,7 +28,7 @@ const Toolbar = () => {
         <img onClick={() => changeLanguage('est')} src="https://res.cloudinary.com/djz69vbsq/image/upload/v1615885940/NorthSeason/est_nzz90i.png" alt="est"/>
         <img onClick={() => changeLanguage('eng')} src="https://res.cloudinary.com/djz69vbsq/image/upload/v1615885940/NorthSeason/eng_i1k8dj.png" alt="eng"/>
       </div>
-      <p className="toolbar_company_name">North Season</p>
+      <p className="toolbar_company_name" onClick={() => router.push('/')}>North Season</p>
     </div>
   </div>
 }

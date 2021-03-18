@@ -9,6 +9,14 @@ const Adventure = ({ language, adventure }) => {
   const [showSlideshow, setShowSlideshow] = useState(false)
 
   return <div className="adventure">
+    <div className="adventure_images">
+      {
+        adventure.images.map((el, i) => <img src={el} alt={el} key={i} onClick={() => {
+          setShowSlideshow(true)
+          setCurrentPage(i + 1)
+        }}/>)
+      }
+    </div>
     <h1>{language ? adventure.name : adventure.nimi}</h1>
     <div className="adventure_details">
       <small>{adventure.type}</small>
@@ -37,15 +45,6 @@ const Adventure = ({ language, adventure }) => {
     }
     <h4>{language ? 'Book the trip' : 'Broneeri elamusmatk'}</h4>
     <Form language={language} adventure={adventure}/>
-
-    <div className="adventure_images">
-      {
-        adventure.images.map((el, i) => <img src={el} alt={el} key={i} onClick={() => {
-          setShowSlideshow(true)
-          setCurrentPage(i + 1)
-        }}/>)
-      }
-    </div>
     {
       showSlideshow && <Slideshow totalImages={adventure.images.length} images={adventure.images} currentPage={currentPage} setCurrentPage={setCurrentPage} close={() => setShowSlideshow(false)}/>
     }

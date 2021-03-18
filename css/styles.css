@@ -86,10 +86,17 @@ textarea {
 button {
   cursor: pointer;
   outline: none;
+  padding: 7px 25px;
 }
 
 button:disabled {
   opacity: .4;
+}
+
+@media(max-width: 768px) {
+  button {
+    padding: 10px 25px;
+  }
 }
 
 /* =======LAYOUT=========================================== */
@@ -306,11 +313,15 @@ nav .fa-route {
   .toolbar {
     width: 100%;
     height: 75px;
+    padding: 0 5%;
+    margin-left: -5%;
     position: relative;
     top: 0;
     right: 0;
     flex-direction: row-reverse;
     border-bottom: 1px solid var(--lightgray);
+    background: var(--black);
+    color: white;
   }
 
   .toolbar_input {
@@ -325,7 +336,7 @@ nav .fa-route {
 
   .toolbar_company_name {
     margin-left: 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .toolbar_details_flags img {
@@ -444,6 +455,10 @@ nav .fa-route {
 
   .hero p {
     margin: 25px 0;
+  }
+
+  .hero a {
+    padding: 10px 25px;
   }
 }
 
@@ -859,9 +874,54 @@ nav .fa-route {
 .booking_form button {
   background: var(--brown);
   color: white;
-  padding: 7px 25px;
   border-radius: 4px;
   border: none;
+}
+
+@media (max-width: 768px) {
+  .adventure_layout {
+    width: 100%;
+    height: calc(100% - 150px);
+    padding: 25px 0 125px 0;
+    position: relative;
+    overflow-y: scroll;
+  }
+
+  .adventure {
+    width: 100%;
+  }
+
+  .adventure_images {
+    width: 100%;
+    margin-bottom: 25px;
+    position: relative;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .adventure_images img {
+    width: 55px;
+    height: 55px;
+    margin: 2px 0 0 0;
+    border-radius: 4px;
+  }
+
+  .booking_form {
+    width: 100%;
+  }
+
+  .booking_form_info {
+    width: 100%;
+  }
+
+  .booking_form_choose_num {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
 }
 
 /* =======GALLERIES=PAGE==================================== */
@@ -944,7 +1004,7 @@ nav .fa-route {
 @media (max-width: 768px) {
   .galleries_layout {
     height: calc(100% - 125px);
-    padding: 0 0 125px 0;
+    padding: 50px 0 125px 0;
   }
 
   .gallery_preview h4 {
@@ -963,6 +1023,10 @@ nav .fa-route {
 
   .gallery_preview_last_image p {
     font-size: 3rem;
+  }
+
+  .galleries_layout_title {
+    display: none;
   }
 }
 
@@ -1000,6 +1064,24 @@ nav .fa-route {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .gallery_layout {
+    width: 100%;
+    height: calc(100% - 50px);
+    padding: 25px 0 125px 0;
+    overflow-y: scroll;
+  }
+
+  .gallery_images {
+    width: 100%;
+    margin: 25px 0 0 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 225px;
+    grid-gap: 5px;
+  }
+}
+
 /* =======SLIDESHOW========================================= */
 .slideshow {
   width: 100%;
@@ -1026,24 +1108,25 @@ nav .fa-route {
 .slideshow img {
   height: 75vh;
   max-width: 90%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slideshow_arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .slideshow button {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%);
   color: white;
   background: none;
   border: none;
   font-size: 2rem;
-}
-
-.slideshow button:nth-of-type(1) {
-  left: 25px;
-}
-
-.slideshow button:nth-of-type(2) {
-  right: 25px;
 }
 
 .slideshow_dots {
@@ -1062,6 +1145,30 @@ nav .fa-route {
   border-radius: 100%;
   background: rgba(255, 255, 255, .2);
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .slideshow .fa-times {
+    top: 25px;
+    right: 25px;
+    font-size: 2rem;
+  }
+
+  .slideshow img {
+    width: 90vw;
+    max-height: 60%;
+    margin-bottom: 100px;
+  }
+
+  .slideshow_arrows {
+    top: 75%;
+    transform: translateY(0);
+    justify-content: center;
+  }
+
+  .slideshow_dots {
+    display: none;
+  }
 }
 
 /* =======CONTACT=========================================== */
@@ -1105,7 +1212,6 @@ nav .fa-route {
 .contact_layout .contact_form button {
   background: var(--brown);
   color: white;
-  padding: 7px 25px;
   border-radius: 4px;
   border: none;
 }

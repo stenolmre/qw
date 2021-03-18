@@ -21,17 +21,19 @@ const Slideshow = ({ totalImages, imagesPerPage = 1, images, currentPage, setCur
     {
       images.map(el => <img key={el} src={el} alt={el}/>).slice(indexOfFirstImage, indexOfLastImage)
     }
-    <button disabled={currentPage === 1} onClick={paginateToPrevious}>
-      <i className="fas fa-chevron-left"/>
-    </button>
     <div className="slideshow_dots">
       {
         numbers.map(number => <div key={number + 1} onClick={() => paginate(number)} style={currentPage === number ? { background: '#fff' } : null}/>)
       }
     </div>
-    <button disabled={totalImages === currentPage} onClick={paginateToNext}>
-      <i className="fas fa-chevron-right"/>
-    </button>
+    <div className="slideshow_arrows">
+      <button disabled={currentPage === 1} onClick={paginateToPrevious}>
+        <i className="fas fa-chevron-left"/>
+      </button>
+      <button disabled={totalImages === currentPage} onClick={paginateToNext}>
+        <i className="fas fa-chevron-right"/>
+      </button>
+    </div>
   </div>
 }
 
